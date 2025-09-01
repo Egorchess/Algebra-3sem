@@ -1,0 +1,219 @@
+\section{Группы}
+\begin{definition}
+    Пусть $G$ - множество. Бинарной операцией на $G$ называется отображение $*: G \times G \rightarrow G$.
+\end{definition}
+\begin{definition}
+    Множество $G$ с бинарной операцией $*$ называется группой, если выполнены следующие аксиомы:
+    \begin{enumerate}
+        \item $\forall a, b, c \in G \ \ a * (b * c) = (a * b) * c$;
+        \item $\exists e \in G: \forall a \in G \ \ a * e = e * a = a$;
+        \item $\forall a \in G \ \exists b \in G: a * b = b * a = e$
+    \end{enumerate}
+\end{definition}
+Различные формы записи группы:
+\begin{enumerate}
+    \item Мультипликативная форма (терминология):\\
+    Операция - $"\cdot"$ (умножение);\\
+    Нейтральный элемент - единичный $(1)$;\\
+    Элемент из аксиомы 3 - обратный ($a^{-1}$ для $a \in G$);
+    \item Аддитивная форма (терминология):\\
+    Операция - $"+"$ (сложение);\\
+    Нейтральный элемент - нулевой $(0)$;\\
+    Элемент из аксиомы 3 - противоположный ($-a$ для $a \in G$);
+\end{enumerate}
+\begin{definition}
+    Если $G$ - группа и $\forall a, b \in G \ a \cdot b = b \cdot a$, то $G$ - абелева (коммутативная) группа. 
+\end{definition}
+\begin{remark}
+    Обычно для обозначения абелевых групп будем использовать аддитивную форму записи, для иных - мультипликативную.
+\end{remark}
+\begin{subtheorem}[Простейшие свойства групп] \tab
+    \begin{enumerate}
+        \item Единичный элемент единственный;
+        \item $\forall a \in G$ обратный к $a$ элемент единственный;
+        \item $(ab)^{-1} = b^{-1}a^{-1}$;
+        \item Если $a, b \in G$, то решение уравнения $ax = b \ (xa = b)$ единственно.
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof} \tab
+    \begin{enumerate}
+        \item (От противного) Допустим, что $\exists \ e_1,e_2 \in A$ - единичные. Тогда $e_1 = e_1 * e_2 = e_2$ по определению единичного элемента.
+        \item Допустим $\exists \ b_1,b_2$ - обратные к $a$ элементы: $b_1 \not = b_2$ \\
+        В силу ассоциативности:
+        $$b_1 * (a * b_2) = (b_1 * a) * b_2$$
+        $$b_1 * e = e * b_2$$ 
+        $$b_1 = b_2$$ 
+        \item $abb^{-1}a^{-1} = aea^{-1} = e$;\\
+        $b^{-1}a^{-1}ab = b^{-1}eb = e \Longrightarrow (ab)^{-1} = b^{-1}a^{-1}$
+        \item $ax = b \Longleftrightarrow a^{-1}ax = a^{-1}b \Longleftrightarrow x = a^{-1}b$;\\
+        $xa = b \Longleftrightarrow xaa^{-1} = ba^{-1} \Longleftrightarrow x = ba^{-1}$; 
+    \end{enumerate} 
+\end{proof}
+\begin{definition}
+    Мощность множества $G$ называется порядком группы $G$.\\ Обозначается $|G|$.\\
+    Если $|G| < \infty$, то группа называется конечной, иначе бесконечной.
+\end{definition}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $(\Z, +), (\Z_n, +)$;
+        \item $GL_n(F)$ - группа невырожденных матриц порядка $n$ с коэффициентами из поля $F$;
+        \item Пусть $\Omega$ - множество. Преобразованиями $\Omega$ назовём биекции $f: \Omega \rightarrow \Omega$.\\
+        $S(\Omega)$ - множество всех преобразований $\Omega$ - образует группу относительно композиции.\\
+        Если $\Omega = \{1,...,n\}$, то $S(n) = S_n$ - группа подстановок.
+        \item Если $G = \{a_1,...,a_n\}$ - конечная группа, то её можно задать с помощью таблицы умножения (таблицы Кэли).\\
+        Например, для $Z_2 = \{0,1\}$:
+        $$\begin{tabular}{c|c|c}
+        \null & 0 & 1\\ \hline
+        0 & 0 & 1 \\ \hline
+        1 & 1 & 0
+        \end{tabular}$$ 
+        \item Группа кватернионов: $Q_8 = \{\pm 1, \pm i, \pm j, \pm k\}$\\
+        Таблица Кэли для кватернионов:
+        $$\begin{tabular}{c|c|c|c|c}
+        \null & 1 & i & j & k \\ \hline
+        1 & 1 & i & j & k \\ \hline
+        i & i & -1 & k & -j \\ \hline
+        j & j & -k & -1 & i \\ \hline
+        k & k & j & i & -1
+        \end{tabular}$$ 
+    \end{enumerate}
+\end{examples}
+\begin{definition}
+    Подмножество $H \subseteq G$ называется подгруппой группы $G$, если:
+    \begin{enumerate}
+        \item $\forall a, b \in H \ ab \in H$;
+        \item $\forall a \in H \ a^{-1} \in H$;
+        \item $1 \in H$ (можно заменить на $H \neq \varnothing$)
+    \end{enumerate}
+    Обозначается $H \leqslant G$.
+\end{definition}
+\begin{subtheorem}
+    Подгруппа $H$ группы $G$ является группой относительно бинарной операции группы $G$.
+\end{subtheorem}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $\Z \leqslant \Q \leqslant \R \leqslant \CC$ ($\N \nleqslant \Z$, т.к. не группа);
+        \item $GL_n(F) \geqslant SL_n(F) = \{A \in GL_n(F)| \det A = 1\}$ - унимодулярная группа.
+        \item $GL_n(F) \geqslant O_n(F) \geqslant SO_n(F)$ ($O_n(F)$ - ортогональная группа, $SO_n(F)$ - специальная ортогональная группа);
+        \item $GL_n(F) \geqslant$ группа строго треугольных матриц.
+    \end{enumerate}
+\end{examples}
+\begin{definition}
+    Любая подгруппа группы $S(\Omega)$ называется группой преобразований множества $\Omega$.
+\end{definition}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $GL(V) \ (\leqslant S(V))$ - группа всех невырожденных линейных операторов векторного пространства $V$;
+        \item $Aff(\A)$ - группа всех невырожденных аффинных преобразований аффинного пространства $\A$;
+        \item $\E^2$ - аффинно-евклидово двумерное пространство.\\
+        $\textup{Isom} \ \E^2$ - группа изометрий (движений) на $\E^2$.\\
+        $\textup{Isom} \ \E^2 \geqslant O_2 \geqslant SO_2$, где $O_2$ - группа движений, сохраняющих точку $O$, $SO_2$ - группа поворотов вокруг точки $O$.
+        \item $T \subseteq \E^2$ - некоторая фигура.\\
+        $\textup{Sym}\ T = \{f \in \textup{Isom} \ \E^2 \| \ f(T) = T\}$ - группа симметрий фигуры $T$.
+        \begin{itemize}
+            \item Если $T$ - окружность с центром в точке $O$, то $\textup{Sym}\ T = O_2$;
+            \item Если $T$ - правильный $n$-угольник с центром в точке $O$, то $\textup{Sym}\ T = D_n$ - группа Диэдра.\\
+            $|D_n| = 2n$ - $n$ поворотов и $n$ симметрий. 
+        \end{itemize}
+    \end{enumerate}
+\end{examples}
+\begin{definition}
+    Пусть $(G_1, *, e_1), (G_2, ,e_2)$ - группы. Отображение $\phi: G_1 \rightarrow G_2$ - изоморфизм, если
+    \begin{enumerate}
+        \item $\phi$ - биекция;
+        \item $\forall a, b \in G_1 \ \phi(a * b) = \phi(a) * \phi(b)$
+    \end{enumerate}
+    Если между $G_1$ и $G_2$ существует изоморфизм, то $G_1$ и $G_2$ называются изоморфными. Обозначается $G_1 \cong  G_2$.
+\end{definition}
+\begin{example}
+    $D_3 \cong S_3$.
+\end{example}
+\begin{proof}
+    $D_3$ - группа движений, переводящая равносторонний треугольник в себя. Если пронумеровать вершины изначального треугольника, то каждый элемент группы $D_3$ будет соответствовать подстановке, переводящей старый порядок вершин в новый. Определение изоморфизма проверяется очевидно.
+\end{proof}
+\begin{subtheorem}
+    Изоморфность групп - отношение эквивалентности на множестве групп.
+\end{subtheorem}
+\begin{subtheorem}[Свойства изоморфизмов] \tab
+    \begin{enumerate}
+        \item $\phi(e_1) = e_2$;
+        \item $\phi(a^{-1}) = (\phi(a))^{-1}$;
+        \item $G_1 \cong  G_2 \Longrightarrow |G_1| = |G_2|$.
+        \begin{remark}
+            Обратное утверждение неверно (например, $S_3 \ncong \Z_6$).
+        \end{remark}
+    \end{enumerate}
+\end{subtheorem}
+\begin{example}
+    $SO_2 \cong (U, \cdot)$, где $U = \{z \in \CC : |z| = 1\}$.
+\end{example}
+\begin{definition}
+    Пусть $(G, \cdot, e)$ - группа, $k \in \Z, g \in G$.\\
+    Мультипликативный термин - элемент $g$ в степени $k$:
+    $$g^k =
+    \begin{cases} \undermat{k}{g \cdot g \cdot ... \cdot g}, k > 0 \\
+        \\
+        \undermat{-k}{g^{-1} \cdot g^{-1} \cdot ... \cdot g^{-1}}, k < 0 \\
+        \\
+        e, k = 0
+    \end{cases}$$
+\end{definition}
+\begin{definition}
+    Пусть $(G, +, e)$ - группа, $k \in \Z, g \in G$.\\
+    Аддитивный термин - кратное элемента $g$:
+    $$kg =
+    \begin{cases} \undermat{k}{g + g + ... + g}, k > 0 \\
+        \\
+        \undermat{-k}{(-g) + (-g) + ... + (-g)}, k < 0 \\
+        \\
+        e, k = 0
+    \end{cases}$$
+\end{definition}
+\begin{subtheorem}[Свойства ($k, m \in \Z, g \in G$)] \tab
+    \begin{enumerate}
+        \item $g^k \cdot g^m = g^{k+m}$;
+        \item $(g^k)^m = g^{km}$;
+        \item $(g^k)^{-1} = g^{-k}$. 
+    \end{enumerate}    
+\end{subtheorem}
+\begin{subtheorem}
+    Множество всех элементов $g^k$, где $k \in \Z$, $g \in G$, образует подгруппу в $G$. Обозначается $\langle g \rangle = \{e, g, g^{-1}, g^2, g^{-2}, ...\}$ .
+\end{subtheorem}
+\begin{definition}
+    $\langle g \rangle$ - циклическая подгруппа. порождённая элементом $g$.
+\end{definition}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $G = \Z: \langle 2 \rangle = 2\Z$ - чётные целые числа;
+        \item $G = \Z_6: \langle 2 \rangle = \{0, 2, 4\}$;
+        \item $G = \CC: \langle i \rangle = \{\pm 1, \pm i\}$ 
+    \end{enumerate}
+\end{examples}
+Пусть $(G, \cdot, e)$ - группа, $g \in G$.
+Если $\forall k, m \in \Z: k \neq m \Longrightarrow g^k \neq g^m$, то $\langle g \rangle$ - бесконечная (элемент $g$ имеет бесконечный порядок).\\
+Если $\exists k, m \in \Z: k \neq m, g^k = g^m \Longrightarrow g^{k-m} = e \Longrightarrow$ существует наименьшее $n \in \N$ такое, что $g^n = e$ (элемент $g$ имеет порядок $n$)  
+\begin{definition}
+    Порядком элемента $g \in G$ называется наименьшее натуральное число $n$ такое, что $g^n = e$, если такое существует. Иначе говорят, что элемент $g$ имеет бесконечный порядок. Обозначается $\textup{ord} \ g$.
+\end{definition}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $G = \Z: \textup{ord } 2 = \infty$;
+        \item $G = \Z: \textup{ord } 2 = 6$;
+        \item $G = \CC^*: \textup{ord } 2 = \infty$\\
+        ($\CC^*$ - мультипликативная группа поля, $\CC\setminus\{0\}$ относительно умножения).
+    \end{enumerate}
+\end{examples}
+\begin{subtheorem}[Свойства] \tab
+    \begin{enumerate}
+        \item $g^m = e \Longleftrightarrow \textup{ord } g \ | \ m$;
+        \item $g^m = g^l \Longleftrightarrow k \equiv l (\textup{mod ord } g)$
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof} \tab
+    \begin{enumerate}
+        \item Разделим $m$ на $n = \textup{ord } g$ с остатком: $m = nq + r$, где $0 \leqslant r < n$. Тогда:
+        $$e = g^m = (g^n)^q \cdot g^r = g^r \Longrightarrow r = 0$$
+        так как $r < n$, где $n$ - минимальное натуральное число такое, что $g^n = 0$.
+        \item Следует из 1. 
+    \end{enumerate}
+\end{proof}
