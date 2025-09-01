@@ -11,8 +11,8 @@
 *.cb
 *.cb2
 .*.lb
-#*.png
-*.DS_Store
+*.png
+*.jpg
 
 ## Intermediate documents:
 *.dvi
@@ -152,7 +152,7 @@ acs-*.bib
 *-concordance.tex
 # TODO Uncomment the next line if you use knitr and want to ignore its generated tikz files
 # *.tikz
-# *-tikzDictionarys
+*-tikzDictionary
 
 # listings
 *.lol
@@ -302,8 +302,6 @@ TSWLatexianTemp*
 # xwatermark package
 *.xwm
 
-#my stupid files and dirs
-#.image/
 
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
