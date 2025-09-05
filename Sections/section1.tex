@@ -1,4 +1,5 @@
 \section{Группы}
+\subsection{Основные понятия}
 \begin{definition}
     Пусть $G$ - множество. Бинарной операцией на $G$ называется отображение $*: G \times G \rightarrow G$.
 \end{definition}
@@ -203,12 +204,12 @@
         ($\CC^*$ - мультипликативная группа поля, $\CC\setminus\{0\}$ относительно умножения).
     \end{enumerate}
 \end{examples}
-\begin{subtheorem}[Свойства элементов конечного порядка]\tab
+\begin{subtheoremnum}[Свойства элементов конечного порядка]\tab
     \begin{enumerate}
         \item $g^m = e \Longleftrightarrow \textup{ord } g \ | \ m$;
         \item $g^m = g^l \Longleftrightarrow k \equiv l (\textup{mod ord } g)$
     \end{enumerate}
-\end{subtheorem}
+\end{subtheoremnum}
 \begin{proof} \tab
     \begin{enumerate}
         \item Разделим $m$ на $n = \textup{ord } g$ с остатком: $m = nq + r$, где $0 \leqslant r < n$. Тогда:
@@ -222,22 +223,22 @@
 \end{consequense}
 \begin{proof}
     Если $\textup{ord } g = \infty: \ \forall k \neq l \ g^k \neq g^l \Longrightarrow$ подгруппа $\langle g \rangle = \{e, g^{\pm 1}, g^{\pm 2},...\}$ бесконечна.\\
-    Если $\textup{ord } g = n: \langle g \rangle = \{e, g^1, ... g^{n-1}\}$ - все эти элементы различны из пункта 2 теоремы, а других нет по определению порядка.
+    Если $\textup{ord } g = n: \langle g \rangle = \{e, g^1, ... g^{n-1}\}$ - все эти элементы различны из пункта 2 утверждения, а других нет по определению порядка.
 \end{proof}
 \begin{examples} \tab
     \begin{enumerate}
         \item $i \in \CC^*$ - $\textup{ord } i = 4$;
         \item $\sigma \in S_n$:\\
         Если $\sigma = (i_1,...,i_k)$ - цикл длины $k$, то $\textup{ord } \sigma = k$.\\
-        Так как любая подстановка раскладывается в произведение независимых циклов и независимые циклы коммутируют, если $\sigma = \tau_1...\tau_n$, где $\tau_i$ - независимые циклы, то верно $\textup{ord } \sigma = $ НОК $\{|\tau_1|,...,|\tau_n|\}$.
+        Так как любая подстановка раскладывается в произведение независимых циклов и независимые циклы коммутируют, если $\sigma = \tau_1...\tau_n$, где $\tau_i$ - независимые циклы, то верно: $\textup{ord } \sigma = $ НОК $\{|\tau_1|,...,|\tau_n|\}$.\\
         Например, $\sigma = (23)(145) \Longrightarrow \textup{ord } \sigma = 6$.
     \end{enumerate}
 \end{examples}
-\begin{subtheorem}
+\begin{subtheoremnum}
     Пусть $n = \textup{ord } g$. Тогда $\textup{ord } g^k = \frac{n}{\text{НОД}(n, k)}$.
-\end{subtheorem}
+\end{subtheoremnum}
 \begin{proof}
-    Очевидно.
+    Пусть $\textup{ord } g^k = m$. Из утверждения 1: $g^{mk} = e \Longleftrightarrow n | mk$, откуда $\frac{n}{\text{НОД}(n, k)} | m$, т.е. $m \geqslant \frac{n}{\text{НОД}(n, k)}$. Очевидно, что при $m = \frac{n}{\text{НОД}(n, k)} \ n | mk$. 
 \end{proof}
 \begin{definition}
     Множество $S \subseteq G$ называется порождающим множеством для группы $G$, если $\forall g \in G \ \exists s_1,...,s_k \in S: \ g = s_1^{\epsilon_1}...s_k^{\epsilon_k}$, где $\epsilon_i = \pm 1$ ($s_i$ не обязательно различны).\\
@@ -253,8 +254,14 @@
         \item $D_n = \langle \alpha, s\rangle$, где $\alpha$ - поворот на $\frac{2\pi}{n}$, а $s$ - любая из симметрий.
         \item Группа Клейна: $H = \{\textup{id}, a=(12)(34), b=(13)(24), c=(14)(23)\} \leqslant S_4$\\
         Это группа симметрий прямоугольника, не являющегося квадратом: $a, c$ - симметрии относительно средних линий, $b$ - поворот на $\pi$ вокруг центра. 
-        Таблица Кэли для группы Клейна:\\
-
+        Таблица Кэли для группы Клейна:
+        $$\begin{tabular}{c|c|c|c|c}
+        \null & e & a & b & c \\ \hline
+        e & e & a & b & c \\ \hline
+        a & a & e & c & b \\ \hline
+        b & b & c & e & a \\ \hline
+        c & c & b & a & e
+        \end{tabular}$$ 
         Отсюда $\{e, a, b, c\} = \langle a, b \rangle$.
         \item $\Q$ - бесконечно порождённая.
     \end{enumerate}
@@ -267,30 +274,31 @@
     \begin{enumerate}
         \item $\Z = \langle 1 \rangle = \langle -1 \rangle$, $\Z_n = \langle 1 \rangle$;
         \item $U_n$ - множество всех комплексных корней степени $n$ из 1.\\
-        $U_n$ образует группу относительно умножения, причём $U_n = \langle \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n} \rangle$.
+        $U_n$ - группа относительно умножения, причём $U_n = \langle \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n} \rangle$.
     \end{enumerate}    
 \end{examples}
-\begin{subtheorem}
+\begin{subtheoremnum}
     Если $G = \langle g \rangle$, то $|G| = \textup{ord } g$.
-\end{subtheorem}
+\end{subtheoremnum}
 \begin{proof}
-    Очевидно из определения порожающего множества.
+    Очевидно из определения порождающего множества.
 \end{proof}
 \begin{remark}
     Далее циклическую группу порядка $n$ обозначаем $\langle g \rangle_n$
 \end{remark}
-\begin{subtheorem}
-    Пусть $G = \langle g \rangle_n$. Тогда $G = \langle g^k \rangle \Longleftrightarrow \text{НОД}(k, n) = 1$.
-\end{subtheorem}
+\begin{subtheoremnum}
+    Пусть $G = \langle g \rangle_n$. Тогда $G = \langle g^k \rangle \Longleftrightarrow \textup{НОД}(k, n) = 1$.
+\end{subtheoremnum}
 \begin{proof}
-    
+    Из утверждения 3 $|G| = \textup{ord } g$. Тогда:
+    $$G = \langle g^k \rangle \Longleftrightarrow \textup{ord } g^k = \frac{n}{\text{НОД}(n, k)} = n \Longleftrightarrow \text{НОД}(n, k) = 1$$ 
 \end{proof}
-\begin{theorem}[Классификация циклических групп] \tab
+\begin{theoremnum}[Классификация циклических групп] \tab
     \begin{enumerate}
         \item Если циклическая группа $G$ бесконечна, то $G \cong \Z$;
         \item Если циклическая группа $G$ конечна и имеет порядок $n$, то $G \cong \Z_n$.
     \end{enumerate}
-\end{theorem}
+\end{theoremnum}
 \begin{proof}\tab
     \begin{enumerate}
         \item Пусть $\textup{ord } g = \infty, \forall h \in g \ \exists k \in \Z: h = g^k$\\
@@ -300,33 +308,35 @@
         \[\phi(g^k \cdot g^m) = \phi(g^{k+m}) = k+m = \phi(g^k) + \phi(g^m)\]
         Отсюда $\phi$ - изоморфизм.
         \item Пусть $\textup{ord } g = n$. Рассмотрим отображение $\phi: \Z_n \rightarrow G$ такого вида: $\phi: k \rightarrowtail g^k$. Очевидно, что $\phi$ - сюръекция (в $g^k\in G$ перешёл $k \in \Z_n$).\\
-        $k \equiv m (\mod n) \Longleftrightarrow g^k = g^n$ - отсюда $\phi$ - инъекция.\\
+        $k \equiv m (\textup{mod } n) \Longleftrightarrow g^k = g^n$ - отсюда $\phi$ - инъекция.\\
         Сохранение операции - аналогично пункту 1.\\ 
         Отсюда $\phi$ - изоморфизм.
     \end{enumerate}
 \end{proof}
 \begin{consequense}
-    Пусть $G_1, G_2$ - циклические группы. Тогда $G_1 \cong G_2 \Longleftrightarrow |G_1| = |G_2|$.
+    Если $G_1, G_2$ - циклические группы, то $G_1 \cong G_2 \Longleftrightarrow |G_1| = |G_2|$.
 \end{consequense}
-\begin{proof}\tab
+\begin{proof} \tab\\
     $\Longrightarrow : \ \ $ верно всегда;\\
     $\Longleftarrow : \ \ $ из теоремы: если $G_1$ бесконечна, то $G_1 \cong \Z \cong G_2$, иначе $G_1 \cong \Z_n \cong G_2$, где $n = |G_1| = |G_2|$.
 \end{proof}
-\begin{theorem} \tab
+\begin{theoremnum} \tab
     \begin{enumerate}
         \item Любая подгруппа циклической группы является циклической.
-        \item Подгруппы циклической группы $G$ порядка $n$ находятся во взаимном соответствии с делителями $n$, т.е. $\forall H \leqslant G \ |H| | n$ и $\forall d | n \ \exists! \ H \leqslant G : |H| = d$.
-        \item Подгруппы группы $\Z$ исчерпываются группами $k\Z =  \langle k \rangle$, где $k \in \N \cup \{0\}$
+        \item Подгруппы циклической группы $G$ порядка $n$ находятся во взаимном соответствии с делителями $n$, т.е.
+        \[\forall H \leqslant G \ |H| \ |\  n \text{ и } \forall d | n \ \exists! \ H \leqslant G : |H| = d\]
+        \item Подгруппы группы $\Z$ исчерпываются группами $k\Z =  \langle k \rangle$, где $k \in \N \cup \{0\}$.
     \end{enumerate}
-\end{theorem}
+\end{theoremnum}
 \begin{proof} \tab
     \begin{enumerate}
-        \item Пусть $G = \langle g \rangle, H \leqslant G$.Если $H = \{e\}$, то $H = \langle e \rangle$.\\
-        При $H \neq \{e\} : \forall h \in H \ \exists k \in \Z : h = g^k$. Так как $g^k \in H \Longrightarrow g^k \in H$ и в $H$ есть элемент, отличный от $e$, $\exists$ наименьшее $k \in \N: g^k \in H$.\\
+        \item Пусть $G = \langle g \rangle, H \leqslant G$. Если $H = \{e\}$, то $H = \langle e \rangle$.\\
+        При $H \neq \{e\} : \forall h \in H \ \exists k \in \Z : h = g^k$. Так как $g^k \in H \Longrightarrow g^{-k} \in H$ и в $H$ есть элемент, отличный от $e$, $\exists$ наименьшее $k \in \N: g^k \in H$.\\
         Докажем, что $H = \langle g^k \rangle$. Рассмотрим произвольный $g^m \in H$. Разделим $m$ на $k$ с остатком: $m = kq + r, 0 \leqslant r < k$. Тогда:
         \[g^m = (g^k)^q\cdot g^r \Longrightarrow g^r = (g^k)^{-q}\cdot g^m \Longrightarrow r = 0, \text{ т.к. k - наименьшее} \in \N\]
         \item $G =  \langle g \rangle_n, H \leqslant G \Longrightarrow_{(1)} H =  \langle g^k \rangle$.\\
-        Так как $g^n = e \in H$, то $k | n \Longrightarrow n = kq$. Отсюда $H = \{e, g^k, g^{2k},...,g^{(q-1)k}\} \Longrightarrow |H| = q | n$.\\
+        Так как $g^n = e \in H$, то $k | n \Longrightarrow n = kq$.\\
+        Отсюда $H = \{e, g^k, g^{2k},...,g^{(q-1)k}\} \Longrightarrow |H| = q$, где $q | n$.\\
         Обратно, $\forall d | n \ \exists! H =  \langle g^{\frac{n}{d}} \rangle$ (в силу описания выше других подгрупп такого порядка нет).
         \item Из пункта 1 в аддитивной форме получаем, что $H \leqslant Z =  \langle 1 \rangle \Longrightarrow H =  \langle k\cdot 1 \rangle$
     \end{enumerate} 
@@ -350,9 +360,9 @@
 \begin{subtheorem}[Свойства смежных классов] \tab
     \begin{enumerate}
         \item $\forall a \in G \ a \in aH$;
-        \item если $a \in bH$, то $bH = aH$; в частности, любые два смежных класса либо не пересекаются, либо совпадают.\\
+        \item если $a \in bH$, то $bH = aH$; в частности, любые два смежных класса либо не пересекаются, либо совпадают.
+        \item $aH = bH \Longleftrightarrow b^{-1}a \in H$;\\
         (Верны аналогичные утверждения для правых смежных классов)
-        \item $aH = bH \Longleftrightarrow b^{-1}a \in H$;
     \end{enumerate}
 \end{subtheorem}
 \begin{proof} \tab
