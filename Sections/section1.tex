@@ -268,7 +268,7 @@
 \end{examples}
 \subsection{Циклические группы}
 \begin{definition}
-    Группа $G$ называется циклической, если $G$ порождается одним элементом, т.е. $\exists g \in G: \forall h \in g \ \exists k \in \Z: h = g^k$. Элемент $G$ также называется образующим элементом группы $G$. 
+    Группа $G$ называется циклической, если $G$ порождается одним элементом, т.е. $\exists g \in G: \forall h \in G \ \exists k \in \Z: h = g^k$. Элемент $g$ также называется образующим элементом группы $G$. 
 \end{definition}
 \begin{examples}\tab
     \begin{enumerate}
@@ -308,7 +308,7 @@
         \[\phi(g^k \cdot g^m) = \phi(g^{k+m}) = k+m = \phi(g^k) + \phi(g^m)\]
         Отсюда $\phi$ - изоморфизм.
         \item Пусть $\textup{ord } g = n$. Рассмотрим отображение $\phi: \Z_n \rightarrow G$ такого вида: $\phi: k \rightarrowtail g^k$. Очевидно, что $\phi$ - сюръекция (в $g^k\in G$ перешёл $k \in \Z_n$).\\
-        $k \equiv m (\textup{mod } n) \Longleftrightarrow g^k = g^n$ - отсюда $\phi$ - инъекция.\\
+        $k \equiv m (\textup{mod } n) \Longleftrightarrow g^k = g^m$ - отсюда $\phi$ - инъекция.\\
         Сохранение операции - аналогично пункту 1.\\ 
         Отсюда $\phi$ - изоморфизм.
     \end{enumerate}
@@ -335,10 +335,10 @@
         Докажем, что $H = \langle g^k \rangle$. Рассмотрим произвольный $g^m \in H$. Разделим $m$ на $k$ с остатком: $m = kq + r, 0 \leqslant r < k$. Тогда:
         \[g^m = (g^k)^q\cdot g^r \Longrightarrow g^r = (g^k)^{-q}\cdot g^m \Longrightarrow r = 0, \text{ т.к. k - наименьшее} \in \N\]
         \item $G =  \langle g \rangle_n, H \leqslant G \Longrightarrow_{(1)} H =  \langle g^k \rangle$.\\
-        Так как $g^n = e \in H$, то $k | n \Longrightarrow n = kq$.\\
+        Так как $g^n = e \in H$, то в силу рассуждений пункта 1 при $m = n$ получаем $k | n \Longrightarrow n = kq$.\\
         Отсюда $H = \{e, g^k, g^{2k},...,g^{(q-1)k}\} \Longrightarrow |H| = q$, где $q | n$.\\
         Обратно, $\forall d | n \ \exists! H =  \langle g^{\frac{n}{d}} \rangle$ (в силу описания выше других подгрупп такого порядка нет).
-        \item Из пункта 1 в аддитивной форме получаем, что $H \leqslant Z =  \langle 1 \rangle \Longrightarrow H =  \langle k\cdot 1 \rangle$
+        \item Из пункта 1 в аддитивной форме получаем, что $H \leqslant \Z =  \langle 1 \rangle \Longrightarrow H =  \langle k\cdot 1 \rangle$
     \end{enumerate} 
 \end{proof}
 \begin{consequense}
@@ -370,7 +370,7 @@
         \item Очевидно;
         \item $a \in bH \Longrightarrow \exists h \in H: a = bh \Longrightarrow \forall \tilde{h} \in H \ a\tilde{h} = bh\tilde{h} \in bH \Longrightarrow aH \subseteq bH$.
         Аналогично $bH \subseteq aH \Longrightarrow aH = bH$.
-        \item $aH = bH \Longrightarrow a \in bH (a \in aH) \Longrightarrow \exists h \in H: a = bh \Longrightarrow b^{-1}a = h \in H$\\
-        $b^{-1}a = h \in H \Longrightarrow a = bh \Longrightarrow aH = bH$ по пункту 2.
+        \item $\Longrightarrow: \ aH = bH \Longrightarrow a \in bH (a \in aH) \Longrightarrow \exists h \in H: a = bh \Longrightarrow b^{-1}a = h \in H$\\
+        $\Longleftarrow: \ b^{-1}a = h \in H \Longrightarrow a = bh \Longrightarrow aH = bH$ по пункту 2.
     \end{enumerate}
 \end{proof}
