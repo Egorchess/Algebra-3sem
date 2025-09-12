@@ -86,17 +86,17 @@
         \item $\forall a \in H \ a^{-1} \in H$;
         \item $1 \in H$ (можно заменить на $H \neq \varnothing$)
     \end{enumerate}
-    Обозначается $H \leqslant G$.
+    Обозначается $H \leq G$.
 \end{definition}
 \begin{subtheorem}
     Подгруппа $H$ группы $G$ является группой относительно бинарной операции группы $G$.
 \end{subtheorem}
 \begin{examples} \tab
     \begin{enumerate}
-        \item $\Z \leqslant \Q \leqslant \R \leqslant \CC$ ($\N \nleqslant \Z$, т.к. не группа);
-        \item $GL_n(F) \geqslant SL_n(F) = \{A \in GL_n(F)| \det A = 1\}$ - унимодулярная группа.
-        \item $GL_n(F) \geqslant O_n(F) \geqslant SO_n(F)$ ($O_n(F)$ - ортогональная группа, $SO_n(F)$ - специальная ортогональная группа);
-        \item $GL_n(F) \geqslant$ группа строго треугольных матриц.
+        \item $\Z \leq \Q \leq \R \leq \CC$ ($\N \nleq \Z$, т.к. не группа);
+        \item $GL_n(F) \geq SL_n(F) = \{A \in GL_n(F)| \det A = 1\}$ - унимодулярная группа.
+        \item $GL_n(F) \geq O_n(F) \geq SO_n(F)$ ($O_n(F)$ - ортогональная группа, $SO_n(F)$ - специальная ортогональная группа);
+        \item $GL_n(F) \geq$ группа строго треугольных матриц.
     \end{enumerate}
 \end{examples}
 \begin{definition}
@@ -104,11 +104,11 @@
 \end{definition}
 \begin{examples} \tab
     \begin{enumerate}
-        \item $GL(V) \ (\leqslant S(V))$ - группа всех невырожденных линейных операторов векторного пространства $V$;
+        \item $GL(V) \ (\leq S(V))$ - группа всех невырожденных линейных операторов векторного пространства $V$;
         \item $Aff(\A)$ - группа всех невырожденных аффинных преобразований аффинного пространства $\A$;
         \item $\E^2$ - аффинно-евклидово двумерное пространство.\\
         $\textup{Isom} \ \E^2$ - группа изометрий (движений) на $\E^2$.\\
-        $\textup{Isom} \ \E^2 \geqslant O_2 \geqslant SO_2$, где $O_2$ - группа движений, сохраняющих точку $O$, $SO_2$ - группа поворотов вокруг точки $O$.
+        $\textup{Isom} \ \E^2 \geq O_2 \geq SO_2$, где $O_2$ - группа движений, сохраняющих точку $O$, $SO_2$ - группа поворотов вокруг точки $O$.
         \item $T \subseteq \E^2$ - некоторая фигура.\\
         $\textup{Sym}\ T = \{f \in \textup{Isom} \ \E^2 \ | \ f(T) = T\}$ - группа симметрий фигуры $T$.
         \begin{itemize}
@@ -252,7 +252,7 @@
         \item $GL_n(F) = \langle \text{все элементарные матрицы} \rangle$
         \item $Q_8 = \langle i, j \rangle$;
         \item $D_n = \langle \alpha, s\rangle$, где $\alpha$ - поворот на $\frac{2\pi}{n}$, а $s$ - любая из симметрий.
-        \item Группа Клейна: $H = \{\textup{id}, a=(12)(34), b=(13)(24), c=(14)(23)\} \leqslant S_4$\\
+        \item Группа Клейна: $H = \{\textup{id}, a=(12)(34), b=(13)(24), c=(14)(23)\} \leq S_4$\\
         Это группа симметрий прямоугольника, не являющегося квадратом: $a, c$ - симметрии относительно средних линий, $b$ - поворот на $\pi$ вокруг центра. 
         Таблица Кэли для группы Клейна:
         $$\begin{tabular}{c|c|c|c|c}
@@ -324,21 +324,21 @@
     \begin{enumerate}
         \item Любая подгруппа циклической группы является циклической.
         \item Подгруппы циклической группы $G$ порядка $n$ находятся во взаимном соответствии с делителями $n$, т.е.
-        \[\forall H \leqslant G \ |H| \ |\  n \text{ и } \forall d | n \ \exists! \ H \leqslant G : |H| = d\]
+        \[\forall H \leq G \ |H| \ |\  n \text{ и } \forall d | n \ \exists! \ H \leq G : |H| = d\]
         \item Подгруппы группы $\Z$ исчерпываются группами $k\Z =  \langle k \rangle$, где $k \in \N \cup \{0\}$.
     \end{enumerate}
 \end{theoremnum}
 \begin{proof} \tab
     \begin{enumerate}
-        \item Пусть $G = \langle g \rangle, H \leqslant G$. Если $H = \{e\}$, то $H = \langle e \rangle$.\\
+        \item Пусть $G = \langle g \rangle, H \leq G$. Если $H = \{e\}$, то $H = \langle e \rangle$.\\
         При $H \neq \{e\} : \forall h \in H \ \exists k \in \Z : h = g^k$. Так как $g^k \in H \Longrightarrow g^{-k} \in H$ и в $H$ есть элемент, отличный от $e$, $\exists$ наименьшее $k \in \N: g^k \in H$.\\
         Докажем, что $H = \langle g^k \rangle$. Рассмотрим произвольный $g^m \in H$. Разделим $m$ на $k$ с остатком: $m = kq + r, 0 \leqslant r < k$. Тогда:
         \[g^m = (g^k)^q\cdot g^r \Longrightarrow g^r = (g^k)^{-q}\cdot g^m \Longrightarrow r = 0, \text{ т.к. k - наименьшее} \in \N\]
-        \item $G =  \langle g \rangle_n, H \leqslant G \Longrightarrow_{(1)} H =  \langle g^k \rangle$.\\
+        \item $G =  \langle g \rangle_n, H \leq G \Longrightarrow_{(1)} H =  \langle g^k \rangle$.\\
         Так как $g^n = e \in H$, то в силу рассуждений пункта 1 при $m = n$ получаем $k | n \Longrightarrow n = kq$.\\
         Отсюда $H = \{e, g^k, g^{2k},...,g^{(q-1)k}\} \Longrightarrow |H| = q$, где $q | n$.\\
         Обратно, $\forall d | n \ \exists! H =  \langle g^{\frac{n}{d}} \rangle$ (в силу описания выше других подгрупп такого порядка нет).
-        \item Из пункта 1 в аддитивной форме получаем, что $H \leqslant \Z =  \langle 1 \rangle \Longrightarrow H =  \langle k\cdot 1 \rangle$
+        \item Из пункта 1 в аддитивной форме получаем, что $H \leq \Z =  \langle 1 \rangle \Longrightarrow H =  \langle k\cdot 1 \rangle$
     \end{enumerate} 
 \end{proof}
 \begin{consequense}
@@ -346,13 +346,13 @@
 \end{consequense}
 \begin{examples}\tab
     \begin{enumerate}
-        \item $H \leqslant \Z_5 \Longrightarrow H = \{0\}, H = \Z_5$;
-        \item $H \leqslant \Z_6 \Longrightarrow H = \{0\}, H = \langle 2 \rangle, H = \langle 3 \rangle, H = \Z_6$. 
+        \item $H \leq \Z_5 \Longrightarrow H = \{0\}, H = \Z_5$;
+        \item $H \leq \Z_6 \Longrightarrow H = \{0\}, H = \langle 2 \rangle, H = \langle 3 \rangle, H = \Z_6$. 
     \end{enumerate}
 \end{examples}
 \subsection{Смежные классы}
 \begin{definition}
-    Пусть $(G, \cdot, e)$ - произвольная группа, $H \leqslant G, g \in G$.\\
+    Пусть $(G, \cdot, e)$ - произвольная группа, $H \leq G, g \in G$.\\
     Рассмотрим множества:
     \[gH = \{gh | h \in H\} \text{ - левый смежный класс G по H с представителем g}\]
     \[Hg = \{hg | h \in H\} \text{ - правый смежный класс G по H с представителем g}\]
@@ -374,3 +374,199 @@
         $\Longleftarrow: \ b^{-1}a = h \in H \Longrightarrow a = bh \Longrightarrow aH = bH$ по пункту 2.
     \end{enumerate}
 \end{proof}
+\begin{subtheorem}
+    Отношение $a\equiv b \pmod{H} \Leftrightarrow b^{-1}a\in H$ является отношением эквивалентности, причём классы эквивалентности совпвдвют с левыми смежными классами (аналогично $ab^{-1} \in H$ для правых).
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{itemize}
+        \item Рефлексивность: $a^{-1}a = e \in H \Longrightarrow a \equiv a \pmod{H}$;
+        \item Симметричность: $a \equiv b \pmod{H} \Rightarrow b^{-1}a \in H \Rightarrow a^{-1}b = (b^{-1}a)^{-1} \in H \Rightarrow b \equiv a \pmod{H}$;
+        \item Транзитивность: $a \equiv b, b \equiv c \pmod{H} \Longrightarrow c^{-1}b, b^{-1}a \in H \Longrightarrow c^{-1}b \cdot b^{-1}a = c^{-1}a \in H \Longrightarrow a \equiv c \pmod{H}$. 
+    \end{itemize}
+    Совпадение классов эквивалентности с левыми смежными классами следует из пункта 3 предыдущего утверждения. 
+\end{proof}
+\begin{subtheorem}
+    Если $G$ - абелева, то $\forall a\in G: aH=Ha$. \\
+    (В общем случае данное утверждение неверно).
+\end{subtheorem}
+\begin{proof}
+    $\forall a \in G: \ \{ah: h \in H\} = \{ha: h \in H\} \Longrightarrow aH = Ha$.
+\end{proof}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $H = \langle (12) \rangle \leq S_3 \ \ (H = \{id, (12)\}),\ g=(13)$.\\
+        Тогда $\{(13), (123)\}=gH\not=Hg=\{(13), (132)\}$.
+        \item $H = 3\Z \leq Z$.
+        Смежные классы - $3\Z, 1 + 3\Z, 2 + 3\Z$.
+        \item $H = \R \leq \CC$.
+        Смежные классы - $a+bi+\R=bi+\R$.
+    \end{enumerate}
+\end{examples}
+\begin{subtheorem}
+    Множество $\{aH : a\in G\}$ находится во взаимно-однозначном соответствии с множеством $\{Ha: a\in G\}$.
+\end{subtheorem}
+\begin{proof}
+    $gH \leftrightarrow Hg^{-1}: x=gh\in gH \leftrightarrow x^{-1}=h^{-1}g^{-1}\in Hg^{-1}$.
+\end{proof}
+\begin{consequense}
+    $|\{aH: a\in G\}|=|\{Ha: a\in G\}|$
+\end{consequense}
+\begin{definition}
+    Мощность множества левых смежных классов группы $G$ по подгруппе $H$ называется индексом $H$ в $G$. Обозначение: $|G: H|$
+\end{definition}
+\begin{example}
+    $|\Z: 3\Z|=3$,\ т.к. смежные классы - $\{3\Z,\ 1+3\Z,\ 2+3\Z\}$.
+\end{example}
+\begin{theorem} (Теорема Лагранжа)\\
+    Пусть $G$ - конечная группа, $H\leq G$. Тогда $|G|=|H|\cdot|G:H|$.
+\end{theorem}
+\begin{proof}
+    Так как $|G|<\infty$, то $|H|<\infty$, т.е. $H=\{h_1,\dots,h_k\}$.\\
+    $\forall g\in G,\ gH=\{gh_1,\dots,gh_k\}$, причем $gh_i=gh_j \Rightarrow h_i=h_j \Rightarrow |gH|=|H|$. Отсюда, если $|G:H| = n$:
+    \[G=\bigsqcup \limits_{i=1}^{n} a_iH \Longrightarrow |G| = \sum \limits_{i=1}^{n} |a_iH| = |G:H|\cdot |H|\]
+\end{proof}
+\begin{consequensenum}
+    Если $G$ - конечная группа, $H\leq G$, то $|H|\ |\ |G|$.\\
+    (Обратное утверждение неверно).
+\end{consequensenum}
+\begin{exercise}
+    Пусть $G = A_4$ (группа чётных перестановок).\\
+    $|A_4|=\frac{4!}{2}=12$. Докажем, что в $A_4$ нет подгруппы порядка 6.\\
+    Предположим, что $H \leq A_4$ и $|H| = 6$. $A_4$ состоит из элемента $id$, 3 элементов вида $(ab)(cd)$ и восьми элементов вида $(abc)$. Значит, $H$ содержит хотя бы один элемент вида $(abc)$ (с точностью до перенумерования - (123)). Тогда $H$ содержит и $(123)^{-1} = (132)$. Также знаем, что группа чётного порядка содержит элемент порядка 2 (иначе в группе все элементы, кроме $e$, разбиваются на пары обратных, и элементов нечётное число), поэтому $H$ содержит $\sigma = (**)(**)$.\\
+    Рассмотрим $\omega = \sigma(123)\sigma^{-1} = (\sigma(1), \sigma(2), \sigma(3))$ (это равенство легко проверить, подставив в него $\sigma(1),...,\sigma(4)$). Очевидно, что это цикл длины 3, не оставляющий на месте 4 (т.к. $\sigma$ не оставляет на месте 4). Значит, $\omega$ и $\omega^{-1}$ принадлежат $H$ и не совпадают с предыдущими элементами (и друг с другом), т.е. 
+    \[H = \{id, (123), (132), \sigma, \omega, \omega^{-1}\}\]
+    Осталось перебрать возможные значения $\sigma$:
+    \begin{itemize}
+        \item $\sigma = (12)(34) \Longrightarrow (123)(12)(34)(132) = (14)(23) \notin H$;
+        \item $\sigma = (13)(24) \Longrightarrow (123)(13)(24)(132) = (12)(34) \notin H$;
+        \item $\sigma = (14)(23) \Longrightarrow (123)(14)(23)(132) = (13)(24) \notin H$;
+    \end{itemize}
+    Отсюда таких $H$ не существует.
+\end{exercise}  
+\begin{consequensenum}
+    Если $G$ - конечная группа, то $\forall g\in G: \textup{ord }g\ |\ |G|$
+\end{consequensenum}
+\begin{proof}
+    $\textup{ord } g =|\langle g \rangle|\ |\ |G|$.
+\end{proof}
+\begin{consequensenum}
+    Если $G$ - конечная группа порядка $n$, то $\forall g\in G: g^n=e$ в $G$.
+\end{consequensenum}
+\begin{proof}
+    По следствию 2: $n=\textup{ord}g\cdot k \Rightarrow g^n=g^{(\textup{ord} g)\cdot k} = e^k = e$.
+\end{proof}
+\begin{example}
+    Пусть $G=\Z_p^*$, $p$ - простое, $|\Z_p^*| = p-1$. По следствию 3:\\
+    $\forall a\in \Z_p^*: a^{p-1}=1$ в $\Z_p^*$, отсюда $\forall a\in \Z,\ p \nmid a: a^{p-1}\equiv 1\pmod{p}$ - малая теорема Ферма.
+\end{example}
+\begin{consequensenum}
+    Любая группа $G$ простого порядка $p$ явзяется циклической.
+\end{consequensenum}
+\begin{proof}
+    $\forall a\in G,\ a \neq e: \textup{ord }a \neq 1,\ \textup{ord }a \mid |G|=p \Rightarrow \textup{ord }a = |G| \Rightarrow G=\langle a \rangle$.
+\end{proof}
+\begin{exercise}
+    Доказать, что с точностью до изоморфизма существует ровно две группы порядка 4 - $\Z_4$ и $V_4$.
+\end{exercise}
+\begin{proof}
+    Пусть $G$ - группа порядка 4. Заметим, что по следствию 2 порядок неединичного элемента в $G$ может быть равен либо 2, либо 4. Если в $G$ есть элемент порядка 4, то $G$ циклическая, а тогда по теореме о классификации циклических групп $G \cong \Z_4$.\\
+    Пусть $G = \{e, a, b, c\}, \textup{ord } a = \textup{ord } b = \textup{ord } c = 2$. Посмотрим, чему может быть равно $ab$:
+    \begin{itemize}
+        \item $ab = e \Longrightarrow aab = a \Longrightarrow b = a$ - противоречие;
+        \item $ab = a \Longrightarrow aab = aa \Longrightarrow b = e$ - противоречие;
+        \item $ab = b \Longrightarrow abb = bb \Longrightarrow a = e$ - противоречие.
+    \end{itemize}
+    Отсюда $ab = c$ - аналогично произведение любых двух различных неединичных элементов равно третьему. Отсюда таблица Кэли для $G$ имеет вид
+    $$\begin{tabular}{c|c|c|c|c}
+        \null & e & a & b & c \\ \hline
+        e & e & a & b & c \\ \hline
+        a & a & e & c & b \\ \hline
+        b & b & c & e & a \\ \hline
+        c & c & b & a & e
+        \end{tabular}$$
+    откуда видно, что $G \cong V_4$.
+\end{proof}
+\begin{exercise}
+    Доказать, что если в группе $G$ все неединичные элементы имеют порядок 2, то $G$ - абелева.
+\end{exercise}
+\begin{proof}
+    $\textup{ord } a = 2 \Longrightarrow a = a^{-1} \Longrightarrow \forall a, b \in G: ab = (ab)^{-1} = b^{-1}a^{-1} = ba$.
+\end{proof}
+\begin{example}
+    $H = \langle (12) \rangle \leq S_3,\ g=(13) \Rightarrow gH \neq Hg$
+\end{example}
+\begin{definition}
+    Подгруппа $H$ группы $G$ называется нормальной, если 
+    \[\forall g\in G: gH=Hg \Longleftrightarrow \forall g\in G: gHg^{-1}=H \Longleftrightarrow\]
+    \[\Longleftrightarrow \forall g\in G: gHg^{-1}\subseteq H \Longleftrightarrow \forall g\in G,\ \forall h\in H: ghg^{-1}\in H\]
+    Обозначение: $H\unlhd G$. 
+\end{definition} 
+\begin{proof}[Эквивалентость определений:]\tab
+    \begin{itemize}
+        \item $1 \Longleftrightarrow 2$ - очевидно;
+        \item $2 \Longleftrightarrow 3$:\\
+        $\Longleftarrow: \ \ gHg^{-1} \subseteq H \Leftrightarrow H \subseteq g^{-1}Hg$ - из условия на всевозможные $g$ получаем равенство;\\
+        $\Longrightarrow$ - очевидно;
+        \item $3 \Longleftrightarrow 4$ - из определения смежного класса.
+    \end{itemize}
+\end{proof}
+\begin{examples} \tab
+    \begin{enumerate}
+        \item $A_n \unlhd S_n$, так как $\forall \sigma\in S_n,\ \forall \tau\in A_n: \sigma\tau\sigma^{-1}\in A_n$.
+        \item $SL_n(\R)\unlhd GL_N(\R)$, так как $\forall A\in GL_n(\R),\ \forall B\in SL_n(\R): \det{(ABA^{-1})}=\det{B}=1 \Rightarrow ABA^{-1}\in SL_n(\R)$.
+    \end{enumerate}
+\end{examples}
+\begin{subtheorem}
+    В абелевой группе любая подгруппа является нормальной.
+\end{subtheorem}
+\begin{exercise}
+    Докажите, что если $|G:H|=2$, то $H\unlhd G$ для произвольной группы $G$ и произвольной подгруппы $H\leq G$.
+\end{exercise}
+\begin{proof}
+    Если $|G:H|=2$, то $G$ разбивается на два непересекающихся левых (правых) смежных класса по $H$. Очевидно, что один из этих классов  в обоих случаях - сама подгруппа $H$. Тогда $\forall g \in G \setminus H$ группа $G$ разбивается на левые смежные классы $H$ и $gH$, а также на правые смежные классы $H$ и $Hg$, откуда $gH = Hg$. Также очевидно, что $\forall h \in H: hH = H = Hh$. Значит, $\forall g \in G: gH = Hg \Longleftarrow H \unlhd G$.
+\end{proof}
+\subsection{Факторгруппа}
+\begin{subtheorem}
+    Пусть $G$ - группа, $H\unlhd G$. Тогда множество всех смежных классов $G$ по $H : G/H = \{eH, aH, ...\}$ образует группу относительно операции $aH \cdot bH = abH$.
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Проверим корректность операции, т.е. $\begin{cases}
+            aH = \tilde{a}H\\
+            bh = \tilde{b}H
+        \end{cases} \Longrightarrow abH = \tilde{a}\tilde{b}H$.\\
+        Действительно, если $\begin{cases}
+            a = \tilde{a}h_a\\
+            bh = \tilde{b}h_b
+        \end{cases}$ из равенства смежных классов, то:
+        \[\forall x \in abH \Longrightarrow \exists h\in H: x = abh = \tilde{a}h_a\tilde{b}h_bh = \tilde{a}\tilde{b}h'h_bh \in \tilde{a}\tilde{b}H\]
+        ($H \unlhd G \Longrightarrow Hb = bH \Longrightarrow \exists h' \in H: h_a\tilde{b} = \tilde{b}h'$)
+        \item Проверим, что это группа:
+        \begin{itemize}
+            \item Ассоциативность:
+            \[aH(bH\cdot cH) = aH(bcH) = a(bc)H = (ab)cH = (abH)cH = (aH\cdot bH)cH\]
+            \item Нейтральный элемент:
+            \[eH = H: aH \cdot eH = aeH = aH = eaH = eH\cdot aH\]
+            \item Обратный элемент:
+            \[\forall \ aH \ \exists \ a^{-1}H: aH \cdot a^{-1}H = eH = a^{-1}H \cdot aH\]
+        \end{itemize}
+    \end{enumerate}
+\end{proof}
+\begin{definition}
+    Группа $G/H$ называется факторгруппой $G$ по $H$.
+\end{definition}
+\begin{remark}
+    Если $H \ntrianglelefteq G$, то операция $aH\cdot bH = abH$ некорректна:
+    \[\langle(12)\rangle \leq S_3: \ (13)H = (132)H, (23)H = (123)H;\]
+    \[(13)(23)H = (132)H \neq H = (123)(123)H\]
+\end{remark}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $\Z / 3\Z \cong \Z_3 = \{0, 1, 2\}$;
+        \item $S_n \unlhd A_n, S_n/A_n \cong \Z_2$ (по чётности);
+        \item $\R \unlhd \CC, \CC / \R \cong \R \ (bi + \R \rightarrowtail b)$. 
+    \end{enumerate}
+\end{examples}
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}

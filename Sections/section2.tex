@@ -1,0 +1,54 @@
+\section{Гомоморфизмы групп}
+\begin{definition}
+    Пусть $(G, \cdot, e), (\tilde{G}, \cdot, \tilde{e})$ - группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\cdot\phi(b)$.
+\end{definition}
+\begin{remark}
+    В частности, изоморфизм - биективный гомоморфизм.
+\end{remark}
+\begin{subtheorem}[Свойства гомоморфизмов]\tab
+    \begin{enumerate}
+        \item $\phi(e) = \tilde{e}$;
+        \item $\phi(a^{-1}) = (\phi(a))^{-1}$
+    \end{enumerate}
+\end{subtheorem}
+\begin{definition}
+    Множество $\textup{Im } \phi = \{b \in \tilde{G} \ | \ \exists a \in G: \phi(a) = b\}$ - образ гомоморфизма.
+    Множество $\textup{Ker } \phi = \{a \in G \ | \ \phi(a) = \tilde{e}\}$ - ядро гомоморфизма.
+\end{definition}
+\begin{subtheoremnum}\tab
+    \begin{enumerate}
+        \item $\textup{Im } \phi \leq \tilde{G}$;
+        \item $\textup{Ker } \phi \unlhd G$.
+    \end{enumerate}
+\end{subtheoremnum}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item $\textup{Im }\phi \subseteq \tilde{G}$
+        \begin{itemize}
+            \item $x, y \in \textup{Im }\phi \Rightarrow \exists a, b \in G: x = \phi(a), y = \phi(b) \Longrightarrow xy = \phi(a)\phi(b) = \phi(ab) \in \textup{Im }\phi$;
+            \item $\tilde{e} = \phi(e) \in \textup{Im }\phi$;
+            \item $\forall x \in \textup{Im }\phi \ \exists a \in G: \phi(a) = x \Longrightarrow x^{-1} = (\phi(a))^{-1}= \phi(a^{-1}) \in \textup{Im }\phi$
+        \end{itemize}
+        Отсюда $\textup{Im } \phi \leq \tilde{G}$.
+        \item $\textup{Ker }\phi \subseteq G$
+        \begin{itemize}
+            \item $\forall a, b \in \textup{Ker }\phi: \phi(a) = \phi(b) = \tilde{e} \Longrightarrow \phi(ab) = \phi(a)\phi(b) = \tilde{e} \Longrightarrow \newline ab \in \textup{Ker }\phi$;
+            \item $\tilde{e} = \phi{e} \Longrightarrow e \in \textup{Ker }\phi$;
+            \item $\forall a \in \textup{Ker }\phi \Rightarrow \phi(a^{-1}) = (\phi(a))^{-1} = \tilde{e}^{-1} = \tilde{e}  \Longrightarrow a^{-1} \in \textup{Ker }\phi$
+        \end{itemize}
+        Отсюда $\textup{Ker } \phi \leq G$.\\
+        $\phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g)^{-1} = \phi(g)\phi(g)^{-1} = \tilde{e} \Rightarrow ghg^{-1} \in \textup{Ker }\phi \Longrightarrow \textup{Ker }\phi \unlhd G$.
+    \end{enumerate}
+\end{proof}
+\begin{subtheoremnum}
+    $\phi(a) = \phi(b) \Longleftrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi$.\\
+    В частности, $\phi$ инъективно $\Longleftrightarrow \textup{Ker }\phi = \{e\}$. 
+\end{subtheoremnum}
+\begin{proof}
+    \[\phi(a) = \phi(b) \Longleftrightarrow \phi(a)\phi(b)^{-1} = \tilde{e} \Longleftrightarrow \phi(ab^{-1}) = \tilde{e} \Longleftrightarrow\]
+    \[ab^{-1} \in \textup{Ker }\phi \Longleftrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi\]
+\end{proof}
+\begin{example}
+    $\phi: GL_n(\R) \rightarrow \R^* : \phi(A) = \det A$.\\
+    $\textup{Ker }\phi = SL_n(\R), \textup{Im }\phi = \R^* \Longrightarrow R^* \cong GL_n(\R) / SL_n(\R)$.
+\end{example}
