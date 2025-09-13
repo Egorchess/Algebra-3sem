@@ -323,7 +323,7 @@
 \begin{theoremnum} \tab
     \begin{enumerate}
         \item Любая подгруппа циклической группы является циклической.
-        \item Подгруппы циклической группы $G$ порядка $n$ находятся во взаимном соответствии с делителями $n$, т.е.
+        \item Подгруппы циклической группы $G$ порядка $n$ находятся во взаимно однозначном соответствии с делителями $n$, т.е.
         \[\forall H \leq G \ |H| \ |\  n \text{ и } \forall d | n \ \exists! \ H \leq G : |H| = d\]
         \item Подгруппы группы $\Z$ исчерпываются группами $k\Z =  \langle k \rangle$, где $k \in \N \cup \{0\}$.
     \end{enumerate}
@@ -375,7 +375,7 @@
     \end{enumerate}
 \end{proof}
 \begin{subtheorem}
-    Отношение $a\equiv b \pmod{H} \Leftrightarrow b^{-1}a\in H$ является отношением эквивалентности, причём классы эквивалентности совпвдвют с левыми смежными классами (аналогично $ab^{-1} \in H$ для правых).
+    Отношение $a\equiv b \pmod{H} \Leftrightarrow b^{-1}a\in H$ является отношением эквивалентности, причём классы эквивалентности совпадают с левыми смежными классами (аналогично $ab^{-1} \in H$ для правых).
 \end{subtheorem}
 \begin{proof}\tab
     \begin{itemize}
@@ -395,15 +395,16 @@
 \begin{examples} \tab
     \begin{enumerate}
         \item $H = \langle (12) \rangle \leq S_3 \ \ (H = \{id, (12)\}),\ g=(13)$.\\
+        $(13)(12) = (123); \ (12)(13) = (132)$.\\
         Тогда $\{(13), (123)\}=gH\not=Hg=\{(13), (132)\}$.
-        \item $H = 3\Z \leq Z$.
+        \item $H = 3\Z \leq \Z$.
         Смежные классы - $3\Z, 1 + 3\Z, 2 + 3\Z$.
         \item $H = \R \leq \CC$.
         Смежные классы - $a+bi+\R=bi+\R$.
     \end{enumerate}
 \end{examples}
 \begin{subtheorem}
-    Множество $\{aH : a\in G\}$ находится во взаимно-однозначном соответствии с множеством $\{Ha: a\in G\}$.
+    Множество $\{aH : a\in G\}$ находится во взаимно однозначном соответствии с множеством $\{Ha: a\in G\}$.
 \end{subtheorem}
 \begin{proof}
     $gH \leftrightarrow Hg^{-1}: x=gh\in gH \leftrightarrow x^{-1}=h^{-1}g^{-1}\in Hg^{-1}$.
@@ -460,7 +461,7 @@
     $\forall a\in \Z_p^*: a^{p-1}=1$ в $\Z_p^*$, отсюда $\forall a\in \Z,\ p \nmid a: a^{p-1}\equiv 1\pmod{p}$ - малая теорема Ферма.
 \end{example}
 \begin{consequensenum}
-    Любая группа $G$ простого порядка $p$ явзяется циклической.
+    Любая группа $G$ простого порядка $p$ является циклической.
 \end{consequensenum}
 \begin{proof}
     $\forall a\in G,\ a \neq e: \textup{ord }a \neq 1,\ \textup{ord }a \mid |G|=p \Rightarrow \textup{ord }a = |G| \Rightarrow G=\langle a \rangle$.
@@ -501,7 +502,7 @@
     \[\Longleftrightarrow \forall g\in G: gHg^{-1}\subseteq H \Longleftrightarrow \forall g\in G,\ \forall h\in H: ghg^{-1}\in H\]
     Обозначение: $H\unlhd G$. 
 \end{definition} 
-\begin{proof}[Эквивалентость определений:]\tab
+\begin{proof}[Эквивалентность определений:]\tab
     \begin{itemize}
         \item $1 \Longleftrightarrow 2$ - очевидно;
         \item $2 \Longleftrightarrow 3$:\\
@@ -523,7 +524,7 @@
     Докажите, что если $|G:H|=2$, то $H\unlhd G$ для произвольной группы $G$ и произвольной подгруппы $H\leq G$.
 \end{exercise}
 \begin{proof}
-    Если $|G:H|=2$, то $G$ разбивается на два непересекающихся левых (правых) смежных класса по $H$. Очевидно, что один из этих классов  в обоих случаях - сама подгруппа $H$. Тогда $\forall g \in G \setminus H$ группа $G$ разбивается на левые смежные классы $H$ и $gH$, а также на правые смежные классы $H$ и $Hg$, откуда $gH = Hg$. Также очевидно, что $\forall h \in H: hH = H = Hh$. Значит, $\forall g \in G: gH = Hg \Longleftarrow H \unlhd G$.
+    Если $|G:H|=2$, то $G$ разбивается на два непересекающихся левых (правых) смежных класса по $H$. Очевидно, что один из этих классов  в обоих случаях - сама подгруппа $H$. Тогда $\forall g \in G \setminus H$ группа $G$ разбивается на левые смежные классы $H$ и $gH$, а также на правые смежные классы $H$ и $Hg$, откуда $gH = Hg$. Также очевидно, что $\forall h \in H: hH = H = Hh$. Значит, $\forall g \in G: gH = Hg \Longrightarrow H \unlhd G$.
 \end{proof}
 \subsection{Факторгруппа}
 \begin{subtheorem}
@@ -533,11 +534,11 @@
     \begin{enumerate}
         \item Проверим корректность операции, т.е. $\begin{cases}
             aH = \tilde{a}H\\
-            bh = \tilde{b}H
+            bH = \tilde{b}H
         \end{cases} \Longrightarrow abH = \tilde{a}\tilde{b}H$.\\
         Действительно, если $\begin{cases}
             a = \tilde{a}h_a\\
-            bh = \tilde{b}h_b
+            b = \tilde{b}h_b
         \end{cases}$ из равенства смежных классов, то:
         \[\forall x \in abH \Longrightarrow \exists h\in H: x = abh = \tilde{a}h_a\tilde{b}h_bh = \tilde{a}\tilde{b}h'h_bh \in \tilde{a}\tilde{b}H\]
         ($H \unlhd G \Longrightarrow Hb = bH \Longrightarrow \exists h' \in H: h_a\tilde{b} = \tilde{b}h'$)
