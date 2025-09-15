@@ -1,54 +1,98 @@
-\section{Гомоморфизмы групп}
+\section{Свободные группы}
 \begin{definition}
-    Пусть $(G, \cdot, e), (\tilde{G}, \cdot, \tilde{e})$ - группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\cdot\phi(b)$.
+    Тривиальные (групповые) соотношения - соотношения, которые выводятся из аксиом группы (и, соответственно, есть в любой группе).
 \end{definition}
-\begin{remark}
-    В частности, изоморфизм - биективный гомоморфизм.
-\end{remark}
-\begin{subtheorem}[Свойства гомоморфизмов]\tab
-    \begin{enumerate}
-        \item $\phi(e) = \tilde{e}$;
-        \item $\phi(a^{-1}) = (\phi(a))^{-1}$
-    \end{enumerate}
-\end{subtheorem}
+Построим группу, в которой нет других соотношений.
 \begin{definition}
-    Множество $\textup{Im } \phi = \{b \in \tilde{G} \ | \ \exists a \in G: \phi(a) = b\}$ - образ гомоморфизма.
-    Множество $\textup{Ker } \phi = \{a \in G \ | \ \phi(a) = \tilde{e}\}$ - ядро гомоморфизма.
-\end{definition}
-\begin{subtheoremnum}\tab
+    Пусть $A$ - множество символов (букв), $A^{-1}$ - множество символов (букв) $a^{-1}$, где $a \in A$.\\
+    Условия на эти множества:
     \begin{enumerate}
-        \item $\textup{Im } \phi \leq \tilde{G}$;
-        \item $\textup{Ker } \phi \unlhd G$.
+        \item $\forall a^{-1} \in A^{-1} \Longrightarrow a^{-1} \notin A$;\\
+        $\forall a \in A \Longrightarrow a \notin A^{-1}$;
+        \item $(a^{-1})^{-1} = a$;\\
+        Буквы $a, a^{-1}$ назовём взаимно обратными.
     \end{enumerate}
-\end{subtheoremnum}
+Множество $A^{\pm 1} = A \sqcup A^{-1}$ называется алфавитом.\\
+Слово в алфавите $A^{\pm 1}$ - конечная последовательность букв $X = x_1...x_k$, где $x_i \in A^{\pm 1}$.\\
+Длина слова $X$ (обозначается $|X|$) - количество букв в $X$.
+\end{definition}
+\begin{example}
+    $A = \{a, b\}: X = abaab^{-1} \Rightarrow |X| = 5$.
+\end{example} 
+\begin{definition}
+    Слово $X = x_1...x_k$ - сократимое, если $\exists i \in \overline{1,..,k-1}: x_i = x^{-1}_{i+1}$.\\
+    Сокращением взаимно обратных букв назовём вычёркиванием пары $x_i, x_{i+1}$ из $X$ (получим слово длины $|X| - 2$).\\
+    За конечное число сокращений получим слово $\tilde{X}$, не являющееся сократимым - такое $\tilde{X}$ называется результатом полного сокращения слова $X$.
+\end{definition}
+\begin{definition}
+    Рассмотрим множество $F(A)$ всех несократимых слов в $A^{\pm 1}$.\\
+    Введём бинарную операцию на $F(A)$: пусть $X = x_1...x_k, Y = y_1...y_m$.\\
+    Если $x_k \neq y_1^{-1}$, то $XY$ - конкатенация (приписывание) $X$ и $Y$:\\
+    $XY = x_1...x_ky_1...y_m, |XY| = k+m$.\\
+    Если $x_k = y_1^{-1}$, то $XY$ - результат полного сокращения слова $x_1...x_ky_1...y_m$.
+\end{definition}
+\begin{example}
+    $(abcda^{-1}b)(b^{-1}ad^{-1}aab) = abcaab$.
+\end{example}
+\begin{definition}
+    Если $|X| = 0$, то $X$ называется пустым словом (обозначим $\lambda$). Пустое слово по определению несократимо и лежит в $F(A)$.
+\end{definition}
+\begin{theorem}
+    $F(A)$ с приведённой выше бинарной операцией - группа.
+\end{theorem}
 \begin{proof}\tab
     \begin{enumerate}
-        \item $\textup{Im }\phi \subseteq \tilde{G}$
+        \item Ассоциативность:\\
+        Пусть $X = x_1...x_k, Z = z_1...z_m$.\\
+        Случай $|Y| = 0 \Longrightarrow Y = \lambda$ очевиден ($XZ = XZ$);\\
+        Индукция по длине слова $Y$:\\
+        База индукции: $|Y| = 1 \Longrightarrow Y = a \in A^{\pm 1}$. Индукция по $|X| + |Z|$:\\
+        \tab База внутренней индукции: \\
+        \tab $|X| + |Z| = 0$ - очевидно ($a = a$);\\
+        \tab $|X| + |Z| = 1$ - очевидно (одно из слов $X, Z$ пустое);\\
+        \tab Шаг внутренней индукции ($k+m-2 \rightarrow k+m$) - рассмотрим случаи:
         \begin{itemize}
-            \item $x, y \in \textup{Im }\phi \Rightarrow \exists a, b \in G: x = \phi(a), y = \phi(b) \Longrightarrow xy = \phi(a)\phi(b) = \phi(ab) \in \textup{Im }\phi$;
-            \item $\tilde{e} = \phi(e) \in \textup{Im }\phi$;
-            \item $\forall x \in \textup{Im }\phi \ \exists a \in G: \phi(a) = x \Longrightarrow x^{-1} = (\phi(a))^{-1}= \phi(a^{-1}) \in \textup{Im }\phi$
+            \item $a^{-1} \neq x_k, a^{-1} \neq z_1: X(YZ) = x_1...x_kaz_1...z_m = (XY)Z$;
+            \item $a^{-1} = x_k, a^{-1} \neq z_1: X(aZ) = X(az_1...z_m) =\\=$ результат полного сокращения $x_1...x_{k-1}a^{-1}az_1...z_m =\\=$ результат полного сокращения $x_1...x_{k-1}z_1...z_m = (Xa)Z$;
+            \item $a^{-1} \neq x_k, a^{-1} = z_1$ - аналогично предыдущему;
+            \item $a^{-1} = x_k, a^{-1} = z_1$: пусть $X = X'a^{-1}, Z = a^{-1}Z'$. Тогда:\\
+            $X(aZ) = X(a(a^{-1}Z')) = XZ' = (X'a^{-1})Z'$\\
+            $(Xa)Z = (X'a^{-1}a)Z = X'Z = X'(a^{-1}Z')$\\
+            При этом $|X'| + |Y'| = k + m - 2$, то есть $X'(a^{-1}Z') = (X'a^{-1})Z'$ по предположению внутренней индукции.
         \end{itemize}
-        Отсюда $\textup{Im } \phi \leq \tilde{G}$.
-        \item $\textup{Ker }\phi \subseteq G$
-        \begin{itemize}
-            \item $\forall a, b \in \textup{Ker }\phi: \phi(a) = \phi(b) = \tilde{e} \Longrightarrow \phi(ab) = \phi(a)\phi(b) = \tilde{e} \Longrightarrow \newline ab \in \textup{Ker }\phi$;
-            \item $\tilde{e} = \phi{e} \Longrightarrow e \in \textup{Ker }\phi$;
-            \item $\forall a \in \textup{Ker }\phi \Rightarrow \phi(a^{-1}) = (\phi(a))^{-1} = \tilde{e}^{-1} = \tilde{e}  \Longrightarrow a^{-1} \in \textup{Ker }\phi$
-        \end{itemize}
-        Отсюда $\textup{Ker } \phi \leq G$.\\
-        $\phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g)^{-1} = \phi(g)\phi(g)^{-1} = \tilde{e} \Rightarrow ghg^{-1} \in \textup{Ker }\phi \Longrightarrow \textup{Ker }\phi \unlhd G$.
+        Во всех случаях $X(aZ) = (Xa)Z \Longrightarrow$ база доказана.\\
+        Шаг индукции: Пусть $Y = y_1...y_l$. Тогда:
+        \[X(YZ) = X(y_1...y_l\cdot Z) = X((y_1...y_{l-1}\cdot y_l)Z) \overset{1}{=} X((y_1...y_{l-1})\cdot (y_lZ)) \overset{2}{=}\] 
+        \[\overset{2}{=} ((X\cdot y_1...y_{l-1}) y_l)Z \overset{3}{=} (X\cdot y_1...y_l)Z = (XY)Z\]
+        1, 3 - из утверждения базы индукции; 2 - по предположению индукции.
+        \item $\lambda$ - нейтральный элемент;
+        \item обратный элемент к $x_1...x_k$ - элемент $x_k^{-1}...x_1^{-1}$.
     \end{enumerate}
 \end{proof}
-\begin{subtheoremnum}
-    $\phi(a) = \phi(b) \Longleftrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi$.\\
-    В частности, $\phi$ инъективно $\Longleftrightarrow \textup{Ker }\phi = \{e\}$. 
-\end{subtheoremnum}
+\begin{definition}
+    Построенная группа $F(A)$ называется свободной группой с базисом $A$. ($A$ также называется свободной порождающей системой группы).\\
+    Любая группа, изоморфная $F(A)$, также называется свободной.
+\end{definition}
+\begin{subtheorem}
+    Пусть $H \leq SL_2(\Z): H = \langle \begin{pmatrix} 1&m\\0&1\end{pmatrix}, \begin{pmatrix} 1&0\\m&1\end{pmatrix} \rangle$.\\
+    Тогда $H \simeq F(A)$ с базисом $A = \{a, b\}$.
+\end{subtheorem}
 \begin{proof}
-    \[\phi(a) = \phi(b) \Longleftrightarrow \phi(a)\phi(b)^{-1} = \tilde{e} \Longleftrightarrow \phi(ab^{-1}) = \tilde{e} \Longleftrightarrow\]
-    \[ab^{-1} \in \textup{Ker }\phi \Longleftrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi\]
+    Без доказательства.
 \end{proof}
+\begin{subtheorem}
+    Все базисы свободной группы равномощны.
+\end{subtheorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\begin{definition}
+    Ранг свободной группы - мощность её базиса.
+\end{definition}
+\begin{remark}
+    Заметим, что в $F(A)$ результат умножения определён однозначно $\Longrightarrow$ однозначно определён элемент $x_1\cdot ... \cdot x_k$, где $x_i \in A^{\pm 1}$.\\
+    Тогда если считать слово $x_1...x_k$ результатом умножения $x_1\cdot ... \cdot x_k$, то можно опускать знак умножения, и в этом смысле работать и с сократимыми словами. 
+\end{remark}
 \begin{example}
-    $\phi: GL_n(\R) \rightarrow \R^* : \phi(A) = \det A$.\\
-    $\textup{Ker }\phi = SL_n(\R), \textup{Im }\phi = \R^* \Longrightarrow R^* \cong GL_n(\R) / SL_n(\R)$.
+    $abb^{-1}ba^{-1}a = a \cdot b \cdot b^{-1}\cdot b\cdot a^{-1}\cdot a = ab \in F(A)$.
 \end{example}

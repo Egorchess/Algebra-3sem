@@ -124,10 +124,10 @@
         \item $\phi$ - биекция;
         \item $\forall a, b \in G_1 \ \phi(a * b) = \phi(a) * \phi(b)$
     \end{enumerate}
-    Если между $G_1$ и $G_2$ существует изоморфизм, то $G_1$ и $G_2$ называются изоморфными. Обозначается $G_1 \cong  G_2$.
+    Если между $G_1$ и $G_2$ существует изоморфизм, то $G_1$ и $G_2$ называются изоморфными. Обозначается $G_1 \simeq  G_2$.
 \end{definition}
 \begin{example}
-    $D_3 \cong S_3$.
+    $D_3 \simeq S_3$.
 \end{example}
 \begin{proof}
     $D_3$ - группа движений, переводящая равносторонний треугольник в себя. Если пронумеровать вершины изначального треугольника, то каждый элемент группы $D_3$ будет соответствовать подстановке, переводящей старый порядок вершин в новый. Определение изоморфизма проверяется очевидно.
@@ -139,14 +139,14 @@
     \begin{enumerate}
         \item $\phi(e_1) = e_2$;
         \item $\phi(a^{-1}) = (\phi(a))^{-1}$;
-        \item $G_1 \cong  G_2 \Longrightarrow |G_1| = |G_2|$.
+        \item $G_1 \simeq  G_2 \Longrightarrow |G_1| = |G_2|$.
         \begin{remark}
             Обратное утверждение неверно (например, $S_3 \ncong \Z_6$).
         \end{remark}
     \end{enumerate}
 \end{subtheorem}
 \begin{example}
-    $SO_2 \cong (U, \cdot)$, где $U = \{z \in \CC : |z| = 1\}$.
+    $SO_2 \simeq (U, \cdot)$, где $U = \{z \in \CC : |z| = 1\}$.
 \end{example}
 \begin{definition}
     Пусть $(G, \cdot, e)$ - группа, $k \in \Z, g \in G$.\\
@@ -295,30 +295,30 @@
 \end{proof}
 \begin{theoremnum}[Классификация циклических групп] \tab
     \begin{enumerate}
-        \item Если циклическая группа $G$ бесконечна, то $G \cong \Z$;
-        \item Если циклическая группа $G$ конечна и имеет порядок $n$, то $G \cong \Z_n$.
+        \item Если циклическая группа $G$ бесконечна, то $G \simeq \Z$;
+        \item Если циклическая группа $G$ конечна и имеет порядок $n$, то $G \simeq \Z_n$.
     \end{enumerate}
 \end{theoremnum}
 \begin{proof}\tab
     \begin{enumerate}
         \item Пусть $\textup{ord } g = \infty, \forall h \in g \ \exists k \in \Z: h = g^k$\\
-        Рассмотрим отображение $\phi: G \rightarrow \Z$ такого вида: $\phi: g^k \rightarrowtail k$. Очевидно, что $\phi$ - сюръекция (в $k\in \Z$ перешёл $g^k \in G$).\\
+        Рассмотрим отображение $\phi: G \rightarrow \Z$ такого вида: $\phi: g^k \mapsto k$. Очевидно, что $\phi$ - сюръекция (в $k\in \Z$ перешёл $g^k \in G$).\\
         $\phi(g^k) = \phi(g^m) \Longrightarrow k = m \Longrightarrow g^k = g^m$ - отсюда $\phi$ - инъекция.\\
         Проверим сохранение операции:
         \[\phi(g^k \cdot g^m) = \phi(g^{k+m}) = k+m = \phi(g^k) + \phi(g^m)\]
         Отсюда $\phi$ - изоморфизм.
-        \item Пусть $\textup{ord } g = n$. Рассмотрим отображение $\phi: \Z_n \rightarrow G$ такого вида: $\phi: k \rightarrowtail g^k$. Очевидно, что $\phi$ - сюръекция (в $g^k\in G$ перешёл $k \in \Z_n$).\\
+        \item Пусть $\textup{ord } g = n$. Рассмотрим отображение $\phi: \Z_n \rightarrow G$ такого вида: $\phi: k \mapsto g^k$. Очевидно, что $\phi$ - сюръекция (в $g^k\in G$ перешёл $k \in \Z_n$).\\
         $k \equiv m (\textup{mod } n) \Longleftrightarrow g^k = g^m$ - отсюда $\phi$ - инъекция.\\
         Сохранение операции - аналогично пункту 1.\\ 
         Отсюда $\phi$ - изоморфизм.
     \end{enumerate}
 \end{proof}
 \begin{consequense}
-    Если $G_1, G_2$ - циклические группы, то $G_1 \cong G_2 \Longleftrightarrow |G_1| = |G_2|$.
+    Если $G_1, G_2$ - циклические группы, то $G_1 \simeq G_2 \Longleftrightarrow |G_1| = |G_2|$.
 \end{consequense}
 \begin{proof} \tab\\
     $\Longrightarrow : \ \ $ верно всегда;\\
-    $\Longleftarrow : \ \ $ из теоремы: если $G_1$ бесконечна, то $G_1 \cong \Z \cong G_2$, иначе $G_1 \cong \Z_n \cong G_2$, где $n = |G_1| = |G_2|$.
+    $\Longleftarrow : \ \ $ из теоремы: если $G_1$ бесконечна, то $G_1 \simeq \Z \simeq G_2$, иначе $G_1 \simeq \Z_n \simeq G_2$, где $n = |G_1| = |G_2|$.
 \end{proof}
 \begin{theoremnum} \tab
     \begin{enumerate}
@@ -470,7 +470,7 @@
     Доказать, что с точностью до изоморфизма существует ровно две группы порядка 4 - $\Z_4$ и $V_4$.
 \end{exercise}
 \begin{proof}
-    Пусть $G$ - группа порядка 4. Заметим, что по следствию 2 порядок неединичного элемента в $G$ может быть равен либо 2, либо 4. Если в $G$ есть элемент порядка 4, то $G$ циклическая, а тогда по теореме о классификации циклических групп $G \cong \Z_4$.\\
+    Пусть $G$ - группа порядка 4. Заметим, что по следствию 2 порядок неединичного элемента в $G$ может быть равен либо 2, либо 4. Если в $G$ есть элемент порядка 4, то $G$ циклическая, а тогда по теореме о классификации циклических групп $G \simeq \Z_4$.\\
     Пусть $G = \{e, a, b, c\}, \textup{ord } a = \textup{ord } b = \textup{ord } c = 2$. Посмотрим, чему может быть равно $ab$:
     \begin{itemize}
         \item $ab = e \Longrightarrow aab = a \Longrightarrow b = a$ - противоречие;
@@ -485,7 +485,7 @@
         b & b & c & e & a \\ \hline
         c & c & b & a & e
         \end{tabular}$$
-    откуда видно, что $G \cong V_4$.
+    откуда видно, что $G \simeq V_4$.
 \end{proof}
 \begin{exercise}
     Доказать, что если в группе $G$ все неединичные элементы имеют порядок 2, то $G$ - абелева.
@@ -526,6 +526,7 @@
 \begin{proof}
     Если $|G:H|=2$, то $G$ разбивается на два непересекающихся левых (правых) смежных класса по $H$. Очевидно, что один из этих классов  в обоих случаях - сама подгруппа $H$. Тогда $\forall g \in G \setminus H$ группа $G$ разбивается на левые смежные классы $H$ и $gH$, а также на правые смежные классы $H$ и $Hg$, откуда $gH = Hg$. Также очевидно, что $\forall h \in H: hH = H = Hh$. Значит, $\forall g \in G: gH = Hg \Longrightarrow H \unlhd G$.
 \end{proof}
+
 \subsection{Факторгруппа}
 \begin{subtheorem}
     Пусть $G$ - группа, $H\unlhd G$. Тогда множество всех смежных классов $G$ по $H : G/H = \{eH, aH, ...\}$ образует группу относительно операции $aH \cdot bH = abH$.
@@ -563,11 +564,132 @@
 \end{remark}
 \begin{examples}\tab
     \begin{enumerate}
-        \item $\Z / 3\Z \cong \Z_3 = \{0, 1, 2\}$;
-        \item $S_n \unlhd A_n, S_n/A_n \cong \Z_2$ (по чётности);
-        \item $\R \unlhd \CC, \CC / \R \cong \R \ (bi + \R \rightarrowtail b)$. 
+        \item $\Z / 3\Z \simeq \Z_3 = \{0, 1, 2\}$;
+        \item $S_n \unlhd A_n, S_n/A_n \simeq \Z_2$ (по чётности);
+        \item $\R \unlhd \CC, \CC / \R \simeq \R \ (bi + \R \mapsto b)$. 
     \end{enumerate}
 \end{examples}
+
 \setcounter{thcount}{0}
 \setcounter{concount}{0}
 \setcounter{subthcount}{0}
+
+\subsection{Гомоморфизмы групп}
+\begin{definition}
+    Пусть $(G, \cdot, e), (\tilde{G}, \cdot, \tilde{e})$ - группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\cdot\phi(b)$.
+\end{definition}
+\begin{remark}
+    В частности, изоморфизм - биективный гомоморфизм.
+\end{remark}
+\begin{subtheorem}[Свойства гомоморфизмов]\tab
+    \begin{enumerate}
+        \item $\phi(e) = \tilde{e}$;
+        \item $\phi(a^{-1}) = (\phi(a))^{-1}$
+    \end{enumerate}
+\end{subtheorem}
+\begin{definition}
+    Множество $\textup{Im } \phi = \{b \in \tilde{G} \ | \ \exists a \in G: \phi(a) = b\}$ - образ гомоморфизма.
+    Множество $\textup{Ker } \phi = \{a \in G \ | \ \phi(a) = \tilde{e}\}$ - ядро гомоморфизма.
+\end{definition}
+\begin{subtheoremnum}\tab
+    \begin{enumerate}
+        \item $\textup{Im } \phi \leq \tilde{G}$;
+        \item $\textup{Ker } \phi \unlhd G$.
+    \end{enumerate}
+\end{subtheoremnum}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item $\textup{Im }\phi \subseteq \tilde{G}$
+        \begin{itemize}
+            \item $x, y \in \textup{Im }\phi \Rightarrow \exists a, b \in G: x = \phi(a), y = \phi(b) \Longrightarrow xy = \phi(a)\phi(b) = \phi(ab) \in \textup{Im }\phi$;
+            \item $\tilde{e} = \phi(e) \in \textup{Im }\phi$;
+            \item $\forall x \in \textup{Im }\phi \ \exists a \in G: \phi(a) = x \Longrightarrow x^{-1} = (\phi(a))^{-1}= \phi(a^{-1}) \in \textup{Im }\phi$
+        \end{itemize}
+        Отсюда $\textup{Im } \phi \leq \tilde{G}$.
+        \item $\textup{Ker }\phi \subseteq G$
+        \begin{itemize}
+            \item $\forall a, b \in \textup{Ker }\phi: \phi(a) = \phi(b) = \tilde{e} \Longrightarrow \phi(ab) = \phi(a)\phi(b) = \tilde{e} \Longrightarrow \newline ab \in \textup{Ker }\phi$;
+            \item $\tilde{e} = \phi{e} \Longrightarrow e \in \textup{Ker }\phi$;
+            \item $\forall a \in \textup{Ker }\phi \Rightarrow \phi(a^{-1}) = (\phi(a))^{-1} = \tilde{e}^{-1} = \tilde{e}  \Longrightarrow a^{-1} \in \textup{Ker }\phi$
+        \end{itemize}
+        Отсюда $\textup{Ker } \phi \leq G$.\\
+        $\phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g)^{-1} = \phi(g)\phi(g)^{-1} = \tilde{e} \Rightarrow ghg^{-1} \in \textup{Ker }\phi \Longrightarrow \textup{Ker }\phi \unlhd G$.
+    \end{enumerate}
+\end{proof}
+\begin{subtheoremnum}
+    $\phi(a) = \phi(b) \Longleftrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi$.\\
+    В частности, $\phi$ инъективно $\Longleftrightarrow \textup{Ker }\phi = \{e\}$. 
+\end{subtheoremnum}
+\begin{proof}
+    \[\phi(a) = \phi(b) \Longleftrightarrow \phi(a)\phi(b)^{-1} = \tilde{e} \Longleftrightarrow \phi(ab^{-1}) = \tilde{e} \Longleftrightarrow\]
+    \[ab^{-1} \in \textup{Ker }\phi \Longleftrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi\]
+\end{proof}
+\begin{example}
+    $\phi: GL_n(\R) \rightarrow \R^* : \phi(A) = \det A$.\\
+    $\textup{Ker }\phi = SL_n(\R), \textup{Im }\phi = \R^* \Longrightarrow R^* \simeq GL_n(\R) / SL_n(\R)$.
+\end{example}
+\begin{theorem}[О гомоморфизме]
+    Пусть $G, \tilde{G}$ - группы, $\phi: G \rightarrow \tilde{G}$ - гомоморфизм.\\
+    Тогда $G / \textup{Ker }\phi \simeq \textup{Im } \phi$.
+\end{theorem}
+\begin{proof}
+    Для начала заметим, что $\textup{Ker } \phi \unlhd G$, поэтому факторгруппа $G / \textup{Ker }\phi$ определена.\\
+    Рассмотрим $\psi: \ g \textup{Ker }\phi \mapsto \phi(g)$:
+    \begin{itemize}
+        \item Корректность:\\
+        По утверждению 2: $g_1 \textup{Ker }\phi = g_2 \textup{Ker }\phi \Longrightarrow \phi(g_1) = \phi(g_2)$;
+        \item Биективность:\\
+        Сюръективность: $\forall b \in \tilde{G} \ \exists a \in G: \phi(a) = b \Longrightarrow \psi(a \textup{Ker }\phi) = b$;\\
+        Инъективность: по утверждению 2: $\psi(a \textup{Ker }\phi) = \psi(b \textup{Ker }\phi) \Longrightarrow \phi(g_1) = \phi(g_2) \Longrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi$;
+        \item Сохранение операции:
+        \[\psi((g_1 \textup{Ker }\phi)(g_2 \textup{Ker }\phi)) = \psi(g_1g_2 \textup{Ker }\phi) = \phi(g_1g_2) =\]
+        \[ = \phi(g_1)\phi(g_2) = \psi(g_1 \textup{Ker }\phi)\psi(g_2 \textup{Ker }\phi)\]
+    \end{itemize}
+    Отсюда $\psi: G/\textup{Ker }\phi \rightarrow \textup{Im }\phi$ - изоморфизм.
+\end{proof}
+\begin{example}
+    Пусть $G = S_n, \tilde{G} = \R^*, \phi(\sigma) = \sgn \sigma$.\\
+    Тогда из теоремы о гомоморфизме: 
+    \[\textup{Im }\phi = \{\pm 1\}, \textup{Ker }\phi = A_n \Longrightarrow S_n / A_n \simeq \{\pm 1\} \simeq \Z_2\]
+\end{example}
+\begin{consequensenum}
+    Гомоморфизм $\phi: G \rightarrow \tilde{G}$ - изоморфизм $\Longleftrightarrow \begin{cases}
+        \textup{Ker }\phi = \{e\}\\
+        \textup{Im }\phi = \tilde{G}
+    \end{cases}$
+\end{consequensenum}
+\begin{proof}  
+    $ \\ \Longrightarrow$ - очевидно из биективности;\\
+    $\Longleftarrow$ - изоморфизм из теоремы совпадёт с $\phi$.  
+\end{proof}
+\begin{consequensenum}
+    Если $|G| < \infty$, то $|G| = |\textup{Ker }\phi|\cdot|\textup{Im }\phi|$.
+\end{consequensenum}
+\begin{proof}
+    $|G| = |G/\textup{Ker }\phi|\cdot|\textup{Ker }\phi| = |\textup{Im }\phi| \cdot |\textup{Ker }\phi|$.
+\end{proof}
+\begin{subtheorem}
+    Пусть $G$ - группа, $H \unlhd G$. Тогда $\exists$ такая группа $\tilde{G}$, что $\exists$ сюръективный гомоморфизм $\pi: G \rightarrow \tilde{G}$, причём $\textup{Ker }\pi = H$.
+\end{subtheorem}
+\begin{proof}
+    Подходят $\tilde{G} = G/H, \pi: g \mapsto gH$.
+\end{proof}
+\begin{definition}
+    Приведённый выше гомоморфизм $\pi: G \mapsto G/H$ называется естественным (натуральным) гомоморфизмом из $G$ в $G/H$.
+\end{definition}
+\begin{definition}
+    Эпиморфизм - сюръективный гомоморфизм.
+\end{definition}
+\begin{subtheorem}
+    Пусть $\phi: G \rightarrow \tilde{\tilde{G}}$ - произвольный эпиморфизм с ядром $H$.\\
+    Тогда $\exists$ изоморфизм $\psi: G/H \rightarrow \tilde{\tilde{G}}$ такой, что $\phi = \psi \circ \pi$, где $\pi$ - натуральный гомоморфизм из $G$ в $G/H$.
+\end{subtheorem}
+\begin{proof}
+    По теореме о гомоморфизме $G/ \textup{Ker }\phi \simeq \textup{Im }\phi$.\\
+    Так как $\phi$ - сюръекция, $\textup{Im }\phi =  \tilde{\tilde{G}}$, также по условию $\textup{Ker }\phi = H$. Тогда $\psi: G/H \rightarrow \tilde{\tilde{G}}$ - изоморфизм, заданный в доказательстве теоремы о гомоморфизме: $\psi: gH \mapsto \phi(g)$.\\
+    Взяв этот изоморфизм, получим $\phi = \psi \circ \pi$ (так как $g \overset{\pi}{\mapsto} gH \overset{\tau}{\mapsto} \phi(g)$).
+\end{proof}
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}
+\newpage
