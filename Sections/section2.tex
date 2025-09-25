@@ -146,7 +146,9 @@ $N$ - нормальная $\Longrightarrow \forall f \in F(A), \forall h \in N:
 \begin{proof}
     $ \\$Пусть $\{(f_1r_1^{\epsilon_1}f_1^{-1})...(f_kr_k^{\epsilon_k}f_k^{-1}) \ | \ r_i \in \mathcal{R}, f_i \in F(A), \epsilon_i = \pm 1\} = H$. Тогда:\\
     $\langle \langle \mathcal{R} \rangle \rangle^{F(A)} \unlhd F(A) \Longrightarrow \forall r_i \in \mathcal{R}, f_i \in F(A), \epsilon_i \in \{\pm 1\}: f_ir_i^{\epsilon_i}f_i^{-1} \in \langle \langle \mathcal{R} \rangle \rangle^{F(A)} \Longrightarrow H \subseteq \langle \langle \mathcal{R} \rangle \rangle^{F(A)}$. Осталось показать, что $H \unlhd F(A)$:
-    \[\forall h \in H, g \in F(A): hgh^{-1} = h(ege^{-1})h^{-1} \in H\]
+    \[\forall h \in H, g \in F(A): ghg^{-1} = g(f_1r_1^{\epsilon_1}f_1^{-1})...(f_kr_k^{\epsilon_k}f_k^{-1})g^{-1} =\]
+    \[=((gf_1)r_1^{\epsilon_1}(f_1^{-1}g^{-1}))...((gf_k)r_k^{\epsilon_k}(f_k^{-1}g^{-1})) = \]
+    \[=((gf_1)r_1^{\epsilon_1}(gf_1)^{-1})...((gf_k)r_k^{\epsilon_k}(gf_k)^{-1}) \in H\]
     Отсюда минимальная группа, содержащая $\mathcal{R}$, в точности равна $H$.
 \end{proof}
 \begin{subtheorem}
