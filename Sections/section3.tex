@@ -22,7 +22,7 @@
     \begin{enumerate}
         \item $G_1 = \Z_3, G_2 = S_3, G = G_1 \times G_2$.\\
         $(1, (12))\cdot (2, (13)) = (1+2, (12)(13)) = (0, (132))$.
-        \item $D_n \simeq \undermat{n}{F^* \times ... \times F^*} \ (D_n$ - группа диагональных матриц порядка $n$). 
+        \item $D_n(\F) \simeq \undermat{n}{\F^* \times ... \times \F^*} \ (D_n(\F)$ - группа диагональных матриц порядка $n$). 
     \end{enumerate}
 \end{examples}
 \begin{subtheorem}\tab
@@ -87,7 +87,7 @@
     Отсюда $NH = HN$.
 \end{proof}
 \begin{lemmanum}
-    Пусть $H, N \unlhd G, H \cap G = \{e\}$. Тогда $\forall h \in H, n \in N \ nh = hn$.
+    Пусть $H, N \unlhd G, H \cap N = \{e\}$. Тогда $\forall h \in H, n \in N \ nh = hn$.
 \end{lemmanum}
 \begin{proof}
     Рассмотрим выражение $(hn)(nh)^{-1} = hnh^{-1}n^{-1}$:
@@ -103,7 +103,7 @@
 \end{theoremnum}
 \begin{proof}
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times H_2$.\\
-    (3) - очевидно из пункта 2 определения.\\
+    (3) - очевидно из пункта 1 определения.\\
     (1): $\forall h_1 \in H_1, g \in G: \ g = \tilde{h}_1\tilde{h}_2 \Longrightarrow$
     \[gh_1g^{-1} = \tilde{h}_1(\tilde{h}_2h_1\tilde{h}_2^{-1})\tilde{h}_1^{-1} \underset{(\text{2 из опр})}{=} \tilde{h}_1h_1\tilde{h}_1^{-1} \in H_1\]
     Отсюда $H_1 \unlhd G$ (аналогично $H_2 \unlhd G$).\\
@@ -124,7 +124,7 @@
 \end{theoremnum}
 \begin{proof}
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times ... \times H_k$.\\
-    (3) - очевидно из пункта 2 определения.\\
+    (3) - очевидно из пункта 1 определения.\\
     (1): $\forall h_i \in H_i, g \in G: \ g = \tilde{h}_1...\tilde{h}_k \Longrightarrow$
     \[gh_1g^{-1} = (\tilde{h}_1...\tilde{h}_k)h_i(\tilde{h}_k^{-1}...\tilde{h}_1^{-1}) \underset{(\text{2 из опр})}{=} \tilde{h}_ih_i\tilde{h}_i^{-1} \in H_i\]
     Отсюда $H_i \unlhd G$.\\
