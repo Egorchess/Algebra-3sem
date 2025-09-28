@@ -104,7 +104,7 @@
 \begin{proof}
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times H_2$.\\
     (3) - очевидно из пункта 1 определения.\\
-    (1): $\forall h_1 \in H_1, g \in G: \ g = \tilde{h}_1\tilde{h}_2 \Longrightarrow$
+    (1): $\forall h_1 \in H_1, g \in G: \ g = \tilde{h}_1\tilde{h}_2 \ (\tilde{h}_1 \in H_1, \tilde{h}_2 \in H_2) \Longrightarrow$
     \[gh_1g^{-1} = \tilde{h}_1(\tilde{h}_2h_1\tilde{h}_2^{-1})\tilde{h}_1^{-1} \underset{(\text{2 из опр})}{=} \tilde{h}_1h_1\tilde{h}_1^{-1} \in H_1\]
     Отсюда $H_1 \unlhd G$ (аналогично $H_2 \unlhd G$).\\
     (2): Пусть $\exists h \in H_1\cap H_2$. Тогда $h = he = eh$ - два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_1 \cap H_2 = \{e\}$.\\
@@ -125,7 +125,7 @@
 \begin{proof}
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times ... \times H_k$.\\
     (3) - очевидно из пункта 1 определения.\\
-    (1): $\forall h_i \in H_i, g \in G: \ g = \tilde{h}_1...\tilde{h}_k \Longrightarrow$
+    (1): $\forall h_i \in H_i, g \in G: \ g = \tilde{h}_1...\tilde{h}_k \ (\tilde{h}_i \in H_i) \Longrightarrow$
     \[gh_1g^{-1} = (\tilde{h}_1...\tilde{h}_k)h_i(\tilde{h}_k^{-1}...\tilde{h}_1^{-1}) \underset{(\text{2 из опр})}{=} \tilde{h}_ih_i\tilde{h}_i^{-1} \in H_i\]
     Отсюда $H_i \unlhd G$.\\
     (2): Пусть $\exists h \in H_i \cap \langle H_j \ | \ j \neq i \rangle$. Тогда $h = he = eh$ - два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_i \cap \langle H_j \ | \ j \neq i \rangle = \{e\}$.\\
