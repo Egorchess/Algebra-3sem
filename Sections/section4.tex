@@ -81,7 +81,7 @@
         \item Линейная независимость:
         \[\alpha_1e_1 + ... + \alpha_ne_n = 0 \Longrightarrow (\alpha_1,...,\alpha_n) = (0,...,0) \Longrightarrow \alpha_i = 0 \ \forall i\]
         \item Порождаемость группы:
-        \[\forall a \in \Z_n: a = (a_1,...,a_n) = a_1e_1 + ... + a_ne_n\]
+        \[\forall a \in \Z^n: a = (a_1,...,a_n) = a_1e_1 + ... + a_ne_n\]
     \end{enumerate}
 \end{example}
 \begin{lemma} (Основная лемма о линейной зависимости для абелевых групп)\\
@@ -198,8 +198,7 @@
         &&&\ddots&\\
         &&&&1
     \end{pmatrix*}$\\
-    называются (целочисленными) элементарными матрицами. \\
-    (нагло украденными у Славы, пожелайте ему удачно линал пересдать))
+    называются (целочисленными) элементарными матрицами.
 \end{definition}
 \begin{definition}(ЭП строк целочисленных матриц)
     \begin{itemize}
@@ -208,3 +207,170 @@
         \item \textbf{ЭП3}: $\overline{a_i} \rightarrow (-1) \overline{a_i}$;
     \end{itemize}
 \end{definition}
+(Аналогично определены ЭП над столбцами матрицы)\\
+\textbf{Приведение целочисленной матрицы с помощью целочисленных ЭП к "диагональному" \ виду}\\
+Пусть $A = (a_{ij}) \in M_{n \times m}(\Z)$.
+Будем говорить, что матрица $A$ имеет "диагональный" \ вид, если либо $A = 0$, либо $a_{ii} = \alpha_i \in \N, i = \overline{1,l}$ и $a_{ij} = 0$ иначе.
+\[ A = \begin{pmatrix}
+      \begin{smallmatrix}
+    \alpha_1&&0\\ &\ddots&\\ 0&&\alpha_l
+    \end{smallmatrix}  & \vline  & 0\\
+     \hline
+       0  \ \ & \vline& 0\\
+
+    \end{pmatrix}\]
+\begin{lemma}
+    Любую матрицу $M\in M_{n \times m}(\Z)$ за конечное число целочисленных ЭП над строками и столбцами можно привести к "диагональному" виду. 
+\end{lemma}
+\begin{proof}
+    Индукция по $n$ - числу строк матрицы.
+    При фиксированном $n$ индукция по $\nu(M)$ - наименьшему по модулю ненулевому элементу $M$. \\
+    Если $M=0$, то утверждение доказано, поэтому далее $M \neq 0$.\\
+    База индукции: $n=1 \Longrightarrow M = (a_{11},...,a_{1m})$.\\
+    \tab База внутренней индукции: $\nu(M) = 1$ - очевидна (если в строке есть 1, то с помощью неё можно занулить все оставшиеся элементы).\\
+    \tab Шаг внутренней индукции: Пусть $\nu(M) = |a_{1j}|$. Если $a_{1j} < 0$, то применим ЭП3 к стоблцу $j$; если $j > 1$, то применением ЭП2 поменяем 1-й и $j$-й столбцы местами. После этих операций $\nu(M) = a_{11}$.\\
+    $\forall j > 1: a_{1j} = a_{11}q_j + r_j$, где $0 \leqslant r_j < a_{11}$. Вычитая с помощью ЭП1 из $j$-го столбца 1-й, умноженный на $q_j$, получим строку $\tilde{M} = (a_{11}, r_2,...,r_m)$.\\
+    Если все $r_j = 0$, то диагональный вид получен, иначе можно воспользоваться предположением индукции ($\nu(\tilde{M}) < \nu(M)$).\\
+    Шаг индукции: Пусть $\nu(M) = |a_{ij}|$. Сначала сделаем $a_{ij}$ положительным (ЭП3), затем переставим его в верхний левый угол (ЭП2).\\
+    \tab Случай 1: $M = \begin{pmatrix} a_{11}&\vline&0&\dots&0\\ \hline 0&\vline \\ \vdots&\vline&&\text{\LARGE{C}}  \\ 0 & \vline \end{pmatrix}$ - по предположению индукции приводим $C$ к диагональному виду;\\
+    \tab Случай 2: $\exists j > 1: a_{1j} \neq 0$. Тогда, аналогично базе индукции, с помощью ЭП1 приводим верхнюю строчку к виду $\forall j > 1: a_{1j} = 0$.\\
+    \tab Случай 3: $\exists j > 1: a_{j1} \neq 0$ - аналогично случаю 2 (ЭП строк вместо столбцов). 
+\end{proof}
+\begin{exercise}
+    Доказать, что с помощью конечного числа целочисленных ЭП над строками и столбцами \[M \sim \begin{pmatrix}
+      \begin{smallmatrix}
+    \alpha_1&&0\\ &\ddots&\\ 0&&\alpha_l
+    \end{smallmatrix}  & \vline  & 0\\
+     \hline
+       0  \ \ & \vline& 0\\
+
+    \end{pmatrix}\] 
+    где $\alpha_l \mid \alpha_{l-1}, \alpha_{l-1} \mid \alpha_{l-2}, ..., \alpha_2 \mid \alpha_1$.
+\end{exercise}
+\begin{proof}
+    По лемме можем с помощью ЭП привести $M$ к диагональному виду. Индукция по $l$ - числу ненулевых $\alpha$ в диагональном виде:\\
+    \tab База: $l = 0, 1$ - очевидно;\\
+    \tab Шаг: Из теории чисел знаем, что для чисел $\alpha_1, \alpha_i$ существуют $a, b \in \Z$, что $a\alpha_1 + b\alpha_i = d_i =$ НОД($\alpha_1, \alpha_i$). Значит, с помощью ЭП1 можно сделать $a_{1i} = d_i$. Тогда следующими операциями:
+    \[\begin{pmatrix}
+    \alpha_1&\cdots&0&\cdots&0\\ &\ddots&&&\\ 0&&\alpha_i&&0\\ &&&\ddots&\\0&&&&\alpha_l
+    \end{pmatrix} \sim \begin{pmatrix}
+    \alpha_1&\cdots&d_i&\cdots&0\\ &\ddots&&&\\ 0&&\alpha_i&&0\\ &&&\ddots&\\0&&&&\alpha_l
+    \end{pmatrix} \sim \begin{pmatrix}
+    \alpha_1&\cdots&d_i&\cdots&0\\ &\ddots&&&\\ k\alpha_1&&0&&0\\ &&&\ddots&\\0&&&&\alpha_l
+    \end{pmatrix} \sim\]
+    \[\sim \begin{pmatrix}
+    0&\cdots&d_i&\cdots&0\\ &\ddots&&&\\ k\alpha_1&&0&&0\\ &&&\ddots&\\0&&&&\alpha_l
+    \end{pmatrix} \sim \begin{pmatrix}
+    k\alpha_1&\cdots&0&\cdots&0\\ &\ddots&&&\\ 0&&d_i&&0\\ &&&\ddots&\\0&&&&\alpha_l
+    \end{pmatrix}\]
+    можем сделать так, чтобы $\alpha_i \mid \alpha_1$. Причём $\alpha_1$ при этих операциях домножается на $k \in \Z$, а значит делимость на все предыдущие $\alpha_j$ сохраняется. Тогда за $l-1$ таких наборов операций можно сделать $\alpha_1$ общим кратным всех $\alpha$, а матрица без первой строки и первого столбца приводится к нужному виду по предположению индукции.
+\end{proof}
+\begin{example}
+    $(12, 10, 6) \sim (6, 10, 12) \sim (6, 4, 0) \sim (4, 6, 0) \sim (4, 2, 0) \sim (2, 4, 0) \sim (2, 0, 0)$.\\
+    (По сути - обобщённый алгоритм Евклида, остаётся НОД чисел 12, 10 и 6).
+\end{example}
+\setcounter{thcount}{0}
+\subsection{Согласованные базисы свободной абелевой группы и её подгруппы}
+\begin{theoremnum}
+    $ \\$Пусть $A$ - свободная абелева группа ранга $n, B \leq A$ - подгруппа ранга $m$.\\
+    Тогда $\exists$ базисы $\tilde{e}_1,...,\tilde{e}_n$ группы $A$ и $\tilde{f}_1,...,\tilde{f}_m$ подгруппы $B$ такие, что \\ $\tilde{f}_i = \alpha_i\tilde{e}_i, \ \alpha_i \in \N$.
+\end{theoremnum}
+\begin{proof}
+    Пусть $e_1,...,e_n$ и $f_1,...,f_n$ - некоторые базисы $A$ и $B$ соответственно. Так как $f_i \in A$, $(f_1,...,f_m) = (e_1,...,e_n)C$, где $C \in M_{n\times m}(\Z)$.\\
+    Если $\tilde{f}_1,...,\tilde{f}_m$ - другой базис $B$, то $(f_1,...,f_m) = (\tilde{f}_1,...,\tilde{f}_m)T$, где $T \in M_{n\times n}(\Z)$\\
+    Если $\tilde{e}_1,...,\tilde{e}_n$ - другой базис $A$, то $(e_1,...,e_n) = (\tilde{e}_1,...,\tilde{e}_n)S$, где $S \in M_{m\times m}(\Z)$ ($\det T, S = \pm 1$).
+    Отсюда
+    \[(\tilde{f}_1,...,\tilde{f}_m)T = (\tilde{e}_1,...,\tilde{e}_n)SC \Longrightarrow (\tilde{f}_1,...,\tilde{f}_m) = (\tilde{e}_1,...,\tilde{e}_n)\tilde{C}, \ \ \tilde{C} = SCT^{-1}\]
+    Тогда если $S, T^{-1}$ - элементарные матрицы, то $SC$ - ЭП над строками $C$, а $CT^{-1}$ - ЭП над столбцами $C$.
+    По лемме 1 $C$ с помощью ЭП можно привести к виду $\tilde{C} = \begin{pmatrix} \begin{smallmatrix}
+    \alpha_1&&0\\ &\ddots&\\ 0&&\alpha_m
+    \end{smallmatrix} \\\hline 0\end{pmatrix}$ (нулей среди $\alpha_i$ не будет, т.к. векторы базиса $f$ ЛНЗ).
+    Отсюда и получаем требуемое равенство $\tilde{f}_i = \alpha_i\tilde{e}_i, \ \alpha_i \in \N$.
+\end{proof}
+\begin{theorem} (не было в лекции)\\
+    Пусть $G = G_1 \times ...\times  G_s$, $H = H_1 \times ...\times  H_s$, причём $H \subseteq G$ и $H_i \unlhd G_i$.\\
+    Тогда $H \unlhd G$ и $G/H = G_1/H_1 \times ... \times G_s/H_s$.
+\end{theorem}
+\begin{proof}
+    $ \\$Будем работать с внешним прямым произведением. Рассмотрим отображение
+    \[\phi: G \rightarrow G_1/H_1 \times ... \times G_s/H_s\]
+    \[\phi(g_1,...,g_s) = (g_1H_1,...,g_sH_s)\]
+    $\phi$ - гомоморфизм, так как по $i$-й компоненте $\phi$ реализует естественный гомоморфизм $G \rightarrow G/H_i$.\\
+    Ядро $\phi$ - наборы $(g_1,...,g_s)$, которые отображаются в нейтральный элемент, т.е. в $(H_1,...,H_s)$. Получаем
+    \[\phi(g_1,..., g_s) = (H_1,..., H_s) \Longleftrightarrow g_i \in H_i, \ \forall i = 1,... , s\]
+    Таким образом, $\textup{Ker }\phi = H_1\times ... \times H_s$.\\
+    Из определения $\phi$ очевидна сюръективность, т.е. $\textup{Im }\phi = G_1/H_1 \times ... \times G_s/H_s$, а значит из теоремы о гомоморфизме получаем необходимое утверждение. 
+\end{proof}
+\begin{remark}
+    Для абелевых групп из теоремы получим следующее утверждение: 
+    Пусть $A = A_1 \oplus ... \oplus A_n$, $B \leq A$, $B = B_1 \oplus ...\oplus B_n$.\\
+    Тогда $A/B = (A_1 \oplus ... \oplus A_n)/(B_1 \oplus ...\oplus B_n) \simeq A_1/B_1 \oplus ...\oplus A_n/B_n$
+\end{remark}
+\begin{consequensenum}
+    В условиях теоремы 1:
+    \[A/B \simeq \Z_{\alpha_1} \oplus ... \oplus \Z_{\alpha_m} \oplus \undermat{n-m}{\Z\oplus ... \oplus \Z}\]
+    \tab
+\end{consequensenum}
+\begin{proof}
+    По теореме 1: $\tilde{f}_1 = \alpha_1\tilde{e}_1,...,\tilde{f}_m = \alpha_m\tilde{e}_m$.
+    \[A = \langle \tilde{e}_1 \rangle \oplus ... \oplus \langle \tilde{e}_m \rangle \oplus \langle \tilde{e}_{m+1} \rangle \oplus ... \oplus \langle \tilde{e}_n \rangle; \ \ B = \langle \alpha_1\tilde{e}_1 \rangle \oplus ... \oplus \langle \alpha_m\tilde{e}_m \rangle \oplus \langle 0 \rangle \oplus ... \oplus \langle 0 \rangle\]
+    Тогда из замечания выше:
+    \[A / B \simeq \langle \tilde{e}_1 \rangle / \langle \alpha_1\tilde{e}_1 \rangle \oplus ... \oplus \langle \tilde{e}_m \rangle / \langle \alpha_m\tilde{e}_m \rangle \oplus \langle \tilde{e}_{m+1} \rangle / \langle 0 \rangle \oplus ... \oplus \langle \tilde{e}_n \rangle / \langle 0 \rangle \simeq\]
+    \[\simeq \Z_{\alpha_1} \oplus ... \oplus \Z_{\alpha_m} \oplus \undermat{n-m}{\Z\oplus ... \oplus \Z}\]
+\end{proof}
+\begin{consequensenum}
+    будет тут утром
+\end{consequensenum}
+\begin{proof}
+    и это тоже
+\end{proof}
+\begin{subtheoremnum}(Универсальное свойство абелевой группы)\\
+    Пусть $S = \{a_1,...,a_n\}$ - система порождающих абелевой группы $A$.\\
+    Тогда следующие утверждения эквивалентны:
+    \begin{enumerate}
+        \item $A$ - свободная с базисом $S$;
+        \item $\forall$ абелевой группы $D$, $\forall \ d_1,...,d_n \in D \ \exists!$ гомоморфизм $\phi: A\rightarrow D$ т.ч. $\phi: a_i \mapsto d_i \  \forall i$. 
+    \end{enumerate} 
+\end{subtheoremnum}
+\begin{proof}
+    $ \\ 1 \Longrightarrow 2:$  $S$ - базис $A \Longrightarrow \forall a \in A \ \exists! \alpha_i  \in \Z : a = \alpha_1a_1 + ... + \alpha_na_n$.\\
+    Рассмотрим отображение $\phi: A \rightarrow D$, заданное как $a = \alpha_1a_1 + ... + \alpha_na_n \mapsto \alpha_1d_1 + ... + \alpha_nd_n$. Оно корректно вследствие единственности разложения по базису, а также очевидно является гомоморфизмом с нужным свойством.\\
+    $2 \Longrightarrow 1$. Рассмотрим свободную группу $D$ ранга $n$, в ней рассмотрим базис $d_1,...,d_n$. По условию $\exists!$ гомоморфизм $\phi: A \rightarrow D$, причём $a_i \mapsto d_i$.\\
+    Предположим, что $a_1,...,a_n$ линейно зависимы. Тогда \[\lambda_1a_1 +...+\lambda_na_n = 0 \Longrightarrow \phi(\lambda_1a_1 +...+\lambda_na_n) = \lambda_1d_1 +...+\lambda_nd_n = 0\] 
+    Противоречие с линейной независимостью $d_1,...,d_n$. Значит, $a_1,...,a_n$ - базис.
+\end{proof}
+\begin{consequensenum}
+    Любая конечнопорождённая абелева группа изоморфна свободной абелевой группе по некоторой её подгруппе $B$.
+\end{consequensenum}
+\begin{proof}
+    Пусть $D = \langle d_1,...,d_n \rangle$. Рассмотрим свободную абелеву группу $A$ ранга $n$ с базисом $a_1,...,a_n$. \\
+    По утверждению 1 $\exists$ гомоморфизм $\phi: A \rightarrow D$ такой, что $\phi(a_i) = d_i$.\\
+    Из порождаемости гомоморфизм сюръективен, а значит по теореме о гомоморфизме $D = \textup{Im }\phi \simeq A/\textup{Ker }\phi$, где $\textup{Ker }\phi \leq A$. 
+\end{proof}
+\begin{consequensenum}
+    Любая конечнопорождённая абелева группа раскладывается в сумму циклических подгрупп.
+\end{consequensenum}
+\begin{proof}
+    $D \simeq A/B \simeq \Z_{\alpha_1} \oplus ... \oplus \Z_{\alpha_m} \oplus \undermat{n-m}{\Z\oplus ... \oplus \Z}\\$
+\end{proof}
+\begin{consequensenum}
+    Любая конечнопорождённая абелева группа $D$ раскладывается в прямую сумму конечной абелевой группы и свободной абелевой группы. 
+\end{consequensenum}
+\begin{proof}
+    $D \simeq (\Z_{\alpha_1} \oplus ... \oplus \Z_{\alpha_m}) \oplus \Z^{n-m}$
+\end{proof}
+\begin{definition}
+    Группа, в которой каждый неединичный элемент имеет бесконечный порядок, называется группой без кручения.
+\end{definition}
+\begin{exercise}
+    Если $A$ - свободная абелева, то $A$ - без кручения.
+\end{exercise}
+\begin{proof}
+    Предположим, что $b \in A$ - элемент конечного порядка $m$. По определению свободной группы $b = \alpha_1a_1 + ... + \alpha_na_n$, причём не все $\alpha_i$ равны 0. Тогда $m\alpha_1a_1 + ... + m\alpha_na_n = mb = 0$ - противоречие с линейной независимостью базиса.
+\end{proof}
+\begin{consequensenum}
+    Если $A$ - конечнопорождённая абелева группа без кручения, то $A$ - свободная абелева группа.
+\end{consequensenum}
+\begin{proof}
+    В обозначениях следствия 5 $m = 0$.
+\end{proof}
