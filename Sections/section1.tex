@@ -284,8 +284,9 @@
     Очевидно из определения порождающего множества.
 \end{proof}
 \begin{remark}
-    Далее циклическую группу порядка $n$ обозначаем $\langle g \rangle_n$
+    Для групп конечного порядка, очевидно, выполняется и обратное утверждение: если $\textup{ord } g = |G| < \infty$, то $G = \langle g \rangle$. 
 \end{remark}
+    Далее циклическую группу порядка $n$ будем обозначать $\langle g \rangle_n$.
 \begin{subtheoremnum}
     Пусть $G = \langle g \rangle_n$. Тогда $G = \langle g^k \rangle \Longleftrightarrow \textup{НОД}(k, n) = 1$.
 \end{subtheoremnum}
@@ -333,8 +334,9 @@
         \item Пусть $G = \langle g \rangle, H \leq G$. Если $H = \{e\}$, то $H = \langle e \rangle$.\\
         При $H \neq \{e\} : \forall h \in H \ \exists k \in \Z : h = g^k$. Так как $g^k \in H \Longrightarrow g^{-k} \in H$ и в $H$ есть элемент, отличный от $e$, $\exists$ наименьшее $k \in \N: g^k \in H$.\\
         Докажем, что $H = \langle g^k \rangle$. Рассмотрим произвольный $g^m \in H$. Разделим $m$ на $k$ с остатком: $m = kq + r, 0 \leqslant r < k$. Тогда:
-        \[g^m = (g^k)^q\cdot g^r \Longrightarrow g^r = (g^k)^{-q}\cdot g^m \Longrightarrow r = 0, \text{ т.к. k - наименьшее} \in \N\]
-        \item $G =  \langle g \rangle_n, H \leq G \Longrightarrow_{(1)} H =  \langle g^k \rangle$.\\
+        \[g^m = (g^k)^q\cdot g^r \Longrightarrow g^r = (g^k)^{-q}\cdot g^m \]
+        то есть $g^r \in H$, а в силу того, что $k$ - наименьшее натуральное число такое, что $g^k \in H$, имеем $r = 0$. Значит, $g^m = (g^k)^q$, а отсюда $H = \langle g^k \rangle$.
+        \item $G =  \langle g \rangle_n, H \leq G \overset{1}{\Longrightarrow} H =  \langle g^k \rangle$.\\
         Так как $g^n = e \in H$, то в силу рассуждений пункта 1 при $m = n$ получаем $k | n \Longrightarrow n = kq$.\\
         Отсюда $H = \{e, g^k, g^{2k},...,g^{(q-1)k}\} \Longrightarrow |H| = q$, где $q | n$.\\
         Обратно, $\forall d | n \ \exists! H =  \langle g^{\frac{n}{d}} \rangle$ (в силу описания выше других подгрупп такого порядка нет).
