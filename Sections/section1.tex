@@ -567,7 +567,7 @@
 \begin{examples}\tab
     \begin{enumerate}
         \item $\Z / 3\Z \simeq \Z_3 = \{0, 1, 2\}$;
-        \item $S_n \unlhd A_n, S_n/A_n \simeq \Z_2$ (по чётности);
+        \item $A_n \unlhd S_n, S_n/A_n \simeq \Z_2$ (по чётности);
         \item $\R \unlhd \CC, \CC / \R \simeq \R \ (bi + \R \mapsto b)$. 
     \end{enumerate}
 \end{examples}
@@ -611,7 +611,7 @@
         \item $\textup{Ker }\phi \subseteq G$
         \begin{itemize}
             \item $\forall a, b \in \textup{Ker }\phi: \phi(a) = \phi(b) = \tilde{e} \Longrightarrow \phi(ab) = \phi(a)\phi(b) = \tilde{e} \Longrightarrow \newline ab \in \textup{Ker }\phi$;
-            \item $\tilde{e} = \phi{e} \Longrightarrow e \in \textup{Ker }\phi$;
+            \item $\tilde{e} = \phi(e) \Longrightarrow e \in \textup{Ker }\phi$;
             \item $\forall a \in \textup{Ker }\phi \Rightarrow \phi(a^{-1}) = (\phi(a))^{-1} = \tilde{e}^{-1} = \tilde{e}  \Longrightarrow a^{-1} \in \textup{Ker }\phi$
         \end{itemize}
         Отсюда $\textup{Ker } \phi \leq G$.\\
@@ -641,8 +641,8 @@
         \item Корректность:\\
         По утверждению 2: $g_1 \textup{Ker }\phi = g_2 \textup{Ker }\phi \Longrightarrow \phi(g_1) = \phi(g_2)$;
         \item Биективность:\\
-        Сюръективность: $\forall b \in \tilde{G} \ \exists a \in G: \phi(a) = b \Longrightarrow \psi(a \textup{Ker }\phi) = b$;\\
-        Инъективность: по утверждению 2: $\psi(a \textup{Ker }\phi) = \psi(b \textup{Ker }\phi) \Longrightarrow \phi(g_1) = \phi(g_2) \Longrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi$;
+        Сюръективность: $\forall b \in \textup{Im } \phi \ \exists a \in G: \phi(a) = b \Longrightarrow \psi(a \textup{Ker }\phi) = b$;\\
+        Инъективность: по утверждению 2: $\psi(a \textup{Ker }\phi) = \psi(b \textup{Ker }\phi) \Longrightarrow \phi(a) = \phi(b) \Longrightarrow a \textup{Ker }\phi = b \textup{Ker }\phi$;
         \item Сохранение операции:
         \[\psi((g_1 \textup{Ker }\phi)(g_2 \textup{Ker }\phi)) = \psi(g_1g_2 \textup{Ker }\phi) = \phi(g_1g_2) =\]
         \[ = \phi(g_1)\phi(g_2) = \psi(g_1 \textup{Ker }\phi)\psi(g_2 \textup{Ker }\phi)\]
@@ -689,7 +689,7 @@
 \begin{proof}
     По теореме о гомоморфизме $G/ \textup{Ker }\phi \simeq \textup{Im }\phi$.\\
     Так как $\phi$ - сюръекция, $\textup{Im }\phi =  \tilde{\tilde{G}}$, также по условию $\textup{Ker }\phi = H$. Тогда $\psi: G/H \rightarrow \tilde{\tilde{G}}$ - изоморфизм, заданный в доказательстве теоремы о гомоморфизме: $\psi: gH \mapsto \phi(g)$.\\
-    Взяв этот изоморфизм, получим $\phi = \psi \circ \pi$ (так как $g \overset{\pi}{\mapsto} gH \overset{\tau}{\mapsto} \phi(g)$).
+    Взяв этот изоморфизм, получим $\phi = \psi \circ \pi$ (так как $g \overset{\pi}{\mapsto} gH \overset{\psi}{\mapsto} \phi(g)$).
 \end{proof}
 \setcounter{thcount}{0}
 \setcounter{concount}{0}
