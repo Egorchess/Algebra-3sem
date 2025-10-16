@@ -463,7 +463,7 @@
     Пусть $A = \langle a_1,...,a_n \rangle$. \\
     Тогда $A/\textup{Tor } A = \langle a_1 + \textup{Tor } A,...,a_n + \textup{Tor } A\rangle$. Кроме того, по лемме 3 $A/\textup{Tor } A$ - группа без кручения, а отсюда по следствию 6 из универсального свойства абелевой группы - свободная. Отсюда по лемме 1 $\exists \ C \leq A$ - свободная абелева группа такая, что $A \simeq \textup{Tor } A \oplus C$.\\
     Осталось показать, что $\textup{Tor } A$ - конечная:
-    $\textup{Tor } A \simeq A/C = \langle a_1 + C,...,a_n + C \rangle \Longrightarrow \textup{Tor } A = \langle b_1,...,b_i \rangle$ - конечнопорождённая.
+    $\textup{Tor } A \simeq A/C = \langle a_1 + C,...,a_n + C \rangle \Longrightarrow \textup{Tor } A = \langle b_1,...,b_n \rangle$ - конечнопорождённая.
     Тогда если $k_i = \textup{ord } b_i$, то $\forall b \in \textup{Tor } A$
     \[b = \lambda_1b_1 + ... + \lambda_nb_n, \ \lambda_i \in \Z, 0 \leqslant \lambda_i < k_i \Longrightarrow |\textup{Tor } A| \leqslant k_1...k_n \]
 \end{proof}
@@ -475,7 +475,7 @@
         \item Существование разложения:\\
         Рассмотрим произвольное простое $p$ и обозначим за $A_p$ множество всех элементов $A$ порядков $p^m$. Проверим, что $A_p$ - подгруппа $A$:
         \begin{enumerate}
-            \item $a, b \in A, p^{m_1}a = p^{m_2}b = 0 \Longrightarrow p^{m_1 + m_2}(a+b) = p^{m_2}\cdot p^{m_1}a + p^{m_1}\cdot p^{m_2}b = 0$
+            \item $a, b \in A_{p}, p^{m_1}a = p^{m_2}b = 0 \Longrightarrow p^{m_1 + m_2}(a+b) = p^{m_2}\cdot p^{m_1}a + p^{m_1}\cdot p^{m_2}b = 0$
             Отсюда $a, b \in A_p \Longrightarrow a+b \in A_p$;
             \item $0 \in A_p$ - очевидно;
             \item $p^ma = 0 \Longrightarrow p^m(-a) = -p^ma = 0$. Отсюда $a\in A_p \Longrightarrow -a \in A_p$.
@@ -483,7 +483,7 @@
         Докажем, что $A = A_{p_1} \oplus ... \oplus A_{p_s}$:
         \begin{enumerate}
             \item $A_{p_1} \oplus ... \oplus A_{p_s}$ - прямая сумма.\\
-            По критерию прямой суммы достаточно показать, что $A_{p_i} \cap \langle \bigcup A_{p_i} \rangle = \{0\}$. Рассмотрим $a \in A_{p_i} \cap \langle \bigcup A_{p_i} \rangle$. Так как $a \in A_{p_i}$, то $p_i^{m_i}a = 0$. С другой стороны, $a = \sum \limits_{j \neq i} a_j$, то есть $(\prod \limits_{j \neq i} p_j^{m_j})a = 0$.\\
+            По критерию прямой суммы достаточно показать, что $A_{p_i} \cap \langle \bigcup \limits_{j \neq i} A_{p_j} \rangle = \{0\}$. Рассмотрим $a \in A_{p_i} \cap \langle \bigcup \limits_{j \neq i} A_{p_j} \rangle$. Так как $a \in A_{p_i}$, то $p_i^{m_i}a = 0$. С другой стороны, $a = \sum \limits_{j \neq i} a_j$, то есть $(\prod \limits_{j \neq i} p_j^{m_j})a = 0$.\\
             Так как $\prod \limits_{j \neq i} p_j^{m_j}$ и $p_i^{m_i}$ взаимно просты, имеем $1 \cdot a = a = 0$.
             \item $A = A_{p_1} \oplus ... \oplus A_{p_s}$.
             Рассмотрим произвольный $a \in A$. Пусть $\textup{ord } a = n = p_1^{\alpha_1}...p_s^{\alpha_s}$. Обозначим $n_i = \frac{n}{p_i^{\alpha_i}}$.\\
@@ -499,11 +499,32 @@
         Значит, такого $a$ не существует, то есть $A_{p_i} \subseteq \tilde{A}_{p_i}$. Отсюда $A_{p_i} = \tilde{A}_{p_i}$.
     \end{itemize}
 \end{proof}
+\begin{lemmanum}
+    Пусть $A$ - конечная абелева $p$-группа. Тогда если $A = A_1 \oplus ... \oplus A_s = B_1 \oplus ... \oplus B_t$, где $A_i, B_i$ - примарные циклические подгруппы, то $s = t$ и набор порядков $|A_1|,...,|A_s|$ совпадает с набором порядков $|B_1|,...,|B_t|$ (т.е. разложение единственно с точностью до порядка слагаемых).
+\end{lemmanum}
+\begin{proof}
+    Индукция по $|A|$:\\
+    База: $|A| = p \Longrightarrow A \simeq \Z_p$ - такое разложение единственно;\\
+    Шаг: Пусть $|A_i| = p^{n_i}, |B_i| = p^{m_i}$. Упорядочим их: пусть
+    \[n_1 \geqslant n_2 \geqslant ... \geqslant n_{\tilde{s}} \geqslant n_{\tilde{s}+1} = ... = n_s = 1\]
+    \[m_1 \geqslant m_2 \geqslant ... \geqslant m_{\tilde{t}} \geqslant m_{\tilde{t}+1} = ... = m_t = 1\]
+    Пусть $A_i = \langle a_i \rangle_{p^{n_i}}, B_i = \langle b_i \rangle_{p^{m_i}}$. Рассмотрим множество $pA = \{pa \ | \ a \in A\}$. Очевидно, что $pA \leq A$. Тогда:
+    \[A = \langle a_1 \rangle \oplus ... \oplus \langle a_{\tilde{s}} \rangle \oplus \langle a_{\tilde{s} + 1} \rangle \oplus ... \oplus \langle a_{s} \rangle\]
+    \[\forall a \in A: \ a = \alpha_1a_1 + ... + \alpha_{\tilde{s}}a_{\tilde{s}} + \alpha_{\tilde{s} + 1}a_{\tilde{s} + 1} + ... + \alpha_sa_s \Longrightarrow pa = \alpha_1pa_1 + ... + \alpha_{\tilde{s}}pa_{\tilde{s}}\]
+    ($A_{\tilde{s}+1},..., A_s$ - циклические порядка $p$, поэтому $\alpha_{\tilde{s} + 1}pa_{\tilde{s} + 1} + ... + \alpha_spa_s = 0$)\\
+    Тогда $pA = \langle pa_1 \rangle \oplus ... \oplus \langle pa_{\tilde{s}} \rangle$. При этом $\textup{ord }(pa_1) = p^{n_1 - 1}, ..., \textup{ord }(pa_{\tilde{s}}) = p^{n_{\tilde{s}} - 1}$.
+    Значит, $|pA| = p^{n_1 + ... + n_{\tilde{s}} - \tilde{s}} < |A|$.\\
+    Аналогично $pA = \langle pb_1 \rangle \oplus ... \oplus \langle pb_{\tilde{t}} \rangle, |pA| = p^{m_1 + ... + m_{\tilde{t}} - \tilde{t}} < |A|$.\\
+    Тогда по предположению индукции разложения $pA$ совпадают (порядок слагаемых одинаковый в силу упорядоченности), то есть 
+    \[\tilde{s} = \tilde{t}; \ \ \forall i = \overline{1...\tilde{s}}: \ n_i - 1 = m_i - 1 \Longrightarrow n_i = m_i\]
+    При этом $|A| = |A_1|\cdot...\cdot|A_{\tilde{s}}|\cdot|A_{\tilde{s} + 1}|\cdot...\cdot|A_s| = p^{n_1 + ... + n_{\tilde{s}} + s - \tilde{s}}$, а с другой стороны $|A| = |B_1|\cdot...\cdot|B_{\tilde{t}}|\cdot|B_{\tilde{t} + 1}|\cdot...\cdot|B_t| = p^{m_1 + ... + m_{\tilde{t}} + t - \tilde{t}}$. Отсюда
+    \[n_1 + ... + n_{\tilde{s}} + s - \tilde{s} = m_1 + ... + m_{\tilde{t}} + t - \tilde{t}; \ \tilde{s} = \tilde{t}; \ n_i = m_i \Longrightarrow s = t\]
+\end{proof}
 \begin{theorem}(\textbf{Основная т. о конечнопорождённых абелевых группах})\\
     Пусть $A$ - конечнопорождённая абелева группа. Тогда $A$ изоморфна прямой сумме (конечных) примарных циклических подгрупп и бесконечных циклических подгрупп:
     \[A \simeq \Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_k^{s_k}} \oplus \undermat{m}{\Z \oplus ... \oplus \Z}\]
     \newline
-    причём число $m$ и набор $\{p_1^{s_1},...,p_k^{s_k}\}$ определены однозначно для группы $A$.
+    причём число $m$ и набор $p_1^{s_1},...,p_k^{s_k}$ определены однозначно для группы $A$.
 \end{theorem}
 \begin{proof}\tab
     \begin{itemize}
@@ -515,7 +536,7 @@
         \item \textbf{Единственность разложения}\\
         По лемме 4 для $A$ имеет место разложение $A = \textup{Tor } A \oplus C$, где $\textup{Tor } A$ - конечная, $C$ - свободная. Заметим, что $\textup{rk } C = \textup{rk } A/\textup{Tor } A$. Так как $\textup{Tor } A$ - инвариант $A$, то $A/\textup{Tor } A$, а тогда и $\textup{rk } C$ - инварианты $A$.\\
         Так как $C \simeq \Z \oplus ... \oplus \Z$, а $\Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_k^{s_k}}$ - конечная, имеем $C = \undermat{m}{\Z \oplus ... \oplus \Z}$, то есть $m = \textup{rk } C$, а отсюда $m$ однозначно определено для $A$.\\
-        Исследование $\textup{Tor }A$ из леммы 5 будет на следующей лекции.
+        Пусть $B = \textup{Tor } A$. По лемме 5 $B \simeq A_{\tilde{p}_1} \oplus ... \oplus A_{\tilde{p}_l}$, причём это разложение на примарные подгруппы единственно с точностью до порядка слагаемых. А из леммы 6 каждая $A_{\tilde{p}_i}$ раскладывается на циклические примарные однозначно с точностью до порядка слагаемых. Значит, набор порядков $p_1^{s_1},...,p_k^{s_k}$ определён однозначно для $A$.
     \end{itemize}
 \end{proof}
 \begin{example}
@@ -527,7 +548,7 @@
     $V_4 = \langle a \rangle_2 \oplus \langle b \rangle_2 = \langle b \rangle_2 \oplus \langle c \rangle_2$, но разложение из теоремы единственно: $V = \Z_2 \oplus \Z_2$.
 \end{example}
 \begin{remark}
-    Для не конечнопорождённых абелевых групп утверждение теоремы неверно.
+    Для не конечнопорождённых абелевых групп утверждение теоремы неверно, контрпримером служит следующее упражнение:
 \end{remark}
 \begin{exercise}
     Доказать, что $\Q$ не раскладывается в прямую сумму циклических (вообще говоря, произвольных) подгрупп.
@@ -537,3 +558,38 @@
     \[h_1 = \frac{m_1}{n_1}, h_2 = \frac{m_2}{n_2} \Longrightarrow m_2n_1h_1 = m_1n_2h_2 \in H_1 \cap H_2\]
     то есть $H_1 \cap H_2 \neq \{0\}$. Отсюда $\Q$ не раскладывается в прямую сумму подгрупп.
 \end{proof}
+\begin{definition}
+    Экспонентой (периодом, показателем) конечной группы $G$ называется наименьшее общее кратное порядков элементов группы $G$.\\
+    Обозначается $\exp G$.
+\end{definition}
+\begin{subtheorem}
+    Если $G$ конечна, то $\exp G \ \mid \ |G|$
+\end{subtheorem}
+\begin{proof}
+    Для конечных групп знаем, что порядок группы является общим кратным всех порядков элементов группы. Так как наименьшее общее кратное набора чисел делит любое общее кратное этого набора, получаем необходимое утверждение. 
+\end{proof}
+\begin{subtheorem}
+    Конечная абелева группа $A$ циклическая $\Longleftrightarrow \exp A = |A|$.
+\end{subtheorem}
+\begin{proof}
+    $ \\ \Longrightarrow: \ \ A = \langle a \rangle \Longrightarrow \textup{ord } a = |A| \Longrightarrow \exp A \geqslant |A| \Longrightarrow \exp A = |A|$ (т.к. $\exp A \mid |A|$).\\
+    $ \Longleftarrow:$ От противного: пусть $\exp A = |A|$, но $A$ - не циклическая. По основной теореме о конечнопорождённых абелевых группах $A \simeq \Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_m^{s_m}}$. Если все $p_1,...,p_m$ различны, то $A$ циклическая по аналогу китайской теоремы об остатках - противоречие. Если среди них есть совпадающие, то можем без ограничения общности считать, что $p_1 = p_2, s_1 \leqslant s_2$.
+    Обозначим $\Z_{p_i^{s_i}} = \langle a_i \rangle \Longrightarrow \forall a \in A: a = \sum \limits_{i = 1}^m \alpha_ia_i$. Тогда если в равенстве $|A| = p_1^{s_1}p_2^{s_2}...p_m^{s_m}$ обозначить $t = p_2^{s_2}...p_m^{s_m}$, то $\forall a \in A: \ ta = \sum \limits_{i = 1}^m \alpha_ita_i = 0$. \\
+    (очевидно, что $ta_i = 0$ для $a \neq 1$, а $ta_1 = 0$ в силу $p_1 = p_2, s_1 \leqslant s_2$)\\
+    Тогда $t$ - общее кратное всех порядков элементов $A$, то есть $\exp A \mid t$, но $t < A = \exp A$ - противоречие. Значит, $A$ - циклическая.
+\end{proof}
+\begin{theorem}
+    Пусть $\F$ - произвольное поле, $A$ - конечная подгруппа в $\F^*$.\\
+    Тогда $A$ - циклическая.
+\end{theorem}
+\begin{proof} (мультипликативная терминология)\\
+    Из определения поля $F^*$ - абелева группа, а значит $A$ также абелева.\\
+    От противного: пусть $A$ не циклическая, т.е. $\exp A < |A|$. Тогда если $\exp A = n$, то $\forall a \in A \ a^{n} = 1$. Рассмотрим многочлен $x^n - 1$ над полем $\F$. Его степень равна $n$, а число его корней в $\F$ хотя бы $|A|$, что больше $n$ по предположению - противоречие. 
+\end{proof}
+\begin{example}
+    $\F = \Z_p: \ A = F^*$ - циклическая. Например, $\Z_5^* = \langle 3 \rangle_4$. 
+\end{example}
+\begin{consequense}
+    Мультипликативная группа любого конечного поля - циклическая.
+\end{consequense}
+\newpage

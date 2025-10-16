@@ -1,0 +1,66 @@
+\section{Действия группы на множестве}
+\begin{definition}
+    Пусть $X$ - произвольное множество. Биективное отображение $f: X \rightarrow X$ называется преобразованием множества $X$.\\
+    Множество всех преобразований $X$ обозначается $S(X)$.
+\end{definition}
+\begin{subtheorem}
+    $S(X)$ - группа относительно композиции.
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Ассоциативность - очевидно;
+        \item Нейтральный элемент - тождественное преобразование;
+        \item Обратный элемент - обратное преобразование (существует, т.к. биекция)
+    \end{enumerate}
+\end{proof}
+\begin{definition}
+    Группа $S(X)$ называется группой всех преобразований $X$.\\
+    Произвольная $H \leq S(X)$ называется группой преобразований множества $X$.
+\end{definition}
+\begin{example}
+    $GL(V)$ - группа невырожденных линейных операторов векторного пространства $V$ : $GL(V) \leq S(V)$.
+\end{example}
+\begin{definition}
+    Пусть $G$ - произвольная группа, $X$ - произвольное множество. Действием группы $G$ на множестве $X$ называется гомоморфизм $\alpha: G \rightarrow S(X)$.
+    Обозначается $G \acts X$ (или $G : H$)\\
+    Элементы множества $X$ при этом называются точками.\\
+    $\forall g \in G: g \mapsto \alpha(g)$ - преобразование множества $X$, т.е. биекция $X \rightarrow X$.\\
+    Равенство $\alpha(g)(x) = y (\in X)$ записывают как $\alpha(g)x = y$ или $gx = y$.
+\end{definition}
+Так как $\alpha$ - гомоморфизм, имеем:
+\[\forall g_1, g_2 \in G: \alpha(g_1g_2) = \alpha(g_1)\alpha(g_2) \Longrightarrow \alpha(g_1g_2)x = (\alpha(g_1)\alpha(g_2))x = \alpha(g_1)(\alpha(g_2)x)\]
+Отсюда $(g_1g_2)x = g_1(g_2x)$. Аналогично:
+\[\forall g \in G: \alpha(g^{-1}) = (\alpha(g))^{-1} \Longrightarrow \alpha(g^{-1})x = (\alpha(g)x)^{-1}\]
+Отсюда $g^{-1}x = y \Longleftrightarrow gy = x$.\\
+Если $H \leq S(X)$, то определено "тавтологическое"\  действие $H$ на $X: \alpha(h) = h$ - вложение $H \rightarrow S(X)$.
+\begin{example}
+    $GL(V) \acts V$: $\alpha(g)x = x \ \forall g \in G, x \in X$
+\end{example}
+В общем случае: $\alpha G \rightarrow S(X)$ - гомоморфизм, то есть $\textup{Im }\alpha \leq S(X), \textup{Ker }\alpha \unlhd G$.
+\begin{definition}
+    $\textup{Ker }\alpha$ называется ядром неэффективности действия группы $G$ на $X$.\\
+    Если $\textup{Ker }\alpha = \{e\}$, то действие называется эффективным.
+\end{definition}
+\begin{remark}
+    Всякое действие группы $G$ на множестве $X$ индуцирует и другие действия. Например:
+    \begin{enumerate}
+        \item $G \acts 2^X$;
+        \item Если $Y \subset X$ - инвариантное подмножество относительно $G$, то $G \acts Y$. 
+    \end{enumerate}
+\end{remark}
+\begin{example}
+    Пусть $K$ - равносторонний треугольник, $G = \textup{Sym }K \leq S(X)$, где $X$ - множество точек треугольника.\\
+    Тогда если $Y = \{v_1, v_2, v_3\}$ - вершины треугольника, а $Z = \{e_1, e_2, e_3\}$ - стороны треугольника, то действие $G \acts X$ индуцирует также и действия $G \acts Y, G \acts Z$
+\end{example}
+\begin{example}
+    Пусть задано $G \acts X$, $\F$ - поле, $Y = \{f: X \rightarrow \F\}$ - алгебра всех функций $X \rightarrow \F$. Рассмотрим $\alpha: G \rightarrow S(Y): \forall g \in G \ \alpha(g)f = \tilde{f}$ такое, что $\tilde{f}(x) = f(g^{-1}x) \ \forall x \in X$. Покажем, что $\alpha$ - гомоморфизм:
+    \[\forall g_1, g_2 \in G: \ (\alpha(g_1g_2)f)(x) = f((g_1g_2)^{-1}(x)) = f(g_2^{-1}(g_1^{-1}x)) = (\alpha(g_2)f)(g_1^{-1}x) =\]
+    \[= \alpha(g_1)(\alpha(g_2)f)(x) = (\alpha(g_1)\alpha(g_2)f)(x)\]
+\end{example}
+\begin{remark}
+    Если $G \acts X, H \leq G$, то определено также действие $H\acts X$ - ограничение действия на подгруппу.
+\end{remark}
+\begin{example}
+    $G = S_3 \acts X$, где $X = \{1, 2, 3\}$ - действуют как подстановки.\\
+    $H = \langle (1, 2, 3) \rangle \leq G$ - определено действие $H \acts X$ как ограничение $G \acts X$.
+\end{example}
