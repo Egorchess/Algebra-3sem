@@ -64,3 +64,218 @@
     $G = S_3 \acts X$, где $X = \{1, 2, 3\}$ - действуют как подстановки.\\
     $H = \langle (1, 2, 3) \rangle \leq G$ - определено действие $H \acts X$ как ограничение $G \acts X$.
 \end{example}
+\subsection{Орбиты и стабилизаторы}
+\begin{subtheorem}
+    Отношение, заданное правилом $x \sim y \Longleftrightarrow \exists g \in G: gx = y$, является отношением эквивалентности.
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{itemize}
+        \item Рефлексивность: $\forall x \in X: ex = x \Longrightarrow x \sim x$;
+        \item Симметричность: 
+        \[x \sim y \Longrightarrow \exists g \in G: gx = y \Longrightarrow g^{-1}gx = g^{-1}y \Longrightarrow g^{-1}y = x \Longrightarrow y \sim x\]
+        \item Транзитивность:
+    \end{itemize}
+    \[\begin{cases} x \sim y \\ y \sim z \end{cases} \Longrightarrow \exists g_1, g_2 \in G: \begin{cases}y = g_1x \\ z = g_2y \end{cases} \Longrightarrow z = g_2(g_1x) = (g_2g_1)x \Longrightarrow x \sim z\]
+\end{proof}
+\begin{definition}
+    Классы эквивалентности относительно этого отношения называются орбитами относительно действия $G \acts X$.\\
+    Обозначается $\textup{Orb}(x) = \{y \in X \ | \ \exists g \in G: y = gx\}$
+\end{definition}
+\begin{example}
+    Пусть $G$ - группа поворотов плоскости $\E^2$ вокруг точки $o$.\\
+    Тогда при $G \acts E^2 \ \ \textup{Orb}(x)$ - окружность с центром в точке $o$ радиуса $|ox|$.
+\end{example}
+\begin{definition}
+    Если $\textup{Orb}(x) = \{x\}$, то $x$ называется неподвижной точкой.
+\end{definition}
+\begin{definition}
+    Если $\textup{Orb}(x) = X$, то действие называется транзитивным.
+\end{definition}
+\begin{remark}
+    Это именно характеристка действия, так как $\exists x: \textup{Orb}(x) = X \Rightarrow \forall x \in X \ \textup{Orb}(x) = X$.
+\end{remark}
+\begin{example}
+    $G$ - группа сдвигов (параллельных переносов) $\E^2$.\\
+    Тогда $G \acts \E^2$ - транзитивное (из любой точки можно получить любую другую сдвигом на вектор, их соединяющий).
+\end{example}
+\begin{subtheorem}
+    Если $y \in \textup{Orb}(x)$, то $\textup{Orb}(y) = \textup{Orb}(x)$.
+\end{subtheorem}
+\begin{proof}
+    Напрямую следует из определения орбиты.
+\end{proof}
+\begin{definition}
+    Стабилизатором (стационарной подгруппой) точки $x$ называется множество $\textup{St}(x) = \{g \in G \ | \ gx = x\}$.
+\end{definition}
+\begin{subtheorem}
+    $\textup{St}(x) \leq G$.
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{itemize}
+        \item $g_1, g_2 \in St(x) \Longrightarrow g_1x = g_2x = x$\\
+        $(g_1g_2)x = g_1(g_2x) = g_1x = x \Longrightarrow g_1g_2 \in \textup{St}(x)$;
+        \item $ex = x \Longrightarrow e \in \textup{St}(x)$;
+        \item Пусть $g \in \textup{St}(x)$. Тогда $g(x) = x$, а также $g(g^{-1}x) = ex = x$. Так как образ $g$ при действии - биекция, имеем $x = g^{-1}x$, то есть $g^{-1} \in \textup{St}(x)$
+    \end{itemize}    
+\end{proof}
+\begin{subtheorem}
+    Если $y = gx$, то множество $M_y = \{h \in G \ | \ y = hx\}$ совпадает с множеством $g\textup{St}(x)$.
+\end{subtheorem}
+\begin{proof}
+    Покажем оба включения:\\
+    $\tab g \textup{St}(x) \subset M_y: \ \ \forall \tilde{g} \in \textup{St}(x): \ \tilde{g} = g\cdot g'$, где $g' \in \textup{St}(x)$. Тогда: $\tilde{g}x = (gg')x = g(g'x) = gx = y \Longrightarrow \tilde{g} \in M_y$. Отсюда $g \textup{St}(x) \subset M_y$.\\
+    $\tab M_y \subset g \textup{St}(x): \ \ \forall h \in M_y: \ y = hx$. Также $y = gx \Longrightarrow gx = hx \Longrightarrow (g^{-1}h)x = g^{-1}(hx) = x \Longrightarrow g^{-1}h \in \textup{St}(x) \Longrightarrow h \in g \textup{St}(x)$. Отсюда $M_y \subset g \textup{St}(x)$.
+\end{proof}
+\begin{theorem}
+    Отображение $\psi: \textup{Orb}(x) \rightarrow G/\textup{St}(x)$ (множество левых смежных классов, не факторгруппа!) такое, что $gx \mapsto g\textup{St}(x)$, является биекцией.
+\end{theorem}
+\begin{proof}\tab
+    \begin{itemize}
+        \item Корректность: \ Пусть $y = g_1x = g_2x$. Тогда:
+        \[g_1x = g_2x \Longrightarrow g_2^{-1}(g_1x) = (g_2^{-1}g_1)x = x \Longrightarrow g_2^{-1}g_1 \in \textup{St}(x) \Longrightarrow\]
+        \[\Longrightarrow g_1 \in g_2\textup{St}(x)\Longrightarrow g_1\textup{St}(x) = g_2\textup{St}(x) \Longrightarrow \psi(g_1x) = \psi(g_2x)\]
+        \item Сюръективность - очевидна ($\forall g \in G$ $g\textup{St}(x)$ будет образом точки $gx$);
+        \item Инъективность: Пусть $\psi(g_1) = \psi(g_2) $. Тогда:
+        \[g_1\textup{St}(x) = g_2\textup{St}(x) \Longrightarrow g_2^{-1}g_1 \in \textup{St}(x) \Longrightarrow (g_2^{-1}g_1)x = x \Longrightarrow g_1x = g_2x\] 
+    \end{itemize}
+\end{proof}
+\begin{consequensenum}
+    $|\textup{Orb}(x)| = |G/\textup{St}(x)| = |G : \textup{St}(x)|$.
+\end{consequensenum}
+\begin{consequensenum}
+    Если $G$ - конечная группа, то $|\textup{Orb}(x)| = \frac{|G|}{|\textup{St}(x)|}$.
+\end{consequensenum}
+\begin{example} 
+    Пусть $K \in \E^3$ - куб, $G = \textup{Sym}^+(K) = \{g \in \textup{Isom}^+(\E^3) \ | \ gK = K\}$ - группа вращений $K$.\\
+    Найдём $|G|$. Так как $G \leq S(X)$, где $X = \{v_1,...,v_8\}$ - множество вершин куба, $|G| < \infty$. Значит, если рассмотреть индуцированное действие $G \acts X$, то $|G| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
+    $\textup{Orb}(v_1) = X$ (вершина может перейти в любую) $\Longrightarrow$ $|\textup{Orb}(v_1)| = 8$;\\
+    $|\textup{St}(v_1)| = 3$ ($\textup{id}$ и два поворота вокруг большой диагонали, содержащей $v_1$);\\
+    Отсюда $|G| = 8 \cdot 3 = 24$.\\
+    Более того, покажем, что $G \simeq S_4$. Рассмотрим множество диагоналей куба $Y = \{d_1, d_2, d_3, d_4\}$. Так как при собственном движении диагонали переходят в диагонали, можем рассмотреть действие $G \acts Y \Longrightarrow \exists \alpha : G \rightarrow S(Y) \simeq S_4$ - гомоморфизм. Из $|G| = |S_4| = 24$ для доказательства того, что $\alpha$ - изоморфизм, достаточно показать сюръективность, а для этого достаточно показать, что все транспозиции диагоналей можно получить вращениями (достаточно, т.к. $S_4$ порождается транспозициями, а $\textup{Im } \alpha \leq S(Y)$).\\
+    Такая транспозиция - это поворот на $\pi$ относительно прямой, проходящей через середины двух рёбер, соединяющих концы диагоналей.
+\end{example}
+\begin{exercise}
+    Доказать, что если $L$ - правильный тетраэдр, то $\textup{Sym}(L) \simeq S_4$.
+\end{exercise}
+\begin{proof}
+    Будем действовать аналогично - пусть $X = \{v_1,...,v_4\}$ - множество вершин тетраэдра, тогда действие $\textup{Sym}(L) \acts E^3$ индуцирует действие $\textup{Sym}(L) \acts X$, а отсюда $|\textup{Sym}(L)| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
+    $\textup{Orb}(v_1) = X$ (вершина может перейти в любую) $\Longrightarrow$ $|\textup{Orb}(v_1)| = 4$;\\
+    $|\textup{St}(v_1)| = 6$ (любые перестановки вершин на грани, не содержащей $v_1$);\\
+    (проверка существования всех этих движений непосредственная)\\
+    Отсюда $|G| = 4 \cdot 6 = 24$.\\
+    Так как $S(X) \simeq S_4$, достаточно показать, что гомоморфизм действия - изоморфизм, а из равенства порядков достаточно сюръективности. Транспозиция любых двух вершин может быть получена симметрией относительно плоскости, проходящей через середину ребра, соединяющего вершины, и противоположное ребро.
+\end{proof}
+\begin{definition}
+    Элементы $a, b \in G$ называются сопряжёнными, если $\exists g \in G$ такой, что $b = g^{-1}ag$. Обозначается $b = a^g$.
+\end{definition}
+\begin{remark}
+    Такое обозначение не случайно: многие свойства возведения в степень присущи и оперции сопряжения. Однако в данном курсе эти свойства пока не понадобятся. 
+\end{remark}
+\begin{definition}
+    Подгруппы $L, K \leq G$ называются сопряжёнными, если $\exists g \in G$ такой, что $K = g^{-1}Lg = \{g^{-1}lg \ | \ l \in L\}$.
+\end{definition}
+\begin{subtheorem}
+    Пусть $y = gx$. Тогда $g\textup{St}(x)g^{-1} = \textup{St}(y)$.
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{itemize}
+        \item $g\textup{St}(x)g^{-1} \overset{?}{\subseteq} \textup{St}(y)$:\\
+        $\forall h \in \textup{St}(x): \ ghg^{-1}(y) = ghg^{-1}(gx) = gh(g^{-1}g)x = ghx = gx = y \Longrightarrow ghg^{-1} \in \textup{St}(y)$;
+        \item $\textup{St}(y) \overset{?}{\subseteq} g\textup{St}(x)g^{-1}$: (аналогичные рассуждения, т.к. $y = gx \Longleftrightarrow x = g^{-1}y$)\\
+        $\forall h \in \textup{St}(y): \ g^{-1}hg(x) = g^{-1}hg(g^{-1}y) = g^{-1}h(gg^{-1})y = g^{-1}hy = g^{-1}y = x \Longrightarrow g^{-1}hg \in \textup{St}(x) \Longrightarrow h \in g \textup{St}(x)g^{-1}$.
+    \end{itemize}
+\end{proof}
+\subsection{Действия группы на себе}
+Пусть $G$ - группа, $X = G$. Рассмотрим основные действия $G \acts G$ и покажем некоторые их свойства:
+\begin{enumerate}
+    \item Действие $G \acts G$ левыми сдвигами:\\
+    $\alpha: G \rightarrow S(G)$ такое, что $\forall g \in G, h \in G: \ \alpha(g)h = gh$.\\
+    Покажем, что $\alpha$ - гомоморфизм:
+    \[\forall g_1, g_2 \in G: \ \alpha(g_1g_2)h = (g_1g_2)h = g_1(g_2h) = \alpha(g_1)(\alpha(g_2)h) = (\alpha(g_1)\alpha(g_2))h\]
+    $g \in \textup{Ker } \alpha \Longrightarrow \forall h \in G: \ gh = h \Longrightarrow g = e \Longrightarrow \textup{Ker }\alpha = \{e\}$ - действие эффективно.\\
+    Значит, по теореме о гомоморфизме $G \simeq \textup{Im }\alpha \leq S(G)$.
+    \begin{consequense} (Теорема Кэли)\\
+        Пусть $|G| = n$. Тогда $G$ изоморфна некоторой подгруппе $S_n$.
+    \end{consequense}
+    \begin{proof}
+        Рассмотрим гомоморфизм $\alpha: G \rightarrow S(G)$, приведённый выше. Тогда $G \simeq \textup{Im }\alpha \leq S(G) \simeq S_n$, т.к. $|G| = n$.
+    \end{proof}
+    \item Действие $G \acts G$ правыми сдвигами:\\
+    $\alpha: G \rightarrow S(G)$ такое, что $\forall g \in G, h \in G: \ \alpha(g)h = hg^{-1}$.\\
+    Покажем, что $\alpha$ - гомоморфизм:
+    \[\forall g_1, g_2 \in G: \ \alpha(g_1g_2)h = hg_2^{-1}g_1^{-1} = \alpha(g_1)(hg_2^{-1}) = (\alpha(g_1)\alpha(g_2))h\]
+    $g \in \textup{Ker } \alpha \Longrightarrow \forall h \in G: \ hg^{-1} = h \Longrightarrow g = e \Longrightarrow \textup{Ker }\alpha = \{e\}$ - действие эффективно.
+    \item Действие $G \acts G$ сопряжениями:\\
+    $\alpha: G \rightarrow S(G)$ такое, что $\forall g \in G, h \in G: \ \alpha(g)h = ghg^{-1}$.\\
+    Покажем, что $\alpha$ - гомоморфизм:
+    \[\forall g_1, g_2 \in G: \ \alpha(g_1g_2)h = (g_1g_2)h(g_1g_2)^{-1} = g_1(g_2hg_2^{-1})g_1^{-1} = \alpha(g_1)(\alpha(g_2)h)\]
+    \begin{subtheorem}
+        $\forall g \in G: \ \alpha(g): G \rightarrow G$ - автоморфизм, т.е. изоморфизм $G$ на себя.
+    \end{subtheorem}
+    \begin{proof} 
+        Биективность $\alpha(g)$ следует из $\alpha(g) \in S(G)$. Докажем, что $\alpha(g)$ - гомоморфизм:
+        \[\alpha(g)(h_1h_2) = gh_1h_2g^{-1} = (gh_1g^{-1})(gh_2g^{-1}) = (\alpha(g)h_1)(\alpha(g)h_2)\]
+        Значит, $\alpha(g)$ - автоморфизм $G$.
+    \end{proof}
+    \begin{definition}
+        Такой автоморфизм называется внутренним автоморфизмом группы $G$ (относительно элемента $g$).
+    \end{definition}
+\end{enumerate}
+\begin{subtheorem}\tab
+    \begin{enumerate}
+        \item Множество $\textup{Aut }G$ всех автоморфизмов группы $G$ - группа относительно композиции, причём $\textup{Aut }G \leq S(G)$.
+        \item Множество $\textup{Int }G$ всех внутренних автоморфизмов группы $G$ - группа относительно композиции, причём $\textup{Int }G \unlhd \textup{Aut }G$.
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Достаточно проверить, что $\textup{Aut } G  \leq S(G)$:
+        \begin{itemize}
+            \item $\alpha_1, \alpha_2 \in \textup{Aut } G \Longrightarrow (\alpha_1\alpha_2) \in \textup{Aut } G$;
+            \item $\textup{id} \in \textup{Aut } G$;
+            \item $\alpha \in \textup{Aut } G \Longrightarrow \alpha^{-1} \in \textup{Aut } G$ (изоморфизм обратим).
+        \end{itemize} 
+        \item Для определения группы достаточно проверить, что $\textup{Int } G \leq \textup{Aut } G$:
+        \begin{itemize}
+            \item $\alpha_1, \alpha_2 \in \textup{Int } G \Longrightarrow \exists g_1, g_2 \in G: \alpha_i$ - сопряжение относительно $g_i$. Тогда $(\alpha_1\alpha_2)$ - сопряжение относительно $g_1g_2$, т.е. $(\alpha_1\alpha_2) \in \textup{Aut } G$;
+            \item $\textup{id} \in \textup{Int } G$ - сопряжение относительно $e$;
+            \item $\alpha \in \textup{Int } G \Longrightarrow \alpha$ - сопряжение относительно $g \in G \Longrightarrow \alpha^{-1}$ - сопряжение относительно $g^{-1} \Longrightarrow \alpha^{-1} \in \textup{Aut } G$.
+        \end{itemize}  
+        Проверим, что $\textup{Int }G \unlhd \textup{Aut }G$, т.е. $\forall \phi \in \textup{Aut }G,\ g \in G : \ \phi\alpha(g)\phi^{-1} \in \textup{Int } G$:
+        \[(\phi\alpha(g)\phi^{-1})(h) = \phi(\alpha(g)(\phi^{-1}(h))) = \phi(g\phi^{-1}(h)g^{-1}) = \phi(g)\phi(\phi^{-1}(h))\phi(g^{-1})\]
+        \[= \phi(g)h(\phi(g))^{-1} = \alpha(\phi(g))(h) \Longrightarrow \phi\alpha(g)\phi^{-1} = \alpha(\phi(g)) \in \textup{Int } G\]
+    \end{enumerate}
+\end{proof}
+\begin{definition}
+    $\textup{Aut }G$ называется группой аутизмов$_{\href{https://ru.wikipedia.org/wiki/\%D0\%90\%D1\%83\%D1\%82\%D0\%B8\%D0\%B7\%D0\%BC}{1}}$ группы $G$.\\
+    $\textup{Int }G$ называется группой внутренних автоморфизмов группы $G$.
+\end{definition}
+Пусть $\alpha$ - действие $G\acts G$ сопряжениями. Тогда 
+$\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{g \in G \ | \ ghg^{-1} = h \ \forall h \in G\} = \{g \in G \ | \ gh = hg \ \forall h \in G\}$, а $\textup{Im } \alpha = \textup{Int }G$.
+\begin{definition}
+    Множество $Z(G) = \{g \in G \ | \ gh = hg \ \forall h \in G\}$ называется центром группы $G$.
+\end{definition}
+\begin{properties}\tab
+    \begin{enumerate}
+        \item $Z(G) = \textup{Ker } \alpha$, где $\alpha$ - действие $G \acts G$ сопряжениями;
+        \item $Z(G) \unlhd G$;
+        \item $\forall H \leq Z(G): \ H \unlhd G$;
+        \item $Z(G) = G \Longleftrightarrow G$ - абелева
+    \end{enumerate}    
+\end{properties}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Доказано выше;
+        \item Следует из (1) ($\textup{Ker }\alpha \unlhd G$ - свойство гомоморфизма);
+        \item $\forall h \in H \leq Z(G),\ g \in G: ghg^{-1} = gg^{-1}h = h \in H \Longrightarrow H \unlhd G$;
+        \item Очевидно из определения абелевой группы.
+    \end{enumerate}
+\end{proof}
+
+
+
+
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}
+\setcounter{lemcount}{0}
