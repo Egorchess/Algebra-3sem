@@ -271,11 +271,105 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
         \item Очевидно из определения абелевой группы.
     \end{enumerate}
 \end{proof}
-
-
-
-
+\subsection{Классы сопряжённости и централизаторы}
+\begin{definition}
+    Пусть $\alpha$ - действие $G \acts G$ сопряжениями.\\
+    Классом сопряжённости $x \in G$ называется орбита $x$ относительно $\alpha$.\\
+    Централизатором элемента $x \in G$ называется стабилизатор $x$ относительно $\alpha$.\\
+    Класс сопряжённости обозначается как $x^G = \{y \in G \ | \ \exists g \in G: y = gxg^{-1}\}$.
+    Централизатор обозначается как $C(x) = \{g \in G \ |\ gxg^{-1} = x\}$.
+\end{definition}
+\begin{subtheoremnum}
+    Если $|G| < \infty$, то $|x^{G}| = \frac{|G|}{|C(x)|}$.
+\end{subtheoremnum}
+\begin{proof}
+    Очевидно следует из утверждения $|\textup{Orb}(x)| = \frac{|G|}{|\textup{St}(x)|}$.
+\end{proof}
+\begin{subtheoremnum}
+    $x^G = \{x\} \Longleftrightarrow x \in Z(G)$.
+\end{subtheoremnum}
+\begin{proof}
+    Очевидно следует из свойства 1 центра группы.
+\end{proof}
+\begin{definition}
+    Группа $G$ называется тривиальной, если $G = \{e\}$.
+\end{definition}
+\begin{theorem}
+    Центр любой нетривиальной $p$-группы нетривиален ($p$ - простое).
+\end{theorem}
+\begin{proof}
+    Пусть $|G| = p^s$. Рассмотрим случаи:
+    \begin{enumerate}
+        \item $G$ - абелева $\Longrightarrow Z(G) = G$.
+        \item $G$ - неабелева. Тогда $G$ разбивается на несколько непересекающихся классов сопряжённости: $G = \bigsqcup \limits_{i=1}^k x_i^G$.\\
+        По утверждению 2 $|x_i^G| = 1 \Longleftrightarrow x_i \in Z(G)$, а по утверждению 1 $|x_i^G| = \frac{|G|}{C(x_i)}$\\
+        Так как $G$ - $p$-группа, для $x_i \notin Z(G): \  |x_i^G| = p^{s_i}, s_i \geqslant 1$.\\
+        Без ограничения общности пусть только $x_1,...,x_m \in Z(G)$ (всегда будет хотя бы один, так как $e \in (G)$). Тогда: 
+        \[|G| = \undermat{|Z(G)|}{|x_1^G| + ... + |x_m^G|} + |x_{m+1}^G| + ... + |x_k^G| \Longrightarrow p^s = |Z(G)| + p^{s_{m+1}} + ... + p^{k}\]
+        \\
+        Отсюда $p \mid |Z(G)|$, а значит $|Z(G)| \geqslant p > 1$ - центр нетривиален.
+    \end{enumerate}
+\end{proof}
+\begin{consequense}
+    Если $|G| = p^2$, где $p$ - простое, то $G$ - абелева.
+\end{consequense}
+\begin{proof}
+    $G$ - $p$-группа $\Longrightarrow Z(G) \neq \{e\}$.\\
+    Предположим, что $G$ неабелева, т.е. что $Z(G) \neq G$. \\
+    Тогда так как $|Z(G)| \mid |G| = p^2$ и $|Z(G)| \neq 1, p^2$, имеем $|Z(G)| = p$.\\
+    Рассмотрим группу $G / Z(G)$. Её порядок равен $\frac{|G|}{|Z(G)|} = \frac{p^2}{p} = p \Longrightarrow G / Z(G)$ - циклическая, а значит $G / Z(G) = \langle aZ(G) \rangle$. Тогда $\forall g \in G \ \exists t \in \Z: g \in a^tZ(G)$. Рассмотрим два произвольных элемента $g_1, g_2 \in G$ и докажем, что $g_1g_2 = g_2g_1$:
+    \[\exists t_1, t_2 \in \Z: g_1 = a^{t_1}Z(G), g_2 = a^{t_2}Z(G) \Longrightarrow \exists z_1, z_2 \in Z(G):  g_1 = a^{t_1}z_1, g_2 = a^{t_2}z_2\]
+    Так как элементы центра коммутируют со всеми элементами $G$, имеем:
+    \[g_1g_2 = a^{t_1}z_1a^{t_2}z_2 = a^{t_1 + t_2}z_1z_2 = a^{t_2 + t_1}z_2z_1 = a^{t_2}z_2a^{t_1}z_1 = g_2g_1\]
+    а значит, $G$ - абелева, что противоречит предположению.\\
+    Отсюда $G$ не может быть неабелевой, т.е. $G$ - абелева. 
+\end{proof}
+\begin{lemmanum}
+    Пусть $X$ - произвольное множество, $G \leq S(X)$. Тогда если $\phi \in G$ т.ч. $\phi: x \mapsto y$, то $\forall \psi \in G: \ \psi \circ \phi \circ \psi^{-1}: \psi(x) \mapsto \psi(y)$.
+\end{lemmanum}
+\begin{proof}
+    Применим преобразование $\psi \circ \phi \circ \psi^{-1}$:
+    \[(\psi \circ \phi \circ \psi^{-1})(\psi(x)) = \psi (\phi (\psi^{-1}(\psi(x)))) = \psi(\phi(x)) = \psi(y)\]
+\end{proof}
+\begin{subtheoremnum}
+    Пусть $\sigma, \tilde{\sigma} \in S_n$. Тогда $\sigma, \tilde{\sigma}$ сопряжены в $S_n \Longleftrightarrow \sigma, \tilde{\sigma}$ имеют одинаковые цикловые структуры, т.е. наборы длин независимых циклов в разложении $\sigma, \tilde{\sigma}$ совпадают.
+\end{subtheoremnum}
+\begin{proof}
+    $ \\ \Longrightarrow: \ \ $ Пусть $\sigma, \tilde{\sigma}$ сопряжены в $S_n \Longrightarrow \exists \tau \in S_n: \tilde{\sigma} = \tau \sigma \tau^{-1}$.\\
+    Пусть $\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...$ - разложение $\sigma$ в независимые циклы. Тогда $\sigma: i_1 \mapsto i_2, i_2 \mapsto i_3,..., i_s \mapsto i_1$, а тогда по лемме 1 $\tau\sigma\tau^{-1}: \tau(i_1) \mapsto \tau(i_2), \tau(i_2) \mapsto \tau(i_3),..., \tau(i_s) \mapsto \tau(i_1)$. Аналогичное рассуждение можно провести для всех независимых циклов $\sigma$, а значит $\tau\sigma\tau^{-1} = (\tau(i_1)\tau(i_2)...\tau(i_s))(\tau(j_1)\tau(j_2)...\tau(j_t))...$ - длины циклов сохраняются.\\
+    $\Longleftarrow: \ \ $ Пусть $\sigma, \tilde{\sigma}$ имеют одинаковые цикловые структуры. Можем поменять порядок циклов так, чтобы длины $i$-х циклов в $\sigma$ и $\tilde{\sigma}$ совпадали, т.е.
+    \[\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...; \ \ \tilde{\sigma} = (\tilde{i}_1\tilde{i}_2...\tilde{i}_s)(\tilde{j}_1j\tilde{j}_2...\tilde{j}_t)...\]
+    Тогда если $\tau = \begin{pmatrix} i_1&i_2&...&i_s&j_1&j_2&...&j_t&...\\ \tilde{i}_1&\tilde{i}_2&...&\tilde{i}_s&\tilde{j}_1&\tilde{j}_2&...&\tilde{j}_t&... \end{pmatrix}$, то по лемме 1 $\tilde{\sigma} = \tau \sigma \tau^{-1}$.  
+\end{proof}
+\begin{examples}
+    $\sigma = (12)(345)(6)(7), \tilde{\sigma} = (15)(243)(6)(7)$ - сопряжены в $S_7$:\\$\tau = \begin{pmatrix} 1&2&3&4&5&6&7\\1&5&2&4&3&6&7  \end{pmatrix}$(из построения в теореме);\\
+    $\sigma = (123)(45), \tau = (135) \Longrightarrow \tau\sigma\tau^{-1} = (325)(41)$.
+\end{examples}
+\begin{consequense}
+    $Z(S_n) = \{\textup{id}\}$ при $n \leqslant 3$.
+\end{consequense}
+\begin{proof}
+    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 3, \exists k \neq i, j$. Тогда при $\tau = (jk): \ \tau\sigma\tau^{-1} = (ik...)...$ - не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$) - противоречие.  
+\end{proof}
+\begin{exercise}
+    Докажите, что $Z(A_n) = \{\textup{id}\}$ при $n \geqslant 4$.
+\end{exercise}
+\begin{proof}
+    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 4, \exists k, l: k,l,i,j$ попарно различны. Тогда при $\tau = (jkl): \ \tau\sigma\tau^{-1} = (ik...)...$ - не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$)- противоречие.  
+\end{proof}
+\begin{subtheorem}
+    $ \\H \unlhd G \Longleftrightarrow \begin{cases}
+        H \leq G\\
+        H \text{ - объединение нескольких классов сопряжённости } G
+    \end{cases}$
+\end{subtheorem}
+\begin{proof}
+    $ \\ \Longrightarrow: \ \ $ Пусть $H \unlhd G$. Очевидно, что $H \leq G$.\\
+    Если $h \in H$, то $\forall g \in G  \ ghg^{-1} \in H$ - $H$ содержит классы сопряжённости всех её элементов $\Longrightarrow H = \bigcup \limits_{h \in H} h^G$.\\
+    $\Longleftarrow: \ \ $ Пусть $H \leq G$ и $H$ - объединение классов сопряжённости. Тогда $\forall h \in H, g \in G: ghg^{-1} \in H$ ($H$ содержит весь класс сопряжённости $h^G$) $\Longrightarrow H \unlhd G$.   
+\end{proof}
 \setcounter{thcount}{0}
 \setcounter{concount}{0}
 \setcounter{subthcount}{0}
 \setcounter{lemcount}{0}
+\newpage
