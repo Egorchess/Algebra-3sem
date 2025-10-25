@@ -305,9 +305,9 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
         По утверждению 2 $|x_i^G| = 1 \Longleftrightarrow x_i \in Z(G)$, а по утверждению 1 $|x_i^G| = \frac{|G|}{C(x_i)}$\\
         Так как $G$ - $p$-группа, для $x_i \notin Z(G): \  |x_i^G| = p^{s_i}, s_i \geqslant 1$.\\
         Без ограничения общности пусть только $x_1,...,x_m \in Z(G)$ (всегда будет хотя бы один, так как $e \in (G)$). Тогда: 
-        \[|G| = \undermat{|Z(G)|}{|x_1^G| + ... + |x_m^G|} + |x_{m+1}^G| + ... + |x_k^G| \Longrightarrow p^s = |Z(G)| + p^{s_{m+1}} + ... + p^{k}\]
+        \[|G| = \undermat{|Z(G)|}{|x_1^G| + ... + |x_m^G|} + |x_{m+1}^G| + ... + |x_k^G| \Longrightarrow p^s = |Z(G)| + p^{s_{m+1}} + ... + p^{s_k}\]
         \\
-        Отсюда $p \mid |Z(G)|$, а значит $|Z(G)| \geqslant p > 1$ - центр нетривиален.
+        Отсюда $p \mid |Z(G)|$, а значит, $|Z(G)| \geqslant p > 1$ - центр нетривиален.
     \end{enumerate}
 \end{proof}
 \begin{consequense}
@@ -316,8 +316,8 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
 \begin{proof}
     $G$ - $p$-группа $\Longrightarrow Z(G) \neq \{e\}$.\\
     Предположим, что $G$ неабелева, т.е. что $Z(G) \neq G$. \\
-    Тогда так как $|Z(G)| \mid |G| = p^2$ и $|Z(G)| \neq 1, p^2$, имеем $|Z(G)| = p$.\\
-    Рассмотрим группу $G / Z(G)$. Её порядок равен $\frac{|G|}{|Z(G)|} = \frac{p^2}{p} = p \Longrightarrow G / Z(G)$ - циклическая, а значит $G / Z(G) = \langle aZ(G) \rangle$. Тогда $\forall g \in G \ \exists t \in \Z: g \in a^tZ(G)$. Рассмотрим два произвольных элемента $g_1, g_2 \in G$ и докажем, что $g_1g_2 = g_2g_1$:
+    Тогда, так как $|Z(G)| \mid |G| = p^2$ и $|Z(G)| \neq 1, p^2$, имеем $|Z(G)| = p$.\\
+    Рассмотрим группу $G / Z(G)$. Её порядок равен $\frac{|G|}{|Z(G)|} = \frac{p^2}{p} = p \Longrightarrow G / Z(G)$ - циклическая, а значит, $G / Z(G) = \langle aZ(G) \rangle$. Тогда $\forall g \in G \ \exists t \in \Z: g \in a^tZ(G)$. Рассмотрим два произвольных элемента $g_1, g_2 \in G$ и докажем, что $g_1g_2 = g_2g_1$:
     \[\exists t_1, t_2 \in \Z: g_1 = a^{t_1}Z(G), g_2 = a^{t_2}Z(G) \Longrightarrow \exists z_1, z_2 \in Z(G):  g_1 = a^{t_1}z_1, g_2 = a^{t_2}z_2\]
     Так как элементы центра коммутируют со всеми элементами $G$, имеем:
     \[g_1g_2 = a^{t_1}z_1a^{t_2}z_2 = a^{t_1 + t_2}z_1z_2 = a^{t_2 + t_1}z_2z_1 = a^{t_2}z_2a^{t_1}z_1 = g_2g_1\]
@@ -336,9 +336,9 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
 \end{subtheoremnum}
 \begin{proof}
     $ \\ \Longrightarrow: \ \ $ Пусть $\sigma, \tilde{\sigma}$ сопряжены в $S_n \Longrightarrow \exists \tau \in S_n: \tilde{\sigma} = \tau \sigma \tau^{-1}$.\\
-    Пусть $\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...$ - разложение $\sigma$ в независимые циклы. Тогда $\sigma: i_1 \mapsto i_2, i_2 \mapsto i_3,..., i_s \mapsto i_1$, а тогда по лемме 1 $\tau\sigma\tau^{-1}: \tau(i_1) \mapsto \tau(i_2), \tau(i_2) \mapsto \tau(i_3),..., \tau(i_s) \mapsto \tau(i_1)$. Аналогичное рассуждение можно провести для всех независимых циклов $\sigma$, а значит $\tau\sigma\tau^{-1} = (\tau(i_1)\tau(i_2)...\tau(i_s))(\tau(j_1)\tau(j_2)...\tau(j_t))...$ - длины циклов сохраняются.\\
+    Пусть $\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...$ - разложение $\sigma$ в независимые циклы. Тогда $\sigma: i_1 \mapsto i_2, i_2 \mapsto i_3,..., i_s \mapsto i_1$, а тогда по лемме 1 $\tau\sigma\tau^{-1}: \tau(i_1) \mapsto \tau(i_2), \tau(i_2) \mapsto \tau(i_3),..., \tau(i_s) \mapsto \tau(i_1)$. Аналогичное рассуждение можно провести для всех независимых циклов $\sigma$, а значит, $\tau\sigma\tau^{-1} = (\tau(i_1)\tau(i_2)...\tau(i_s))(\tau(j_1)\tau(j_2)...\tau(j_t))...$ - длины циклов сохраняются.\\
     $\Longleftarrow: \ \ $ Пусть $\sigma, \tilde{\sigma}$ имеют одинаковые цикловые структуры. Можем поменять порядок циклов так, чтобы длины $i$-х циклов в $\sigma$ и $\tilde{\sigma}$ совпадали, т.е.
-    \[\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...; \ \ \tilde{\sigma} = (\tilde{i}_1\tilde{i}_2...\tilde{i}_s)(\tilde{j}_1j\tilde{j}_2...\tilde{j}_t)...\]
+    \[\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...; \ \ \tilde{\sigma} = (\tilde{i}_1\tilde{i}_2...\tilde{i}_s)(\tilde{j}_1\tilde{j}_2...\tilde{j}_t)...\]
     Тогда если $\tau = \begin{pmatrix} i_1&i_2&...&i_s&j_1&j_2&...&j_t&...\\ \tilde{i}_1&\tilde{i}_2&...&\tilde{i}_s&\tilde{j}_1&\tilde{j}_2&...&\tilde{j}_t&... \end{pmatrix}$, то по лемме 1 $\tilde{\sigma} = \tau \sigma \tau^{-1}$.  
 \end{proof}
 \begin{examples}
