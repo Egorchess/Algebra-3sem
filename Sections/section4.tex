@@ -131,9 +131,9 @@
     Пусть $B = \langle ke \rangle, k \in \N \cup \{0\}$. Тогда:
     \[k = 0 \Longrightarrow B = \{0\} \Longrightarrow \textup{rk }B = 0 < 1 = \textup{rk }A\]
     \[k \neq 0 \Longrightarrow B = \langle ke \rangle \simeq \Z \Longrightarrow \textup{rk }B = 1 = \textup{rk }A\]
-    \tab Шаг: пусть $e_1,...,e_n$ - базис свободной группы $A$.\\
+    \tab Шаг: пусть $e_1,...,e_n$ - базис свободной абелевой группы $A$.\\
     Рассмотрим $\tilde{A} = \langle e_1,...,e_{n-1} \rangle \leq A$ - свободная абелева ранга $n-1$.\\
-    Рассмотрим $\tilde{B} = B \cap \tilde{A}$ - подгруппу $B$ в $\tilde{A}$. По предположению индукции $\tilde{B}$ - свободная абелева, причём $\textup{rk }\tilde{B} \leqslant \textup{rk }\tilde{A} = n-1$.\\
+    Рассмотрим $\tilde{B} = B \cap \tilde{A}$ - подгруппу $B$, которая содерится в $\tilde{A}$ (очевидно, что это подгруппа). По предположению индукции $\tilde{B}$ - свободная абелева, причём $\textup{rk }\tilde{B} \leqslant \textup{rk }\tilde{A} = n-1$.\\
     Если $B = \tilde{B}$, то теорема доказана. \\
     Иначе рассмотрим гомоморфизм (проекцию на $\langle e_n \rangle$) \\ $\pi: A \rightarrow \Z: \forall a = \alpha_1e_1 + ... + \alpha_ne_n \in A \ \pi(a) = \alpha_n \ (\textup{Ker }\pi = \tilde{A}, \textup{Im }\pi = \Z)$.\\
     Знаем, что $\pi(B)$ - подгруппа в $\Z \Longrightarrow \pi(B) = \langle k \rangle$ ($k \neq 0$ из $B \neq \tilde{B}$).\\
@@ -287,23 +287,9 @@
     \end{smallmatrix} \\\hline 0\end{pmatrix}$ (нулей среди $\alpha_i$ не будет, т.к. векторы базиса $f$ ЛНЗ).
     Отсюда и получаем требуемое равенство $\tilde{f}_i = \alpha_i\tilde{e}_i, \ \alpha_i \in \N$.
 \end{proof}
-\begin{theorem} (не было в лекции)\\
-    Пусть $G = G_1 \times ...\times  G_s$, $H = H_1 \times ...\times  H_s$, причём $H \subseteq G$ и $H_i \unlhd G_i$.\\
-    Тогда $H \unlhd G$ и $G/H = G_1/H_1 \times ... \times G_s/H_s$.
-\end{theorem}
-\begin{proof}
-    $ \\$Будем работать с внешним прямым произведением. Рассмотрим отображение
-    \[\phi: G \rightarrow G_1/H_1 \times ... \times G_s/H_s\]
-    \[\phi(g_1,...,g_s) = (g_1H_1,...,g_sH_s)\]
-    $\phi$ - гомоморфизм, так как по $i$-й компоненте $\phi$ реализует естественный гомоморфизм $G \rightarrow G/H_i$.\\
-    Ядро $\phi$ - наборы $(g_1,...,g_s)$, которые отображаются в нейтральный элемент, т.е. в $(H_1,...,H_s)$. Получаем
-    \[\phi(g_1,..., g_s) = (H_1,..., H_s) \Longleftrightarrow g_i \in H_i, \ \forall i = 1,... , s\]
-    Таким образом, $\textup{Ker }\phi = H_1\times ... \times H_s$.\\
-    Из определения $\phi$ очевидна сюръективность, т.е. $\textup{Im }\phi = G_1/H_1 \times ... \times G_s/H_s$, а значит, из теоремы о гомоморфизме получаем необходимое утверждение. 
-\end{proof}
 \begin{remark}
-    Для абелевых групп из теоремы получим следующее утверждение: 
-    Пусть $A = A_1 \oplus ... \oplus A_n$, $B \leq A$, $B = B_1 \oplus ...\oplus B_n$.\\
+    Для абелевых групп из теоремы \hyperref[theoremnum:th1]{4} прямого произведения получим следующее утверждение: 
+    Пусть $A = A_1 \oplus ... \oplus A_n$, $B = B_1 \oplus ...\oplus B_n$, причём $B \leq A, B_i \leq A_i$\\
     Тогда $A/B = (A_1 \oplus ... \oplus A_n)/(B_1 \oplus ...\oplus B_n) \simeq A_1/B_1 \oplus ...\oplus A_n/B_n$
 \end{remark}
 \begin{consequensenum}
@@ -416,7 +402,7 @@
     \begin{itemize}
         \item $B \cap C = \{0\}$: Рассмотрим $b \in B \cap C$. Тогда:
         \[b = \mu_1e_1 + ... + \mu_ne_n \Longrightarrow  \mu_1e_1 + ... + \mu_ne_n + B = b + B = B \Longrightarrow  \]
-        \[\Longrightarrow \phi(\lambda_1e_1 + ... + \lambda_ne_n + B) = \lambda_1\overline{e}_1 + ... + \lambda_n\overline{e}_n = 0 \Longrightarrow \forall i \ \lambda_i = 0 \]
+        \[\Longrightarrow \phi(\mu_1e_1 + ... + \mu_ne_n + B) = \mu_1\overline{e}_1 + ... + \mu_n\overline{e}_n = 0 \Longrightarrow \forall i \ \mu_i = 0 \]
         \item $A = B + C$: Рассмотрим произвольный $a \in A$.\\
         $\phi(a + B) = \overline{a} \in \Z^n$, где $\overline{a} = \mu_1\overline{e}_1 + ... + \mu_n\overline{e}_n$. Тогда 
         \[\phi(a - \sum \limits_i \mu_ie_i + B) = 0 \Longrightarrow a - \sum \limits_i \mu_ie_i + B = B \Longrightarrow \exists \ b \in B: a = b + \sum \limits_i \mu_ie_i\]

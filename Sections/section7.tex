@@ -1,0 +1,108 @@
+\section{Коммутант}
+\begin{definition}
+    Пусть $G$ - произвольная группа, $x, y \in G$.\\
+    Коммутатором элементов $x, y$ называется элемент $[x, y] = xyx^{-1}y^{-1}$. 
+\end{definition}
+\begin{properties}\tab
+    \begin{enumerate}
+        \item $[x, y] = e \Longleftrightarrow xy = yx$;
+        \item $[x, y]^{-1} = [y, x]$;
+        \item $\forall g \in G \ g[x, y]g^{-1} = [gxg^{-1}, gyg^{-1}]$.
+    \end{enumerate}    
+\end{properties}
+\begin{proof}
+    1, 2 - очевидно;
+    \[3: [gxg^{-1}, gyg^{-1}] = gxg^{-1}gyg^{-1}gx^{-1}g^{-1}gy^{-1}g^{-1} = gxyx^{-1}y^{-1}g^{-1} = g[x, y]g^{-1}\]
+\end{proof}
+\begin{definition}
+    Коммутантом группы $G$ называется подгруппа, порождённая всеми коммутаторами элементов группы $G$. Обозначается $[G]$ или $G'$.\\
+    $G' = \{\prod \limits_{i = 1}^k [x_i, y_i] \ | \ x_i, y_i \in G\}$.
+\end{definition}
+\begin{subtheorem}
+    $G' = \{e\} \Longleftrightarrow G$ - абелева.
+\end{subtheorem}
+\begin{proof}
+    Очевидно из свойства 1 коммутатора.
+\end{proof}
+\begin{subtheorem}
+    $G' \unlhd G$
+\end{subtheorem}
+\begin{proof}
+    \[\forall g \in G, [x, y] \in G': g[x, y]g^{-1} = [gxg^{-1}, gyg^{-1}] \in G' \Longrightarrow G' \unlhd G\]
+\end{proof}
+\begin{subtheorem}
+    Если $H \leq G$ и $G' \leq H$, то $H \unlhd G$.
+\end{subtheorem}
+\begin{proof}
+    $\forall g \in G, h \in H: \ ghg^{-1} = (ghg^{-1}h^{-1})h \in H$.
+\end{proof}
+\begin{subtheorem}
+    Пусть $N \unlhd G$. Тогда $G/N$ абелева $\Longleftrightarrow G' \subseteq N$.
+\end{subtheorem}
+\begin{proof}
+    $\\\Longrightarrow: \ $ Пусть $G/N$ абелева. Тогда $\forall g_1, g_2 \in G (g_1N)(g_2N) = (g_2N)(g_1N) \Longrightarrow g_1g_2N = g_2g_1N \Longrightarrow g_1^{-1}g_2^{-1}g_1g_2 = [g_2, g_1] \in N$;
+    $\\\Longleftarrow: \ $ Пусть $G' \subseteq N$. Тогда $\forall g_1, g_2 \in G [g_1, g_2] = g_1g_2g_1^{-1}g_2^{-1} \in N \Longrightarrow g_1g_2N = g_2g_1N \Longrightarrow (g_1N)(g_2N) = (g_2N)(g_1N)$
+\end{proof}
+\subsection{Коммутанты некоторых известных групп}
+\begin{lemmanum}\tab
+    \begin{enumerate}
+        \item $A_n$ порождается циклами длины 3;
+        \item Если $n \geqslant 5$, то $A_n$ порождается произведениями пар независимых транспозиций;
+    \end{enumerate}    
+\end{lemmanum}
+\begin{proof}
+    $\forall \sigma \in A_n \ \sigma = \prod \limits_{i=1}^k \tau_i$, где $\tau_i$ - транспозиции, $k$ - чётное, т.е. транспозиции разбиваются на пары - в паре транспозиции могут быть зависимы либо независимы.\\
+    Если $i, j, k, l$ - различные (случай $n \leqslant 3$ очевиден), то
+    \[(ij)(jk) = (ijk); \ (ij)(kl) = (ij)(jk)(jk)(kl) = (ijk)(jkl)\]
+    то есть $\sigma$ представима как произведение тройных циклов.\\
+    Если $n \geqslant 5$, то $\exists i, j, k, l, m$ - различные, а тогда $(ij)(jk) = ((ij)(lm))((lm)(jk))$. Таким образом можно избавиться от пар зависимых транспозиций, то есть $\sigma$ представима как произведение пар независимых транспозиций.
+\end{proof}
+\begin{subtheorem}
+    $S_n' = A_n$.
+\end{subtheorem}
+\begin{proof}
+    $|S_n / A_n| = 2 \Longrightarrow S_n / A_n$ - абелева $\Longrightarrow S_n' \subseteq A_n$.
+    Значит, достаточно доказать (по лемме 1), что $\forall i, j, k$ (различных) $(ikj) \in S_n'$.
+    \[[(ij), (jk)] = (ij)(jk)(ij)^{-1}(jk)^{-1} = (ik)(kj) = (ikj)\] 
+\end{proof}
+\begin{subtheorem}\tab
+    \begin{enumerate}
+        \item $n = 1, 2, 3 \Longrightarrow A_n' = \{\textup{id}\}$;
+        \item $n = 4 \Longrightarrow A_n' = V_4$;
+        \item $n \geqslant 5 \Longrightarrow A_n' = A_n$.
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item $n = 1, 2, 3$ - $A_n' = \{\textup{id}\}$, т.к. $A_n$ - абелева;
+        \item $n = 4$:
+        $V_4 \unlhd A_4, |V_4| = 4 \Longrightarrow |A_4/V_4| = 3$ - абелева. Значит, $A_4' \subseteq V_4$.
+        \[[(ijk), (ijm)] = (ijk)(ijm)(ijk)^{-1}(ijm)^{-1} = (jkm)(imj) = (ij)(km)\]
+        \item $n \geqslant 5$: По пункту 2 леммы 1 $A_n$ порождается парами независимых транспозиций. Аналогично $[(ijk), (ijm)] = (ij)(km)$, а значит все элементы $A_n$ принадлежат $A_n'$.
+    \end{enumerate}    
+\end{proof}
+\begin{lemmanum}
+    Группа $SL_n(\F)$ порождается элементарными матрицами, соответствующими преобразованиям $I$ типа ($a_i \mapsto a_i + \lambda a_j$).
+\end{lemmanum}
+\begin{proof}
+    Покажем, что $\forall A \in SL_n(\F)$ приводится к $E$ за конечное число операций $I$ типа (над строками):\\
+    Индукция по $n$. База $n=1$ очевидна ($\det A = a_{11} = 1 \Longrightarrow A = E$)\\
+    Шаг: Так как $\det A \neq 0, \ \exists i: a_{i1} \neq 0$.\\
+    Если $a_{11} = 0$, то прибавим $i$-ю строку к первой - сделаем $a_{11} \neq 0$. Пусть $n \geqslant 2$ (случай $n=1$)\\
+    Если $a_{11} \neq 1$, то сделаем $a_{12} \neq 0$ аналогично $a_{11}$, а далее прибавим к первой строке вторую, умноженную на $\frac{1-a_{11}}{a_{12}}$ - сделаем $a_{11} = 1$.
+    Далее с помощью первой строки сможем занулить оставшиеся элементы первого столбца. По предположению индукции подматрицу полученной матрицы без первой строки и первого столбца можно привести к единичному виду. Сделаем это, а далее с помощью $i$-й строки занулим $a_{1i}$.\\
+    Значит, $\forall A \in SL_n(\F)$ приводится к $E$ за конечное число операций $I$ типа над строками, то есть раскладывается в произведение соответствующих элементарных матриц.
+\end{proof}
+\begin{subtheorem}
+    Пусть $|\F| > 3$. Тогда $GL_n(\F)' = SL_n(\F)' = SL_n(\F)$.
+\end{subtheorem}
+\begin{proof}
+    Заметим, что $GL_n(\F) / SL_n(\F) = \F^*$ из теоремы о гомоморфизме для $\alpha: GL_n(\F) \rightarrow F^*$ такого, что $\alpha(A) = \det A$.
+    Отсюда $GL_n(\F) / SL_n(\F)$ - абелева (как мультипликативная группа поля), т.е. $GL_n(\F)' \subseteq SL_n(\F)$.\\
+    Если $|\F| > 3$, то $\exists \lambda \in \F: \lambda \neq 0, 1, -1$.
+    \[n = 2: \left[\begin{pmatrix} \lambda&0 \\ 0&\lambda^{-1} \end{pmatrix}, \begin{pmatrix} 1&a \\ 0&1 \end{pmatrix}\right] = \begin{pmatrix} 1&(\lambda^2-1)a \\ 0&1 \end{pmatrix} \ (\lambda \neq 0)\]
+    Любое ур-е $(\lambda^2 - 1)a = \mu$ решается для $a$, так как $\lambda \neq \pm 1$ - отсюда все верхнетреугольные элементарные матрицы I типа принадлежат $GL_n(\F)' $. Аналогично для нижнетреугольных - все элеметарные матрицы $I$ типа, а значит и $SL_n{\F}$, принадлежат $GL_n(\F)'$.\\
+    Случай $n > 2$ аналогичен: необходимо рассмотреть коммутатор 
+    \[[E + (\lambda - 1)E_{ii} + (\lambda^{-1} - 1)E_{jj}, E + aE_{ij}] = E + (\lambda^2 - 1)aE_{ij} \ (i \neq j)\]
+    Все рассуждения верны и для доказательства $SL_n(\F)\subseteq SL_n(\F)' $, т.к. определители всех рассматриваемых при взятии коммутаторов матриц равны 1.
+\end{proof}
