@@ -1,0 +1,214 @@
+\section{Разрешимые и простые группы}
+\subsection{Разрешимые группы}
+\begin{definition}
+    Кратный коммутант группы $G$:
+    \[G^{(1)} = G; \ \ G^{(k+1)} = [G^{(k)}, G^{(k)}] = (G^{(k)})'\]
+\end{definition}
+Очевидно, что $G \geq G^{(1)} \geq G^{(2)} \geq ...$.
+\begin{definition}
+    Группа $G$ называется разрешимой, если $\exists m \in \N: G^{(m)} = \{e\}$.
+\end{definition}
+\begin{subtheorem}
+    $G$ - абелева $\Longrightarrow \ G$ - разрешимая.
+\end{subtheorem}
+\begin{proof}
+    $G$ - абелева $\Longrightarrow \ G' = \{e\}$.
+\end{proof}
+\begin{subtheorem}\tab
+    \begin{enumerate}
+        \item $S_n$ - разрешимая $\Longleftrightarrow \ n \leqslant 4$; 
+        \item $A_n$ - разрешимая $\Longleftrightarrow \ n \leqslant 4$.
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof}
+    $S_n' = A_n$, поэтому $S_n$ - разрешимая $\Longleftrightarrow$ $A_n$ - разрешимая.\\
+    $A_2 = \{\textup{id}\}, \ A_3 \simeq \Z_3$ - абелева, $A_4' = V_4$ - абелева $\Longrightarrow$ при $n \leqslant 4 \ A_n$ разрешима. 
+    При $n \geq 5 \ A_n' = A_n$, то есть $A_n$ - не разрешимая. 
+\end{proof}
+\begin{subtheorem}
+    Пусть $\F$ - поле, $|\F| > 3$. Тогда $GL_n(\F)$ и $SL_n(\F)$ не разрешимы. 
+\end{subtheorem}
+\begin{proof}
+    $GL_n(\F)' = SL_n(\F)' = SL_n(\F)$.
+\end{proof}
+\begin{subtheorem}\tab
+    \begin{enumerate}
+        \item $G$ - разрешимая, $H \leq G \Longrightarrow H$ - разрешимая;
+        \item $G$ - разрешимая, $H \unlhd G \Longrightarrow G/H$ - разрешимая;
+        \item $H \unlhd G$, $H$ и $G/H$ - разрешимые  $\Longrightarrow G$ - разрешимая.
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Для начала заметим, что $H \leq G \Longrightarrow H' \leq G'$, так как любой коммутатор элементов из $H$ - также коммутатор элементов из $G$. Значит, $H^{(m)} \leq G^{(m)}$.\\
+        $G$ разрешима $\Longrightarrow \exists m: G^{(m)} = \{e\} \Longrightarrow H^{(m)} = \{e\} \Longrightarrow H$ разрешима.
+        \item Рассмотрим натуральный гомоморфизм $\pi: G \rightarrow G/H$. Очевидно, что образ коммутатора при гомоморфизме - коммутатор:
+        \[\alpha([x, y]) = \alpha(xyx^{-1}y^{-1}) = \alpha(x)\alpha(y)\alpha(x)^{-1}\alpha(y)^{-1} = [\alpha(x), \alpha(y)]\]
+        то есть $\pi(G') \subseteq (G/H)'$. При этом натуральный гомоморфизм сюръективен, а прообраз коммутатора - также коммутатор (аналогично), то есть $\pi(G') \subseteq (G/H)'$. Аналогично $\pi(G^{(m)}) = (G/H)^{(m)}$.\\
+        $G$ разрешима $\Longrightarrow \exists m: G^{(m)} = \{e\} \Longrightarrow \pi(G^{(m)}) = (G/H)^{(m)} = \{e\}$.
+        \item $(G/H)$ разрешима $\Longrightarrow \exists k: (G/H)^{(k)} = \{e\} \Longrightarrow \pi(G^{(k)}) = \{e\} \Rightarrow G^{(k)} \subseteq H$.\\
+        Также $H$ разрешима $\Longrightarrow \exists l: H^{(l)} = \{e\} \Longrightarrow (G^{(k)})^{(l)} = G^{(k+l)} = \{e\}$. Значит, $G$ разрешима.
+    \end{enumerate}
+\end{proof}
+\begin{subtheorem}
+    Группа $T_n(\F)$ невырожденных верхнетреугольных матриц порядка $n$ с коэффициентами из поля $\F$ разрешима.
+\end{subtheorem}
+\begin{proof}
+    Индукция по $n$:\\
+    База: $n = 1 \Longrightarrow T_n(\F) \simeq \F^*$ - абелева, а значит разрешима;\\
+    Шаг: пусть $T_{n-1}(\F)$ разрешима. Рассмотрим гомоморфизм $\phi: T_{n} \rightarrow T_{n-1}$:
+    \[\phi: \begin{pmatrix} a_{11}&&*&\vline&a_{1n} \\ &\ddots&&\vline&a_{2n} \\ 0&&a_{n-1 n-1} & \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & a_{nn}  \end{pmatrix} \mapsto \begin{pmatrix} a_{11}&&* \\ &\ddots& \\ 0&&a_{n-1 n-1} \end{pmatrix}\]
+    Этот гомоморфизм, очевидно, сюръективен, т.е по теореме о гомоморфизме $T_n/\textup{Ker }\phi \simeq T_{n-1}$. Так как $T_{n-1}$ разрешима по предположению индукции, по пункту 3 предыдущег утверждения достаточно доказать разрешимость группы
+    \[\textup{Ker }\phi = \left\{\begin{pmatrix} &&&\vline&a_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} \\ &&& \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & a_{nn}  \end{pmatrix}: a_{in} \in \F, a_{nn}\neq 0\right\}\]
+    Аналогично, рассмотрим гомоморфизм $\psi$: $\textup{Ker }\phi \rightarrow \F^*$:
+    \[\psi: \begin{pmatrix} &&&\vline&a_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} \\ &&& \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & a_{nn}  \end{pmatrix} \mapsto a_{nn}\]
+    Заметим, что $\textup{Im } \psi = \F^*$ - абелева, а $\textup{Ker }\psi$ состоит из матриц $\textup{Ker } \phi$ с $a_{nn} = 1$.
+    \[\begin{pmatrix} &&&\vline&a_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} \\ &&& \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & 1  \end{pmatrix} \cdot \begin{pmatrix} &&&\vline&b_{1n} \\ &\text{\Huge{E}}&&\vline&b_{2n} \\ &&& \vline & b_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & 1 \end{pmatrix} = \begin{pmatrix} &&&\vline&a_{1n} + b_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} + b_{2n} \\ &&& \vline & a_{n-1 n} + b_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & 1 \end{pmatrix}\]
+    Отсюда несложно видеть, что $\textup{Ker } \psi$ - также абелева, то есть разрешшимая группа. Значит, $\textup{Ker }\phi$ разрешима, а отсюда и $T_n(\F)$ - разрешимая группа.
+\end{proof}
+\begin{subtheoremnum}
+    Всякая конечная примарная группа $G$ разрешима.
+\end{subtheoremnum}
+\begin{proof}
+    Пусть $p$ - простое, для которого $G$ является $p$-группой.\\
+    Индукция по $n = |G|$:\\
+    База: $n = 1 \Longrightarrow G = \{e\}$ - разрешима;\\
+    Шаг: $G \neq \{e\} \Longrightarrow Z(G) \neq \{e\}$ (из примарности).
+    Знаем, что $Z(G) \unlhd G$ - рассмотрим $G / Z(G)$. Это также $p$-группа, причём порядка $\frac{|G|}{|Z(G)|}$, что меньше $n$. Значит, $G/Z(G)$ разрешима по предположению индукции, а также $Z(G)$ разрешима, так как абелева. Отсюда $G$ разрешима.
+\end{proof}
+\begin{subtheoremnum}
+    Всякая группа $G$ порядка $pq$, где $p,q$ простые, разрешима.
+\end{subtheoremnum}
+\begin{proof}
+    Случай $p = q$ очевиден из утверждения 1.\\
+    Пусть $p \neq q$ - без ограничения общности $p > q$.\\
+    По I теореме Силова $\exists$ силовская $p$-подгруппа $H \leq G$.\\
+    По III теореме Силова $\begin{cases}
+        N_p \mid q\\ N_p \equiv 1 (\textup{mod }p)
+    \end{cases} \Longrightarrow N_p = 1$\\(не может равняться $q$ в силу $q < p$)\\
+    Тогда по следствию из II теоремы Силова единственная силовская $p$-подгруппа $H$ нормальна в $G$. Притом $|H| = p \Longrightarrow H \simeq \Z_p$ и $|G/H| = q \Longrightarrow G/H \simeq \Z_q$ - абелевы. Значит, $H$ и $G/H$ разрешимы, а отсюда $G$ разрешима.
+\end{proof}
+\subsection{Простые группы}
+\begin{definition}
+    Подгруппа $H \leq G$ называется собственной, если $H \neq \{e\}, G$.
+\end{definition}
+\begin{definition}
+    Группа $G$ называется простой, если $G \neq \{e\}$ и в $G$ нет собственных нормальных подгрупп.
+\end{definition}
+\setcounter{subthcount}{0}
+\begin{subtheoremnum}
+    Абелева группа $G$ - простая $\Longleftrightarrow G \simeq \Z_p$, где $p$ - простое.
+\end{subtheoremnum}
+\begin{proof}
+    $ \\\Longleftarrow$ - очевидно ($\Z_p$ - циклическая, т.е. нет собственных подгрупп);
+    $ \\\Longrightarrow$: Пусть $G$ - абелева и простая группа. \\
+    Тогда $G$ циклическая, так как $\forall g \neq e: \langle g \rangle \unlhd G$ (т.к. абелева) и $g \neq \{e\}$, т.е. $\langle g \rangle = G$. Теперь, если $G$ бесконечна, то $G \simeq \Z$, но $2\Z \vartriangleleft \Z$ - противоречие, т.е. $G$ конечна. А если $|G|$ составное, то $G \simeq \Z_{mn}$, где $\langle m \rangle \vartriangleleft \Z_{mn} (m, n \neq 1)$. Значит, $|G|$ простое, т.е. $G \simeq \Z_p$. 
+\end{proof}
+\begin{subtheoremnum}
+    Если $G$ - разрешимая и простая, то $G \simeq \Z_p$, где $p$ - простое.
+\end{subtheoremnum}
+\begin{proof}
+    Так как $G$ разрешима, $G' \neq G$. Притом $G' \unlhd G$, а отсюда из простоты $G' = \{e\}$. Значит, $G$ - абелева, а тогда $\simeq \Z_p$ из утверждения 1.
+\end{proof}
+\begin{remark}
+    Таким образом, всякая простая группа либо изоморфна $\Z_p$, либо не абелева и не разрешима.
+\end{remark}
+\subsection{Значение простых групп}
+\begin{definition}
+    Субнормальной матрёшкой называется последовательность
+    \[G = G_0 \geq G_1 \geq ... \geq G_m = \{e\}; \ \ G_{i+1} \unlhd G_i \ \forall i = \overline{0....m-1}\]
+\end{definition}
+\begin{example}
+    $G = A_4, H = V_4, K = \langle (12)(34) \rangle$. Тогда $H \unlhd G$, $K \unlhd H$, то есть $G \geq H \geq K \geq \{\textup{id}\}$ - субнормальная матрёшка.
+\end{example}
+\begin{theorem}
+    Группа $G$ разрешима $\Longleftrightarrow G$ обладает субнормальной матрёшкой такой, что $G_i/G_{i+1}$ - абелева $\forall i = \overline{0....m-1}$. 
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\begin{definition}
+    Композиционным рядом называется субнормальная матрёшка такая, что $\forall i = \overline{0....m-1}: G_i \neq G_{i+1}$ и $G_i/ G_{i+1}$ - простая группа.
+\end{definition}
+\begin{subtheoremnum}
+    Всякая конечная группа $G$ обладает композиционным рядом.
+\end{subtheoremnum}
+\begin{proof}
+    Если $G$ - простая, то $G \gneq \{e\}$ - композиционный ряд.\\
+    Если $G$ - не простая, то $\exists$ собственная подгруппа $N \unlhd G$, т.е. $G \gneq N \gneq \{e\}$ - субнормальная матрёшка. Будем уплотнять эту матрёшку следующим образом:
+
+    Предположим, что в субнормальной матрёшке $G_0 \gneq ... \gneq G_m$ группа $G_i / G_{i+1}$ - не простая. Тогда $\exists$ собственная $\tilde{N} \unlhd G_i / G_{i+1}$.\\
+    Рассмотрим натуральный гомоморфизм $\pi: G_i \rightarrow G_i / G_{i+1}$. Тогда $\pi^{-1}(\tilde{N}) = \tilde{\tilde{N}}$ - собственная нормальная подгруппа $G_i$, содержащая $G_{i+1}$, то есть в матрёшке кусок "$...\gneq G_i \gneq G_{i+1} \gneq ...$"\ заменяем на "$...\gneq G_i \gneq \tilde{\tilde{N}} \gneq G_{i+1} \gneq ...$".
+    Очевидно, что процесс таких уплотнений конечен, так как количество членов матрёшки явно не превышает $|G|$ (порядок строго убывает). Значит, за конечное число уплотнений сможем построить композиционный ряд для $G$.
+\end{proof}
+\begin{theorem}(Жордана - Гёльдера)\\
+    Если группа $G$ обладает композиционным рядом, то набор факторгрупп в нём определён однозначно с точностью до перестановки. 
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\begin{example}
+    Пусть $G = \langle a \rangle_{12}$. Композиционные ряды:
+    \[\langle a \rangle_{12} > \langle a_6 \rangle > \langle a_3 \rangle > \{e\} \ \ - \ \ \Z_2, \Z_2, \Z_3;\]
+    \[\langle a \rangle_{12} > \langle a_6 \rangle > \langle a_2 \rangle > \{e\} \ \ - \ \ \Z_2, \Z_3, \Z_2;\]
+    \[\langle a \rangle_{12} > \langle a_4 \rangle > \langle a_2 \rangle > \{e\} \ \ - \ \ \Z_3, \Z_2, \Z_2;\]
+\end{example}
+\begin{remark}
+    Группа $G$ не задаётся однозначно набором простых факторов композиционного ряда: пусть набор факторов - $\Z_2, \Z_2$, тогда возможны композиционные ряды $0 < \Z_2 < \Z_4$ и $0 < \Z_2 < \Z_2 \oplus \Z_2 \simeq V_4$.
+\end{remark}
+% \subsection{Примеры простых групп}
+% \begin{exercise}
+%     Если $|G| < 60$ и $|G|$ - не простое, то $G$ - не простая группа.
+% \end{exercise}
+% \begin{theorem}
+%     Если $G$ - простая и $|G| = 60$, то $G \simeq A_5$. 
+% \end{theorem}
+% \begin{example}
+%     $A_2 = \{\textup{id}\}, A_3 \simeq \Z_3$ - простая, $A_4$ - не простая ($V_4 \unlhd A_4$).
+% \end{example}
+% \begin{lemmanum}
+%     Пусть $n \geqslant 5, N \leq  A_n, N \neq \{\textup{id}\}, N \unlhd S_n$. Тогда $A_n = N$.
+% \end{lemmanum}
+% \begin{proof}
+%     Так как $N \neq \{\textup{id}\}$, то $\exists \sigma \in N, \sigma \neq \textup{id}$. Разложим $\sigma$ в независимые циклы: $\sigma = c_1c_2...c_k$.\\
+%     Если $\exists i$ такой, что длина $c_i \geqslant 3$, то можем считать, что $c_1 = (i_1...i_k), k \geqslant 3$.
+%     Так как $N \unlhd S_n$, $\forall \tau \in S_n: \tau\sigma\tau^{-1} \in N$. Рассмотрим $\tau = (i_1i_2)$:
+%     \[\tau\sigma\tau^{-1}\sigma^{-1} \in N; \tau\sigma\tau^{-1}\sigma^{-1} = \tau c_1 \tau^{-1} c_1^{-1} = (i_1i_2i_3)\]
+%     Тогда в $N$ содержатся все тройные циклы - $A_n = N$.
+
+%     Если же $\forall i$ длина $c_i$ равна 2, то $k$ - чётно, т.е. $\sigma = (i_1i_2)(i_3i_4)c_3...c_k$.\\
+%     Тогда при аналогичных рассуждениях и $\tau = (i_2i_3)$:
+%     \[\tau\sigma\tau^{-1}\sigma^{-1} = (i_2i_3)(i_1i_2)(i_3i_4)(i_2i_3)(i_1i_2)(i_3i_4) = (i_1i_3)(i_2i_4)(i_1i_2)(i_3i_4) = (i_1i_4)(i_2i_3) \in N\]
+%     Так как в $S_n$ все произведения пар независимых транспозиций сопряжены, все пары независимых транспозиций $\in N$.
+%     Так как $n \geqslant 5$, $A_n$ порождается парами незав. транспозиций, а значит, $N = A_n$
+% \end{proof}
+% \begin{theorem}
+%     $A_n$ - простая при $n \geqslant 5$.
+% \end{theorem}
+% \begin{proof}
+%     Рассмотрим произвольную нормальную подгруппу $N \unlhd A_n$. Если $N \unlhd S_n$, то л1. Иначе:\\
+%     $|S_n : A_n| = 2, S_n = A_n \sqcup (12)A_n$. Обозначим $N_1 = N, N_2 = (12)N_1(12)^{-1}$. Так как $N \not \unlhd \S_n$, имеем $N_1 \neq N_2$. Притом $|N_1| \times |N_2|$.
+%     Докажем, что $A_n = N_1 \times N_2$:
+%     \begin{enumerate}
+%         \item $N_1 \unlhd A_n$ - уже имеем;
+%         \item $N_2 \unlhd A_n$:
+%         \[\forall \sigma \in A_n: \sigma N_2\sigma^{-1} = \sigma(12)N_1(12)\sigma^{-1} = (12)\underset{ = \tilde{\sigma}}{(12)\sigma(12)}N_1\underset{=\tilde{\sigma}^{-1}}{(12)\sigma^{-1}(12)}(12) = N_2\]
+%         \item $N_1 \cap N_2 = \{\textup{id}\}$: Пусть $K = N_1 \cap N_2 \leq A_n$. Тогда $K \unlhd S_n$ (ну догадайтесь, что сложно что ли). Тогда по лемме 1 и $K \neq A_n$ имеем $K = \{\textup{id}\}$.
+%         \item $N_1N_2 = A_n$: Пусть $L = N_1N_2 \leq A_n$ Тогда $L \unlhd S_n$ и $\neq id$ - победа по лемме 1.
+%     \end{enumerate}
+%     Теперь индукция по $n \leq 5$.
+%     База: $n = 5$ - $|A_5| = 60$ - не квадрат;
+%     Шаг: Пусть $A_{n-1}$ - простая. Тогда в $A_n$ существует $H = \{\sigma \in A_n \ | \ \sigma(n) = n\} \simeq A_{n-1}$.
+%     $H \leq A_n = N_1 \times N_2$. Тогда $H \cap N_2 \unlhd H$ вау, непосредственно.
+%     Так как $H$ - простая, то $H \cap N_2 = H$ либо $id$.
+%     Если $H \cap N_2 = H$, то $H \subseteq N-2 \Longrightarrow |H| \leqslant |N_2| = |N|$.\\
+%     Если $H \cap N_2 = \{id\}$, то гомомомомомоморфизм $\phi: A_n = N_1 \times N_2 \rightarrow N_1$. $\textup{Ker } \phi = N_2 \Longrightarrow H \simeq \textup{Im } \phi \leq N_1 \Longrightarrow |H| \leqslant |N_1| = |N|$.
+%     В каждом случае все плохо.
+% \end{proof}\
+% \begin{theorem}
+%     $SO_3$ - простая (б/д).
+% \end{theorem}
+% \setcounter{thcount}{0}
+% \setcounter{concount}{0}
+% \setcounter{subthcount}{0}
+% \newpage

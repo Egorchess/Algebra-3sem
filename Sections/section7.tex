@@ -40,8 +40,8 @@
     Пусть $N \unlhd G$. Тогда $G/N$ абелева $\Longleftrightarrow G' \subseteq N$.
 \end{subtheorem}
 \begin{proof}
-    $\\\Longrightarrow: \ $ Пусть $G/N$ абелева. Тогда $\forall g_1, g_2 \in G (g_1N)(g_2N) = (g_2N)(g_1N) \Longrightarrow g_1g_2N = g_2g_1N \Longrightarrow g_1^{-1}g_2^{-1}g_1g_2 = [g_2, g_1] \in N$;
-    $\\\Longleftarrow: \ $ Пусть $G' \subseteq N$. Тогда $\forall g_1, g_2 \in G [g_1, g_2] = g_1g_2g_1^{-1}g_2^{-1} \in N \Longrightarrow g_1g_2N = g_2g_1N \Longrightarrow (g_1N)(g_2N) = (g_2N)(g_1N)$
+    $\\\Longrightarrow: \ $ Пусть $G/N$ абелева. Тогда $\forall g_1, g_2 \in G: \ (g_1N)(g_2N) = (g_2N)(g_1N) \Longrightarrow g_1g_2N = g_2g_1N \Longrightarrow g_1^{-1}g_2^{-1}g_1g_2 = [g_2, g_1] \in N$;
+    $\\\Longleftarrow: \ $ Пусть $G' \subseteq N$. Тогда $\forall g_1, g_2 \in G: \ [g_1, g_2] = g_1g_2g_1^{-1}g_2^{-1} \in N \Longrightarrow g_1g_2N = g_2g_1N \Longrightarrow (g_1N)(g_2N) = (g_2N)(g_1N)$
 \end{proof}
 \subsection{Коммутанты некоторых известных групп}
 \begin{lemmanum}\tab
@@ -78,7 +78,7 @@
         \item $n = 4$:
         $V_4 \unlhd A_4, |V_4| = 4 \Longrightarrow |A_4/V_4| = 3$ - абелева. Значит, $A_4' \subseteq V_4$.
         \[[(ijk), (ijm)] = (ijk)(ijm)(ijk)^{-1}(ijm)^{-1} = (jkm)(imj) = (ij)(km)\]
-        \item $n \geqslant 5$: По пункту 2 леммы 1 $A_n$ порождается парами независимых транспозиций. Аналогично $[(ijk), (ijm)] = (ij)(km)$, а значит все элементы $A_n$ принадлежат $A_n'$.
+        \item $n \geqslant 5$: По пункту 2 леммы 1 $A_n$ порождается парами независимых транспозиций. Аналогично $[(ijk), (ijm)] = (ij)(km)$, а значит, все элементы $A_n$ принадлежат $A_n'$.
     \end{enumerate}    
 \end{proof}
 \begin{lemmanum}
@@ -101,8 +101,12 @@
     Отсюда $GL_n(\F) / SL_n(\F)$ - абелева (как мультипликативная группа поля), т.е. $GL_n(\F)' \subseteq SL_n(\F)$.\\
     Если $|\F| > 3$, то $\exists \lambda \in \F: \lambda \neq 0, 1, -1$.
     \[n = 2: \left[\begin{pmatrix} \lambda&0 \\ 0&\lambda^{-1} \end{pmatrix}, \begin{pmatrix} 1&a \\ 0&1 \end{pmatrix}\right] = \begin{pmatrix} 1&(\lambda^2-1)a \\ 0&1 \end{pmatrix} \ (\lambda \neq 0)\]
-    Любое ур-е $(\lambda^2 - 1)a = \mu$ решается для $a$, так как $\lambda \neq \pm 1$ - отсюда все верхнетреугольные элементарные матрицы I типа принадлежат $GL_n(\F)' $. Аналогично для нижнетреугольных - все элеметарные матрицы $I$ типа, а значит и $SL_n{\F}$, принадлежат $GL_n(\F)'$.\\
+    Любое ур-е $(\lambda^2 - 1)a = \mu$ решается для $a$, так как $\lambda \neq \pm 1$ - отсюда все верхнетреугольные элементарные матрицы $I$ типа принадлежат $GL_n(\F)' $. Аналогично для нижнетреугольных - все элементарные матрицы $I$ типа, а отсюда и $SL_n{\F}$, принадлежат $GL_n(\F)'$.\\
     Случай $n > 2$ аналогичен: необходимо рассмотреть коммутатор 
     \[[E + (\lambda - 1)E_{ii} + (\lambda^{-1} - 1)E_{jj}, E + aE_{ij}] = E + (\lambda^2 - 1)aE_{ij} \ (i \neq j)\]
     Все рассуждения верны и для доказательства $SL_n(\F)\subseteq SL_n(\F)' $, т.к. определители всех рассматриваемых при взятии коммутаторов матриц равны 1.
 \end{proof}
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}
+\newpage
