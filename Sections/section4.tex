@@ -455,7 +455,7 @@
     \[b = \lambda_1b_1 + ... + \lambda_nb_n, \ \lambda_i \in \Z, 0 \leqslant \lambda_i < k_i \Longrightarrow |\textup{Tor } A| \leqslant k_1...k_n \]
 \end{proof}
 \begin{lemmanum}
-    Пусть $A$ - конечная абелева группа. Тогда $A$ раскладывается в прямую сумму своих $p$-подгрупп $A_p$, причём набор этих подгрупп определён однозначно.
+    Пусть $A$ - конечная абелева группа, $|A| = p_1^{k_1}...p_s^{k_s}$ Тогда $A$ раскладывается в прямую сумму $A_{p_1} \oplus ... \oplus A_{p_s}$, где $A_{p_i}$ - $p_i$-подгруппа, причём набор этих подгрупп определён однозначно.
 \end{lemmanum}
 \begin{proof}\tab
     \begin{itemize}
@@ -470,7 +470,7 @@
         Докажем, что $A = A_{p_1} \oplus ... \oplus A_{p_s}$:
         \begin{enumerate}
             \item $A_{p_1} \oplus ... \oplus A_{p_s}$ - прямая сумма.\\
-            По критерию прямой суммы достаточно показать, что $A_{p_i} \cap \langle \bigcup \limits_{j \neq i} A_{p_j} \rangle = \{0\}$. Рассмотрим $a \in A_{p_i} \cap \langle \bigcup \limits_{j \neq i} A_{p_j} \rangle$. Так как $a \in A_{p_i}$, то $p_i^{m_i}a = 0$. С другой стороны, $a = \sum \limits_{j \neq i} a_j$, то есть $(\prod \limits_{j \neq i} p_j^{m_j})a = 0$.\\
+            Из критерия прямой суммы достаточно показать, что $A_{p_i} \cap \langle A_{p_j} | j \neq i\rangle\\ = \{0\}$. Рассмотрим $a \in A_{p_i} \cap \langle A_{p_j} | \ j \neq i\rangle$. Так как $a \in A_{p_i}$, то $p_i^{m_i}a = 0$. С другой стороны, $a = \sum \limits_{j \neq i} a_j$, то есть $(\prod \limits_{j \neq i} p_j^{m_j})a = 0$.\\
             Так как $\prod \limits_{j \neq i} p_j^{m_j}$ и $p_i^{m_i}$ взаимно просты, имеем $1 \cdot a = a = 0$.
             \item $A = A_{p_1} \oplus ... \oplus A_{p_s}$.
             Рассмотрим произвольный $a \in A$. Пусть $\textup{ord } a = n = p_1^{\alpha_1}...p_s^{\alpha_s}$. Обозначим $n_i = \frac{n}{p_i^{\alpha_i}}$.\\
@@ -478,9 +478,9 @@
             Отсюда $a = l_1n_1a + ... + l_sn_sa$. Так как $p_i^{\alpha_i}(l_in_ia) = l_ina = 0$, имеем $l_in_ia \in A_{p_i}$. Значит, $a$ раскладывается в линейную комбинацию элементов $A_{p_i}$.
         \end{enumerate} 
         \item Единственность разложения - от противного: пусть
-        \[A = \tilde{A}_{\tilde{p}_1} \oplus ... \oplus \tilde{A}_{\tilde{p}_s} = A_{p_1} \oplus ... \oplus A_{p_s}\]
-        Очевидно, что (возможно, после переупорядочивания) $p_i = \tilde{p}_i$, так как порядок подгруппы конечной группы делит порядок группы. Так как $A_{p_i}$ - максимальная $p_i$-подгруппа в $A$ (содержит все элементы $A$ порядка $p_i^m$), $\tilde{A}_{p_i} \subseteq A_{p_i}$.\\
-        Предположим, что $\exists a \in A_{p_i}: a \notin \tilde{A}_{p_i}$. Так как $a \in A = \tilde{A}_{p_1} \oplus ... \oplus \tilde{A}_{p_s}$, $a = \tilde{a}_{p_i} + b$, где $\tilde{a}_{p_i} \in \tilde{A}_{p_i}, b \in \langle \bigcup \limits_{j \neq i} A_{p_j} \rangle$. Тогда $\textup{ord } a = p_i^{m_1}, \textup{ord } \tilde{a}_{p_i} = p_i^{m_2} \Longrightarrow$
+        \[A = \tilde{A}_{p_1} \oplus ... \oplus \tilde{A}_{p_s} = A_{p_1} \oplus ... \oplus A_{p_s}\]
+        Так как $A_{p_i}$ - максимальная $p_i$-подгруппа в $A$ (содержит все элементы $A$ порядка $p_i^m$), $\tilde{A}_{p_i} \subseteq A_{p_i}$.\\
+        Предположим, что $\exists a \in A_{p_i}: a \notin \tilde{A}_{p_i}$. Так как $a \in A = \tilde{A}_{p_1} \oplus ... \oplus \tilde{A}_{p_s}$, $a = \tilde{a}_{p_i} + b$, где $\tilde{a}_{p_i} \in \tilde{A}_{p_i}, b \in \langle \tilde{A}_{p_j} \ |\ j\neq i \rangle$. Тогда $\textup{ord } a = p_i^{m_1}, \textup{ord } \tilde{a}_{p_i} = p_i^{m_2} \Longrightarrow$
         \[ p_i^{m_1 + m_2}a = p_i^{m_1 + m_2}\tilde{a}_{p_i} + p_i^{m_1 + m_2}b \Longrightarrow p_i^{m_1 + m_2}b = 0, \text{а также } \prod \limits_{j \neq i} p_j^{\alpha_j} b = 0\]
         $\prod \limits_{j \neq i} p_j^{\alpha_j}$ и $p_i^{m_1+m_2}$ взаимно просты $\Longrightarrow b = 0$, т.е. $a = \tilde{a}_{p_i} \in \tilde{A}_{p_i}$ - противоречие.\\
         Значит, такого $a$ не существует, то есть $A_{p_i} \subseteq \tilde{A}_{p_i}$. Отсюда $A_{p_i} = \tilde{A}_{p_i}$.
@@ -493,8 +493,8 @@
     Индукция по $|A|$:\\
     База: $|A| = p \Longrightarrow A \simeq \Z_p$ - такое разложение единственно;\\
     Шаг: Пусть $|A_i| = p^{n_i}, |B_i| = p^{m_i}$. Упорядочим их: пусть
-    \[n_1 \geqslant n_2 \geqslant ... \geqslant n_{\tilde{s}} \geqslant n_{\tilde{s}+1} = ... = n_s = 1\]
-    \[m_1 \geqslant m_2 \geqslant ... \geqslant m_{\tilde{t}} \geqslant m_{\tilde{t}+1} = ... = m_t = 1\]
+    \[n_1 \geqslant n_2 \geqslant ... \geqslant n_{\tilde{s}} > n_{\tilde{s}+1} = ... = n_s = 1\]
+    \[m_1 \geqslant m_2 \geqslant ... \geqslant m_{\tilde{t}} > m_{\tilde{t}+1} = ... = m_t = 1\]
     Пусть $A_i = \langle a_i \rangle_{p^{n_i}}, B_i = \langle b_i \rangle_{p^{m_i}}$. Рассмотрим множество $pA = \{pa \ | \ a \in A\}$. Очевидно, что $pA \leq A$. Тогда:
     \[A = \langle a_1 \rangle \oplus ... \oplus \langle a_{\tilde{s}} \rangle \oplus \langle a_{\tilde{s} + 1} \rangle \oplus ... \oplus \langle a_{s} \rangle\]
     \[\forall a \in A: \ a = \alpha_1a_1 + ... + \alpha_{\tilde{s}}a_{\tilde{s}} + \alpha_{\tilde{s} + 1}a_{\tilde{s} + 1} + ... + \alpha_sa_s \Longrightarrow pa = \alpha_1pa_1 + ... + \alpha_{\tilde{s}}pa_{\tilde{s}}\]
