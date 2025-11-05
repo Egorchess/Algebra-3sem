@@ -34,7 +34,7 @@
 Отсюда $g^{-1}x = y \Longleftrightarrow gy = x$.\\
 Если $H \leq S(X)$, то определено "тавтологическое"\  действие $H$ на $X: \alpha(h) = h$ - вложение $H \rightarrow S(X)$.
 \begin{example}
-    $GL(V) \acts V$: $\alpha(g)x = x \ \forall g \in G, x \in X$
+    $GL(V) \acts V$: $\alpha(g)x = g(x) \ \forall g \in GL(V), x \in X$
 \end{example}
 В общем случае: $\alpha G \rightarrow S(X)$ - гомоморфизм, то есть $\textup{Im }\alpha \leq S(X), \textup{Ker }\alpha \unlhd G$.
 \begin{definition}
@@ -61,7 +61,7 @@
     Если $G \acts X, H \leq G$, то определено также действие $H\acts X$ - ограничение действия на подгруппу.
 \end{remark}
 \begin{example}
-    $G = S_3 \acts X$, где $X = \{1, 2, 3\}$ - действуют как подстановки.\\
+    $G = S_3; \ G \acts X$, где $X = \{1, 2, 3\}$ - действуют как подстановки.\\
     $H = \langle (1, 2, 3) \rangle \leq G$ - определено действие $H \acts X$ как ограничение $G \acts X$.
 \end{example}
 \subsection{Орбиты и стабилизаторы}
@@ -123,7 +123,7 @@
 \end{subtheorem}
 \begin{proof}
     Покажем оба включения:\\
-    $\tab g \textup{St}(x) \subset M_y: \ \ \forall \tilde{g} \in \textup{St}(x): \ \tilde{g} = g\cdot g'$, где $g' \in \textup{St}(x)$. Тогда: $\tilde{g}x = (gg')x = g(g'x) = gx = y \Longrightarrow \tilde{g} \in M_y$. Отсюда $g \textup{St}(x) \subset M_y$.\\
+    $\tab g \textup{St}(x) \subset M_y: \ \ \forall \tilde{g} \in g\textup{St}(x): \ \tilde{g} = g\cdot g'$, где $g' \in \textup{St}(x)$. Тогда: $\tilde{g}x = (gg')x = g(g'x) = gx = y \Longrightarrow \tilde{g} \in M_y$. Отсюда $g \textup{St}(x) \subset M_y$.\\
     $\tab M_y \subset g \textup{St}(x): \ \ \forall h \in M_y: \ y = hx$. Также $y = gx \Longrightarrow gx = hx \Longrightarrow (g^{-1}h)x = g^{-1}(hx) = x \Longrightarrow g^{-1}h \in \textup{St}(x) \Longrightarrow h \in g \textup{St}(x)$. Отсюда $M_y \subset g \textup{St}(x)$.
 \end{proof}
 \begin{theorem}
