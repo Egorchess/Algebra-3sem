@@ -44,7 +44,7 @@
         $G$ разрешима $\Longrightarrow \exists m: G^{(m)} = \{e\} \Longrightarrow H^{(m)} = \{e\} \Longrightarrow H$ разрешима.
         \item Рассмотрим натуральный гомоморфизм $\pi: G \rightarrow G/H$. Очевидно, что образ коммутатора при гомоморфизме - коммутатор:
         \[\alpha([x, y]) = \alpha(xyx^{-1}y^{-1}) = \alpha(x)\alpha(y)\alpha(x)^{-1}\alpha(y)^{-1} = [\alpha(x), \alpha(y)]\]
-        то есть $\pi(G') \subseteq (G/H)'$. При этом натуральный гомоморфизм сюръективен, а прообраз коммутатора - также коммутатор (аналогично), то есть $\pi(G') \subseteq (G/H)'$. Аналогично $\pi(G^{(m)}) = (G/H)^{(m)}$.\\
+        то есть $\pi(G') \subseteq (G/H)'$. При этом натуральный гомоморфизм сюръективен, а прообраз коммутатора - также коммутатор (аналогично), то есть $\pi(G') = (G/H)'$. Аналогично $\pi(G^{(m)}) = (G/H)^{(m)}$.\\
         $G$ разрешима $\Longrightarrow \exists m: G^{(m)} = \{e\} \Longrightarrow \pi(G^{(m)}) = (G/H)^{(m)} = \{e\}$.
         \item $(G/H)$ разрешима $\Longrightarrow \exists k: (G/H)^{(k)} = \{e\} \Longrightarrow \pi(G^{(k)}) = \{e\} \Rightarrow G^{(k)} \subseteq H$.\\
         Также $H$ разрешима $\Longrightarrow \exists l: H^{(l)} = \{e\} \Longrightarrow (G^{(k)})^{(l)} = G^{(k+l)} = \{e\}$. Значит, $G$ разрешима.
@@ -55,16 +55,16 @@
 \end{subtheorem}
 \begin{proof}
     Индукция по $n$:\\
-    База: $n = 1 \Longrightarrow T_n(\F) \simeq \F^*$ - абелева, а значит разрешима;\\
+    База: $n = 1 \Longrightarrow T_n(\F) \simeq \F^*$ - абелева, а значит, разрешима;\\
     Шаг: пусть $T_{n-1}(\F)$ разрешима. Рассмотрим гомоморфизм $\phi: T_{n} \rightarrow T_{n-1}$:
     \[\phi: \begin{pmatrix} a_{11}&&*&\vline&a_{1n} \\ &\ddots&&\vline&a_{2n} \\ 0&&a_{n-1 n-1} & \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & a_{nn}  \end{pmatrix} \mapsto \begin{pmatrix} a_{11}&&* \\ &\ddots& \\ 0&&a_{n-1 n-1} \end{pmatrix}\]
-    Этот гомоморфизм, очевидно, сюръективен, т.е по теореме о гомоморфизме $T_n/\textup{Ker }\phi \simeq T_{n-1}$. Так как $T_{n-1}$ разрешима по предположению индукции, по пункту 3 предыдущег утверждения достаточно доказать разрешимость группы
+    Этот гомоморфизм, очевидно, сюръективен, т.е по теореме о гомоморфизме $T_n/\textup{Ker }\phi \simeq T_{n-1}$. Так как $T_{n-1}$ разрешима по предположению индукции, по пункту 3 предыдущего утверждения достаточно доказать разрешимость группы
     \[\textup{Ker }\phi = \left\{\begin{pmatrix} &&&\vline&a_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} \\ &&& \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & a_{nn}  \end{pmatrix}: a_{in} \in \F, a_{nn}\neq 0\right\}\]
     Аналогично, рассмотрим гомоморфизм $\psi$: $\textup{Ker }\phi \rightarrow \F^*$:
     \[\psi: \begin{pmatrix} &&&\vline&a_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} \\ &&& \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & a_{nn}  \end{pmatrix} \mapsto a_{nn}\]
     Заметим, что $\textup{Im } \psi = \F^*$ - абелева, а $\textup{Ker }\psi$ состоит из матриц $\textup{Ker } \phi$ с $a_{nn} = 1$.
     \[\begin{pmatrix} &&&\vline&a_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} \\ &&& \vline & a_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & 1  \end{pmatrix} \cdot \begin{pmatrix} &&&\vline&b_{1n} \\ &\text{\Huge{E}}&&\vline&b_{2n} \\ &&& \vline & b_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & 1 \end{pmatrix} = \begin{pmatrix} &&&\vline&a_{1n} + b_{1n} \\ &\text{\Huge{E}}&&\vline&a_{2n} + b_{2n} \\ &&& \vline & a_{n-1 n} + b_{n-1 n} \\ \hline 0 & \cdots & 0 & \vline & 1 \end{pmatrix}\]
-    Отсюда несложно видеть, что $\textup{Ker } \psi$ - также абелева, то есть разрешшимая группа. Значит, $\textup{Ker }\phi$ разрешима, а отсюда и $T_n(\F)$ - разрешимая группа.
+    Отсюда несложно видеть, что $\textup{Ker } \psi$ - также абелева, то есть разрешимая группа. Значит, $\textup{Ker }\phi$ разрешима, а отсюда и $T_n(\F)$ - разрешимая группа.
 \end{proof}
 \begin{subtheoremnum}
     Всякая конечная примарная группа $G$ разрешима.
