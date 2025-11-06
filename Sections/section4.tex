@@ -562,7 +562,7 @@
     $ \\ \Longrightarrow: \ \ A = \langle a \rangle \Longrightarrow \textup{ord } a = |A| \Longrightarrow \exp A \geqslant |A| \Longrightarrow \exp A = |A|$ (т.к. $\exp A \mid |A|$).\\
     $ \Longleftarrow:$ От противного: пусть $\exp A = |A|$, но $A$ - не циклическая. По основной теореме о конечнопорождённых абелевых группах $A \simeq \Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_m^{s_m}}$. Если все $p_1,...,p_m$ различны, то $A$ циклическая по аналогу китайской теоремы об остатках - противоречие. Если среди них есть совпадающие, то можем без ограничения общности считать, что $p_1 = p_2, s_1 \leqslant s_2$.
     Обозначим $\Z_{p_i^{s_i}} = \langle a_i \rangle \Longrightarrow \forall a \in A: a = \sum \limits_{i = 1}^m \alpha_ia_i$. Тогда если в равенстве $|A| = p_1^{s_1}p_2^{s_2}...p_m^{s_m}$ обозначить $t = p_2^{s_2}...p_m^{s_m}$, то $\forall a \in A: \ ta = \sum \limits_{i = 1}^m \alpha_ita_i = 0$. \\
-    (очевидно, что $ta_i = 0$ для $a \neq 1$, а $ta_1 = 0$ в силу $p_1 = p_2, s_1 \leqslant s_2$)\\
+    (очевидно, что $ta_i = 0$ для $i \neq 1$, а $ta_1 = 0$ в силу $p_1 = p_2, s_1 \leqslant s_2$)\\
     Тогда $t$ - общее кратное всех порядков элементов $A$, то есть $\exp A \mid t$, но $t < A = \exp A$ - противоречие. Значит, $A$ - циклическая.
 \end{proof}
 \begin{theorem}
