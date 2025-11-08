@@ -36,7 +36,7 @@
 \begin{example}
     $GL(V) \acts V$: $\alpha(g)x = g(x) \ \forall g \in GL(V), x \in X$
 \end{example}
-В общем случае: $\alpha G \rightarrow S(X)$ - гомоморфизм, то есть $\textup{Im }\alpha \leq S(X), \textup{Ker }\alpha \unlhd G$.
+В общем случае: $\alpha: G \rightarrow S(X)$ - гомоморфизм, то есть $\textup{Im }\alpha \leq S(X), \textup{Ker }\alpha \unlhd G$.
 \begin{definition}
     $\textup{Ker }\alpha$ называется ядром неэффективности действия группы $G$ на $X$.\\
     Если $\textup{Ker }\alpha = \{e\}$, то действие называется эффективным.
@@ -237,9 +237,9 @@
         \end{itemize} 
         \item Для определения группы достаточно проверить, что $\textup{Int } G \leq \textup{Aut } G$:
         \begin{itemize}
-            \item $\alpha_1, \alpha_2 \in \textup{Int } G \Longrightarrow \exists g_1, g_2 \in G: \alpha_i$ - сопряжение относительно $g_i$. Тогда $(\alpha_1\alpha_2)$ - сопряжение относительно $g_1g_2$, т.е. $(\alpha_1\alpha_2) \in \textup{Aut } G$;
+            \item $\alpha_1, \alpha_2 \in \textup{Int } G \Longrightarrow \exists g_1, g_2 \in G: \alpha_i$ - сопряжение относительно $g_i$. Тогда $(\alpha_1\alpha_2)$ - сопряжение относительно $g_1g_2$, т.е. $(\alpha_1\alpha_2) \in \textup{Int } G$;
             \item $\textup{id} \in \textup{Int } G$ - сопряжение относительно $e$;
-            \item $\alpha \in \textup{Int } G \Longrightarrow \alpha$ - сопряжение относительно $g \in G \Longrightarrow \alpha^{-1}$ - сопряжение относительно $g^{-1} \Longrightarrow \alpha^{-1} \in \textup{Aut } G$.
+            \item $\alpha \in \textup{Int } G \Longrightarrow \alpha$ - сопряжение относительно $g \in G \Longrightarrow \alpha^{-1}$ - сопряжение относительно $g^{-1} \Longrightarrow \alpha^{-1} \in \textup{Int } G$.
         \end{itemize}  
         Проверим, что $\textup{Int }G \unlhd \textup{Aut }G$, т.е. $\forall \phi \in \textup{Aut }G,\ g \in G : \ \phi\alpha(g)\phi^{-1} \in \textup{Int } G$:
         \[(\phi\alpha(g)\phi^{-1})(h) = \phi(\alpha(g)(\phi^{-1}(h))) = \phi(g\phi^{-1}(h)g^{-1}) = \phi(g)\phi(\phi^{-1}(h))\phi(g^{-1})\]
@@ -349,7 +349,7 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
     $\sigma = (123)(45), \tau = (135) \Longrightarrow \tau\sigma\tau^{-1} = (325)(41)$.
 \end{examples}
 \begin{consequense}
-    $Z(S_n) = \{\textup{id}\}$ при $n \leqslant 3$.
+    $Z(S_n) = \{\textup{id}\}$ при $n \geqslant 3$.
 \end{consequense}
 \begin{proof}
     Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 3, \exists k \neq i, j$. Тогда при $\tau = (jk): \ \tau\sigma\tau^{-1} = (ik...)...$ - не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$) - противоречие.  
