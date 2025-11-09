@@ -39,10 +39,10 @@
         Найдём $\textup{Ker }\phi:$
         \[\phi([a]_{mn}) = ([0]_m, [0]_n) \Longleftrightarrow \begin{cases}m \mid a\\ n\mid a \end{cases} \underset{(m,n)=1}{\Longrightarrow} mn \mid a \Longrightarrow \textup{Ker }\phi = \{[0]_{mn}\}\]
         По теореме о гомоморфизме $\textup{Im }\phi \simeq \Z_{mn} / \textup{Ker }\phi = \Z_{mn} \Longrightarrow |\textup{Im } \phi| = mn$. Так как $|\Z_m \times \Z_n| = mn$ и $\textup{Im }\phi \leq \Z_m \times \Z_n, \ \textup{Im }\phi = \Z_m \times \Z_n$.\\
-        Отсюда $\phi$ - биекция (инъекция из $\textup{Ker }\phi = \{e\}$), т.е. $\phi$  -изоморфизм.
+        Отсюда $\phi$ - биекция (инъекция из $\textup{Ker }\phi = \{e\}$), т.е. $\phi$ - изоморфизм.
         \item Пусть $(m,n) = d \neq 1$ ($m = dk_1, n = dk_2$). Тогда $\forall g = (g_1, g_2) \in \Z_m \times \Z_n$:
         \[(g_1, g_2)^{dk_1k_2} = (g_1^{dk_1k_2}, g_2^{dk_1k_2}) = (0^{k_2}, 0^{k_1}) = (0, 0)\]
-        Отсюда $\textup{ord } (g_1, g_2) = dk_1k_2 = \frac{mn}{d} < mn = |\Z_m \times \Z_n|$. Значит, $\Z_m \times \Z_n$ не является циклической.
+        Отсюда $\textup{ord } (g_1, g_2) \mid dk_1k_2 = \frac{mn}{d} < mn = |\Z_m \times \Z_n|$. Значит, $\Z_m \times \Z_n$ не является циклической.
     \end{enumerate}
 \end{proof}
 \begin{consequense}
@@ -126,7 +126,7 @@
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times ... \times H_k$.\\
     (3) - очевидно из пункта 1 определения.\\
     (1): $\forall h_i \in H_i, g \in G: \ g = \tilde{h}_1...\tilde{h}_k \ (\tilde{h}_i \in H_i) \Longrightarrow$
-    \[gh_1g^{-1} = (\tilde{h}_1...\tilde{h}_k)h_i(\tilde{h}_k^{-1}...\tilde{h}_1^{-1}) \underset{(\text{2 из опр})}{=} \tilde{h}_ih_i\tilde{h}_i^{-1} \in H_i\]
+    \[gh_ig^{-1} = (\tilde{h}_1...\tilde{h}_k)h_i(\tilde{h}_k^{-1}...\tilde{h}_1^{-1}) \underset{(\text{2 из опр})}{=} \tilde{h}_ih_i\tilde{h}_i^{-1} \in H_i\]
     Отсюда $H_i \unlhd G$.\\
     (2): Пусть $\exists h \in H_i \cap \langle H_j \ | \ j \neq i \rangle$. Тогда $h = he = eh$ - два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_i \cap \langle H_j \ | \ j \neq i \rangle = \{e\}$.\\
     $\Longleftarrow:$ Пусть даны условия (1) - (3).\\
