@@ -49,6 +49,13 @@
         \end{enumerate}
     \end{enumerate}
 \end{proof}
+\begin{consequense}
+    Пусть $|G| < \infty$. Тогда $G$ - $p$-группа $\Longleftrightarrow |G| = p^s (s\in \N)$. 
+\end{consequense}
+\begin{proof}
+    $ \\ \Longleftarrow$ - доказано ранее;\\
+    $\Longrightarrow: \ \ $ От противного: пусть $|G|$ содержит простой множитель $q \neq p$. Тогда по $I$ теореме Силова $\exists$ силовская $q$-подгруппа в $G$, причём в ней хотя бы $q$ элементов. Значит, в ней есть элемент порядка $q^k (k \geqslant 1)$, что противоречит определению $p$-группы. Отсюда у $|G|$ нет простых делителей, отличных от $p$ $\Longrightarrow |G| = p^s$.
+\end{proof}
 \subsection{II теорема Силова}
 Пусть $G$ - группа, $|G| = p^sm$, где $p$ - простое, $(p, m) = 1$.\\
 Тогда любая $p$-подгруппа группы $G$ лежит в некоторой силовской $p$-подгруппе.\\
@@ -61,7 +68,7 @@
     $|\textup{Orb}(g_iS)| \mid |H| \Longrightarrow \left[\begin{array}{l}
         |\textup{Orb}(g_iS)| = 1\\
         p \mid |\textup{Orb}(g_iS)|
-    \end{array}\right.$.\\
+    \end{array}\right.$ ($|H| = p^m$ по следствию из $I$ т. Силова).\\
     Предположим, что $\forall i = \overline{1,...,m}: p \mid |\textup{Orb}(g_iS)|$. Тогда $p \mid \sum \limits_i |\textup{Orb}(g_iS)| = |X|$. Однако $|X| = m$ - взаимно просто с $p$. Противоречие.\\
     Отсюда $\exists i = \overline{1,...,m}: |\textup{Orb}(g_iS)| = 1$, т.е. точка $g_iS$ неподвижна при $H \acts X$. Значит, $\forall h \in H\  hg_iS = g_iS \Longrightarrow h \in g_iSg_i^{-1} \Longrightarrow H \leq g_iSg_i^{-1}$. Так как $|g_iSg_i^{-1}| = |S|$, $g_iSg_i^{-1}$ - силовская $p$-подгруппа, т.е. $H$ лежит в силовской $p$-подгруппе $G$.
 
@@ -69,11 +76,13 @@
     Если рассмотреть $H$ - произвольную силовскую $p$-подгруппу $G$, то $|H| = p^s$. Так как $H \leq g_iSg_i^{-1}$, $|g_iSg_i^{-1}| = p^s \Longrightarrow H = g_iSg_i^{-1}$ - любая силовская $p$-подгруппа сопряжена с $S$. Значит, все силовские $p$-подгруппы сопряжены.
 \end{proof}
 \begin{consequense}
-    Пусть $|G| < \infty$. Тогда $G$ - $p$-группа $\Longleftrightarrow |G| = p^s (s\in \N)$. 
+    Пусть $G$ - группа, $|G| = p^sm$, где $p$ - простое, $(p, m) = 1$.\\
+    Тогда силовская $p$-подгруппа в $G$ единственна $\Longleftrightarrow$ эта подгруппа нормальна. 
 \end{consequense}
 \begin{proof}
-    $ \\ \Longleftarrow$ - доказано ранее;\\
-    $\Longrightarrow: \ \ $ Пусть $|G| = p^sm, (p, m) = 1$. По $I$ теореме Силова $\exists$ силовская $p$-подгруппа в $G$ (порядка $p^s$), а по $II$ теореме Силова $G$ как своя $p$-подгруппа содержится в своей силовской $p$-подгруппе. Значит, $|G| \mid p^s$, а отсюда $|G| = p^s$.
+    $\\\Longleftarrow: \ $ Пусть $S \unlhd G$ - силовская $p$-подгруппа. По $II$ теореме Силова все силовские $p$-подгруппы сопряжены с $S$, а из нормальности совпадают с $S$.\\
+    (из нормальности следует включение $gSg^{-1} \subseteq G$, а также $|gSg^{-1}| = |S| = p^s$)
+    $\Longrightarrow: \ $ Если $S$ - единственная, то $\forall g \in G: gSg^{-1} = S$, т.к. сопряженной к силовской $p$-подгруппе должна быть силовская $p$-подгруппа. Отсюда $S \unlhd G$.  
 \end{proof}
 \subsection{Нормализатор. III теорема Силова}
 Пусть $G$ - группа, $H \leq G, X = \{gHg^{-1} \ | \ g \in G\}$.\\
@@ -109,15 +118,6 @@
     Значит, достаточно показать, что $S$ - единственная неподвижная точка относительно данного движения (тогда $|X| = \sum \limits_{i=1}^k |\textup{Orb}(x_i)| \equiv |\textup{Orb}(S)| = 1 (\textup{mod } p)$)\\
     Допустим, что $\tilde{S}$ - неподвижная точка $\Longrightarrow \forall g \in S \ g \tilde{S}g^{-1} = \tilde{S}$. \\
     Рассмотрим нормализатор $N_G(\tilde{S})$. Знаем, что $\tilde{S} \subseteq N_G(\tilde{S})$, а из неподвижности точки $\tilde{S}$ имеем $S \subseteq N_G(\tilde{S})$. Также  $N_G(\tilde{S}) \leq G$, то есть степень вхождения $p$ в $|N_G(\tilde{S})|$ также равна $s$. Значит, $S, \tilde{S}$ - силовские $p$-подгруппы в $N_G(\tilde{S})$. Тогда по $II$ теореме Силова $S$ и $\tilde{S}$ сопряжены в $N_G(\tilde{S})$, т.е. $S = g\tilde{S}g^{-1}, g \in N_G(\tilde{S})$, а тогда по определению нормализатора $S = \tilde{S}$. Значит, $S$ - единственная неподвижная точка.  
-\end{proof}
-\begin{consequense}
-    Пусть $G$ - группа, $|G| = p^sm$, где $p$ - простое, $(p, m) = 1$.\\
-    Тогда силовская $p$-подгруппа в $G$ единственна $\Longleftrightarrow$ эта подгруппа нормальна. 
-\end{consequense}
-\begin{proof}
-    $\\\Longleftarrow: \ $ Пусть $S \unlhd G$ - силовская $p$-подгруппа. По $II$ теореме Силова все силовские $p$-подгруппы сопряжены с $S$, а из нормальности совпадают с $S$.\\
-    $\Longrightarrow: \ $ Если $S$ - единственная, то $\forall g \in G: gSg^{-1} = S$\\
-    (используется, что из конечности $G$: $gSg^{-1} \subseteq S \Rightarrow gSg^{-1} = S$). 
 \end{proof}
 \begin{exercise}
     Доказать, что любая группа порядка 15 циклическая.
