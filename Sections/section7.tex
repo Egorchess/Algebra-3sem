@@ -28,7 +28,8 @@
     $G' \unlhd G$
 \end{subtheorem}
 \begin{proof}
-    \[\forall g \in G, [x, y] \in G': g[x, y]g^{-1} = [gxg^{-1}, gyg^{-1}] \in G' \Longrightarrow G' \unlhd G\]
+    \[\forall g \in G, g' = [x_1, y_1][x_2, y_2]...[x_k, y_k] \in G': gg'g^{-1} = g[x_1, y_1][x_2, y_2]...[x_k, y_k]g^{-1} =\]\[(g[x_1, y_1]g^{-1})(g[x_2, y_2]g^{-1})...(g[x_k, y_k]g^{-1}) = [gx_1g^{-1}, gy_1g^{-1}]...[gx_kg^{-1}, gy_kg^{-1}]\]
+    Отсюда $\forall g \in G, g' \in G': gg'g^{-1} \in G' \Longrightarrow G' \unlhd G$.
 \end{proof}
 \begin{subtheorem}
     Если $H \leq G$ и $G' \leq H$, то $H \unlhd G$.
