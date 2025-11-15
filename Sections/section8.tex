@@ -156,59 +156,110 @@
 \begin{remark}
     Группа $G$ не задаётся однозначно набором простых факторов композиционного ряда: пусть набор факторов - $\Z_2, \Z_2$, тогда возможны композиционные ряды $0 < \Z_2 < \Z_4$ и $0 < \Z_2 < \Z_2 \oplus \Z_2 \simeq V_4$.
 \end{remark}
-% \subsection{Примеры простых групп}
-% \begin{exercise}
-%     Если $|G| < 60$ и $|G|$ - не простое, то $G$ - не простая группа.
-% \end{exercise}
-% \begin{theorem}
-%     Если $G$ - простая и $|G| = 60$, то $G \simeq A_5$. 
-% \end{theorem}
-% \begin{example}
-%     $A_2 = \{\textup{id}\}, A_3 \simeq \Z_3$ - простая, $A_4$ - не простая ($V_4 \unlhd A_4$).
-% \end{example}
-% \begin{lemmanum}
-%     Пусть $n \geqslant 5, N \leq  A_n, N \neq \{\textup{id}\}, N \unlhd S_n$. Тогда $A_n = N$.
-% \end{lemmanum}
-% \begin{proof}
-%     Так как $N \neq \{\textup{id}\}$, то $\exists \sigma \in N, \sigma \neq \textup{id}$. Разложим $\sigma$ в независимые циклы: $\sigma = c_1c_2...c_k$.\\
-%     Если $\exists i$ такой, что длина $c_i \geqslant 3$, то можем считать, что $c_1 = (i_1...i_k), k \geqslant 3$.
-%     Так как $N \unlhd S_n$, $\forall \tau \in S_n: \tau\sigma\tau^{-1} \in N$. Рассмотрим $\tau = (i_1i_2)$:
-%     \[\tau\sigma\tau^{-1}\sigma^{-1} \in N; \tau\sigma\tau^{-1}\sigma^{-1} = \tau c_1 \tau^{-1} c_1^{-1} = (i_1i_2i_3)\]
-%     Тогда в $N$ содержатся все тройные циклы - $A_n = N$.
+\subsection{Примеры простых групп}
+\setcounter{lemcount}{0}
+\begin{exercise}
+    Если $|G| < 60$ и $|G|$ - не простое, то $G$ - не простая группа.
+\end{exercise}
+\begin{proof}(довольно объёмное и вряд ли пригодится)\\
+    Всё в лучших традициях - докажем несколько лемм:
+    \begin{lemmanum}
+        Всякая неабелева примарная группа не является простой.
+    \end{lemmanum}
+    \begin{proof}
+        Очевидно из нетривиальности центра - он не совпадает со всей группой из неабелевости, а значит является собственной нормальной подгруппой $G$ 
+    \end{proof}
+    \begin{lemmanum}
+        Пусть $G$ - неабелева группа, $|G| = p^lm$, где $p \nmid m$, $p^l \nmid (m-1)!$\\
+        Тогда $G$ - не простая группа.
+    \end{lemmanum}
+    \begin{proof}
+        Случай $m = 1$ очевиден из леммы 1.\\
+        Пусть $m > 1$. Рассмотрим действие $G \acts G/S$ левыми сдвигами ($G/S$ - множество левых смежных классов). Таких смежных классов ровно $m$ (из теоремы Лагранжа), причём каждый элемент $g$ переводит разные смежные классы в разные - отсюда каждый элемент $G$ соответствует некоторой подстановке из $S_m$, то есть определён гомоморфизм $\alpha: G \rightarrow S_m$. Если $G$ простая, то $\textup{Ker }\alpha = \{e\}$ либо $G$ - второе, очевидно, невозможно (класс $g_1S$ в класс $g_2S$ переводит элемент $g_2g_1^{-1}$). Значит, $G \simeq \alpha(G) \leq S_m$ из теоремы о гомоморфизме. Отсюда $|G| \mid |S_m| \Longrightarrow p^lm \mid m! \Longrightarrow p^l \mid (m-1)!$ - противоречие. 
+    \end{proof}
+    \begin{remark}
+        Данная лемма очень сильна при решении некоторых упражнений - например, из неё несложными рассуждениями следует непростота (а по индукции и разрешимость) групп порядков $2p^k, 3p^k, 4p^k$ ($p$ - простое).
+    \end{remark}
 
-%     Если же $\forall i$ длина $c_i$ равна 2, то $k$ - чётно, т.е. $\sigma = (i_1i_2)(i_3i_4)c_3...c_k$.\\
-%     Тогда при аналогичных рассуждениях и $\tau = (i_2i_3)$:
-%     \[\tau\sigma\tau^{-1}\sigma^{-1} = (i_2i_3)(i_1i_2)(i_3i_4)(i_2i_3)(i_1i_2)(i_3i_4) = (i_1i_3)(i_2i_4)(i_1i_2)(i_3i_4) = (i_1i_4)(i_2i_3) \in N\]
-%     Так как в $S_n$ все произведения пар независимых транспозиций сопряжены, все пары независимых транспозиций $\in N$.
-%     Так как $n \geqslant 5$, $A_n$ порождается парами незав. транспозиций, а значит, $N = A_n$
-% \end{proof}
-% \begin{theorem}
-%     $A_n$ - простая при $n \geqslant 5$.
-% \end{theorem}
-% \begin{proof}
-%     Рассмотрим произвольную нормальную подгруппу $N \unlhd A_n$. Если $N \unlhd S_n$, то л1. Иначе:\\
-%     $|S_n : A_n| = 2, S_n = A_n \sqcup (12)A_n$. Обозначим $N_1 = N, N_2 = (12)N_1(12)^{-1}$. Так как $N \not \unlhd \S_n$, имеем $N_1 \neq N_2$. Притом $|N_1| \times |N_2|$.
-%     Докажем, что $A_n = N_1 \times N_2$:
-%     \begin{enumerate}
-%         \item $N_1 \unlhd A_n$ - уже имеем;
-%         \item $N_2 \unlhd A_n$:
-%         \[\forall \sigma \in A_n: \sigma N_2\sigma^{-1} = \sigma(12)N_1(12)\sigma^{-1} = (12)\underset{ = \tilde{\sigma}}{(12)\sigma(12)}N_1\underset{=\tilde{\sigma}^{-1}}{(12)\sigma^{-1}(12)}(12) = N_2\]
-%         \item $N_1 \cap N_2 = \{\textup{id}\}$: Пусть $K = N_1 \cap N_2 \leq A_n$. Тогда $K \unlhd S_n$ (ну догадайтесь, что сложно что ли). Тогда по лемме 1 и $K \neq A_n$ имеем $K = \{\textup{id}\}$.
-%         \item $N_1N_2 = A_n$: Пусть $L = N_1N_2 \leq A_n$ Тогда $L \unlhd S_n$ и $\neq id$ - победа по лемме 1.
-%     \end{enumerate}
-%     Теперь индукция по $n \leq 5$.
-%     База: $n = 5$ - $|A_5| = 60$ - не квадрат;
-%     Шаг: Пусть $A_{n-1}$ - простая. Тогда в $A_n$ существует $H = \{\sigma \in A_n \ | \ \sigma(n) = n\} \simeq A_{n-1}$.
-%     $H \leq A_n = N_1 \times N_2$. Тогда $H \cap N_2 \unlhd H$ вау, непосредственно.
-%     Так как $H$ - простая, то $H \cap N_2 = H$ либо $id$.
-%     Если $H \cap N_2 = H$, то $H \subseteq N-2 \Longrightarrow |H| \leqslant |N_2| = |N|$.\\
-%     Если $H \cap N_2 = \{id\}$, то гомомомомомоморфизм $\phi: A_n = N_1 \times N_2 \rightarrow N_1$. $\textup{Ker } \phi = N_2 \Longrightarrow H \simeq \textup{Im } \phi \leq N_1 \Longrightarrow |H| \leqslant |N_1| = |N|$.
-%     В каждом случае все плохо.
-% \end{proof}\
-% \begin{theorem}
-%     $SO_3$ - простая (б/д).
-% \end{theorem}
-% \setcounter{thcount}{0}
-% \setcounter{concount}{0}
-% \setcounter{subthcount}{0}
-% \newpage
+    Остаётся лишь перебор случаев составных чисел $< 60$ - целиком его несложно провести самому, поэтому здесь он приведён не будет в целях сохранения моего морального и физического благополучия. \\
+    В результате под лемму 2 не попадут порядки $30, 40$ и $56$ - разберём их:
+    \begin{itemize}
+        \item $|G| = 40 = 2^3 \cdot 5$: По $III$ теореме Силова в $G$ единственная подгруппа порядка 5 ($N_5 \mid 8, N_5 \equiv 1 (\textup{mod }5)$) - она нормальна;
+        \item $|G| = 30 = 2 \cdot 3 \cdot 5$: По $III$ теореме Силова число силовских $5$-подгрупп в $G$ либо 1, либо 6 ($N_5 \mid 6, N_5 \equiv 1 (\textup{mod }5)$). Если такая подгруппа единственна - то она нормальна, и $G$ не простая. Аналогично силовских 3-подгрупп либо 1, либо 10 - случай единственности очевиден. Остаётся заметить, что порядки самих силовских подгрупп простые, то есть эти подгруппы циклические - значит, различные 3- и 5-подгруппы пересекаются тривиально. Значит, в $G$ есть $6 \cdot (5-1) = 24$ различных элементов порядка 5 и $10 \cdot (3-1) = 20$ различных элементов порядка 3, что невозможно для группы порядка 30.
+        \item $|G| = 56 = 2^3 \cdot 7$: По $III$ теореме Силова силовских $7$-подгрупп в $G$ либо 1, либо 7 ($N_7 \mid 8, N_7 \equiv 1 (\textup{mod }7)$). Случай $N_7 = 1$ очевиден, а иначе по рассуждениям выше силовские $7$-подгруппы пересекаются тривиально, а значит в $G$ есть хотя бы $8 \cdot (7-1) = 48$ различных элементов порядка 7. При этом в $G$ есть силовская 2-подгруппа, которой принадлежат 8 элементов порядка $2^k$ - либо она единственна, то есть нормальна, либо их больше одной, что невозможно в группе порядка $56 = 48 + 8$.
+    \end{itemize} 
+    Все случаи разобраны.
+\end{proof}
+\begin{theorem}
+    Если $G$ - простая и $|G| = 60$, то $G \simeq A_5$. 
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\begin{example}
+    $A_2 = \{\textup{id}\}, A_3 \simeq \Z_3$ - простая, $A_4$ - не простая ($V_4 \unlhd A_4$).
+\end{example}
+\begin{lemma}
+    Пусть $n \geqslant 5, N \leq  A_n, N \neq \{\textup{id}\}, N \unlhd S_n$. Тогда $A_n = N$.
+\end{lemma}
+\begin{proof}
+    Так как $N \neq \{\textup{id}\}$, то $\exists \sigma \in N, \sigma \neq \textup{id}$. Разложим $\sigma$ в независимые циклы: $\sigma = c_1c_2...c_k$. Рассмотрим случаи:
+    \begin{enumerate}
+        \item $\exists i$ такой, что длина $c_i \geqslant 3$, то можем считать, что $c_1 = (i_1...i_k), k \geqslant 3$. Так как $N \unlhd S_n$, $\forall \tau \in S_n: \tau\sigma\tau^{-1} \in N$. Рассмотрим $\tau = (i_1i_2)$:
+        \[\tau\sigma\tau^{-1}\sigma^{-1} \in N; \tau\sigma\tau^{-1}\sigma^{-1} = \tau c_1 \tau^{-1} c_1^{-1} = (i_2i_1i_3...i_k)(i_k...i_1) = (i_1i_2i_3)\]
+        ($\tau\sigma\tau^{-1}\sigma^{-1} = \tau c_1 \tau^{-1} c_1^{-1}$, так как остальные циклы в $\sigma$ независимы с $\tau$, т.е. коммутируют с $\tau$)\\
+        Тогда в $N$ содержатся все тройные циклы - $A_n = N$.
+        \item Если же $\forall i$ длина $c_i$ равна 2, то $k$ - чётно, т.е. $\sigma = (i_1i_2)(i_3i_4)c_3...c_k$.\\
+        Тогда при аналогичных рассуждениях и $\tau = (i_2i_3)$:
+        \[\tau\sigma\tau^{-1}\sigma^{-1} = (i_2i_3)(i_1i_2)(i_3i_4)(i_2i_3)(i_1i_2)(i_3i_4) =\]
+        \[= (i_1i_3)(i_2i_4)(i_1i_2)(i_3i_4) = (i_1i_4)(i_2i_3) \in N\]
+        Так как в $S_n$ все произведения пар независимых транспозиций сопряжены, все пары независимых транспозиций $\in N$.
+        Так как $n \geqslant 5$, $A_n$ порождается парами независимых транспозиций, а значит, $N = A_n$.
+    \end{enumerate}
+\end{proof}
+\begin{theorem}
+    $A_n$ - простая при $n \geqslant 5$.
+\end{theorem}
+\begin{proof}
+    Рассмотрим произвольную нормальную подгруппу $N \unlhd A_n$. Если $N \unlhd S_n$, то по лемме 1 $N = A_n$. Иначе: $|S_n : A_n| = 2, S_n = A_n \sqcup (12)A_n$.\\
+    Пусть $N$ не нормальна в $S_n$. Обозначим $N_1 = N, N_2 = (12)N_1(12)$. Если $N_1 = N_2$, то $N$ при сопряжении любой $\sigma \in S_n$ не изменится, т.е. $N \unlhd S_n$ - противоречие. Поэтому $N_1 \neq N_2$, причём $|N_1| = |N_2|$.\\
+    Докажем, что $A_n = N_1 \times N_2$ (отсюда получим, что $|A_n| = |N|^2$):
+    \begin{enumerate}
+        \item $N_1 \unlhd A_n$ - уже имеем;
+        \item $N_2 \unlhd A_n$:
+        \[\forall \sigma \in A_n: \sigma N_2\sigma^{-1} = \sigma(12)N_1(12)\sigma^{-1} = (12)\underset{ = \tilde{\sigma}}{(12)\sigma(12)}N_1\underset{=\tilde{\sigma}^{-1}}{(12)\sigma^{-1}(12)}(12) = \]\[= (12)\tilde{\sigma}N_1\tilde{\sigma}^{-1}(12) = (12)N_1(12) = N_2\]
+        \item $N_1 \cap N_2 = \{\textup{id}\}$: Пусть $K = N_1 \cap N_2 \leq A_n$. Тогда $K \unlhd S_n$:
+        \begin{itemize}
+            \item $\forall \sigma \in A_n: \sigma K\sigma^{-1} \subseteq N_1, N_2$ из $N_1, N_2 \unlhd A_n$, то есть $\sigma K\sigma^{-1} \subseteq K$;
+            \item $(12)K(12) \subseteq N_2$ из $K \subseteq N_1$, $(12)K(12) \subseteq N_1$ из $K \subseteq N_2 \Longrightarrow \\ \Longrightarrow (12)K(12) \subseteq K$
+        \end{itemize}
+        Значит, $K$ не изменится при сопряжении любой подстановкой из $S_n$, то есть $K \unlhd S_n$.
+        Тогда по лемме 1 и $K \neq A_n$ имеем $K = \{\textup{id}\}$.
+        \item $N_1N_2 = A_n$: Пусть $L = N_1N_2 \leq A_n$ Тогда $L \unlhd S_n$:
+        \begin{itemize}
+            \item $\forall \sigma \in A_n: \sigma L\sigma^{-1} = \sigma N_1N_2 \sigma^{-1} = \sigma N_1\sigma^{-1}\sigma N_2 \sigma^{-1} = N_1N_2$;
+            \item $(12) L(12) = (12) N_1N_2 (12) = (12)N_1(12)(12) N_2 (12) = N_2N_1 = N_1N_2$
+        \end{itemize}
+        При этом $L \neq id$ - по лемме 1 $L = A_n$.
+    \end{enumerate}
+    Теперь индукцией по $n \leq 5$ докажем, что $A_n$ - простая.\\
+    База: $n = 5$ - $|A_5| = 60$ - не точный квадрат, то есть невозможна ненормальность $N$ в $S_n$, а отсюда $A_n$ - простая;\\
+    Шаг: Пусть $A_{n-1}$ - простая. Обозначим $A_n \geq H = \{\sigma \in A_n \ | \ \sigma(n) = n\} \simeq A_{n-1}$.\\
+    Предположим, что $N_1 \neq N_2 \Longrightarrow A_n = N_1 \times N_2 \Longrightarrow H \leq N_1 \times N_2$. Тогда $H \cap N_2 \unlhd H$, т.к. $N_2 \unlhd A_n$ и $H \cap N_2 \subseteq H$.\\
+    Так как $H$ - простая, то $H \cap N_2$ равно либо $H$, либо $id$.\\
+    Если $H \cap N_2 = H$, то $H \subseteq N_2 \Longrightarrow |H| \leqslant |N_2| = |N|$.\\
+    Если $H \cap N_2 = \{id\}$, то рассмотрим гомоморфизм $\phi: A_n = N_1 \times N_2 \rightarrow N_1$. $\textup{Ker } \phi = N_2 \Longrightarrow H \simeq \phi(H) \leq N_1 \Longrightarrow |H| \leqslant |N_1| = |N|$.\\
+    В каждом случае $|H| = |A_{n-1}| \leqslant |N|$. Тогда из предположения
+    \[|A_n| = |N|^2 \geqslant |A_{n-1}|^2 \Longrightarrow \frac{n!}{2} \geqslant \frac{((n-1)!)^2}{4} \Longrightarrow 2n \geqslant (n-1)!\]
+    Последнее неравенство, очевидно, неверно при $n \geqslant 5$.
+\end{proof}
+\begin{theorem}
+    $SO_3$ - простая.
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}
+\newpage

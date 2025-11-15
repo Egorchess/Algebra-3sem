@@ -1,13 +1,14 @@
 \section{Линейные представления}
-Пусть $V$ - векторное пространство над полем $\F$.\\
-$GL(V)$ - группа обратимых линейных операторов над $V$, $G$ - произвольная группа.
+Пусть $V$ - векторное пространство над полем $\F$, $GL(V)$ - группа обратимых линейных операторов над $V$, $G$ - произвольная группа.
 \begin{definition}
-    Произвольный гомоморфизм $\Phi: G \rightarrow GL(V)$ называется линейным представлением группы $G$.\\
+    Произвольный гомоморфизм $\Phi: G \rightarrow GL(V)$ (действие $G \acts V$) называется линейным представлением группы $G$.\\
     $V$ называется пространством линейного представления, $\dim V$ - размерность (степень) линейного представления.
     Если $\F = \Q, \R, \CC$, то линейное представление называется рациональным, вещественным или комплексным соответственно.
 \end{definition}
-По определению $\Phi(e) = I$ - тождественный оператор, $\Phi(g_1g_2) = \Phi(G_1)\Phi(g_2)$.\\
-$\forall g \in G \ \Phi(g)$ называется оператором линейного представления. Обозначается $\forall v \in V \Phi(g)v := \Phi(g)(v)$.
+Из определения $\Phi(e) = I$ - тождественный оператор, $\Phi(g_1g_2) = \Phi(g_1)\Phi(g_2)$.
+\begin{definition}
+    $\forall g \in G \ \Phi(g)$ называется оператором линейного представления. Обозначается $\forall v \in V \ \ \Phi(g)v := \Phi(g)(v)$.
+\end{definition}
 \begin{definition}
     Если $\textup{Ker }\Phi = \{e\}$, то линейное представление называется точным. В этом случае $G \simeq \textup{Im }\Phi \leq GL(V)$.
 \end{definition} 
@@ -22,10 +23,12 @@ $\forall g \in G \ \Phi(g)$ называется оператором линей
             \item $\F = \R, G = S_n:$ $\Phi(\sigma) = \sgn \sigma$;
             \item $G = GL_n(\F):$ $\Phi(A) = \det A$. 
         \end{enumerate}
-        \item $V = M_n(\CC), G = \R$. Фиксируем матрицу $B \in M_n(\CC)$ и $\Phi(t) = e^{tB}$.
-        \item Пусть задано линейное представление $\Phi: G \rightarrow GL(V)$ и задан гомоморфизм $\Psi: H \rightarrow G$. Тогда $\tilde{\Phi} = \Phi \circ \Psi: H \rightarrow GL(V)$ - лин предст гр аш.
-        \item $X$ - некоторое множество, задано $G \acts X$. Рассмотрим $\mathcal{F}(X, \F) = \{f: X \rightarrow \F\} = V$ -в.п.\\
-        Тогда $\Phi: G \rightarrow GL(V)$: $\forall g \in G \Phi(g)f = \tilde{f}$, где $\tilde{f}(x) = f(g^[-1]x)$. Это лин представление группы $G$ (дз).
+        \item $V = M_n(\CC), G = \R$. Если зафиксировать матрицу $B \in M_n(\CC)$, то определено линейное представление $\Phi(t) = e^{tB}$.
+        \item Пусть задано линейное представление $\Phi: G \rightarrow GL(V)$ и задан гомоморфизм $\Psi: H \rightarrow G$. Тогда $\tilde{\Phi} = \Phi \circ \Psi: H \rightarrow GL(V)$ - линейное представление группы $H$.
+        \item Пусть $X$ - некоторое множество, задано $G \acts X$.\\
+        Рассмотрим векторное пространство функций $\mathcal{F}(X, \F) = \{f: X \rightarrow \F\} = V$\\
+        Тогда $\Phi: G \rightarrow GL(V)$: $\forall g \in G \ \Phi(g)f = \tilde{f}$, где $\tilde{f}(x) = f(gx)$ - линейное представление группы $G$:
+        \[\forall g_1, g_2\in G : \Phi(g_1g_2)f(x) = f(g_1g_2x) = \Phi(g_1)f(g_2x) = \Phi(g_1)\Phi(g_2)f(x)\]
     \end{enumerate}
 \end{examples}
 
@@ -33,7 +36,8 @@ $\forall g \in G \ \Phi(g)$ называется оператором линей
 \begin{definition}
     Произвольный гомоморфизм $\Phi: G \rightarrow GL_n(\F)$ называется матричным представлением группы $G$ размерности $n$ над полем $\F$.
 \end{definition}
+Заметим, что линейные и матричные представления связаны между собой:
 \begin{enumerate}
-    \item Если задано матричное представление $G$, то есть гомоморфизм $\Phi: G \rightarrow GL_n(\F)$, то $GL_n(\F) \underset{\psi}{\simeq} GL(\F^n) \Longrightarrow \tilde{\Phi} = \psi \circ \Phi: G \rightarrow GL(\F^n)$ - лин представление $G$.
-    \item Если задано $n$-мерное линейное представление $G$, то есть гомоморфизм $\Phi: G \rightarrow GL(V) : \forall g \in G g \mapsto \Phi(g) = \phi_g$ - лин оператор. Если фиксировать базис $\E = \{e_1,...,e_n\}$, то $\phi_g \leftrightarrow A_g$ - матрица лин оператора. Т.к. $GL(V) \underset{\tilde{\psi}}{\simeq} GL_n(\E)$ - есть мтар предст.
+    \item Если задано матричное представление $G$, то есть гомоморфизм $\Phi: G \rightarrow GL_n(\F)$, то $GL_n(\F) \underset{\psi}{\simeq} GL(\F^n) \Longrightarrow \tilde{\Phi} = \psi \circ \Phi: G \rightarrow GL(\F^n)$ - линейное представление $G$.
+    \item Если задано $n$-мерное линейное представление $G$, то есть гомоморфизм $\Phi: G \rightarrow GL(V) : \forall g \in G \ g \mapsto \Phi(g) = \phi_g$ - линейный оператор. Если фиксировать базис $\E = \{e_1,...,e_n\}$, то $\phi_g \leftrightarrow A_g$ - матрица $\phi_g$ в базисе $\E$. Отсюда $GL(V) \underset{\tilde{\psi}}{\simeq} GL_n(\E)$ - получим матричное представление группы $G$.
 \end{enumerate}
