@@ -64,6 +64,9 @@
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
 
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
 \newsavebox{\boxedalignbox}
 \newenvironment{boxedalign*}
   {\begin{equation*}\begin{lrbox}{\boxedalignbox}$\begin{aligned}}
