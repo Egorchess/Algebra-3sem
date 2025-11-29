@@ -457,3 +457,33 @@ $\\$\textbf{Одномерные комплексные лин. представ
         \[\rchi_\Phi(g^{-1}) = \textup{tr} A(g^{-1}) = \sum \limits_i \lambda_i(g^{-1}) = \sum \limits_i \overline{\lambda_i(g)} = \overline{\sum \limits_i \lambda_i(g)} = \overline{\textup{tr} A(g)} = \overline{\rchi_\Phi(g)}\] 
     \end{enumerate}
 \end{proof}
+\begin{definition}
+    Множество всех функций $f: G \rightarrow \CC$ будем обозначать как $\CC^G$.
+\end{definition}
+\begin{subtheorem}
+    $\CC^G$ - векторное пространство над $\CC$.
+\end{subtheorem}
+\begin{proof}
+    Очевидно.
+\end{proof}
+\begin{subtheorem}
+    Пусть $G$ - конечная группа. Тогда функция \[(f_1, f_2) = \frac{1}{|G|}\sum \limits_{g \in G}f_1(g)\overline{f_2(g)}\] задаёт на $\CC^G$ скалярное произведение, т.е. $\CC^G$ с данной функцией - эрмитово пространство.
+\end{subtheorem}
+\begin{proof}
+    Проверим определение:
+    \begin{enumerate}
+        \item $\forall f \in \CC^G:\ (f, f) = \frac{1}{|G|}\sum \limits_{g \in G}f(g)\overline{f(g)} = \frac{1}{|G|}\sum \limits_{g \in G}|f(g)|^2 \geqslant 0$, причём\\
+        $(f, f) = 0 \Longleftrightarrow \forall g \in G: |f(g)| = 0 \Longleftrightarrow f = 0$;
+        \item $\overline{(f_1, f_2)} = \overline{\frac{1}{|G|}\sum \limits_{g \in G}f_1(g)\overline{f_2(g)}} = \frac{1}{|G|}\sum \limits_{g \in G}\overline{f_1(g)}f_2(g) = (f_2, f_1)$;
+        \item $(\alpha f_1 + \beta f_2, f_3) = \frac{1}{|G|}\sum \limits_{g \in G}(\alpha f_1 + \beta f_2)(g)\overline{f_3(g)} = \\ = \frac{\alpha}{|G|}\sum \limits_{g \in G}f_1(g)\overline{f_3(g)} + \frac{\beta}{|G|}\sum \limits_{g \in G}f_2(g)\overline{f_3(g)} = \alpha(f_1, f_3) + \beta(f_2, f_3)$.
+    \end{enumerate}
+    Значит, $(f_1, f_2)$ задаёт на $\CC^G$ скалярное произведение.
+\end{proof}
+\begin{theorem}(Свойство ортогональности характеров)\\
+    Пусть $\Phi_1, \Phi_2: G \rightarrow GL(V)$ - неприводимые комплексные линейные представления конечной группы $G$. Тогда $(\rchi_{\Phi_1}, \rchi_{\Phi_2}) = \begin{cases} 1, \ \Phi_1 \approx \Phi_2 \\ 0, \ \Phi_1 \not \approx \Phi_2 \end{cases}$
+\end{theorem}
+\begin{proof}
+    Пусть $\dim V = n$. Зафиксируем базис $\E$ пространства $V$ - в нём $\Phi_1(g) \leftrightarrow A(g) = (a_{ij}(g))$, $\Phi_2(g) \leftrightarrow B(g) = (b_{ij}(g))$. Так как $G$ конечна, $\forall g\in G: \textup{ord } g < \infty$, то есть по свойству 4 $\overline{\rchi_{\Phi_1}(g)} = \rchi_{\Phi_1}(g^{-1})$. Тогда:
+    \[(\rchi_{\Phi_2}, \rchi_{\Phi_1}) = \frac{1}{|G|}\sum \limits_{g \in G}\rchi_{\Phi_2}(g)\overline{\rchi_{\Phi_1}(g)} = \frac{1}{|G|}\sum \limits_{g \in G}\rchi_{\Phi_2}(g)\rchi_{\Phi_1}(g^{-1}) =\]\[=\frac{1}{|G|}\sum \limits_{g \in G}(\sum \limits_{i=1}^n b_{ii}(g))(\sum \limits_{j=1}^n a_{jj}(g^{-1})) = \sum \limits_{i,j = 1}^n \left(\frac{1}{|G|}\sum \limits_{g \in G}( b_{ii}(g) a_{jj}(g^{-1}))\right) = \]\[= \begin{cases} \sum \limits_{i,j = 1}^n \frac{\delta_i^j}{n}, \ \Phi_1 = \Phi_2 \\ 0, \ \Phi_1 \not \approx \Phi_2 \end{cases} = \begin{cases} 1, \ \Phi_1 = \Phi_2 \\ 0, \ \Phi_1 \not \approx \Phi_2 \end{cases}\]
+    Остаётся заметить, что $\Phi_1 \approx \Phi_2 \Longrightarrow \rchi_{\Phi_1} = \rchi_{\Phi_2}$, т.е. $(\rchi_{\Phi_2}, \rchi_{\Phi_1}) = (\rchi_{\Phi_1}, \rchi_{\Phi_1}) = 1$. Теорема доказана.
+\end{proof}
