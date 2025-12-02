@@ -50,13 +50,13 @@
 \end{reminder}
 Здесь и далее: если вдруг не вспоминается - см. \href{https://github.com/Viacheslavik122333/Linear-algebra/blob/main/linal.pdf}{конспект} линейной алгебры.
 \begin{definition}
-    Матричные представления $\Phi_1, \Phi_2$ группы $G$ размерности $n$ над полем $\F$ называются эквивалентными (изоморфными, подобными), если $\exists C \in GL_n(\F): \forall g \in G: \ \Phi_2(g) = C^{-1}\Phi_1(g)C$. Обозначается $\Phi_1 \approx \Phi_2$.
+    Матричные представления $\Phi_1, \Phi_2$ группы $G$ размерности $n$ над полем $\F$ называются эквивалентными (изоморфными, подобными), если $\exists C \in GL_n(\F): \forall g \in G: \ \Phi_1(g) = C^{-1}\Phi_2(g)C$. Обозначается $\Phi_1 \approx \Phi_2$.
 \end{definition}
 \begin{remark}
     Эквивалентные матричные представления группы $G$ соответствуют одному и тому же линейному представлению $G$ относительно разных базисов.
 \end{remark}
 \begin{definition}
-    Пусть $V_1, V_2$ - векторные пространства над полем $\F$. Линейные представления $\Phi_1: G \rightarrow GL(V_1)$ и $\Phi_2: G \rightarrow GL(V_2)$ называются эквивалентными (изоморфными, подобными), если $\exists \phi: V_1 \rightarrow V_2$ - изоморфизм такой, что $\forall g \in G: \ \Phi_2 = \phi^{-1}\circ\Phi_1\circ\phi$. Обозначается $\Phi_1 \approx \Phi_2$.
+    Пусть $V_1, V_2$ - векторные пространства над полем $\F$. Линейные представления $\Phi_1: G \rightarrow GL(V_1)$ и $\Phi_2: G \rightarrow GL(V_2)$ называются эквивалентными (изоморфными, подобными), если $\exists \phi: V_1 \rightarrow V_2$ - изоморфизм такой, что $\forall g \in G: \ \Phi_1 = \phi^{-1}\circ\Phi_2\circ\phi$. Обозначается $\Phi_1 \approx \Phi_2$.
 \end{definition}
 \begin{remark}
     Если $\Phi_1 \approx \Phi_2$ и $\E_1= \{e_1,...,e_n\}$ - базис $V_1$, то в базисе $\E_2 = \{\phi(e_1),...,\phi(e_n)\}$ (где $\phi$ - изоморфизм $V_1$ и $V_2$ из определения $\Phi_1 \approx \Phi_2$) для любого $g$ матрица линейного оператора $\Phi_2(g)$ равна матрице оператора $\Phi_1(g)$ в базисе $\E_1$.
@@ -185,7 +185,8 @@ $\\$\textbf{Одномерные комплексные лин. представ
 \begin{proof}
     Из двух предыдущих утверждений имеем взаимно однозначное соответствие между одномерными комплексными линейными представлениями $G$ и $G/G'$. Если $G$ конечна, то $G/G'$ - конечная абелева, а тогда она имеет ровно $|G/G'|$ представлений.
 \end{proof}
-\subsection{Сумма линейных представлений группы}
+\subsection{Вполне приводимые линейные представления}
+\begin{definition} Сумма линейных представлений:
 \begin{enumerate}
     \item \textbf{Внутренняя сумма линейных представлений}\\
     Пусть $\Phi: G \rightarrow GL(V)$ - линейное представление $G$, и пусть $V = U \oplus W$, где $U$ и $W$ инвариантны относительно $\Phi$. Тогда говорят, что $\Phi$ есть сумма (внутренняя) представлений $\Phi|_U$ и $\Phi|_W$.\\
@@ -194,12 +195,13 @@ $\\$\textbf{Одномерные комплексные лин. представ
     Пусть $U, W$ - векторные пространства над полем $\F$, и пусть заданы линейные представления $\Psi_1: G \rightarrow GL(U)$ и $\Psi_2: G \rightarrow GL(W)$. Обозначим $V = U \oplus W$ - внешняя прямая сумма $U$ и $W$. Тогда линейное представление $\Phi: G \rightarrow GL(V)$, заданное по правилу $\Phi(g)(u, w) = (\Psi_1(g)u, \Psi_2(g)w)$ (очевидно, что это гомоморфизм), называется (внешней) суммой линейных представлений $\Psi_1, \Psi_2$ и обозначается $\Phi = \Psi_1 + \Psi_2$.\\
     Аналогично, если выбрать базисы $\E_U = \{e_1,...,e_m\}$ в $U$, $\E_W = \{e_{m+1},...,e_n\}$ в $W$, то в базисе $\E_V = \{(e_1, 0),...,(e_m, 0), (0, e_{m+1}),...,(0, e_n)\}$ пространства $V$ матрица оператора $\Phi(g)$ для любого $g \in G$ имеет вид $\begin{pmatrix} A_{\Psi_1} &\vline&0 \\ \hline 0&\vline&A_{\Psi_2} \end{pmatrix}$, где $A_{\Psi_1}$ - матрица $\Psi_1$ в базисе $\E_U$, а $A_{\Psi_2}$ - матрица $\Psi_2$ в базисе $\E_W$.
 \end{enumerate}
-\subsection{Вполне приводимые линейные представления}
+\end{definition}
+
 \begin{definition}
     Линейное представление $\Phi: G \rightarrow GL(V)$ называется вполне приводимым, если для любого подпространства $U \subseteq V$, инвариантного относительно $\Phi$, существует такое подпространство $W \subseteq V$, инвариантное относительно $\Phi$, что $V = U \oplus W$.
 \end{definition}
 \begin{remark}
-    Любое неприводимое линейное представление вполне приводимо - для него есть только инвариантные подпространства $V$ и $\{0\}$, причём $V \oplus \{0\} = V$.
+    Любое неприводимое линейное представление вполне приводимо - для него инвариантные подпространства - только $V$ и $\{0\}$, причём $V \oplus \{0\} = V$.
 \end{remark}
 \begin{examples} (Напомним, что при фиксированном базисе $V$ линейные представления взаимно однозначно соответствуют матричным, где в соответствие каждому оператору поставлена его матрица).
     \begin{enumerate}
@@ -231,7 +233,7 @@ $\\$\textbf{Одномерные комплексные лин. представ
     Шаг: Пусть $V_1$ - минимальное ненулевое инвариантное подпространство линейного представления $\Phi$. Так как $\Phi$ вполне приводимо, $\exists$ инвариантное дополнение $W: V = V_1 \oplus W \Longrightarrow \Phi = \Phi_{V_1} + \Phi_W$. При этом $\Phi_{V_1}$ неприводимо из минимальности $V_1$ (нет нетривиальных инвариантных подпространств меньшей размерности), а $\Phi_W$ по лемме 1 вполне приводимо, и притом меньшей размерности - раскладывается в искомую сумму по предположению индукции. Значит, $\Phi$ также раскладывается в искомую сумму.  
 \end{proof}
 \begin{example}
-    Если $\dim V = n > 1$ и $\Phi: G \rightarrow GL(n)$ такое, что $\Phi(g) = I \ \forall g \in G$, то все подпространства $V$ являются инвариантными для $\Phi$, откуда $\Phi$ вполне приводимо. Тогда $\Phi$ раскладывается в сумму одномерных представлений, причём не единственным образом - в зависимости от выбора базиса:
+    Если $\dim V = n > 1$ и $\Phi: G \rightarrow GL(V)$ такое, что $\Phi(g) = I \ \forall g \in G$, то все подпространства $V$ являются инвариантными для $\Phi$, откуда $\Phi$ вполне приводимо. Тогда $\Phi$ раскладывается в сумму одномерных представлений, причём не единственным образом - в зависимости от выбора базиса:
     \[\E = \{e_1,...,e_n\} \Longrightarrow V = \langle e_1 \rangle \oplus ... \oplus \langle e_n \rangle \Longrightarrow \Phi = \Phi_1 + ... + \Phi_n;\]
     \[\tilde{\E} = \{\tilde{e}_1,...,\tilde{e}_n\} \Longrightarrow V = \langle \tilde{e}_1 \rangle \oplus ... \oplus \langle \tilde{e}_n \rangle \Longrightarrow \Phi = \tilde{\Phi}_1 + ... + \tilde{\Phi}_n;\]
 \end{example}
@@ -301,7 +303,8 @@ $\\$\textbf{Одномерные комплексные лин. представ
 \begin{example}
     Найдём число неэквивалентных двумерных комплексных линейных представлений $\Z_2$. $\Z_2 = \langle a \rangle_2$ - конечная абелева группа, то есть по следствию $2$ любое комплексное линейное представление $\Phi$ представимо в виде суммы одномерных линейных представлений $\Phi_1 + \Phi_2$. Таким образом, матрица $\Phi(a)$ имеет вид $\begin{pmatrix} \Phi_1(a)&0 \\ 0&\Phi_2(a) \end{pmatrix}$,  а также $\Phi_i(a) = \pm 1$, т.к. $a^2 = e$. Значит, $\Phi(a) = \begin{pmatrix} \pm1&0 \\ 0&\pm1 \end{pmatrix}$ - 4 различные матрицы. Осталось заметить, что линейные представления неэквивалентны, если ЖНФ матриц $\Phi(a)$ различны - отсюда случаи $\begin{pmatrix} 1&0 \\ 0&-1 \end{pmatrix}$ и $\begin{pmatrix} -1&0 \\ 0&1 \end{pmatrix}$ эквивалентны, что оставляет нам 3 неэквивалентных (разные собственные значения) линейных представления.
 \end{example}
-\subsection{Ортогональные (унитарные) линейные представления}
+
+\textbf{Ортогональные (унитарные) представления}
 \setcounter{lemcount}{0}
 \begin{definition}
     Вещественное (комплексное) линейное представление $\Phi: G \rightarrow GL(V)$ называется ортогональным (унитарным), если в $V$ можно ввести скалярное произведение так, что $\forall g \in G: \Phi(g)$ - ортогональный (унитарный) оператор относительно этого скалярного произведения.
@@ -331,7 +334,7 @@ $\\$\textbf{Одномерные комплексные лин. представ
     Случай $\F = \CC$: рассмотрим произвольную эрмитову положительно определённую полуторалинейную функцию $\gamma: V \times V \rightarrow \CC$. Тогда аналогично определим отображение $(x|y)$ - его свойства и унитарность $\Phi(g)$ проверяются аналогично свойствам $\beta$ и ортогональности $\Phi(g)$. 
 \end{proof}
 \subsection{Неприводимые линейные представления над \texorpdfstring{$\CC$}{полем комплексных чисел}}
-Сформулируем две теоремы, описывающие поведение неприводимых комплексных представлений произвольной конечной группы. Они будут доказаны в разделе 9.7, а этот раздел посвящён их практическому применению. 
+Сформулируем две теоремы, описывающие поведение неприводимых комплексных представлений произвольной конечной группы. Они будут доказаны в разделе 9.5 (а именно \hyperlink{chtarget}{здесь}), а этот раздел посвящён их практическому применению. 
 \begin{theoremnum}
     Пусть $G$ - конечная группа, $r$ - количество классов сопряжённости в $G$. Тогда существует ровно $r$ попарно неэквивалентных неприводимых комплексных линейных представлений $G$ над $\CC$.
 \end{theoremnum}
@@ -487,3 +490,142 @@ $\\$\textbf{Одномерные комплексные лин. представ
     \[(\rchi_{\Phi_2}, \rchi_{\Phi_1}) = \frac{1}{|G|}\sum \limits_{g \in G}\rchi_{\Phi_2}(g)\overline{\rchi_{\Phi_1}(g)} = \frac{1}{|G|}\sum \limits_{g \in G}\rchi_{\Phi_2}(g)\rchi_{\Phi_1}(g^{-1}) =\]\[=\frac{1}{|G|}\sum \limits_{g \in G}(\sum \limits_{i=1}^n b_{ii}(g))(\sum \limits_{j=1}^n a_{jj}(g^{-1})) = \sum \limits_{i,j = 1}^n \left(\frac{1}{|G|}\sum \limits_{g \in G}( b_{ii}(g) a_{jj}(g^{-1}))\right) = \]\[= \begin{cases} \sum \limits_{i,j = 1}^n \frac{\delta_i^j}{n}, \ \Phi_1 = \Phi_2 \\ 0, \ \Phi_1 \not \approx \Phi_2 \end{cases} = \begin{cases} 1, \ \Phi_1 = \Phi_2 \\ 0, \ \Phi_1 \not \approx \Phi_2 \end{cases}\]
     Остаётся заметить, что $\Phi_1 \approx \Phi_2 \Longrightarrow \rchi_{\Phi_1} = \rchi_{\Phi_2}$, т.е. $(\rchi_{\Phi_2}, \rchi_{\Phi_1}) = (\rchi_{\Phi_1}, \rchi_{\Phi_1}) = 1$. Теорема доказана.
 \end{proof}
+\begin{remark}
+    Далее в разложениях линейного представления в сумму неприводимых будут группироваться эквивалентные слагаемые - это записывается в виде
+    \[\Phi = m_1\Phi_1 + ... + m_s\Phi_s \Longleftrightarrow \Phi = \undermat{m_1}{\Phi_1 + ... + \Phi_1} + ... + \undermat{m_s}{\Phi_s + ... + \Phi_s}\]
+    $\\$В данной записи подразумевается, что $\Phi_i \not \approx \Phi_j$ при $i \neq j$.
+\end{remark}
+\begin{consequense}
+    Пусть $\Phi = m_1\Phi_1 + ... + m_s\Phi_s$, где $\Phi_1,...,\Phi_s$ - комплексные неприводимые линейные представления конечной группы $G$. Тогда:
+    \begin{enumerate}
+        \item $(\rchi_\Phi, \rchi_{\Phi_i}) = m_i$;
+        \item $(\rchi_\Phi, \rchi_\Phi) = m_1^2 + ... + m_s^2$;
+        \item Если $(\rchi_\Phi, \rchi_\Phi) = 1$, то $\Phi$ - неприводимое.
+    \end{enumerate}
+\end{consequense}
+\begin{proof}
+    Заметим, что $\Phi = \sum \limits_i m_i\Phi_i \Longrightarrow \rchi_\Phi = \sum \limits_i m_i\rchi_{\Phi_i}$. При этом $\Phi_i \not \approx \Phi_j$ при $i \neq j$, а значит $(\rchi_j, \rchi_i) = \delta_i^j$ из теоремы. Тогда:
+    \begin{enumerate} 
+        \item $(\rchi_\Phi, \rchi_{\Phi_i}) = (\sum \limits_j m_j\rchi_{\Phi_j}, \rchi_{\Phi_i}) = \sum \limits_j m_j(\rchi_j, \rchi_i) = m_i$;
+        \item $(\rchi_\Phi, \rchi_\Phi) = (\sum \limits_i m_i\rchi_{\Phi_i}, \sum \limits_j m_j\rchi_{\Phi_j}) = \sum \limits_{i, j} m_im_j(\rchi_i, \rchi_j) = \sum \limits_i m_i^2$;
+        \item Следует из пункта 2 - если $(\rchi_\Phi, \rchi_\Phi) = 1$, то ненулевой коэффициент может быть только один, и он равен единице. Пусть $m_i = 1$ - тогда $\Phi = \Phi_i$, т.е. $\Phi$ - неприводимое. 
+    \end{enumerate}
+\end{proof}
+\begin{consequense}
+    Пусть $G$ - конечная группа, $V$ - векторное пространство над $\CC$, $\Phi$, $\Psi$ - линейные представления группы $G$. Тогда если $\rchi_\Phi = \rchi_\Psi$, то $\Phi \approx \Psi$.
+\end{consequense}
+\begin{proof}
+    По теореме Машке $\Phi$ и $\Psi$ вполне приводимы, то есть \begin{equation*}
+        \Phi = m_1\Phi_1 + ... + m_s\Phi_s, \ \ \Psi = n_1 \Psi_1 + ... + n_t\Psi_t
+    \end{equation*}
+    При этом $\forall i: (\rchi_\Phi, \rchi_{\Phi_i}) = m_i$ из 1 пункта предыдущего следствия, то есть 
+    \[(\rchi_\Psi, \rchi_{\Phi_i}) = m_i \Longrightarrow n_1(\rchi_{\Psi_1}, \rchi_{\Phi_i}) + ... + n_t(\rchi_{\Psi_t}, \rchi_{\Phi_i}) = m_i\]
+    Так как эта сумма не равна нулю, среди слагаемых в разложении $\Psi$ найдётся $\Psi_j \approx \Phi_i$, а также $n_j = m_i$. Аналогичными рассуждениями для всех слагаемых обоих разложений получим, что каждое из них имеет эквивалентное в другом разложении, причём с тем же коэффициентом. Таким образом, с точностью до нумерации $\Psi = m_1\Psi_1 + ... + m_s\Psi_s$, где $\Psi_i \approx \Phi_i$. Отсюда очевидно, что $\Phi \approx \Psi$.
+\end{proof}
+
+\textbf{Пространство центральных функций}
+\begin{definition}
+    Функция $f: G \rightarrow \CC$ называется центральной, если она постоянна на классах сопряжённости $G$. Множество всех центральных функций для группы $G$ обозначается как $\rchi_\CC(G)$.
+\end{definition}
+\begin{example}
+    Для произвольного комплексного линейного представления $\Phi$ гр. $G$ $\rchi_\Phi$ - центральная функция.
+\end{example}
+\begin{subtheorem}
+    $\rchi_\CC(G)$ - подпространство в $\CC^G$.
+\end{subtheorem}
+\begin{proof}
+    Очевидно, что $\forall \rchi_1, \rchi_2 \in \rchi_\CC(G), \lambda \in \CC$ функции $\rchi_1 + \rchi_2$ и $\lambda \rchi_1$ также являются центральными, так как постоянность на классах сопряжённости не нарушается. Также $0 \in \rchi_\CC(G)$, то есть определение подпространства выполнено.
+\end{proof}
+\begin{subtheorem}
+    Если $r$ - число классов сопряжённости в $G$, то $\dim \rchi_\CC(G) = r$.
+\end{subtheorem}
+\begin{proof}
+    Если в группе $G$ есть ровно $r$ классов сопряжённости, то $G = x_1^G \sqcup ... \sqcup x_r^G$. В таком случае функции \[\Gamma_1,...,\Gamma_r,\text{ где }\Gamma_i = \begin{cases} 1,\ g \in x_i^G\\ 0,\ \text{иначе} \end{cases}\]
+    очевидно, образуют базис в $\rchi_\CC(G)$.
+\end{proof}
+\begin{lemmanum}
+    Пусть $G$ - конечная группа, $V$ - векторное пространство над $\CC$,\\
+    $\Phi: G \rightarrow GL(V)$ - неприводимое линейное представление, $\Gamma \in \rchi_\CC(G)$.\\
+    Тогда оператор \[\Psi_{\Gamma, \Phi} = \sum \limits_{g \in G} \overline{\Gamma(g)}\Phi(g)\text{ равен }\lambda I,\text{ где }\lambda = |G|\frac{(\rchi_\Phi, \Gamma)}{\rchi_\Phi(e)}\]
+\end{lemmanum}
+\begin{proof}
+    Докажем, что $\forall g \in G: \ \Psi_{\Gamma, \Phi} \circ \Phi(G) = \Phi(g) \circ \Psi_{\Gamma, \Phi}$:
+    \[\Phi(g)\circ\Psi_{\Gamma, \Phi}\circ\Phi(g^{-1}) = \Phi(g)(\sum \limits_{h \in G} \overline{\Gamma(h)}\Phi(h))\Phi(g^{-1}) = \sum \limits_{g \in G} \overline{\Gamma(h)}\Phi(ghg^{-1}) =\]
+    \[(\text{из центральности } \Gamma) \ \ = \sum \limits_{g \in G} \overline{\Gamma(ghg^{-1})}\Phi(ghg^{-1}) = \sum \limits_{\tilde{g} \in G} \overline{\Gamma(\tilde{g})}\Phi(\tilde{g}) = \Psi_{\Gamma, \Phi}\]
+    Отсюда по лемме Шура $\Psi_{\Gamma, \Phi} = \lambda I$. Рассмотрим след $\Psi_{\Gamma, \Phi}$:
+    \[\textup{tr } \Psi_{\Gamma, \Phi} = \textup{tr } \lambda I = \lambda \dim V = \lambda \rchi_\Phi(e)\]
+    \[\textup{tr } \Psi_{\Gamma, \Phi} = \sum \limits_{g \in G} \overline{\Gamma(g)}\cdot\textup{tr } \Phi(g) = \sum \limits_{g \in G} \overline{\Gamma(g)}\rchi_\Phi(g) = |G|\cdot(\rchi_\Phi, \Gamma)\]
+    Значит, $\lambda = \frac{\textup{tr } \Psi_{\Gamma, \Phi}}{\rchi_\Phi(e)} = |G|\frac{(\rchi_\Phi, \Gamma)}{\rchi_\Phi(e)}$.
+\end{proof}
+\begin{definition}
+    Пусть $G = \{g_1,...,g_n\}$, $V$ - векторное пространство над $\F$ такое, что $\dim V = n$, $\E = \{e_{g_1},...,e_{g_n}\}$ - базис $V$. Линейное представление $\rho: G \rightarrow GL(V)$, заданное по правилу $\forall g \in G: \ \rho(g)e_{g_r} = e_{gg_r}$, называется регулярным представлением группы $G$ над полем $\F$.
+\end{definition}
+\begin{lemmanum}
+    Пусть $G$ - конечная группа, $\Phi_1,...,\Phi_k$ - все попарно неэквивалентные комплексные линейные представления группы $G$, $\rchi_1,...,\rchi_k$ - их характеры. Тогда $\rchi_1,...,\rchi_k$ - ортонормированный базис в $\rchi_\CC(G)$.
+\end{lemmanum}
+\begin{proof}
+    Так как $\Phi_1,...,\Phi_k$ неприводимы и попарно неэквивалентны, $(\rchi_i, \rchi_j) = \delta_i^j$, то есть $\rchi_1,...,\rchi_k$ линейно независимы как попарно ортогональные векторы. При этом $\dim V < \infty$ (равно числу классов сопряжённости в $G$), то есть $k < \infty$. Осталось доказать, что $\rchi_\CC(G) = \langle \rchi_1,...,\rchi_k \rangle$.
+
+    Докажем от противного: предположим, что $\rchi_\CC(G) \neq \langle \rchi_1,...,\rchi_k \rangle$. Тогда \\
+    $\langle \rchi_1,...,\rchi_k \rangle^\perp \neq \{0\}$, то есть $\exists \Gamma \in \langle \rchi_1,...,\rchi_k \rangle^\perp$, $\Gamma \neq 0$. Пусть $G = \{g_1,...,g_n\}$. Выберем произвольное векторное пространство $V$ размерности $n$ и произвольный базис $\E = \{e_{g_1},...,e_{g_n}\}$ в нём. Рассмотрим регулярное представление $\rho: G \rightarrow GL(V)$ над $\CC$. По теореме Машке оно вполне приводимо, то есть представимо в виде $\rho = m_1\tilde{\Phi}_1 + ... + m_s\tilde{\Phi}_s$, где $\tilde{\Phi}_i$ неприводимы и попарно неэквивалентны.\\
+    Рассмотрим линейный оператор $\Psi_{\Gamma, \rho} = \sum \limits_{g \in G} \overline{\Gamma(g)}\rho(g)$ пр-ва $V$, как в лемме 1:
+    \[\Psi_{\Gamma, \rho} = \sum \limits_{g \in G} \overline{\Gamma(g)}\rho(g) = \sum \limits_{g \in G} \overline{\Gamma(g)}(m_1\tilde{\Phi}_1 + ... + m_s\tilde{\Phi}_s)(g) = m_1\Psi_{\Gamma, \tilde{\Phi}_1} + ... + m_s\Psi_{\Gamma, \tilde{\Phi}_s}\]
+    Из неприводимости $\tilde{\Phi}_i$ по лемме 1 $\Psi_{\Gamma, \tilde{\Phi}_i} = \lambda_i I$, где $\lambda_i = |G|\frac{(\rchi_{\tilde{\Phi}_i}, \Gamma)}{\rchi_{\tilde{\Phi}_i}(e)}$. Но при этом $\tilde{\Phi}_i$ - неприводимое представление $G$, то есть оно эквивалентно одному из $\Phi_i$, а отсюда $\rchi_{\tilde{\Phi}_i} \in \langle \rchi_1,...,\rchi_k \rangle$. Значит, $(\rchi_{\tilde{\Phi}_i}, \Gamma) = 0 \Longrightarrow \lambda_i = 0 \Longrightarrow \Psi_{\Gamma, \rho} = 0$.\\
+    С другой стороны,
+    \[\Psi_{\Gamma, \rho}(e_{g_1}) = \sum \limits_{g \in G} \overline{\Gamma(g)}\rho(g)(e_{g_1}) = \sum \limits_{g \in G} \overline{\Gamma(g)}e_{gg_1}\]
+    А так как $\Psi_{\Gamma, \rho} = 0$, имеем $\sum \limits_{g \in G} \overline{\Gamma(g)}e_{gg_1} = 0 \Longrightarrow \forall g \in G: \Gamma(g) = 0 \Longrightarrow \Gamma = 0$ - противоречие. Значит, $\rchi_\CC(G) = \langle \rchi_1,...,\rchi_k \rangle$, и $\rchi_1,...,\rchi_k$ - ортонормированный базис в $\rchi_\CC(G)$.
+\end{proof}
+\begin{consequense}
+    \hypertarget{chtarget}{Пусть} $G$ - конечная группа, $r$ - количество классов сопряжённости в $G$. Тогда существует ровно $r$ попарно неэквивалентных неприводимых комплексных линейных представлений $G$ над $\CC$.
+\end{consequense}
+\begin{proof}
+    Из леммы 2 количество попарно неэквивалентных комплексных линейных представлений $G$ равно $\dim \rchi_\CC(G)$, что равно количеству классов сопряжённости в $G$.
+\end{proof}
+\begin{consequense}
+    Пусть $G$ - конечная группа, $\Phi_1,...,\Phi_r$ - все попарно неэквивалентные комплексные линейные представления группы $G$, $n_1,...,n_r$ - их размерности. Тогда:
+    \begin{enumerate}
+        \item $\rho = n_1\Phi_1 + ... + n_r\Phi_r$, где $\rho$ - регулярное представление группы $G$ над $\CC$;
+        \item $|G| = n_1^2 + ... + n_r^2$
+    \end{enumerate}
+\end{consequense}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item По теореме Машке $\rho$ вполне приводимо, то есть $\rho = m_1\Phi_1 + ... + m_r\Phi_r$ ($m \geqslant 0$). Пусть $\rchi_\rho$ и $\rchi_{\Phi_i}$ - характеры $\rho$ и $\Phi_i$ соответственно. Так как $\rchi_1,...,\rchi_r$ - ортонормированный базис, $(\rchi_\rho, \rchi_{\Phi_i}) = m_i$. С другой стороны:
+        \[(\rchi_\rho, \rchi_{\Phi_i}) = \frac{1}{|G|}\sum \limits_{g \in G}\rchi_\rho(g)\overline{\rchi_{\Phi_i}(g)}\]
+        Посмотрим, какие значения принимает $\rchi_\rho$. Выберем векторное пространство $V$ размерности $n$ и базис $\E = \{e_{g_1},...,e_{g_n}\}$. Так как $\rho(g)e_{g_i} = e_{gg_i}$, в базисе $\E$ каждый столбец матрицы $A_\rho(g)$ содержит одну единицу и $n-1$ ноль. При этом если $g = 1$ в $G$, то $A_\rho(g) = E$, а иначе ни один базисный вектор не перейдёт в себя, то есть все элементы на главной диагонали $A_\rho(g)$ равны нулю. Отсюда:
+        \[\rchi_\rho(g) = \begin{cases} |G|, \ g = 1\\ 0, \ g \neq 1 \end{cases}\]
+        Значит,
+        \[\frac{1}{|G|}\sum \limits_{g \in G}\rchi_\rho(g)\overline{\rchi_{\Phi_i}(g)} = \frac{1}{|G|}\cdot|G|\overline{\rchi_{\Phi_i}(1)} = n_i\]
+        так как $\Phi_i(1) = I$
+        \item Выразим $|G|$:
+        \[|G| = \dim V = \textup{tr } \rho(1) = n_1 \textup{tr } \Phi_1 + ... + n_r \textup{tr } \Phi_r = n_1^2 + ... + n_r^2\]
+    \end{enumerate}    
+\end{proof}
+\begin{example}
+    Построим таблицу характеров неприводимых комплексных представлений $S_3$:
+    Сами представления уже были найдены:
+    \begin{itemize}
+        \item $\Phi_1(\sigma) = I$;
+        \item $\Phi_2(\sigma) = \sgn \sigma \cdot I$;
+        \item $\Phi_3: S_3 \simeq D_3 = \textup{Sym } \triangle \subset GL_2(\CC)$
+    \end{itemize}
+    $$\begin{tabular}{c|c|c|c|}
+        \text{Классы сопр.} & id & (12) & (123)\\ \hline
+        $\rchi_{\Phi_1}$ & 1 & 1 & 1 \\ \hline
+        $\rchi_{\Phi_2}$ & 1 & -1 & 1 \\ \hline 
+        $\rchi_{\Phi_3}$ & 2 & 0 & -1 \\ \hline
+    \end{tabular}$$
+    Значения $\rchi_{\Phi_1}$ и $\rchi_{\Phi_2}$ ищутся очевидно. Опишем подробнее поиск значений $\rchi_{\Phi_3}$:
+    \begin{itemize}
+        \item $\rchi_{\Phi_3}(\id) = I$ - в любом базисе матрица $\begin{pmatrix} 1&0 \\ 0&1 \end{pmatrix}$, след равен 2;
+        \item $\rchi_{\Phi_3}((12))$ - симметрия относительно прямой, содержащей вершину 3 и середину стороны 1-2. Так как характер не зависит от базиса, можем выбрать удобный нам - в ортонормированном базисе, где первый базисный вектор параллелен оси симметрии, матрица примет вид $\begin{pmatrix} 1&0 \\ 0&-1 \end{pmatrix}$, след равен 0;
+        \item $\rchi_{\Phi_3}((123))$ - поворот на $\frac{2\pi}{3}$ относительно центра треугольнка. Матрица этого поворота имеет вид $\begin{pmatrix} \cos(\frac{2\pi}{3})&\sin(\frac{2\pi}{3}) \\ -\sin(\frac{2\pi}{3})&\cos(\frac{2\pi}{3}) \end{pmatrix} = \begin{pmatrix} -\frac{1}{2}&\frac{\sqrt{3}}{2} \\ -\frac{\sqrt{3}}{2}&-\frac{1}{2} \end{pmatrix}$, след равен -1.
+    \end{itemize}
+    Покажем с помощью характера, что $\Phi_3$ - неприводимое представление:
+    \[(\rchi_{\Phi_3}, \rchi_{\Phi_3}) = \frac{1}{|S_3|}\sum \limits_{g \in S_3} \rchi_{\Phi_3}(g)\overline{\rchi_{\Phi_3}(g)} = \frac{1}{6}(1 \cdot 2^2 + 3 \cdot 0 + 2 \cdot (-1)^2) = 1\]
+\end{example}
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}
+\setcounter{lemcount}{0}
+\newpage

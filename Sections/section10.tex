@@ -1,0 +1,226 @@
+\section{Кольца и поля}
+\begin{definition}
+    Кольцо - множество $K$, на котором введены две бинарные операции - сложение и умножение - удовлетворяющие следующим условиям:
+    \begin{enumerate}
+        \item $(K, +)$ - абелева группа;
+        \item $\forall a, b, c \in K: \ (b + c)a = ba + ca$ и $a(b+c) = ab + ac$ (дистрибутивность) 
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Кольцо называется коммутативным (ассоциативным), если в нём умножение коммутативно (ассоциативно).
+\end{definition}
+\begin{definition}
+    Кольцо $K$ называется кольцом с единицей, если \[\exists 1 \in K: \forall a \in K \ a\cdot 1 = 1 \cdot a = a\]
+    Элемент 1 называется единицей.
+\end{definition}
+\begin{definition}
+    Элемент кольца $K$ с единицей называется обратимым, если
+    \[\exists b \in K: ab = ba = 1\]
+    Элемент $b$ называется обратным к $a$ и обозначается $a^{-1}$.
+\end{definition}
+\begin{definition}
+    Поле - коммутативное ассоциативное кольцо с единицей, в котором любой ненулевой элемент обратим.
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $\Z, \R[x]$ - ассоциативное, коммутативное, с единицей;\\
+        $M_n(\R)$ - некоммутативное, ассоциативное, с единицей;\\
+        $(V^3, +, \times)$ - некоммутативное, неассоциативное, без единицы ($\times$ - векторное произведение);\\
+        $2\Z$ - ассоциативное, коммутативное, без единицы;
+        \item $\R, \Q, \CC$ - поле;\\
+        $\Z_n$ - поле $\Longleftrightarrow n$ - простое;\\
+        $\R(x)$ (рациональные дроби над $\R$) - поле.
+    \end{enumerate}    
+\end{examples}
+\begin{definition}
+    Если $a, b \in K$ такие, что $a, b \neq 0$ и $ab = 0$, то $a, b$ называются делителями нуля ($a$ - левый делитель нуля, $b$ - правый делитель нуля)
+\end{definition}
+\begin{examples} Делители нуля в кольцах:
+    \begin{itemize}
+        \item $\Z_6: 2, 3, 4$ - все делители нуля;
+        \item $M_2(\R)$: например, $\begin{pmatrix} 1&0 \\ 0&0 \end{pmatrix}\cdot \begin{pmatrix} 0&0 \\ 0&1 \end{pmatrix} = \begin{pmatrix} 0&0 \\ 0&0 \end{pmatrix}$
+    \end{itemize}
+\end{examples}
+\begin{subtheorem}
+    Если $a$ - обратимый элемент ассоциативного кольца $K$ с единицей, то обратный элемент к $a$ единственный.
+\end{subtheorem}
+\begin{proof}
+    Пусть $b$ и $c$ - обратные к $a$. Тогда:
+    \[b = b \cdot 1 = b(ac) = (ba)c = 1 \cdot c = c\]
+\end{proof}
+\begin{remark}
+    Далее все рассматриваемые кольца - ассоциативные (свойства неассоциативных колец не такие общие и не будут рассматриваться в данном курсе).
+\end{remark}
+\begin{subtheorem}
+    Если элемент $a$ кольца $K$ обратим, то $a$ - не делитель нуля. 
+\end{subtheorem}
+\begin{proof}
+    От противного: пусть $a$ обратим и $a$ - делитель нуля. Тогда:
+    \[\exists b \neq 0 : ab = 0 \Longrightarrow a^{-1}ab = a\cdot 0 \Longrightarrow b = 0 \text{ - противоречие.}\]
+\end{proof}
+\begin{consequense}
+    В поле нет делителей нуля.
+\end{consequense}
+\begin{definition}
+    Подмножество $L$ кольца $K$ называется подкольцом, если
+    \begin{enumerate}
+        \item $(L, +)$ - подгруппа аддитивной группы кольца $(K, +)$;
+        \item $\forall a, b \in L: \ ab \in L$.
+    \end{enumerate}
+\end{definition}
+\begin{subtheorem}
+    Любое подкольцо $L$ кольца $K$ является кольцом относительно операций кольца $K$.  
+\end{subtheorem}
+\begin{example}
+    $2\Z \subset \Z \subset \Q$.
+\end{example}
+\begin{definition}
+    Подмножество $L$ поля $K$ называется подполем, если
+    \begin{enumerate}
+        \item $(L, +, \cdot)$ - подкольцо кольца $(K, +, \cdot)$;
+        \item $1 \in L$;
+        \item $\forall a \in L: \ a^{-1} \in L$.
+    \end{enumerate}
+\end{definition}
+\begin{subtheorem}
+    Любое подполе $L$ поля $K$ является полем относительно операций поля $K$.  
+\end{subtheorem}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $\Z$ - подкольцо $\Q$, но не подполе $\Q$;
+        \item $\Q \subset \R \subset \CC$.
+    \end{enumerate}    
+\end{examples}
+\begin{definition}
+    Если $L$ - подполе поля $K$, то $K$ называется расширением $L$.
+\end{definition}
+\subsection{Идеалы колец и факторкольца}
+\begin{definition}
+    Подмножество $L$ кольца $K$ называется левым (правым) идеалом, если:
+    \begin{enumerate}
+        \item $(L, +)$ - подгруппа $(K, +)$;
+        \item $\forall a \in K, x \in L: ax \in L \ (xa \in L)$
+    \end{enumerate}
+\end{definition}
+\begin{remark}
+    Левый идеал замкнут относительно умножения на элементы кольца слева, правый - относительно умножения справа.
+\end{remark}
+\begin{definition}
+    Подмножество $L$ кольца $K$ называется (двусторонним) идеалом, если:
+    \begin{enumerate}
+        \item $(L, +)$ - подгруппа $(K, +)$;
+        \item $\forall a \in K, x \in L: ax, xa \in L$
+    \end{enumerate}
+\end{definition}
+\begin{subtheorem}
+    (Левый, правый, двусторонний) идеал кольца $K$ - подкольцо $K$.
+\end{subtheorem}
+\begin{proof}
+    Очевидно из определения.
+\end{proof}
+\begin{remark}
+    Идеалы в кольцах можно считать аналогом нормальных подгрупп в группах.
+\end{remark}
+\begin{example}
+    Пусть $K = \Z$. Тогда любое подкольцо $K$ имеет вид $H = m\Z$ - любое такое подкольцо является идеалом в $\Z$
+\end{example}
+\begin{definition}
+    В любом кольце $K$ есть идеалы $\{0\}, K$ - они называются тривиальными идеалами.
+\end{definition}
+\begin{subtheorem}
+    В поле нет нетривиальных идеалов.
+\end{subtheorem}
+\begin{proof}
+    Пусть $\F$ - поле. Пусть $I \subset \F$ - идеал, причём $I \neq 0$. Тогда $\exists x \in I: x \neq 0$. Так как $\F$ - поле, $\exists x^{-1} \in \F$, а отсюда $1 = x^{-1}x \in I$ (т.к. $x \in I$).\\
+    Тогда для любого $a \in \F$: $a = a\cdot 1 \in I \ (\text{т.к. } 1 \in \F)\Longrightarrow I = \F$.
+\end{proof}
+
+Пусть $K$ - кольцо, $I$ - идеал $K$. Рассмотрим множество
+\[K/I = \{a + I \ | \ a \in K\}\]
+и введём на нём операции:
+\begin{enumerate}
+    \item Сложение: $(a + I) + (b + I) = a + b + I$;
+    \item Умножение: $(a + I) \cdot (b + I) = ab + I$.
+\end{enumerate}
+\begin{subtheorem}
+    Данные операции корректны (не зависят от представителей классов).
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Сложение корректно из корректности сложения смежных классов в группах, так как $(I, +)$ - нормальная подгруппа $(K, +)$;
+        \item Пусть $a + I = \tilde{a} + I$, $b + I = \tilde{b} + I$. Докажем, что $ab + I = \tilde{a}\tilde{b} + I$:\\ $\tilde{a} = a + y_a$, $\tilde{b} = b + y_b$, где $y_a, y_b \in I$. Тогда:
+        \[\forall x \in \tilde{a}\tilde{b} + I: \ x = \tilde{a}\tilde{b} + y, y \in I\]
+        \[x =  \tilde{a}\tilde{b} + y = (a + y_a)(b + y_b) + y = ab + \undermat{\in I}{y_ab + ay_b + y_ay_b + y} = ab + I\]
+    \end{enumerate}    
+\end{proof}
+\begin{subtheorem}
+    Множество $K/I$ с введёнными операциями - кольцо, причём если $K$ ассоциативно (коммутативно), то $K/I$ ассоциативно (коммутативно).
+\end{subtheorem}
+\begin{proof}
+    Проверим определение кольца:
+    \begin{itemize}
+        \item $(K/I, +)$ - группа по сложению (как факторгруппа $K/I$);
+        \item $(a + I) + (b + I) = a + b + I = b + a + I = (b + I) + (a + I)$ - коммутативность сложения;
+        \item $(a + I)((b + I) + (c + I)) = (a + I)(b + c + I) = a(b + c) + I = ab + ac + I = \\ = (ab + I) + (ac + I) = (a+I)(b+I) + (a+I)(c+I)$;
+        \item $((b + I) + (c + I))(a + I) = (b + c + I)(a + I) = (b + c)a + I = ba + ca + I = \\ = (ba + I) + (ca + I) = (b+I)(a+I) + (c+I)(a+I)$;
+    \end{itemize}
+    При этом:
+    \begin{itemize}
+        \item $K$ ассоциативно $\Longrightarrow (a+I)((b+I)(c+I)) = (a+I)(bc+I) = (a(bc) + I) = ((ab)c + I) = (ab+I)(c+I) = ((a+I)(b+I))(c+I) \Longrightarrow K/I$ ассоциативно;
+        \item $K$ коммутативно $\Longrightarrow (a+I)(b+I) = ab+ I = ba + I = (b+I)(a+I) \Longrightarrow K/I$ коммутативно.
+    \end{itemize} 
+\end{proof}
+\begin{definition}
+    Данное кольцо $K/I$ называется факторкольцом $K$ по идеалу $I$.
+\end{definition}
+\subsection{Гомоморфизмы колец}
+\begin{definition}
+    Пусть $K, \tilde{K}$ - кольца. Отображение $\phi: K \rightarrow \tilde{K}$ называется гомоморфизмом колец, если:
+    \begin{enumerate}
+        \item $\forall a, b \in K: \ \phi(a+b) = \phi(a)+\phi(b)$;
+        \item $\forall a, b \in K: \ \phi(ab) = \phi(a)\phi(b)$;
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Изоморфизм колец - биективный гомоморфизм колец. 
+\end{definition}
+\begin{definition}
+    Кольца $K, \tilde{K}$ называются изоморфными, если существует изоморфизм $\phi: K \rightarrow \tilde{K}$. Обозначается $K \simeq \tilde{K}$.
+\end{definition}
+\begin{definition}
+    Пусть $\phi: K \rightarrow \tilde{K}$ - гомоморфизм.\\
+    Множество $\textup{Ker } \phi = \{a \in K \ | \ \phi(a) = 0\}$ называется ядром $\phi$.\\
+    Множество $\textup{Im } \phi = \{b \in \tilde{K} \ | \ \exists a \in K: \phi(a) = b\}$ называется образом $\phi$.
+\end{definition}
+\begin{subtheorem}
+    Пусть $\phi: K \rightarrow \tilde{K}$ - гомоморфизм. Тогда:
+    \begin{enumerate}
+        \item $\textup{Ker } \phi$ - идеал $K$;
+        \item $\textup{Im } \phi$ - подкольцо $\tilde{K}$.
+    \end{enumerate}
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Проверим определение идеала:
+        \begin{itemize}
+            \item $\textup{Ker } \phi$ - подгруппа $(K, +)$, так как $\phi$ - гомоморфизм $(K, +) \rightarrow (\tilde{K}, +)$;
+            \item $\forall a \in \textup{Ker }\phi, b \in K: \ \phi(ab) = \phi(a)\phi(b) = 0; \ \phi(ba) = \phi(b)\phi(a) = 0$. Значит, $ab, ba \in \textup{Ker } \phi$.
+        \end{itemize}
+        Отсюда $\textup{Ker } \phi$ - идеал кольца $K$.
+        \item Проверим определение подкольца:
+        \begin{itemize}
+            \item $\textup{Im } \phi$ - подгруппа $(\tilde{K}, +)$, так как $\phi$ - гомоморфизм $(K, +) \rightarrow (\tilde{K}, +)$;
+            \item $\forall a, b \in \textup{Im } \phi: \exists x_a, x_b \in K: \phi(x_a) = a, \phi(x_b) = b$. Тогда $\phi(x_ax_b) = ab$, то есть $ab \in \textup{Im }\phi$.
+        \end{itemize}
+        Отсюда $\textup{Im } \phi$ - подкольцо $\tilde{K}$.
+    \end{enumerate}    
+\end{proof}
+\begin{subtheorem}
+    Пусть $K$ - кольцо, $I$ - идеал $K$. Тогда $\exists$ гомоморфизм колец $\phi: K \rightarrow K/I$ такой, что $\textup{Ker } \phi = I, \textup{Im } \phi = K/I$.
+\end{subtheorem}
+\begin{proof}
+    Подойдёт гомоморфизм $\pi: a \mapsto a + I$.
+\end{proof}
+\begin{definition}
+    Приведённый выше гомоморфизм $\pi: K \rightarrow K/I$ называется каноническим (естественным, натуральным) гомоморфизмом колец $K$ и $K/I$.
+\end{definition}
