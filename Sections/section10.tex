@@ -91,9 +91,6 @@
         \item $\Q \subset \R \subset \CC$.
     \end{enumerate}    
 \end{examples}
-\begin{definition}
-    Если $L$ - подполе поля $K$, то $K$ называется расширением $L$.
-\end{definition}
 \subsection{Идеалы колец и факторкольца}
 \begin{definition}
     Подмножество $L$ кольца $K$ называется левым (правым) идеалом, если:
@@ -224,3 +221,233 @@
 \begin{definition}
     Приведённый выше гомоморфизм $\pi: K \rightarrow K/I$ называется каноническим (естественным, натуральным) гомоморфизмом колец $K$ и $K/I$.
 \end{definition}
+\begin{theorem} (О гомоморфизме колец)\\
+    Пусть $K, \tilde{K}$ - кольца, $\phi: K \rightarrow \tilde{K}$ - гомоморфизм колец.\\
+    Тогда $K / \textup{Ker }\phi \simeq \textup{Im }\phi$.
+\end{theorem}
+\begin{proof}
+    $\textup{Ker }\phi$ - идеал кольца $K$, то есть факторкольцо $K/\textup{Ker }\phi$ определено. Рассмотрим отображение 
+    \[\psi: K/\textup{Ker }\phi \rightarrow \textup{Im }\phi \ \ a + \textup{Ker } \phi \mapsto \phi(a)\]
+    В доказательстве теоремы о гомоморфизме групп было доказано, что это отображение корректно, биективно и сохраняет сложение. Проверим сохранение умножения:
+    \[\psi((a+\textup{Ker }\phi)(b + \textup{Ker } \phi)) = \psi(ab+\textup{Ker }\phi) = \phi(ab) =\]
+    \[= \phi(a)\phi(b) = \psi(a + \textup{Ker }\phi)\psi(b+\textup{Ker }\phi)\]
+    Значит, $\psi$ - изоморфизм колец. 
+\end{proof}
+\subsection{Главный идеал}
+Пусть $K$ - коммутативное ассоциативное кольцо с единицей, $S \subset K$ - произвольное подмножество. Рассмотрим множество \[(S) = \{\sum \limits_{i=0}^ka_is_i \ |\ a_i \in K, s_i \in S\}\]
+\begin{subtheorem}\tab
+    \begin{enumerate}
+        \item $(S)$ - двусторонний идеал;
+        \item $(S)$ - наименьший двусторонний идеал, содержащий $S$.
+    \end{enumerate}    
+\end{subtheorem}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Мы поверим, но проверим:
+        \begin{itemize}
+            \item $\forall x, y \in (S):\ x + y = \sum \limits_{i=0}^kx_is_i + \sum \limits_{i=0}^ky_is_i = \sum \limits_{i=0}^k(x_i + y_i)s_i \in (S)$;
+            \item $0 = \sum \limits_{i=0}^k0\cdot s_i \in (S)$;
+            \item $\forall x \in (S): \ -x = \sum \limits_{i=0}^kx_is_i = \sum \limits_{i=0}^k(-x_i)s_i \in (S)$;
+            \item $\forall x \in (S), a \in K: \ xa = ax = a\sum \limits_{i=0}^kx_is_i = \sum \limits_{i=0}^kax_is_i \in (S)$.
+        \end{itemize}
+        Значит, $(S)$ - двусторонний идеал.
+        \item Пусть $I$ - двусторонний идеал кольца $K$ такой, что $S \subset K$. Тогда из определения идеала $\forall a \in K, s \in S: \ as \in I$, а так как идеал - подкольцо, любая сумма вида $\sum \limits_{i=0}^ka_is_i$, где $a_i \in K, s_i \in S$, лежит в $I$. Значит, $(S) \subseteq I$.
+    \end{enumerate}
+\end{proof}
+\begin{definition}
+    Если $I = (S)$, то говорят, что $I$ порождается множеством $S$.\\
+    Если при этом $|S| = 1$, то $I$ называется главным идеалом.\\
+    Иными словами, $I$ - главный идеал кольца $K$, если $\exists u \in K: \ \forall x \in I: \ x = ua$ для некоторого $a \in K$.
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $K = \Z$: $(m) = m\Z$;
+        \item $K = \F[x]$: $(x+1) = \{(x+1)f \ |\ f \in \F[x]\}$.
+    \end{enumerate}    
+\end{examples}
+\begin{definition}
+    Коммутативное ассоциативное кольцо с единицей $1 \neq 0$, в котором любой идеал является главным, называется кольцом главных идеалов.
+\end{definition}
+\begin{example}
+    $\Z$ - кольцо главных идеалов.
+\end{example}
+\begin{definition}
+    Коммутативное ассоциативное кольцо с единицей $1 \neq 0$, в котором нет делителей нуля, называется целостным кольцом.
+\end{definition}
+\begin{examples}
+    $\Z, \F[x]$ - целостные кольца.
+\end{examples}
+Все напоминания данной главы из 1 семестра, их доказательства см. \href{https://github.com/Viacheslavik122333/Halgebra1sem/blob/main/lecture.pdf}{здесь}.
+\begin{reminder}
+    Если $K$ - целостное кольцо, то в $K$ определены понятия $a\mid b$, $\textup{НОД}(a, b)$.\\
+    \textup{НОД} бывает не определён, но если он существует - определён однозначно с точностью до ассоциированности (умножения на обратимые элементы). 
+\end{reminder}
+\begin{definition}
+    Целостное кольцо $K$, не являющееся полем, называется евклидовым кольцом, если $\exists$ функция $N: K\setminus{0} \rightarrow \Z_+$ (она называется нормой) такая, что:
+    \begin{enumerate}
+        \item $\forall a, b \in K: N(ab) > N(a)$;
+        \item $\forall a, b \in K, b \neq 0 \exists q, r \in K: \ a = bq + r$, где $\left[\begin{array}{l}
+        r = 0\\
+        N(r) < N(b)
+    \end{array}\right.$
+    \end{enumerate}
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $K = \Z$: $N(a) = |a|$;
+        \item $K = \F[x]$: $N(f) = \deg f$;
+        \item $K = \Z[i]$ - кольцо гауссовых чисел
+        \\$N(a + bi) = a^2 + b^2$.
+    \end{enumerate}
+\end{examples}
+\begin{exercise}
+    $\Z[x]$ - целостное, но не евклидово кольцо.
+\end{exercise}
+\begin{proof}
+    Покажем, что $\Z[x]$ - целостное кольцо. Очевидно, что $\Z[x]$ - коммутативное ассоциативное кольцо с единицей, то есть остаётся показать, что в нём нет делителей нуля: если $P(x), Q(x)\neq 0$, то, взяв произведение членов с максимальной степенью $x$ в обоих многочленах, получим одночлен, степень которого больше, чем у всех других в произведении. Значит, коэффициент при нём останется ненулевым, то есть $ab \neq 0$.\\
+    Доказательство неевклидовости $\Z[x]$ проведём после следующей теоремы.
+\end{proof}
+\begin{reminder}
+    Пусть $K$ - евклидово кольцо. Тогда $\exists\ \textup{НОД}(a, b) = d$ и $\exists u, v \in K: d = ua + vb$. 
+\end{reminder}
+\begin{theorem}
+    Всякий идеал евклидова кольца $K$ является главным.
+\end{theorem}
+\begin{proof}
+    Рассмотрим произвольный идеал $I$ кольца $K$.\\
+    Если $I = \{0\}$, то $I = (0)$. Иначе рассмотрим наименьший по норме элемент в $I$ - обозначим его $u$. Докажем, что $I = (u)$:\\
+    Пусть $a \in I$ - произвольный элемент. Разделим $a$ на $u$ с остатком: $\exists q, r \in K: a = uq + r$, причём если $r \neq 0$, то $N(r) < N(u)$. При этом $r = a - uq \in I$, а значит $r = 0$ из предположения, что $u$ - наименьший по норме элемент в $I$. Значит, $\forall a \in I \ \exists q \in K: a = uq$, а значит $I = (u)$. 
+\end{proof}
+\begin{consequense}
+    Любое евклидово кольцо является кольцом главных идеалов.
+\end{consequense}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $\F[x]$ - кольцо главных идеалов;
+        \item $\F[x, y]$ - не кольцо главных идеалов. Покажем это:\\
+        Рассмотрим идеал $I = (x, y)$. Предположим, что $I = (f)$ - тогда $\exists q_1, q_2 \in \F[x, y]: x = fq_1, y = fq_2$. Из равенства многочленов $x = fq_1$ имеем, что либо $f \sim 1$, либо $f \sim x$. Рассмотрим эти случаи:
+        \begin{itemize}
+            \item $f \sim 1 \Longrightarrow 1 = ax + by$ - очевидно невозможно (не можем получить ненулевую константу);
+            \item $f \sim x \Longrightarrow f = cx \Longrightarrow y = cxq_2$ - невозможно.
+        \end{itemize}
+        Значит, $I$ - не главный идеал.
+        \item Докажем, что $\Z[x]$ - не кольцо главных идеалов. Рассмотрим $I = (2, x)$. Предположим, что $I = (f)$ - тогда $\exists q_1, q_2 \in \Z[x]: 2 = fq_1, x = fq_2$. Из первого равенства имеем, что либо $f \sim 1$, либо $f \sim 2$:
+        \begin{itemize}
+            \item $f \sim 1 \Longrightarrow \pm 1 = 2a + xb$ - невозможно, т.к. коэффициенты целые;
+            \item $f \sim 2 \Longrightarrow x = \pm2 \cdot q_2$ - невозможно по тем же соображениям.
+        \end{itemize}
+        Значит, $\Z[x]$ - не кольцо главных идеалов, а отсюда и не евклидово кольцо.
+    \end{enumerate}
+\end{examples}
+\begin{definition}
+    Пусть $K$ - целостное кольцо.\\
+    Элемент $p \in K$ называется простым, если
+    \begin{enumerate}
+        \item $p \neq 0$;
+        \item $p$ - необратимый;
+        \item если $p = ab$, то либо $a$, либо $b$ - обратимый элемент.
+    \end{enumerate}
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $K = \Z$: простые элементы - $\pm p$, где $p$ - простое число;
+        \item $K = \F[x]$: простые элементы - неприводимые многочлены. 
+    \end{enumerate}    
+\end{examples}
+\begin{reminder}
+    Любой элемент евклидова кольца раскладывается в произведение простых элементов этого кольца, причём это разложение единственно с точностью до домножения множителей на обратимые элементы и их порядка.
+\end{reminder}
+\begin{remark}
+    Аналогичное утверждение верно для всех колец главных идеалов, однако в данном курсе оно рассматриваться не будет.
+\end{remark}
+\begin{reminder}
+    $\Z/(n) = \Z/n\Z = \Z_n$ - поле $\Longleftrightarrow n$ - простое.
+\end{reminder}
+Теперь можем доказать гораздо более общее утверждение:
+\begin{theorem}
+    Пусть $K$ - евклидово кольцо, $u \in K$. Тогда $K/(u)$ - поле $\Longleftrightarrow u$ - простой элемент. 
+\end{theorem}
+\begin{proof}
+    $\\ \Longrightarrow: \ \ $Пусть $K/(u)$ - поле. Допустим, что $u$ - не простой. Тогда возможны случаи:
+    \begin{enumerate}
+        \item $u = 0 \Longrightarrow K/(u) = K$ - не поле по определению евклидова кольца;
+        \item $u$ обратим $\Longrightarrow 1 \in (u) \Longrightarrow K/(u) = K/K = \{0\}$ - не поле;
+        \item $u = ab$, где $a, b$ - необратимы. Тогда покажем, что $a + (u) \neq (u)$: иначе
+        \[a \in (u) \Longrightarrow a = ud = abd \Longrightarrow a(bd-1) = 0 \Longrightarrow bd = 1 \Longrightarrow b\text{ - обратим}\]
+        Аналогично $b + (u) \neq (u)$. Тогда из $u = ab$ следует, что $(a + (u))(b + (u)) = (u)$, то есть в поле $K/(u)$ элементы $a + (u)$ и $b + (u)$ - делители нуля - противоречие.
+    \end{enumerate}
+    Все случаи невозможны, а значит, $u$ не может не быть простым.\\
+    $\Longleftarrow: \ \ $ Пусть $u$ - простой элемент. $K/(u)$ - коммутативное ассоциативное кольцо с единицей из соответвующих свойств $K$, причём единица в нём - $1 + (u)$ \\
+    ($\neq (u)$, так как иначе $1 \in (u) \Longrightarrow 1 = ua$ - противоречие с необратимостью $u$)\\
+    Пусть $a$ - произвольный ненулевой элемент $K/(u)$. Тогда:
+    \[a + (u) \neq (u) \Longrightarrow a \notin (u) \Longrightarrow u \nmid a \overset{u \text{-простой}}{\Longrightarrow} \textup{НОД}(u, a) = 1 \Longrightarrow\]\[\Longrightarrow \exists x, y \in K: xa + yu = 1 \text{ в } K \Longrightarrow (x + (u))(a + (u)) = 1 + (u) \text{ в } K/(u)\]
+    Значит, $x + (u)$ - обратный к $a + (u)$. Отсюда любой ненулевой элемент $K/(u)$ обратим, а тогда $K/(u)$ - поле.
+\end{proof}
+\begin{consequense}
+    Пусть $K = \F[x]$ ($\F$ - поле), $f \in \F[x]$. Тогда $\F[x]/(f)$ - поле $\Longleftrightarrow f$ - неприводимых многочлен.
+\end{consequense}
+\begin{example}
+    $\R[x] / (x^2 + 1)$ - поле.
+\end{example}
+\begin{subtheorem}
+    Множество $\{a + (f) \ | \ a \in \F\}$ образует подкольцо в кольце $\F[x]/(f)$, где $\F$ - поле.\\
+    В частности, если $f$ неприводим, то это подкольцо - подполе поля $\F[x]/(f)$.\\
+    Более того, это подполе изоморфно полю $\F$ (изоморфизм $a + (f) \mapsto a$).
+\end{subtheorem}
+\begin{proof}
+    Все пункты определения подкольца (подполя) очевидно следуют из аналогичных утверждений для поля $\F$.
+\end{proof}
+\begin{remark}
+    В дальнейшем такое подполе и поле $\F$ будут отождествляться.
+\end{remark}
+\begin{definition}
+    Если $L$ - подполе поля $K$, то $K$ называется расширением $L$.
+\end{definition}
+В таком случае $K$ можно рассматривать как векторное пространство над $L$.
+\begin{examples}\tab
+    \begin{enumerate}
+        \item $\CC$ - расширение $\R$;
+        \item если $f \in \F[x]$ - неприводимый, то $\F(x)/(f)$ - расширение поля $\F$.
+    \end{enumerate}    
+\end{examples}
+\begin{definition}
+    Расширение $K$ поля $L$ называется конечномерным, если $K$ - конечномерное векторное пространство над $L$ (т.е. $\dim_L K < \infty$).\\
+    В этом случае $\dim_L K$ называется степенью расширения.
+\end{definition}
+\begin{example}
+    $\dim_\R \CC = 2$ - базис $\{1, i\}$.
+\end{example}
+\begin{subtheorem}
+    $\\$Пусть $\F$ - поле, $f \in \F[x]$ - неприводимый многочлен, $\deg f = n$. Тогда элементы $1 + (f), x + (f),...,x^{n-1} + (f)$ - базис $\F[x]/(f)$ как векторного пространства над $\F$, то есть $\F[x]/(f)$ - расширение поля $\F$ степени $n$.
+\end{subtheorem}
+\begin{proof}
+    Рассмотрим произвольный многочлен $g \in \F[x]$ и разделим его на $f$ с остатком:
+    \[g(x) = f(x)q(x) + r(x), \  \left[\begin{array}{l}
+        r = 0\\
+        \deg r < \deg f
+    \end{array}\right.\]
+    Если $r = 0$, то $g(x) \in (f) \Longrightarrow g + (f) = 0$.\\
+    Иначе (далее обозначим $(f)$ как $I$): 
+    \[g(x) + I = r(x) + I = c_0 + c_1x + ... + c_{n-1}x^{n-1} + I =\]
+    \[= (c_0 + I)(1 + I) + (c_1 + I)(x + I) + ... + (c_{n-1} + I)(x^{n-1} + I) =\]
+    \[\text{(отождествление)  } = c_0(1 + I) + c_1(x + I) + ... + c_{n-1}(x^{n-1} + I)\] 
+    - отсюда система $\{1 + (f), x + (f),...,x^{n-1} + (f)\}$ порождает $\F[x]/(f)$.\\
+    Покажем линейную независимость:
+    \[\lambda_0(1+I) + \lambda_1(x+I) + ... + \lambda_{n-1}x^{n-1} + I = I \Longrightarrow \lambda_0 + \lambda_1x + ...+\lambda_{n-1}x^{n-1} \in I\] 
+    Тогда $f \mid (\lambda_0 + ...+\lambda_{n-1}x^{n-1})$, но $\deg f > n-1$. Значит, такое возможно только в случае, когда все $\lambda_i$ равны нулю, что и означает линейную независимость.
+\end{proof}
+
+Далее введём обозначения $\alpha = x + I, \alpha^k = x^k + I$. Тогда по утверждению $\{1,\alpha, ..., \alpha^{n-1}\}$ - базис $\F[x]/I$. Посмотрим на значение $f(\alpha)$
+\[f = a_0 + a_1x + ... + a_nx^n \Longrightarrow f(\alpha) = a_0 + a_1\alpha + ... + a_n\alpha^n + I =\]
+\[= a_0 + a_1(x + I) + ... + a_n(x^n + I) + I = a_0 + a_1x + ... + a_nx^n + I = I\]
+то есть в отождествлении $f(\alpha) = 0$, и $\alpha$ - корень $f$ в $\F[x]/(f)$.\\
+При этом в $\F$ у многочлена $f$ не было корней, так как он неприводим над $\F$.
+\begin{definition}
+    Данный переход от поля $\F$ к расширению $\F[x]/(f)$ ($f$ - неприводимый) называется присоединением к полю $\F$ корня $\alpha$ многочлена $f$.
+\end{definition}
+\begin{example}
+    Пусть $\F = \R, f = x^2 + 1$ - неприводимый над $\R$.\\
+    $\R[x]/(f)$ - поле, $\{1, \alpha\} = \{1 + (f), x + (f)\}$ - его базис как векторного пространства над $\R$. Тогда любой элемент этого пространства представим в виде
+    \[a + bx + (f) = a(1 + (f)) + b(x + (f)) = a + b\alpha\]
+    При этом $f(\alpha) = 0 \Longrightarrow \alpha^2 + 1 = 0 \Longrightarrow \alpha^2 = -1$. Значит, получили поле, в котором все элементы представляются в виде $a + b\alpha$, где $\alpha^2 = -1$ - это в точности поле комплексных чисел. Значит, $\R[x]/(x^2+1) \simeq \CC$.
+\end{example}
