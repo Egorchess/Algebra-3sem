@@ -1,10 +1,10 @@
 \section{Свободные группы}
 \begin{definition}
-    Тривиальные (групповые) соотношения - соотношения, которые выводятся из аксиом группы (и, соответственно, есть в любой группе).
+    Тривиальные (групповые) соотношения --- соотношения, которые выводятся из аксиом группы (и, соответственно, есть в любой группе).
 \end{definition}
 Построим группу, в которой нет других соотношений.
 \begin{definition}
-    Пусть $A$ - множество символов (букв), $A^{-1}$ - множество символов (букв) $a^{-1}$, где $a \in A$.\\
+    Пусть $A$ --- множество символов (букв), $A^{-1}$ --- множество символов (букв) $a^{-1}$, где $a \in A$.\\
     Условия на эти множества:
     \begin{enumerate}
         \item $\forall a^{-1} \in A^{-1} \Longrightarrow a^{-1} \notin A$;\\
@@ -13,23 +13,23 @@
         Буквы $a, a^{-1}$ назовём взаимно обратными.
     \end{enumerate}
 Множество $A^{\pm 1} = A \sqcup A^{-1}$ называется алфавитом.\\
-Слово в алфавите $A^{\pm 1}$ - конечная последовательность букв $X = x_1...x_k$, где $x_i \in A^{\pm 1}$.\\
-Длина слова $X$ (обозначается $|X|$) - количество букв в $X$.
+Слово в алфавите $A^{\pm 1}$ --- конечная последовательность букв $X = x_1...x_k$, где $x_i \in A^{\pm 1}$.\\
+Длина слова $X$ (обозначается $|X|$) --- количество букв в $X$.
 \end{definition}
 \begin{example}
     $A = \{a, b\}: X = abaab^{-1} \Rightarrow |X| = 5$.
 \end{example} 
 \begin{definition}
-    Слово $X = x_1...x_k$ - сократимое, если $\exists i \in \overline{1,..,k-1}: x_i = x^{-1}_{i+1}$.\\
+    Слово $X = x_1...x_k$ --- сократимое, если $\exists i \in \overline{1,..,k-1}: x_i = x^{-1}_{i+1}$.\\
     Сокращением взаимно обратных букв назовём вычёркивание пары $x_i, x_{i+1}$ из $X$ (получим слово длины $|X| - 2$).\\
-    За конечное число сокращений получим слово $\tilde{X}$, не являющееся сократимым - такое $\tilde{X}$ называется результатом полного сокращения слова $X$.
+    За конечное число сокращений получим слово $\tilde{X}$, не являющееся сократимым --- такое $\tilde{X}$ называется результатом полного сокращения слова $X$.
 \end{definition}
 \begin{definition}
     Рассмотрим множество $F(A)$ всех несократимых слов в $A^{\pm 1}$.\\
     Введём бинарную операцию на $F(A)$: пусть $X = x_1...x_k, Y = y_1...y_m$.\\
-    Если $x_k \neq y_1^{-1}$, то $XY$ - конкатенация (приписывание) $X$ и $Y$:\\
+    Если $x_k \neq y_1^{-1}$, то $XY$ --- конкатенация (приписывание) $X$ и $Y$:\\
     $XY = x_1...x_ky_1...y_m, |XY| = k+m$.\\
-    Если $x_k = y_1^{-1}$, то $XY$ - результат полного сокращения слова $x_1...x_ky_1...y_m$.
+    Если $x_k = y_1^{-1}$, то $XY$ --- результат полного сокращения слова $x_1...x_ky_1...y_m$.
 \end{definition}
 \begin{example}
     $(abcda^{-1}b)(b^{-1}ad^{-1}aab) = abcaab$.
@@ -38,7 +38,7 @@
     Если $|X| = 0$, то $X$ называется пустым словом (обозначим $\lambda$). Пустое слово по определению несократимо и лежит в $F(A)$.
 \end{definition}
 \begin{theorem}
-    $F(A)$ с приведённой выше бинарной операцией - группа.
+    $F(A)$ с приведённой выше бинарной операцией --- группа.
 \end{theorem}
 \begin{proof}\tab
     \begin{enumerate}
@@ -48,13 +48,13 @@
         Индукция по длине слова $Y$:\\
         База индукции: $|Y| = 1 \Longrightarrow Y = a \in A^{\pm 1}$. Индукция по $|X| + |Z|$:\\
         \tab База внутренней индукции: \\
-        \tab $|X| + |Z| = 0$ - очевидно ($a = a$);\\
-        \tab $|X| + |Z| = 1$ - очевидно (одно из слов $X, Z$ пустое);\\
-        \tab Шаг внутренней индукции ($k+m-2 \rightarrow k+m$) - рассмотрим случаи:
+        \tab $|X| + |Z| = 0$ --- очевидно ($a = a$);\\
+        \tab $|X| + |Z| = 1$ --- очевидно (одно из слов $X, Z$ пустое);\\
+        \tab Шаг внутренней индукции ($k+m-2 \rightarrow k+m$) --- рассмотрим случаи:
         \begin{itemize}
             \item $a^{-1} \neq x_k, a^{-1} \neq z_1: X(YZ) = x_1...x_kaz_1...z_m = (XY)Z$;
             \item $a^{-1} = x_k, a^{-1} \neq z_1: X(aZ) = X(az_1...z_m) =\\=$ результат полного сокращения $x_1...x_{k-1}a^{-1}az_1...z_m =\\=$ результат полного сокращения $x_1...x_{k-1}z_1...z_m = (Xa)Z$;
-            \item $a^{-1} \neq x_k, a^{-1} = z_1$ - аналогично предыдущему;
+            \item $a^{-1} \neq x_k, a^{-1} = z_1$ --- аналогично предыдущему;
             \item $a^{-1} = x_k, a^{-1} = z_1$: пусть $X = X'a^{-1}, Z = a^{-1}Z'$. Тогда:\\
             $X(aZ) = X(a(a^{-1}Z')) = XZ' = (X'a^{-1})Z'$\\
             $(Xa)Z = (X'a^{-1}a)Z = X'Z = X'(a^{-1}Z')$\\
@@ -64,9 +64,9 @@
         Шаг индукции: Пусть $Y = y_1...y_l$. Тогда:
         \[X(YZ) = X(y_1...y_l\cdot Z) = X((y_1...y_{l-1}\cdot y_l)Z) \overset{1}{=} X((y_1...y_{l-1})\cdot (y_lZ)) \overset{2}{=}\] 
         \[\overset{2}{=} (X\cdot y_1...y_{l-1}) (y_lZ )\overset{3}{=} (X\cdot y_1...y_l)Z = (XY)Z\]
-        1, 3 - из утверждения базы индукции; 2 - по предположению индукции.
-        \item $\lambda$ - нейтральный элемент;
-        \item обратный элемент к $x_1...x_k$ - элемент $x_k^{-1}...x_1^{-1}$.
+        1, 3 --- из утверждения базы индукции; 2 --- по предположению индукции.
+        \item $\lambda$ --- нейтральный элемент;
+        \item обратный элемент к $x_1...x_k$ --- элемент $x_k^{-1}...x_1^{-1}$.
     \end{enumerate}
 \end{proof}
 \begin{definition}
@@ -87,7 +87,7 @@
     Без доказательства.
 \end{proof}
 \begin{definition}
-    Ранг свободной группы - мощность её базиса.
+    Ранг свободной группы --- мощность её базиса.
 \end{definition}
 \begin{remark}
     Заметим, что в $F(A)$ результат умножения определён однозначно $\Longrightarrow$ однозначно определён элемент $x_1\cdot ... \cdot x_k$, где $x_i \in A^{\pm 1}$.\\
@@ -97,46 +97,46 @@
     $abb^{-1}ba^{-1}a = a \cdot b \cdot b^{-1}\cdot b\cdot a^{-1}\cdot a = ab \in F(A)$.
 \end{example}
 \begin{theoremnum}[Универсальное свойство свободной группы]
-    $ \\$Пусть $G$ - группа, $\{g_i \ | \ i \in I\} \subset G$ - произвольное множество её элементов.\\
+    $ \\$Пусть $G$ --- группа, $\{g_i \ | \ i \in I\} \subset G$ --- произвольное множество её элементов.\\
     Рассмотрим свободную группу $F(A)$ с базисом $A = \{a_i \ | \ i \in I\}$.\\
     Тогда отображение $\phi: a_i \mapsto g_i$ продолжается до гомоморфизма $\phi: F(A) \rightarrow G$, причём единственным образом.
 \end{theoremnum}
 \begin{proof}
-    Пусть $W = a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}$ - несократимое слово из $F(A)$, где $\epsilon_i = \pm 1, a_{i_j} \in A$. Зададим $\phi: F(A) \rightarrow G$ по правилу $\phi(W) = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}$.\\
-    Проверим, что $\phi$ - гомоморфизм ($W, \tilde{W} \in F(A), W = a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}, \tilde{W} = a_{j_1}^{\tau_1}...a_{j_m}^{\tau_m}$):
+    Пусть $W = a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}$ --- несократимое слово из $F(A)$, где $\epsilon_i = \pm 1, a_{i_j} \in A$. Зададим $\phi: F(A) \rightarrow G$ по правилу $\phi(W) = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}$.\\
+    Проверим, что $\phi$ --- гомоморфизм ($W, \tilde{W} \in F(A), W = a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}, \tilde{W} = a_{j_1}^{\tau_1}...a_{j_m}^{\tau_m}$):
     \[\phi(W\tilde{W}) = \phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}\cdot a_{j_1}^{\tau_1}...a_{j_m}^{\tau_m}) = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}\cdot g_{j_1}^{\tau_1}...g_{j_m}^{\tau_m} =\]
     \[=(g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k})\cdot (g_{j_1}^{\tau_1}...g_{j_m}^{\tau_m}) = \phi(W)\phi(\tilde{W})\]
     Единственность такого гомоморфизма очевидна:\\
-    $\phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}) = \phi(a_{i_1})^{\epsilon_1}...\phi(a_{i_k})^{\epsilon_k} = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}$ - определено однозначно.
+    $\phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}) = \phi(a_{i_1})^{\epsilon_1}...\phi(a_{i_k})^{\epsilon_k} = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}$ --- определено однозначно.
 \end{proof}
 \begin{example} 
     (несвободной группы)\\
     $S_3 = \langle (12), (123) \rangle: \forall g \in S_3 \ g^6 = id$. Попытаемся продолжить до гомоморфизма $S_3 \rightarrow Q_8$ отображение $\phi: (12) \mapsto i, (123) \mapsto j$:\\
-    $-1 = i^2 = \phi((12))^2 = \phi((12)^2) = \phi(id) = 1$ - противоречие. 
+    $-1 = i^2 = \phi((12))^2 = \phi((12)^2) = \phi(id) = 1$ --- противоречие. 
 \end{example}
 \begin{consequensenum}
-    Пусть $G$ - группа, $M = \{g_i \ | \ i \in I\}$ - порождающее множество $G$, $F(A)$ - свободная группа с базисом $A = \{a_i \ | \ i \in I\}$.\\
+    Пусть $G$ --- группа, $M = \{g_i \ | \ i \in I\}$ --- порождающее множество $G$, $F(A)$ --- свободная группа с базисом $A = \{a_i \ | \ i \in I\}$.\\
     Тогда $\exists!$ сюръективный гомоморфизм $\phi: F(A) \rightarrow G$ такой, что $\forall i \in I: \phi(a_i) = g_i$.
 \end{consequensenum}
 \begin{proof}
-    Достаточно показать, что в этом случае гомоморфизм из доказательства теоремы сюръективен - это следует из того, что множество $\{g_i \ | \ i \in I\}$ порождает группу $G$ (каждый элемент представим как $g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k} = \phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k})$).
+    Достаточно показать, что в этом случае гомоморфизм из доказательства теоремы сюръективен --- это следует из того, что множество $\{g_i \ | \ i \in I\}$ порождает группу $G$ (каждый элемент представим как $g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k} = \phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k})$).
 \end{proof}
 \begin{consequensenum}
     Любая группа $G$ изоморфна факторгруппе некоторой свободной группы по некоторой её нормальной подгруппе.
 \end{consequensenum}
 \begin{proof}
-    Пусть $\phi: F(A) \rightarrow G$ - гомоморфизм из следствия 1.\\
+    Пусть $\phi: F(A) \rightarrow G$ --- гомоморфизм из следствия 1.\\
     Так как $\textup{Ker }\phi \unlhd F(A)$, из теоремы о гомоморфизме $G = \textup{Im }\phi \simeq F(A)/\textup{Ker }\phi$.
 \end{proof}
 \begin{definition}
-    Сюръективный гомоморфизм $\phi: F(A) \rightarrow G$ - из следствия 1 называется копредставлением группы $G$.
+    Сюръективный гомоморфизм $\phi: F(A) \rightarrow G$ --- из следствия 1 называется копредставлением группы $G$.
 \end{definition}
 \begin{remark}
     Копредставление зависит от выбора порождающего множества $M$.
 \end{remark}
 \subsection{Задание группы порождающими и определяющими соотношениями}
 По следствию 2: $G \simeq F(A)/N$, где $N \unlhd F(A)$. Отсюда задание группы $G$ сводится к заданию $A$ и $N$.\\
-$N$ - нормальная $\Longrightarrow \forall f \in F(A), \forall h \in N: fhf^{-1} \in N$.
+$N$ --- нормальная $\Longrightarrow \forall f \in F(A), \forall h \in N: fhf^{-1} \in N$.
 \begin{definition}
     Пусть $\mathcal{R} \subseteq F(A)$. Нормальным замыканием множества $\mathcal{R}$ в группе $F(A)$ называется наименьшая (по включению) нормальная подгруппа, содержащая $\mathcal{R}$. Обозначается $\langle \langle \mathcal{R} \rangle \rangle^{F(A)}$
 \end{definition}
@@ -162,20 +162,20 @@ $N$ - нормальная $\Longrightarrow \forall f \in F(A), \forall h \in N:
 \begin{itemize}
     \item ЭП1: $W = W_1a^\epsilon a^{-\epsilon}W_2 \mapsto \tilde{W} = W_1W_2$, где $a \in A, \epsilon = \pm 1$;
     \item ЭП2: $W = W_1r^\epsilon W_2 \mapsto \tilde{W} = W_1W_2$, где $r \in \mathcal{R}, \epsilon = \pm 1$;
-    \item ЭП$1'$ - обратное к ЭП1;
-    \item ЭП$2'$ - обратное к ЭП2;
+    \item ЭП$1'$ --- обратное к ЭП1;
+    \item ЭП$2'$ --- обратное к ЭП2;
 \end{itemize}
 \begin{definition}
     Назовём слова $W$ и $\tilde{W}$ $\mathcal{R}$-эквивалентными, если от $W$ можно с помощью ЭП перейти к $\tilde{W}$.
 \end{definition}
 \begin{subtheorem}
-    $\mathcal{R}$-эквивалентность - отношение эквивалентности.
+    $\mathcal{R}$-эквивалентность --- отношение эквивалентности.
 \end{subtheorem}
 \begin{proof}\tab
     \begin{itemize}
-        \item Рефлексивность - очевидно;
-        \item Симметричность - следует из обратимости каждого ЭП;
-        \item Транзитивность - очевидно; 
+        \item Рефлексивность --- очевидно;
+        \item Симметричность --- следует из обратимости каждого ЭП;
+        \item Транзитивность --- очевидно; 
     \end{itemize}
 \end{proof}
 \begin{theoremnum}
@@ -197,7 +197,7 @@ $N$ - нормальная $\Longrightarrow \forall f \in F(A), \forall h \in N:
         При ЭП, обратных этим, образ слова аналогично не изменяется.\\
         Тогда если $W \underset{\text{ЭП}}{\sim} \lambda$, то $\phi(W) = \phi(\lambda) = 1$.  
         \item $3 \Longrightarrow 1: \ \ \forall r \in \mathcal{R}: \phi(r) = 1 \Longrightarrow r \in \textup{Ker }\phi; \ \phi(W) = 1 \Longrightarrow W \in \textup{Ker }\phi$.\\
-        Рассмотрим в качестве $G$ группу $F(A)/N$, где $N = \langle \langle \mathcal{R} \rangle \rangle^{F(A)}$, а в качестве $\phi$ - $\pi$ (естественный гомоморфизм $F(A) \rightarrow F(A)/N$).\\
+        Рассмотрим в качестве $G$ группу $F(A)/N$, где $N = \langle \langle \mathcal{R} \rangle \rangle^{F(A)}$, а в качестве $\phi$ --- $\pi$ (естественный гомоморфизм $F(A) \rightarrow F(A)/N$).\\
         $r \in N \Longrightarrow \pi(r) = 1$. Тогда по условию 3: $\pi(W) = 1 \Longrightarrow W \in \textup{Ker }\pi = N$.
     \end{itemize}
 \end{proof}
@@ -216,21 +216,21 @@ $N$ - нормальная $\Longrightarrow \forall f \in F(A), \forall h \in N:
 \end{definition}
 \begin{examples}\tab
     \begin{enumerate}
-        \item $\Z_3 = \langle a | a^3 = 1 \rangle; a^{12} = 1$ - следствие;
-        \item $V_4 = \langle a, b | a^2 = b^2 = 1, ab=ba \rangle; (ab)^2 = 1$ - следствие.
+        \item $\Z_3 = \langle a | a^3 = 1 \rangle; a^{12} = 1$ --- следствие;
+        \item $V_4 = \langle a, b | a^2 = b^2 = 1, ab=ba \rangle; (ab)^2 = 1$ --- следствие.
     \end{enumerate}
 \end{examples}
 \begin{theorem}[Теорема Дика]
-    $ \\$Пусть $G$ - группа, заданная копредставлением $\langle A \ | \ R \rangle$, где $A = \{a_i \ | \ i \in I\}$.\\ Пусть $H$ - произвольная группа, $\{h_i \ | \ i \in I\} \subset H$ - произвольное множество её элементов.\\
+    $ \\$Пусть $G$ --- группа, заданная копредставлением $\langle A \ | \ R \rangle$, где $A = \{a_i \ | \ i \in I\}$.\\ Пусть $H$ --- произвольная группа, $\{h_i \ | \ i \in I\} \subset H$ --- произвольное множество её элементов.\\
     Тогда отображение $\phi: a_i \mapsto h_i \ \forall i \in I$ на порождающих группы $G$ продолжается до гомоморфизма $\phi: G \rightarrow H$ тогда и только тогда, когда $\forall r \in \mathcal{R}: \ \phi(r) = 1$ в $H$.
 \end{theorem}
 \begin{proof}
-    % Если $\phi: a_i \mapsto h_i$ и $\phi$ - гомоморфизм, то должно выполняться $\phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}) = h_{i_1}^{\epsilon_1}...h_{i_k}^{\epsilon_k}$. Если это отображение корректно, то очевидно, что оно является искомым гомоморфизмом. Покажем корректность:\\
+    % Если $\phi: a_i \mapsto h_i$ и $\phi$ --- гомоморфизм, то должно выполняться $\phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}) = h_{i_1}^{\epsilon_1}...h_{i_k}^{\epsilon_k}$. Если это отображение корректно, то очевидно, что оно является искомым гомоморфизмом. Покажем корректность:\\
     % Пусть $W = \tilde{W}$ в $G$. Тогда $\tilde{W}W^{-1} = 1$ в $G \Longrightarrow \tilde{W}W^{-1} \in \langle \langle \mathcal{R} \rangle \rangle^{F(A)}$ (так как по определению копредставления соотношение $\tilde{W}W^{-1} = 1$ следует из $R$).\\
     % Отсюда $\tilde{W}W^{-1} \sim \lambda \Longrightarrow W \sim \tilde{W}W^{-1}W = \tilde{W}$. Из размышлений доказательства перехода $2 \Longrightarrow 3$ теоремы 2 видно, что из условия $\forall r \in \mathcal{R}: \ \phi(r) = 1$ в $H$ следует, что образ не изменяется при ЭП, то есть $\phi(W) = \phi(\tilde{W})$, т.е. отображение корректно.
-    $\\$\textit{Я устал пытаться починить доказательство, которое было здесь ранее, поэтому теперь оно в корне изменено - данный вариант взят из материалов \href{https://halgebra.math.msu.su/staff/klyachko/lect21.pdf}{спецкурса} А.А. Клячко и кажется мне значительно более наглядным.}\\
+    $\\$\textit{Я устал пытаться починить доказательство, которое было здесь ранее, поэтому теперь оно в корне изменено --- данный вариант взят из материалов \href{https://halgebra.math.msu.su/staff/klyachko/lect21.pdf}{спецкурса} А.А. Клячко и кажется мне значительно более наглядным.}\\
     $\Longrightarrow: \ \ $ По определению определяющих соотношений любое соотношение $r = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k} \in \mathcal{R}$ равно 1 в $G$. Тогда если $\phi$ продолжается до гомоморфизма, то $\forall r \in \mathcal{R}: \ \phi(r) = \phi(1) = 1$ в $H$.\\
-    $\Longleftarrow: \ \ $ Рассмотрим свободную группу $F(A)$. По универсальному свойству свободной группы отображение $\phi: a_i \mapsto h_i$ продолжается до гомоморфизма $\phi: F(A) \rightarrow H$. Знаем, что $\phi(r) = 1 \ \forall r \in \mathcal{R}$, т.е. $\mathcal{R} \subseteq \textup{Ker }\phi$. Также $\textup{Ker } \phi \unlhd F(A)$ по свойству гомоморфизма, а так как $\langle \langle \mathcal{R} \rangle \rangle^{F(A)}$ - наименьшая по включению нормальная подгруппа, содержащая $\mathcal{R}$, получаем $\langle \langle \mathcal{R} \rangle \rangle^{F(A)} \subseteq \textup{Ker }\phi$. Значит, корректно рассматривать $\phi$ как гомоморфизм $F(A)/\langle \langle \mathcal{R} \rangle \rangle^{F(A)} \rightarrow H$ (образ не зависит от представителя класса), а из определения копредставления $F(A)/\langle \langle \mathcal{R} \rangle \rangle^{F(A)} = G$. Отсюда получили гомоморфизм $\phi: G \rightarrow H$, являющийся продолжением исходного отображения, что и требовалось.
+    $\Longleftarrow: \ \ $ Рассмотрим свободную группу $F(A)$. По универсальному свойству свободной группы отображение $\phi: a_i \mapsto h_i$ продолжается до гомоморфизма $\phi: F(A) \rightarrow H$. Знаем, что $\phi(r) = 1 \ \forall r \in \mathcal{R}$, т.е. $\mathcal{R} \subseteq \textup{Ker }\phi$. Также $\textup{Ker } \phi \unlhd F(A)$ по свойству гомоморфизма, а так как $\langle \langle \mathcal{R} \rangle \rangle^{F(A)}$ --- наименьшая по включению нормальная подгруппа, содержащая $\mathcal{R}$, получаем $\langle \langle \mathcal{R} \rangle \rangle^{F(A)} \subseteq \textup{Ker }\phi$. Значит, корректно рассматривать $\phi$ как гомоморфизм $F(A)/\langle \langle \mathcal{R} \rangle \rangle^{F(A)} \rightarrow H$ (образ не зависит от представителя класса), а из определения копредставления $F(A)/\langle \langle \mathcal{R} \rangle \rangle^{F(A)} = G$. Отсюда получили гомоморфизм $\phi: G \rightarrow H$, являющийся продолжением исходного отображения, что и требовалось.
 \end{proof}
 \setcounter{thcount}{0}
 \setcounter{concount}{0}

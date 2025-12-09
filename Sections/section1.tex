@@ -1,7 +1,7 @@
 \section{Группы}
 \subsection{Основные понятия}
 \begin{definition}
-    Пусть $G$ - множество. Бинарной операцией на $G$ называется отображение $*: G \times G \rightarrow G$.
+    Пусть $G$ --- множество. Бинарной операцией на $G$ называется отображение $*: G \times G \rightarrow G$.
 \end{definition}
 \begin{definition}
     Множество $G$ с бинарной операцией $*$ называется группой, если выполнены следующие аксиомы:
@@ -14,19 +14,19 @@
 Различные формы записи группы:
 \begin{enumerate}
     \item Мультипликативная форма (терминология):\\
-    Операция - $"\cdot"$ (умножение);\\
-    Нейтральный элемент - единичный $(1)$;\\
-    Элемент из аксиомы 3 - обратный ($a^{-1}$ для $a \in G$);
+    Операция --- $"\cdot"$ (умножение);\\
+    Нейтральный элемент --- единичный $(1)$;\\
+    Элемент из аксиомы 3 --- обратный ($a^{-1}$ для $a \in G$);
     \item Аддитивная форма (терминология):\\
-    Операция - $"+"$ (сложение);\\
-    Нейтральный элемент - нулевой $(0)$;\\
-    Элемент из аксиомы 3 - противоположный ($-a$ для $a \in G$);
+    Операция --- $"+"$ (сложение);\\
+    Нейтральный элемент --- нулевой $(0)$;\\
+    Элемент из аксиомы 3 --- противоположный ($-a$ для $a \in G$);
 \end{enumerate}
 \begin{definition}
-    Если $G$ - группа и $\forall a, b \in G \ a \cdot b = b \cdot a$, то $G$ - абелева (коммутативная) группа. 
+    Если $G$ --- группа и $\forall a, b \in G \ a \cdot b = b \cdot a$, то $G$ --- абелева (коммутативная) группа. 
 \end{definition}
 \begin{remark}
-    Обычно для обозначения абелевых групп будем использовать аддитивную форму записи, для иных - мультипликативную.
+    Обычно для обозначения абелевых групп будем использовать аддитивную форму записи, для иных --- мультипликативную.
 \end{remark}
 \begin{subtheorem}[Простейшие свойства групп] \tab
     \begin{enumerate}
@@ -38,8 +38,8 @@
 \end{subtheorem}
 \begin{proof} \tab
     \begin{enumerate}
-        \item (От противного) Допустим, что $\exists \ e_1,e_2 \in A$ - единичные. Тогда $e_1 = e_1 * e_2 = e_2$ по определению единичного элемента.
-        \item Допустим $\exists \ b_1,b_2$ - обратные к $a$ элементы: $b_1 \not = b_2$ \\
+        \item (От противного) Допустим, что $\exists \ e_1,e_2 \in A$ --- единичные. Тогда $e_1 = e_1 * e_2 = e_2$ по определению единичного элемента.
+        \item Допустим $\exists \ b_1,b_2$ --- обратные к $a$ элементы: $b_1 \not = b_2$ \\
         В силу ассоциативности:
         $$b_1 * (a * b_2) = (b_1 * a) * b_2$$
         $$b_1 * e = e * b_2$$ 
@@ -57,11 +57,11 @@
 \begin{examples} \tab
     \begin{enumerate}
         \item $(\Z, +), (\Z_n, +)$;
-        \item $GL_n(F)$ - группа невырожденных матриц порядка $n$ с коэффициентами из поля $F$;
-        \item Пусть $\Omega$ - множество. Преобразованиями $\Omega$ назовём биекции $f: \Omega \rightarrow \Omega$.\\
-        $S(\Omega)$ - множество всех преобразований $\Omega$ - образует группу относительно композиции.\\
-        Если $\Omega = \{1,...,n\}$, то $S(n) = S_n$ - группа подстановок.
-        \item Если $G = \{a_1,...,a_n\}$ - конечная группа, то её можно задать с помощью таблицы умножения (таблицы Кэли).\\
+        \item $GL_n(F)$ --- группа невырожденных матриц порядка $n$ с коэффициентами из поля $F$;
+        \item Пусть $\Omega$ --- множество. Преобразованиями $\Omega$ назовём биекции $f: \Omega \rightarrow \Omega$.\\
+        $S(\Omega)$ --- множество всех преобразований $\Omega$ --- образует группу относительно композиции.\\
+        Если $\Omega = \{1,...,n\}$, то $S(n) = S_n$ --- группа подстановок.
+        \item Если $G = \{a_1,...,a_n\}$ --- конечная группа, то её можно задать с помощью таблицы умножения (таблицы Кэли).\\
         Например, для $Z_2 = \{0,1\}$:
         $$\begin{tabular}{c|c|c}
         \null & 0 & 1\\ \hline
@@ -94,8 +94,8 @@
 \begin{examples} \tab
     \begin{enumerate}
         \item $\Z \leq \Q \leq \R \leq \CC$ ($\N \nleq \Z$, т.к. не группа);
-        \item $GL_n(F) \geq SL_n(F) = \{A \in GL_n(F)| \det A = 1\}$ - унимодулярная группа.
-        \item $GL_n(F) \geq O_n(F) \geq SO_n(F)$ ($O_n(F)$ - ортогональная группа, $SO_n(F)$ - специальная ортогональная группа);
+        \item $GL_n(F) \geq SL_n(F) = \{A \in GL_n(F)| \det A = 1\}$ --- унимодулярная группа.
+        \item $GL_n(F) \geq O_n(F) \geq SO_n(F)$ ($O_n(F)$ --- ортогональная группа, $SO_n(F)$ --- специальная ортогональная группа);
         \item $GL_n(F) \geq$ группа строго треугольных матриц.
     \end{enumerate}
 \end{examples}
@@ -104,24 +104,24 @@
 \end{definition}
 \begin{examples} \tab
     \begin{enumerate}
-        \item $GL(V) \ (\leq S(V))$ - группа всех невырожденных линейных операторов векторного пространства $V$;
-        \item $Aff(\A)$ - группа всех невырожденных аффинных преобразований аффинного пространства $\A$;
-        \item $\E^2$ - аффинно-евклидово двумерное пространство.\\
-        $\textup{Isom} \ \E^2$ - группа изометрий (движений) на $\E^2$.\\
-        $\textup{Isom} \ \E^2 \geq O_2 \geq SO_2$, где $O_2$ - группа движений, сохраняющих точку $O$, $SO_2$ - группа поворотов вокруг точки $O$.
-        \item $T \subseteq \E^2$ - некоторая фигура.\\
-        $\textup{Sym}\ T = \{f \in \textup{Isom} \ \E^2 \ | \ f(T) = T\}$ - группа симметрий фигуры $T$.
+        \item $GL(V) \ (\leq S(V))$ --- группа всех невырожденных линейных операторов векторного пространства $V$;
+        \item $Aff(\A)$ --- группа всех невырожденных аффинных преобразований аффинного пространства $\A$;
+        \item $\E^2$ --- аффинно-евклидово двумерное пространство.\\
+        $\textup{Isom} \ \E^2$ --- группа изометрий (движений) на $\E^2$.\\
+        $\textup{Isom} \ \E^2 \geq O_2 \geq SO_2$, где $O_2$ --- группа движений, сохраняющих точку $O$, $SO_2$ --- группа поворотов вокруг точки $O$.
+        \item $T \subseteq \E^2$ --- некоторая фигура.\\
+        $\textup{Sym}\ T = \{f \in \textup{Isom} \ \E^2 \ | \ f(T) = T\}$ --- группа симметрий фигуры $T$.
         \begin{itemize}
-            \item Если $T$ - окружность с центром в точке $O$, то $\textup{Sym}\ T = O_2$;
-            \item Если $T$ - правильный $n$-угольник с центром в точке $O$, то $\textup{Sym}\ T = D_n$ - группа Диэдра.\\
+            \item Если $T$ --- окружность с центром в точке $O$, то $\textup{Sym}\ T = O_2$;
+            \item Если $T$ --- правильный $n$-угольник с центром в точке $O$, то $\textup{Sym}\ T = D_n$ --- группа Диэдра.\\
             $|D_n| = 2n$, т.к. $n$ поворотов и $n$ симметрий. 
         \end{itemize} 
     \end{enumerate}
 \end{examples}
 \begin{definition}
-    Пусть $(G_1, *, e_1), (G_2, \circ ,e_2)$ - группы. Отображение $\phi: G_1 \rightarrow G_2$ - изоморфизм, если
+    Пусть $(G_1, *, e_1), (G_2, \circ ,e_2)$ --- группы. Отображение $\phi: G_1 \rightarrow G_2$ --- изоморфизм, если
     \begin{enumerate}
-        \item $\phi$ - биекция;
+        \item $\phi$ --- биекция;
         \item $\forall a, b \in G_1 \ \phi(a * b) = \phi(a) \circ \phi(b)$
     \end{enumerate}
     Если между $G_1$ и $G_2$ существует изоморфизм, то $G_1$ и $G_2$ называются изоморфными. Обозначается $G_1 \simeq  G_2$.
@@ -130,10 +130,10 @@
     $D_3 \simeq S_3$.
 \end{example}
 \begin{proof}
-    $D_3$ - группа движений, переводящая равносторонний треугольник в себя. Если пронумеровать вершины изначального треугольника, то каждый элемент группы $D_3$ будет соответствовать подстановке, переводящей старый порядок вершин в новый. Определение изоморфизма проверяется очевидно.
+    $D_3$ --- группа движений, переводящая равносторонний треугольник в себя. Если пронумеровать вершины изначального треугольника, то каждый элемент группы $D_3$ будет соответствовать подстановке, переводящей старый порядок вершин в новый. Определение изоморфизма проверяется очевидно.
 \end{proof}
 \begin{subtheorem}
-    Изоморфность групп - отношение эквивалентности на множестве групп.
+    Изоморфность групп --- отношение эквивалентности на множестве групп.
 \end{subtheorem}
 \begin{subtheorem}[Свойства изоморфизмов] \tab
     \begin{enumerate}
@@ -149,8 +149,8 @@
     $SO_2 \simeq (U, \cdot)$, где $U = \{z \in \CC : |z| = 1\}$.
 \end{example}
 \begin{definition}
-    Пусть $(G, \cdot, e)$ - группа, $k \in \Z, g \in G$.\\
-    Мультипликативный термин - элемент $g$ в степени $k$:
+    Пусть $(G, \cdot, e)$ --- группа, $k \in \Z, g \in G$.\\
+    Мультипликативный термин --- элемент $g$ в степени $k$:
     $$g^k =
     \begin{cases} \undermat{k}{g \cdot g \cdot ... \cdot g}, k > 0 \\
         \\
@@ -160,8 +160,8 @@
     \end{cases}$$
 \end{definition}
 \begin{definition}
-    Пусть $(G, +, e)$ - группа, $k \in \Z, g \in G$.\\
-    Аддитивный термин - кратное элемента $g$:
+    Пусть $(G, +, e)$ --- группа, $k \in \Z, g \in G$.\\
+    Аддитивный термин --- кратное элемента $g$:
     $$kg =
     \begin{cases} \undermat{k}{g + g + ... + g}, k > 0 \\
         \\
@@ -181,17 +181,17 @@
     Множество всех элементов $g^k$, где $k \in \Z$, $g \in G$, образует подгруппу в $G$. Обозначается $\langle g \rangle = \{e, g, g^{-1}, g^2, g^{-2}, ...\}$ .
 \end{subtheorem}
 \begin{definition}
-    $\langle g \rangle$ - циклическая подгруппа. порождённая элементом $g$.
+    $\langle g \rangle$ --- циклическая подгруппа. порождённая элементом $g$.
 \end{definition}
 \begin{examples} \tab
     \begin{enumerate}
-        \item $G = \Z: \langle 2 \rangle = 2\Z$ - чётные целые числа;
+        \item $G = \Z: \langle 2 \rangle = 2\Z$ --- чётные целые числа;
         \item $G = \Z_6: \langle 2 \rangle = \{0, 2, 4\}$;
         \item $G = \CC: \langle i \rangle = \{\pm 1, \pm i\}$ 
     \end{enumerate}
 \end{examples}
-Пусть $(G, \cdot, e)$ - группа, $g \in G$.
-Если $\forall k, m \in \Z: k \neq m \Longrightarrow g^k \neq g^m$, то $\langle g \rangle$ - бесконечная (элемент $g$ имеет бесконечный порядок).\\
+Пусть $(G, \cdot, e)$ --- группа, $g \in G$.
+Если $\forall k, m \in \Z: k \neq m \Longrightarrow g^k \neq g^m$, то $\langle g \rangle$ --- бесконечная (элемент $g$ имеет бесконечный порядок).\\
 Если $\exists k, m \in \Z: k \neq m, g^k = g^m \Longrightarrow g^{k-m} = e \Longrightarrow$ существует наименьшее $n \in \N$ такое, что $g^n = e$ (элемент $g$ имеет порядок $n$)  
 \begin{definition}
     Порядком элемента $g \in G$ называется наименьшее натуральное число $n$ такое, что $g^n = e$, если такое существует. Иначе говорят, что элемент $g$ имеет бесконечный порядок. Обозначается $\textup{ord} \ g$.
@@ -201,7 +201,7 @@
         \item $G = \Z: \textup{ord } 2 = \infty$;
         \item $G = \Z_{12}: \textup{ord } 2 = 6$;
         \item $G = \CC^*: \textup{ord } 2 = \infty$\\
-        ($\CC^*$ - мультипликативная группа поля, $\CC\setminus\{0\}$ относительно умножения).
+        ($\CC^*$ --- мультипликативная группа поля, $\CC\setminus\{0\}$ относительно умножения).
     \end{enumerate}
 \end{examples}
 \begin{subtheoremnum}[Свойства элементов конечного порядка]\tab
@@ -214,7 +214,7 @@
     \begin{enumerate}
         \item Разделим $m$ на $n = \textup{ord } g$ с остатком: $m = nq + r$, где $0 \leqslant r < n$. Тогда:
         $$e = g^m = (g^n)^q \cdot g^r = g^r \Longrightarrow r = 0$$
-        так как $r < n$, где $n$ - минимальное натуральное число такое, что $g^n = 0$.
+        так как $r < n$, где $n$ --- минимальное натуральное число такое, что $g^n = 0$.
         \item Следует из 1. 
     \end{enumerate}
 \end{proof}
@@ -223,14 +223,14 @@
 \end{consequense}
 \begin{proof}
     Если $\textup{ord } g = \infty: \ \forall k \neq l \ g^k \neq g^l \Longrightarrow$ подгруппа $\langle g \rangle = \{e, g^{\pm 1}, g^{\pm 2},...\}$ бесконечна.\\
-    Если $\textup{ord } g = n: \langle g \rangle = \{e, g^1, ... g^{n-1}\}$ - все эти элементы различны из пункта 2 утверждения, а других нет по определению порядка.
+    Если $\textup{ord } g = n: \langle g \rangle = \{e, g^1, ... g^{n-1}\}$ --- все эти элементы различны из пункта 2 утверждения, а других нет по определению порядка.
 \end{proof}
 \begin{examples} \tab
     \begin{enumerate}
-        \item $i \in \CC^*$ - $\textup{ord } i = 4$;
+        \item $i \in \CC^*$ --- $\textup{ord } i = 4$;
         \item $\sigma \in S_n$:\\
-        Если $\sigma = (i_1,...,i_k)$ - цикл длины $k$, то $\textup{ord } \sigma = k$.\\
-        Так как любая подстановка раскладывается в произведение независимых циклов и независимые циклы коммутируют, если $\sigma = \tau_1...\tau_n$, где $\tau_i$ - независимые циклы, то верно: $\textup{ord } \sigma = $ НОК $\{|\tau_1|,...,|\tau_n|\}$.\\
+        Если $\sigma = (i_1,...,i_k)$ --- цикл длины $k$, то $\textup{ord } \sigma = k$.\\
+        Так как любая подстановка раскладывается в произведение независимых циклов и независимые циклы коммутируют, если $\sigma = \tau_1...\tau_n$, где $\tau_i$ --- независимые циклы, то верно: $\textup{ord } \sigma = $ НОК $\{|\tau_1|,...,|\tau_n|\}$.\\
         Например, $\sigma = (23)(145) \Longrightarrow \textup{ord } \sigma = 6$.
     \end{enumerate}
 \end{examples}
@@ -244,16 +244,16 @@
     Множество $S \subseteq G$ называется порождающим множеством для группы $G$, если $\forall g \in G \ \exists s_1,...,s_k \in S: \ g = s_1^{\epsilon_1}...s_k^{\epsilon_k}$, где $\epsilon_i = \pm 1$ ($s_i$ не обязательно различны).\\
     При этом говорят, что $G$ порождается множеством $S$.\\
     Если $\exists$ конечное множество $S$ такое, что $S$ порождает $G$, то $G$ называется конечно порождённой, и бесконечно порождённой иначе.\\
-    Обозначается $\langle S \rangle = \{s_1^{\epsilon_1}...s_k^{\epsilon_k} | \epsilon_i = \pm 1\}$ - группа, порождённая $S$.
+    Обозначается $\langle S \rangle = \{s_1^{\epsilon_1}...s_k^{\epsilon_k} | \epsilon_i = \pm 1\}$ --- группа, порождённая $S$.
 \end{definition}
 \begin{examples} \tab
     \begin{enumerate}
         \item $S_n = \langle \text{все транспозиции} \rangle$;
         \item $GL_n(F) = \langle \text{все элементарные матрицы} \rangle$
         \item $Q_8 = \langle i, j \rangle$;
-        \item $D_n = \langle \alpha, s\rangle$, где $\alpha$ - поворот на $\frac{2\pi}{n}$, а $s$ - любая из симметрий.
+        \item $D_n = \langle \alpha, s\rangle$, где $\alpha$ --- поворот на $\frac{2\pi}{n}$, а $s$ --- любая из симметрий.
         \item Группа Клейна: $H = \{\textup{id}, a=(12)(34), b=(13)(24), c=(14)(23)\} \leq S_4$\\
-        Это группа симметрий прямоугольника, не являющегося квадратом: $a, c$ - симметрии относительно средних линий, $b$ - поворот на $\pi$ вокруг центра. 
+        Это группа симметрий прямоугольника, не являющегося квадратом: $a, c$ --- симметрии относительно средних линий, $b$ --- поворот на $\pi$ вокруг центра. 
         Таблица Кэли для группы Клейна:
         $$\begin{tabular}{c|c|c|c|c}
         \null & e & a & b & c \\ \hline
@@ -263,7 +263,7 @@
         c & c & b & a & e
         \end{tabular}$$ 
         Отсюда $\{e, a, b, c\} = \langle a, b \rangle$.
-        \item $\Q$ - бесконечно порождённая.
+        \item $\Q$ --- бесконечно порождённая.
     \end{enumerate}
 \end{examples}
 \subsection{Циклические группы}
@@ -273,8 +273,8 @@
 \begin{examples}\tab
     \begin{enumerate}
         \item $\Z = \langle 1 \rangle = \langle -1 \rangle$, $\Z_n = \langle 1 \rangle$;
-        \item $U_n$ - множество всех комплексных корней степени $n$ из 1.\\
-        $U_n$ - группа относительно умножения, причём $U_n = \langle \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n} \rangle$.
+        \item $U_n$ --- множество всех комплексных корней степени $n$ из 1.\\
+        $U_n$ --- группа относительно умножения, причём $U_n = \langle \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n} \rangle$.
     \end{enumerate}    
 \end{examples}
 \begin{subtheoremnum}
@@ -303,19 +303,19 @@
 \begin{proof}\tab
     \begin{enumerate}
         \item Пусть $\textup{ord } g = \infty, \forall h \in G \ \exists k \in \Z: h = g^k$\\
-        Рассмотрим отображение $\phi: G \rightarrow \Z$ такого вида: $\phi: g^k \mapsto k$. Очевидно, что $\phi$ - сюръекция (в $k\in \Z$ перешёл $g^k \in G$).\\
-        $\phi(g^k) = \phi(g^m) \Longrightarrow k = m \Longrightarrow g^k = g^m$ - отсюда $\phi$ - инъекция.\\
+        Рассмотрим отображение $\phi: G \rightarrow \Z$ такого вида: $\phi: g^k \mapsto k$. Очевидно, что $\phi$ --- сюръекция (в $k\in \Z$ перешёл $g^k \in G$).\\
+        $\phi(g^k) = \phi(g^m) \Longrightarrow k = m \Longrightarrow g^k = g^m$ --- отсюда $\phi$ --- инъекция.\\
         Проверим сохранение операции:
         \[\phi(g^k \cdot g^m) = \phi(g^{k+m}) = k+m = \phi(g^k) + \phi(g^m)\]
-        Отсюда $\phi$ - изоморфизм.
-        \item Пусть $\textup{ord } g = n$. Рассмотрим отображение $\phi: \Z_n \rightarrow G$ такого вида: $\phi: k \mapsto g^k$. Очевидно, что $\phi$ - сюръекция (в $g^k\in G$ перешёл $k \in \Z_n$).\\
-        $k \equiv m (\textup{mod } n) \Longleftrightarrow g^k = g^m$ - отсюда $\phi$ - инъекция.\\
-        Сохранение операции - аналогично пункту 1.\\ 
-        Отсюда $\phi$ - изоморфизм.
+        Отсюда $\phi$ --- изоморфизм.
+        \item Пусть $\textup{ord } g = n$. Рассмотрим отображение $\phi: \Z_n \rightarrow G$ такого вида: $\phi: k \mapsto g^k$. Очевидно, что $\phi$ --- сюръекция (в $g^k\in G$ перешёл $k \in \Z_n$).\\
+        $k \equiv m (\textup{mod } n) \Longleftrightarrow g^k = g^m$ --- отсюда $\phi$ --- инъекция.\\
+        Сохранение операции --- аналогично пункту 1.\\ 
+        Отсюда $\phi$ --- изоморфизм.
     \end{enumerate}
 \end{proof}
 \begin{consequense}
-    Если $G_1, G_2$ - циклические группы, то $G_1 \simeq G_2 \Longleftrightarrow |G_1| = |G_2|$.
+    Если $G_1, G_2$ --- циклические группы, то $G_1 \simeq G_2 \Longleftrightarrow |G_1| = |G_2|$.
 \end{consequense}
 \begin{proof} \tab\\
     $\Longrightarrow : \ \ $ верно всегда;\\
@@ -335,7 +335,7 @@
         При $H \neq \{e\} : \forall h \in H \ \exists k \in \Z : h = g^k$. Так как $g^k \in H \Longrightarrow g^{-k} \in H$ и в $H$ есть элемент, отличный от $e$, $\exists$ наименьшее $k \in \N: g^k \in H$.\\
         Докажем, что $H = \langle g^k \rangle$. Рассмотрим произвольный $g^m \in H$. Разделим $m$ на $k$ с остатком: $m = kq + r, 0 \leqslant r < k$. Тогда:
         \[g^m = (g^k)^q\cdot g^r \Longrightarrow g^r = (g^k)^{-q}\cdot g^m \]
-        то есть $g^r \in H$, а в силу того, что $k$ - наименьшее натуральное число такое, что $g^k \in H$, имеем $r = 0$. Значит, $g^m = (g^k)^q$, а отсюда $H = \langle g^k \rangle$.
+        то есть $g^r \in H$, а в силу того, что $k$ --- наименьшее натуральное число такое, что $g^k \in H$, имеем $r = 0$. Значит, $g^m = (g^k)^q$, а отсюда $H = \langle g^k \rangle$.
         \item $G =  \langle g \rangle_n, H \leq G \overset{1}{\Longrightarrow} H =  \langle g^k \rangle$.\\
         Так как $g^n = e \in H$, то в силу рассуждений пункта 1 при $m = n$ получаем $k | n \Longrightarrow n = kq$.\\
         Отсюда $H = \{e, g^k, g^{2k},...,g^{(q-1)k}\} \Longrightarrow |H| = q$, где $q | n$.\\
@@ -344,7 +344,7 @@
     \end{enumerate} 
 \end{proof}
 \begin{consequense}
-    В циклической группе простого порядка существуют ровно две подгруппы - тривиальная и сама группа. 
+    В циклической группе простого порядка существуют ровно две подгруппы --- тривиальная и сама группа. 
 \end{consequense}
 \begin{examples}\tab
     \begin{enumerate}
@@ -354,10 +354,10 @@
 \end{examples}
 \subsection{Смежные классы}
 \begin{definition}
-    Пусть $(G, \cdot, e)$ - произвольная группа, $H \leq G, g \in G$.\\
+    Пусть $(G, \cdot, e)$ --- произвольная группа, $H \leq G, g \in G$.\\
     Рассмотрим множества:
-    \[gH = \{gh | h \in H\} \text{ - левый смежный класс G по H с представителем g}\]
-    \[Hg = \{hg | h \in H\} \text{ - правый смежный класс G по H с представителем g}\]
+    \[gH = \{gh | h \in H\} \text{ --- левый смежный класс G по H с представителем g}\]
+    \[Hg = \{hg | h \in H\} \text{ --- правый смежный класс G по H с представителем g}\]
 \end{definition}
 \begin{subtheorem}[Свойства смежных классов] \tab
     \begin{enumerate}
@@ -388,7 +388,7 @@
     Совпадение классов эквивалентности с левыми смежными классами следует из пункта 3 предыдущего утверждения. 
 \end{proof}
 \begin{subtheorem}
-    Если $G$ - абелева, то $\forall a\in G: aH=Ha$. \\
+    Если $G$ --- абелева, то $\forall a\in G: aH=Ha$. \\
     (В общем случае данное утверждение неверно).
 \end{subtheorem}
 \begin{proof}
@@ -400,9 +400,9 @@
         $(13)(12) = (123); \ (12)(13) = (132)$.\\
         Тогда $\{(13), (123)\}=gH\not=Hg=\{(13), (132)\}$.
         \item $H = 3\Z \leq \Z$.
-        Смежные классы - $3\Z, 1 + 3\Z, 2 + 3\Z$.
+        Смежные классы --- $3\Z, 1 + 3\Z, 2 + 3\Z$.
         \item $H = \R \leq \CC$.
-        Смежные классы - $a+bi+\R=bi+\R$.
+        Смежные классы --- $a+bi+\R=bi+\R$.
     \end{enumerate}
 \end{examples}
 \begin{subtheorem}
@@ -418,10 +418,10 @@
     Мощность множества левых смежных классов группы $G$ по подгруппе $H$ называется индексом $H$ в $G$. Обозначение: $|G: H|$
 \end{definition}
 \begin{example}
-    $|\Z: 3\Z|=3$,\ т.к. смежные классы - $\{3\Z,\ 1+3\Z,\ 2+3\Z\}$.
+    $|\Z: 3\Z|=3$,\ т.к. смежные классы --- $\{3\Z,\ 1+3\Z,\ 2+3\Z\}$.
 \end{example}
 \begin{theorem} (Теорема Лагранжа)\\
-    Пусть $G$ - конечная группа, $H\leq G$. Тогда $|G|=|H|\cdot|G:H|$.
+    Пусть $G$ --- конечная группа, $H\leq G$. Тогда $|G|=|H|\cdot|G:H|$.
 \end{theorem}
 \begin{proof}
     Так как $|G|<\infty$, то $|H|<\infty$, т.е. $H=\{h_1,\dots,h_k\}$.\\
@@ -429,13 +429,13 @@
     \[G=\bigsqcup \limits_{i=1}^{n} a_iH \Longrightarrow |G| = \sum \limits_{i=1}^{n} |a_iH| = |G:H|\cdot |H|\]
 \end{proof}
 \begin{consequensenum}
-    Если $G$ - конечная группа, $H\leq G$, то $|H|\ |\ |G|$.\\
+    Если $G$ --- конечная группа, $H\leq G$, то $|H|\ |\ |G|$.\\
     (Обратное утверждение неверно).
 \end{consequensenum}
 \begin{exercise}
     Пусть $G = A_4$ (группа чётных перестановок).\\
     $|A_4|=\frac{4!}{2}=12$. Докажем, что в $A_4$ нет подгруппы порядка 6.\\
-    Предположим, что $H \leq A_4$ и $|H| = 6$. $A_4$ состоит из элемента $id$, 3 элементов вида $(ab)(cd)$ и восьми элементов вида $(abc)$. Значит, $H$ содержит хотя бы один элемент вида $(abc)$ (с точностью до перенумерования - (123)). Тогда $H$ содержит и $(123)^{-1} = (132)$. Также знаем, что группа чётного порядка содержит элемент порядка 2 (иначе в группе все элементы, кроме $e$, разбиваются на пары обратных, и элементов нечётное число), поэтому $H$ содержит $\sigma = (**)(**)$.\\
+    Предположим, что $H \leq A_4$ и $|H| = 6$. $A_4$ состоит из элемента $id$, 3 элементов вида $(ab)(cd)$ и восьми элементов вида $(abc)$. Значит, $H$ содержит хотя бы один элемент вида $(abc)$ (с точностью до перенумерования --- (123)). Тогда $H$ содержит и $(123)^{-1} = (132)$. Также знаем, что группа чётного порядка содержит элемент порядка 2 (иначе в группе все элементы, кроме $e$, разбиваются на пары обратных, и элементов нечётное число), поэтому $H$ содержит $\sigma = (**)(**)$.\\
     Рассмотрим $\omega = \sigma(123)\sigma^{-1} = (\sigma(1), \sigma(2), \sigma(3))$ (это равенство легко проверить, подставив в него $\sigma(1),...,\sigma(4)$). Очевидно, что это цикл длины 3, не оставляющий на месте 4 (т.к. $\sigma$ не оставляет на месте 4). Значит, $\omega$ и $\omega^{-1}$ принадлежат $H$ и не совпадают с предыдущими элементами (и друг с другом), т.е. 
     \[H = \{id, (123), (132), \sigma, \omega, \omega^{-1}\}\]
     Осталось перебрать возможные значения $\sigma$:
@@ -447,20 +447,20 @@
     Отсюда таких $H$ не существует.
 \end{exercise}  
 \begin{consequensenum}
-    Если $G$ - конечная группа, то $\forall g\in G: \textup{ord }g\ |\ |G|$
+    Если $G$ --- конечная группа, то $\forall g\in G: \textup{ord }g\ |\ |G|$
 \end{consequensenum}
 \begin{proof}
     $\textup{ord } g =|\langle g \rangle|\ |\ |G|$.
 \end{proof}
 \begin{consequensenum}
-    Если $G$ - конечная группа порядка $n$, то $\forall g\in G: g^n=e$ в $G$.
+    Если $G$ --- конечная группа порядка $n$, то $\forall g\in G: g^n=e$ в $G$.
 \end{consequensenum}
 \begin{proof}
     По следствию 2: $n=\textup{ord}g\cdot k \Rightarrow g^n=g^{(\textup{ord} g)\cdot k} = e^k = e$.
 \end{proof}
 \begin{example}
-    Пусть $G=\Z_p^*$, $p$ - простое, $|\Z_p^*| = p-1$. По следствию 3:\\
-    $\forall a\in \Z_p^*: a^{p-1}=1$ в $\Z_p^*$, отсюда $\forall a\in \Z,\ p \nmid a: a^{p-1}\equiv 1\pmod{p}$ - малая теорема Ферма.
+    Пусть $G=\Z_p^*$, $p$ --- простое, $|\Z_p^*| = p-1$. По следствию 3:\\
+    $\forall a\in \Z_p^*: a^{p-1}=1$ в $\Z_p^*$, отсюда $\forall a\in \Z,\ p \nmid a: a^{p-1}\equiv 1\pmod{p}$ --- малая теорема Ферма.
 \end{example}
 \begin{consequensenum}
     Любая группа $G$ простого порядка $p$ является циклической.
@@ -469,17 +469,17 @@
     $\forall a\in G,\ a \neq e: \textup{ord }a \neq 1,\ \textup{ord }a \mid |G|=p \Rightarrow \textup{ord }a = |G| \Rightarrow G=\langle a \rangle$.
 \end{proof}
 \begin{exercise}
-    Доказать, что с точностью до изоморфизма существует ровно две группы порядка 4 - $\Z_4$ и $V_4$.
+    Доказать, что с точностью до изоморфизма существует ровно две группы порядка 4 --- $\Z_4$ и $V_4$.
 \end{exercise}
 \begin{proof}
-    Пусть $G$ - группа порядка 4. Заметим, что по следствию 2 порядок неединичного элемента в $G$ может быть равен либо 2, либо 4. Если в $G$ есть элемент порядка 4, то $G$ циклическая, а тогда по теореме о классификации циклических групп $G \simeq \Z_4$.\\
+    Пусть $G$ --- группа порядка 4. Заметим, что по следствию 2 порядок неединичного элемента в $G$ может быть равен либо 2, либо 4. Если в $G$ есть элемент порядка 4, то $G$ циклическая, а тогда по теореме о классификации циклических групп $G \simeq \Z_4$.\\
     Пусть $G = \{e, a, b, c\}, \textup{ord } a = \textup{ord } b = \textup{ord } c = 2$. Посмотрим, чему может быть равно $ab$:
     \begin{itemize}
-        \item $ab = e \Longrightarrow aab = a \Longrightarrow b = a$ - противоречие;
-        \item $ab = a \Longrightarrow aab = aa \Longrightarrow b = e$ - противоречие;
-        \item $ab = b \Longrightarrow abb = bb \Longrightarrow a = e$ - противоречие.
+        \item $ab = e \Longrightarrow aab = a \Longrightarrow b = a$ --- противоречие;
+        \item $ab = a \Longrightarrow aab = aa \Longrightarrow b = e$ --- противоречие;
+        \item $ab = b \Longrightarrow abb = bb \Longrightarrow a = e$ --- противоречие.
     \end{itemize}
-    Отсюда $ab = c$ - аналогично произведение любых двух различных неединичных элементов равно третьему. Отсюда таблица Кэли для $G$ имеет вид
+    Отсюда $ab = c$ --- аналогично произведение любых двух различных неединичных элементов равно третьему. Отсюда таблица Кэли для $G$ имеет вид
     $$\begin{tabular}{c|c|c|c|c}
         \null & e & a & b & c \\ \hline
         e & e & a & b & c \\ \hline
@@ -490,7 +490,7 @@
     откуда видно, что $G \simeq V_4$.
 \end{proof}
 \begin{exercise}
-    Доказать, что если в группе $G$ все неединичные элементы имеют порядок 2, то $G$ - абелева.
+    Доказать, что если в группе $G$ все неединичные элементы имеют порядок 2, то $G$ --- абелева.
 \end{exercise}
 \begin{proof}
     $\textup{ord } a = 2 \Longrightarrow a = a^{-1} \Longrightarrow \forall a, b \in G: ab = (ab)^{-1} = b^{-1}a^{-1} = ba$.
@@ -506,11 +506,11 @@
 \end{definition} 
 \begin{proof}[Эквивалентность определений:]\tab
     \begin{itemize}
-        \item $1 \Longleftrightarrow 2$ - очевидно;
+        \item $1 \Longleftrightarrow 2$ --- очевидно;
         \item $2 \Longleftrightarrow 3$:\\
-        $\Longleftarrow: \ \ gHg^{-1} \subseteq H \Leftrightarrow H \subseteq g^{-1}Hg$ - из условия на всевозможные $g$ получаем равенство;\\
-        $\Longrightarrow$ - очевидно;
-        \item $3 \Longleftrightarrow 4$ - из определения смежного класса.
+        $\Longleftarrow: \ \ gHg^{-1} \subseteq H \Leftrightarrow H \subseteq g^{-1}Hg$ --- из условия на всевозможные $g$ получаем равенство;\\
+        $\Longrightarrow$ --- очевидно;
+        \item $3 \Longleftrightarrow 4$ --- из определения смежного класса.
     \end{itemize}
 \end{proof}
 \begin{examples} \tab
@@ -526,12 +526,12 @@
     Докажите, что если $|G:H|=2$, то $H\unlhd G$ для произвольной группы $G$ и произвольной подгруппы $H\leq G$.
 \end{exercise}
 \begin{proof}
-    Если $|G:H|=2$, то $G$ разбивается на два непересекающихся левых (правых) смежных класса по $H$. Очевидно, что один из этих классов  в обоих случаях - сама подгруппа $H$. Тогда $\forall g \in G \setminus H$ группа $G$ разбивается на левые смежные классы $H$ и $gH$, а также на правые смежные классы $H$ и $Hg$, откуда $gH = Hg$. Также очевидно, что $\forall h \in H: hH = H = Hh$. Значит, $\forall g \in G: gH = Hg \Longrightarrow H \unlhd G$.
+    Если $|G:H|=2$, то $G$ разбивается на два непересекающихся левых (правых) смежных класса по $H$. Очевидно, что один из этих классов  в обоих случаях --- сама подгруппа $H$. Тогда $\forall g \in G \setminus H$ группа $G$ разбивается на левые смежные классы $H$ и $gH$, а также на правые смежные классы $H$ и $Hg$, откуда $gH = Hg$. Также очевидно, что $\forall h \in H: hH = H = Hh$. Значит, $\forall g \in G: gH = Hg \Longrightarrow H \unlhd G$.
 \end{proof}
 
 \subsection{Факторгруппа}
 \begin{subtheorem}
-    Пусть $G$ - группа, $H\unlhd G$. Тогда множество всех смежных классов $G$ по $H : G/H = \{eH, aH, ...\}$ образует группу относительно операции $aH \cdot bH = abH$.
+    Пусть $G$ --- группа, $H\unlhd G$. Тогда множество всех смежных классов $G$ по $H : G/H = \{eH, aH, ...\}$ образует группу относительно операции $aH \cdot bH = abH$.
 \end{subtheorem}
 \begin{proof}\tab
     \begin{enumerate}
@@ -578,10 +578,10 @@
 
 \subsection{Гомоморфизмы групп}
 \begin{definition}
-    Пусть $(G, \cdot, e), (\tilde{G}, \cdot, \tilde{e})$ - группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\cdot\phi(b)$.
+    Пусть $(G, \cdot, e), (\tilde{G}, \cdot, \tilde{e})$ --- группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\cdot\phi(b)$.
 \end{definition}
 \begin{remark}
-    В частности, изоморфизм - биективный гомоморфизм.
+    В частности, изоморфизм --- биективный гомоморфизм.
 \end{remark}
 \begin{subtheorem}[Свойства гомоморфизмов]\tab
     \begin{enumerate}
@@ -590,8 +590,8 @@
     \end{enumerate}
 \end{subtheorem}
 \begin{definition}
-    Множество $\textup{Im } \phi = \{b \in \tilde{G} \ | \ \exists a \in G: \phi(a) = b\}$ - образ гомоморфизма.
-    Множество $\textup{Ker } \phi = \{a \in G \ | \ \phi(a) = \tilde{e}\}$ - ядро гомоморфизма.
+    Множество $\textup{Im } \phi = \{b \in \tilde{G} \ | \ \exists a \in G: \phi(a) = b\}$ --- образ гомоморфизма.
+    Множество $\textup{Ker } \phi = \{a \in G \ | \ \phi(a) = \tilde{e}\}$ --- ядро гомоморфизма.
 \end{definition}
 \begin{subtheoremnum}\tab
     \begin{enumerate}
@@ -631,7 +631,7 @@
     $\textup{Ker }\phi = SL_n(\R), \textup{Im }\phi = \R^* \Longrightarrow R^* \simeq GL_n(\R) / SL_n(\R)$.
 \end{example}
 \begin{theorem}[О гомоморфизме]
-    Пусть $G, \tilde{G}$ - группы, $\phi: G \rightarrow \tilde{G}$ - гомоморфизм.\\
+    Пусть $G, \tilde{G}$ --- группы, $\phi: G \rightarrow \tilde{G}$ --- гомоморфизм.\\
     Тогда $G / \textup{Ker }\phi \simeq \textup{Im } \phi$.
 \end{theorem}
 \begin{proof}
@@ -647,7 +647,7 @@
         \[\psi((g_1 \textup{Ker }\phi)(g_2 \textup{Ker }\phi)) = \psi(g_1g_2 \textup{Ker }\phi) = \phi(g_1g_2) =\]
         \[ = \phi(g_1)\phi(g_2) = \psi(g_1 \textup{Ker }\phi)\psi(g_2 \textup{Ker }\phi)\]
     \end{itemize}
-    Отсюда $\psi: G/\textup{Ker }\phi \rightarrow \textup{Im }\phi$ - изоморфизм.
+    Отсюда $\psi: G/\textup{Ker }\phi \rightarrow \textup{Im }\phi$ --- изоморфизм.
 \end{proof}
 \begin{example}
     Пусть $G = S_n, \tilde{G} = \R^*, \phi(\sigma) = \sgn \sigma$.\\
@@ -655,14 +655,14 @@
     \[\textup{Im }\phi = \{\pm 1\}, \textup{Ker }\phi = A_n \Longrightarrow S_n / A_n \simeq \{\pm 1\} \simeq \Z_2\]
 \end{example}
 \begin{consequensenum}
-    Гомоморфизм $\phi: G \rightarrow \tilde{G}$ - изоморфизм $\Longleftrightarrow \begin{cases}
+    Гомоморфизм $\phi: G \rightarrow \tilde{G}$ --- изоморфизм $\Longleftrightarrow \begin{cases}
         \textup{Ker }\phi = \{e\}\\
         \textup{Im }\phi = \tilde{G}
     \end{cases}$
 \end{consequensenum}
 \begin{proof}  
-    $ \\ \Longrightarrow$ - очевидно из биективности;\\
-    $\Longleftarrow$ - изоморфизм из теоремы совпадёт с $\phi$.  
+    $ \\ \Longrightarrow$ --- очевидно из биективности;\\
+    $\Longleftarrow$ --- изоморфизм из теоремы совпадёт с $\phi$.  
 \end{proof}
 \begin{consequensenum}
     Если $|G| < \infty$, то $|G| = |\textup{Ker }\phi|\cdot|\textup{Im }\phi|$.
@@ -671,7 +671,7 @@
     $|G| = |G/\textup{Ker }\phi|\cdot|\textup{Ker }\phi| = |\textup{Im }\phi| \cdot |\textup{Ker }\phi|$.
 \end{proof}
 \begin{subtheorem}
-    Пусть $G$ - группа, $H \unlhd G$. Тогда $\exists$ такая группа $\tilde{G}$, что $\exists$ сюръективный гомоморфизм $\pi: G \rightarrow \tilde{G}$, причём $\textup{Ker }\pi = H$.
+    Пусть $G$ --- группа, $H \unlhd G$. Тогда $\exists$ такая группа $\tilde{G}$, что $\exists$ сюръективный гомоморфизм $\pi: G \rightarrow \tilde{G}$, причём $\textup{Ker }\pi = H$.
 \end{subtheorem}
 \begin{proof}
     Подходят $\tilde{G} = G/H, \pi: g \mapsto gH$.
@@ -680,15 +680,15 @@
     Приведённый выше гомоморфизм $\pi: G \mapsto G/H$ называется каноническим (естественным, натуральным) гомоморфизмом из $G$ в $G/H$.
 \end{definition}
 \begin{definition}
-    Эпиморфизм - сюръективный гомоморфизм.
+    Эпиморфизм --- сюръективный гомоморфизм.
 \end{definition}
 \begin{subtheorem}
-    Пусть $\phi: G \rightarrow \tilde{\tilde{G}}$ - произвольный эпиморфизм с ядром $H$.\\
-    Тогда $\exists$ изоморфизм $\psi: G/H \rightarrow \tilde{\tilde{G}}$ такой, что $\phi = \psi \circ \pi$, где $\pi$ - натуральный гомоморфизм из $G$ в $G/H$.
+    Пусть $\phi: G \rightarrow \tilde{\tilde{G}}$ --- произвольный эпиморфизм с ядром $H$.\\
+    Тогда $\exists$ изоморфизм $\psi: G/H \rightarrow \tilde{\tilde{G}}$ такой, что $\phi = \psi \circ \pi$, где $\pi$ --- натуральный гомоморфизм из $G$ в $G/H$.
 \end{subtheorem}
 \begin{proof}
     По теореме о гомоморфизме $G/ \textup{Ker }\phi \simeq \textup{Im }\phi$.\\
-    Так как $\phi$ - сюръекция, $\textup{Im }\phi =  \tilde{\tilde{G}}$, также по условию $\textup{Ker }\phi = H$. Тогда $\psi: G/H \rightarrow \tilde{\tilde{G}}$ - изоморфизм, заданный в доказательстве теоремы о гомоморфизме: $\psi: gH \mapsto \phi(g)$.\\
+    Так как $\phi$ --- сюръекция, $\textup{Im }\phi =  \tilde{\tilde{G}}$, также по условию $\textup{Ker }\phi = H$. Тогда $\psi: G/H \rightarrow \tilde{\tilde{G}}$ --- изоморфизм, заданный в доказательстве теоремы о гомоморфизме: $\psi: gH \mapsto \phi(g)$.\\
     Взяв этот изоморфизм, получим $\phi = \psi \circ \pi$ (так как $g \overset{\pi}{\mapsto} gH \overset{\psi}{\mapsto} \phi(g)$).
 \end{proof}
 \setcounter{thcount}{0}

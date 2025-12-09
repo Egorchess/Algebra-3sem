@@ -1,34 +1,34 @@
 \section{Прямое произведение групп}
 \subsection{Внешнее прямое произведение}
-    Пусть $G_1,...,G_k$ - группы.\\
+    Пусть $G_1,...,G_k$ --- группы.\\
     $G = G_1 \times ... \times G_k = \{(g_1,...,g_k)| g_i \in G_i\}$.\\
     $(g_1,...,g_k)\cdot(\tilde{g}_1,...,\tilde{g}_k) = (g_1\tilde{g}_1,...,g_k\tilde{g}_k)$\\
     ($g_i\tilde{g}_i$ перемножаются по правилу бинарной операции на $G_i$).
 \begin{subtheorem}
-    $(G, \cdot)$ - группа.
+    $(G, \cdot)$ --- группа.
 \end{subtheorem}
 \begin{proof}\tab
     \begin{enumerate}
         \item $(a_1,...,a_k)((b_1,...,b_k)(c_1,...,c_k)) = (a_1(b_1c_1),...,a_k(b_kc_k)) =\\= ((a_1b_1)c_1,...,(a_kb_k)c_k) = ((a_1,...,a_k)(b_1,...,b_k))(c_1,...,c_k)$ 
-        \item Нейтральный элемент - $(e_1,...,e_k)$ ($e_i$ - нейтральный в $G_i$)
+        \item Нейтральный элемент --- $(e_1,...,e_k)$ ($e_i$ --- нейтральный в $G_i$)
         \item $(g_1,...,g_k)^{-1} = (g_1^{-1},...,g_k^{-1})$ 
     \end{enumerate}
 \end{proof}
 \begin{definition}
     Данная группа $(G, \cdot)$ называется прямым произведением групп $G_1,...,G_k$. Обозначается $G = G_1 \times ... \times G_k$; $G_i$ называются множителями.\\
-    В аддитивной терминологии те же рассуждения определяют прямую сумму $G = G_1 \oplus ... \oplus G_k$, где $G_i$ - слагаемые.
+    В аддитивной терминологии те же рассуждения определяют прямую сумму $G = G_1 \oplus ... \oplus G_k$, где $G_i$ --- слагаемые.
 \end{definition}
 \begin{examples}\tab
     \begin{enumerate}
         \item $G_1 = \Z_3, G_2 = S_3, G = G_1 \times G_2$.\\
         $(1, (12))\cdot (2, (13)) = (1+2, (12)(13)) = (0, (132))$.
-        \item $D_n(\F) \simeq \undermat{n}{\F^* \times ... \times \F^*} \ (D_n(\F)$ - группа диагональных матриц порядка $n$). 
+        \item $D_n(\F) \simeq \undermat{n}{\F^* \times ... \times \F^*} \ (D_n(\F)$ --- группа диагональных матриц порядка $n$). 
     \end{enumerate}
 \end{examples}
 \begin{subtheorem}\tab
     \begin{enumerate}
-        \item Если $(m, n) = 1$, то $\Z_m \times \Z_n \simeq Z_{nm}$ - циклическая группа;
-        \item Если $(m, n) \neq 1$, то $\Z_m \times \Z_n$ - не циклическая.
+        \item Если $(m, n) = 1$, то $\Z_m \times \Z_n \simeq Z_{nm}$ --- циклическая группа;
+        \item Если $(m, n) \neq 1$, то $\Z_m \times \Z_n$ --- не циклическая.
     \end{enumerate}
 \end{subtheorem}
 \begin{proof}\tab
@@ -39,20 +39,20 @@
         Найдём $\textup{Ker }\phi:$
         \[\phi([a]_{mn}) = ([0]_m, [0]_n) \Longleftrightarrow \begin{cases}m \mid a\\ n\mid a \end{cases} \underset{(m,n)=1}{\Longrightarrow} mn \mid a \Longrightarrow \textup{Ker }\phi = \{[0]_{mn}\}\]
         По теореме о гомоморфизме $\textup{Im }\phi \simeq \Z_{mn} / \textup{Ker }\phi = \Z_{mn} \Longrightarrow |\textup{Im } \phi| = mn$. Так как $|\Z_m \times \Z_n| = mn$ и $\textup{Im }\phi \leq \Z_m \times \Z_n, \ \textup{Im }\phi = \Z_m \times \Z_n$.\\
-        Отсюда $\phi$ - биекция (инъекция из $\textup{Ker }\phi = \{e\}$), т.е. $\phi$ - изоморфизм.
+        Отсюда $\phi$ --- биекция (инъекция из $\textup{Ker }\phi = \{e\}$), т.е. $\phi$ --- изоморфизм.
         \item Пусть $(m,n) = d \neq 1$ ($m = dk_1, n = dk_2$). Тогда $\forall g = (g_1, g_2) \in \Z_m \times \Z_n$:
         \[(g_1, g_2)^{dk_1k_2} = (g_1^{dk_1k_2}, g_2^{dk_1k_2}) = (0^{k_2}, 0^{k_1}) = (0, 0)\]
         Отсюда $\textup{ord } (g_1, g_2) \mid dk_1k_2 = \frac{mn}{d} < mn = |\Z_m \times \Z_n|$. Значит, $\Z_m \times \Z_n$ не является циклической.
     \end{enumerate}
 \end{proof}
 \begin{consequense}
-    Пусть $n = p_1^{s_1}...p_k^{s_k}$ - разложение на простые множители. Тогда $\Z_n = \Z_{p_1^{s_1}}\times ...\times \Z_{p_k^{s_k}}$.
+    Пусть $n = p_1^{s_1}...p_k^{s_k}$ --- разложение на простые множители. Тогда $\Z_n = \Z_{p_1^{s_1}}\times ...\times \Z_{p_k^{s_k}}$.
 \end{consequense}
 \begin{proof}
     Очевидно следует из теоремы.
 \end{proof}
 \begin{consequense}(Китайская теорема об остатках)
-    Если числа $a_1,...,a_n$ попарно взаимно просты, то для любых целых $r_1,...,r_n \ (0 \leq r_i < n) \ \exists ! N \ (0 \leq N < a_1\cdot...\cdot a_n)$ такой, что $N \equiv r_i (\textup{mod } a_i)$ 
+    Если числа $a_1,...,a_n$ попарно взаимно просты, то для любых целых $r_1,...,r_n \ (0 \leq r_i < a_i) \ \exists ! N \ (0 \leq N < a_1\cdot...\cdot a_n)$ такой, что $N \equiv r_i (\textup{mod } a_i)$ 
 \end{consequense}
 \begin{proof}
     Из теоремы следует, что $\Z_{a_1}\times...\times \Z_{a_n}\simeq \Z_a$ ($a = a_1\cdot...\cdot a_n$).\\
@@ -60,7 +60,7 @@
 \end{proof}
 \subsection{Внутреннее прямое произведение}
 \begin{definition}
-    Пусть $G$ - группа, $H_1,...,H_k \leq G$.\\
+    Пусть $G$ --- группа, $H_1,...,H_k \leq G$.\\
     $G$ раскладывается в прямое произведение подгрупп $H_1,...,H_k$, если:
     \begin{enumerate}
         \item $\forall g \in G \ \exists! \ h_i \in H_i : g = h_1...h_k$;
@@ -75,13 +75,13 @@
     Пусть $H, N \leq G$. Обозначим $NH = \{nh | n \in N, h \in H\}$
 \end{definition}
 \begin{subtheorem}
-    Пусть $N\unlhd G, H \leq G$. Тогда $NH$ - подгруппа в $G$, причём $NH = HN$.  
+    Пусть $N\unlhd G, H \leq G$. Тогда $NH$ --- подгруппа в $G$, причём $NH = HN$.  
 \end{subtheorem}
 \begin{proof}
     Рассмотрим $(n_1h_1)(n_2h_2) = \undermat{= \tilde{n}}{n_1(h_1n_2h_1^{-1})}\undermat{= \tilde{h}}{h_1h_2} = \tilde{n}\tilde{h} \in NH$.\\
     $e \in N \cap H \Longrightarrow e \cdot e = e \in NH$.\\
     $(nh)^{-1} = h^{-1}n^{-1} = (h^{-1}n^{-1}h)h^{-1} \in NH$.\\
-    Отсюда $NH$ - подгруппа. Покажем, что $NH = HN$:
+    Отсюда $NH$ --- подгруппа. Покажем, что $NH = HN$:
     \[\forall nh \in NH:\ nh = (hh^{-1})nh = h(h^{-1}nh) \in HN \Longrightarrow NH \subseteq HN\]
     \[\forall hn \in HN:\ hn = hn(h^{-1}h) = (hnh^{-1})h  \in NH \Longrightarrow HN \subseteq NH\]
     Отсюда $NH = HN$.
@@ -103,12 +103,12 @@
 \end{theoremnum}
 \begin{proof}
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times H_2$.\\
-    (3) - очевидно из пункта 1 определения.\\
+    (3) --- очевидно из пункта 1 определения.\\
     (1): $\forall h_1 \in H_1, g \in G: \ g = \tilde{h}_1\tilde{h}_2 \ (\tilde{h}_1 \in H_1, \tilde{h}_2 \in H_2) \Longrightarrow$
     \[gh_1g^{-1} = \tilde{h}_1(\tilde{h}_2h_1\tilde{h}_2^{-1})\tilde{h}_1^{-1} \underset{(\text{2 из опр})}{=} \tilde{h}_1h_1\tilde{h}_1^{-1} \in H_1\]
     Отсюда $H_1 \unlhd G$ (аналогично $H_2 \unlhd G$).\\
-    (2): Пусть $\exists h \in H_1\cap H_2$. Тогда $h = he = eh$ - два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_1 \cap H_2 = \{e\}$.\\
-    $\Longleftarrow:$ Пусть даны условия (1) - (3).\\
+    (2): Пусть $\exists h \in H_1\cap H_2$. Тогда $h = he = eh$ --- два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_1 \cap H_2 = \{e\}$.\\
+    $\Longleftarrow:$ Пусть даны условия (1)-(3).\\
     По лемме 1 из (1), (2) очевидно следует пункт 2 определения.\\
     Из (3): $\forall g \in G \ \exists h_i \in H_i: g = h_1h_2$.\\
     Допустим, что это разложение не единственно, т.е. $h_1h_2 = \tilde{h}_1\tilde{h}_2$.\\
@@ -124,12 +124,12 @@
 \end{theoremnum}
 \begin{proof}
     $ \\$ $\Longrightarrow:$ Пусть $G = H_1 \times ... \times H_k$.\\
-    (3) - очевидно из пункта 1 определения.\\
+    (3) --- очевидно из пункта 1 определения.\\
     (1): $\forall h_i \in H_i, g \in G: \ g = \tilde{h}_1...\tilde{h}_k \ (\tilde{h}_i \in H_i) \Longrightarrow$
     \[gh_ig^{-1} = (\tilde{h}_1...\tilde{h}_k)h_i(\tilde{h}_k^{-1}...\tilde{h}_1^{-1}) \underset{(\text{2 из опр})}{=} \tilde{h}_ih_i\tilde{h}_i^{-1} \in H_i\]
     Отсюда $H_i \unlhd G$.\\
-    (2): Пусть $\exists h \in H_i \cap \langle H_j \ | \ j \neq i \rangle$. Тогда $h = he = eh$ - два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_i \cap \langle H_j \ | \ j \neq i \rangle = \{e\}$.\\
-    $\Longleftarrow:$ Пусть даны условия (1) - (3).\\
+    (2): Пусть $\exists h \in H_i \cap \langle H_j \ | \ j \neq i \rangle$. Тогда $h = he = eh$ --- два разложения на произведение элементов подгрупп. Они совпадают только в случае $h = e$, т.е. $H_i \cap \langle H_j \ | \ j \neq i \rangle = \{e\}$.\\
+    $\Longleftarrow:$ Пусть даны условия (1)-(3).\\
     По лемме 1 из (1), (2) очевидно следует пункт 2 определения.\\
     Из (3): $\forall g \in G \ \exists h_i \in H_i: g = h_1...h_k$.\\
     Допустим, что это разложение не единственно, т.е. $h_1...h_k = \tilde{h}_1...\tilde{h}_k$.\\
@@ -155,12 +155,12 @@
         \item Имеем: $H_i \leq G, G = H_1 \times ... \times H_k$.\\
         Рассмотрим отображение $\phi: G \rightarrow G_1 \times ... \times G_k$, где $G_i = H_i$, такое, что $\forall g = h_1...h_k \in G \ \ \phi(h_1...h_k) \mapsto (h_1,...,h_k)$. Это изоморфизм:
         \begin{itemize}
-            \item Биекция - очевидна;
+            \item Биекция --- очевидна;
             \item Гомоморфизм:
         \end{itemize}
         \[\phi((h_1...h_k)\cdot(h_1'...h_k')) = \phi(h_1h_1'...h_kh_k') = (h_1h_1',...,h_kh_k') =\]
         \[= (h_1,...,h_k)\cdot(h_1',...,h_k') = \phi(h_1...h_k) \cdot \phi(h_1'...h_k')\]
-        \item Имеем: $G_1,...,G_k$ - группы, $G = \{(g_1,...,g_k) \ | \ g_i \in G_i\}$.\\
+        \item Имеем: $G_1,...,G_k$ --- группы, $G = \{(g_1,...,g_k) \ | \ g_i \in G_i\}$.\\
         Тогда $H_i = \{(e,...,e,g_i,e,...,e) \ | \ g_i \in G_i\}$ очевидно является подгруппой $G$, изоморфной $G_i$.\\
         Покажем, что $G = H_1 \times ... \times H_k$:
         \begin{itemize}

@@ -1,16 +1,16 @@
 \section{Действия группы на множестве}
 \begin{definition}
-    Пусть $X$ - произвольное множество. Биективное отображение $f: X \rightarrow X$ называется преобразованием множества $X$.\\
+    Пусть $X$ --- произвольное множество. Биективное отображение $f: X \rightarrow X$ называется преобразованием множества $X$.\\
     Множество всех преобразований $X$ обозначается $S(X)$.
 \end{definition}
 \begin{subtheorem}
-    $S(X)$ - группа относительно композиции.
+    $S(X)$ --- группа относительно композиции.
 \end{subtheorem}
 \begin{proof}\tab
     \begin{enumerate}
-        \item Ассоциативность - очевидно;
-        \item Нейтральный элемент - тождественное преобразование;
-        \item Обратный элемент - обратное преобразование (существует, т.к. биекция)
+        \item Ассоциативность --- очевидно;
+        \item Нейтральный элемент --- тождественное преобразование;
+        \item Обратный элемент --- обратное преобразование (существует, т.к. биекция)
     \end{enumerate}
 \end{proof}
 \begin{definition}
@@ -18,25 +18,25 @@
     Произвольная $H \leq S(X)$ называется группой преобразований множества $X$.
 \end{definition}
 \begin{example}
-    $GL(V)$ - группа невырожденных линейных операторов векторного пространства $V$ : $GL(V) \leq S(V)$.
+    $GL(V)$ --- группа невырожденных линейных операторов векторного пространства $V$ : $GL(V) \leq S(V)$.
 \end{example}
 \begin{definition}
-    Пусть $G$ - произвольная группа, $X$ - произвольное множество. Действием группы $G$ на множестве $X$ называется гомоморфизм $\alpha: G \rightarrow S(X)$.
+    Пусть $G$ --- произвольная группа, $X$ --- произвольное множество. Действием группы $G$ на множестве $X$ называется гомоморфизм $\alpha: G \rightarrow S(X)$.
     Обозначается $G \acts X$ (или $G : H$)\\
     Элементы множества $X$ при этом называются точками.\\
-    $\forall g \in G: g \mapsto \alpha(g)$ - преобразование множества $X$, т.е. биекция $X \rightarrow X$.\\
+    $\forall g \in G: g \mapsto \alpha(g)$ --- преобразование множества $X$, т.е. биекция $X \rightarrow X$.\\
     Равенство $\alpha(g)(x) = y (\in X)$ записывают как $\alpha(g)x = y$ или $gx = y$.
 \end{definition}
-Так как $\alpha$ - гомоморфизм, имеем:
+Так как $\alpha$ --- гомоморфизм, имеем:
 \[\forall g_1, g_2 \in G: \alpha(g_1g_2) = \alpha(g_1)\alpha(g_2) \Longrightarrow \alpha(g_1g_2)x = (\alpha(g_1)\alpha(g_2))x = \alpha(g_1)(\alpha(g_2)x)\]
 Отсюда $(g_1g_2)x = g_1(g_2x)$. Аналогично:
 \[\forall g \in G: \alpha(g^{-1}) = (\alpha(g))^{-1} \Longrightarrow \alpha(g^{-1})x = (\alpha(g)x)^{-1}\]
 Отсюда $g^{-1}x = y \Longleftrightarrow gy = x$.\\
-Если $H \leq S(X)$, то определено "тавтологическое"\  действие $H$ на $X: \alpha(h) = h$ - вложение $H \rightarrow S(X)$.
+Если $H \leq S(X)$, то определено "тавтологическое"\  действие $H$ на $X: \alpha(h) = h$ --- вложение $H \rightarrow S(X)$.
 \begin{example}
     $GL(V) \acts V$: $\alpha(g)x = g(x) \ \forall g \in GL(V), x \in X$
 \end{example}
-В общем случае: $\alpha: G \rightarrow S(X)$ - гомоморфизм, то есть $\textup{Im }\alpha \leq S(X), \textup{Ker }\alpha \unlhd G$.
+$\\$В общем случае $\alpha: G \rightarrow S(X)$ --- гомоморфизм, то есть $\textup{Im }\alpha \leq S(X), \textup{Ker }\alpha \unlhd G$.
 \begin{definition}
     $\textup{Ker }\alpha$ называется ядром неэффективности действия группы $G$ на $X$.\\
     Если $\textup{Ker }\alpha = \{e\}$, то действие называется эффективным.
@@ -45,24 +45,24 @@
     Всякое действие группы $G$ на множестве $X$ индуцирует и другие действия. Например:
     \begin{enumerate}
         \item $G \acts 2^X$;
-        \item Если $Y \subset X$ - инвариантное подмножество относительно $G$, то $G \acts Y$. 
+        \item Если $Y \subset X$ --- инвариантное подмножество относительно $G$, то $G \acts Y$. 
     \end{enumerate}
 \end{remark}
 \begin{example}
-    Пусть $K$ - равносторонний треугольник, $G = \textup{Sym }K \leq S(X)$, где $X$ - множество точек треугольника.\\
-    Тогда если $Y = \{v_1, v_2, v_3\}$ - вершины треугольника, а $Z = \{e_1, e_2, e_3\}$ - стороны треугольника, то действие $G \acts X$ индуцирует также и действия $G \acts Y, G \acts Z$
+    Пусть $K$ --- равносторонний треугольник, $G = \textup{Sym }K \leq S(X)$, где $X$ --- множество точек треугольника.\\
+    Тогда если $Y = \{v_1, v_2, v_3\}$ --- вершины треугольника, а $Z = \{e_1, e_2, e_3\}$ --- стороны треугольника, то действие $G \acts X$ индуцирует также и действия $G \acts Y, G \acts Z$
 \end{example}
 \begin{example}
-    Пусть задано $G \acts X$, $\F$ - поле, $Y = \{f: X \rightarrow \F\}$ - алгебра всех функций $X \rightarrow \F$. Рассмотрим $\alpha: G \rightarrow S(Y): \forall g \in G \ \alpha(g)f = \tilde{f}$ такое, что $\tilde{f}(x) = f(g^{-1}x) \ \forall x \in X$. Покажем, что $\alpha$ - гомоморфизм:
+    Пусть задано $G \acts X$, $\F$ --- поле, $Y = \{f: X \rightarrow \F\}$ --- алгебра всех функций $X \rightarrow \F$. Рассмотрим $\alpha: G \rightarrow S(Y): \forall g \in G \ \alpha(g)f = \tilde{f}$ такое, что $\tilde{f}(x) = f(g^{-1}x) \ \forall x \in X$. Покажем, что $\alpha$ --- гомоморфизм:
     \[\forall g_1, g_2 \in G: \ (\alpha(g_1g_2)f)(x) = f((g_1g_2)^{-1}(x)) = f(g_2^{-1}(g_1^{-1}x)) = (\alpha(g_2)f)(g_1^{-1}x) =\]
     \[= \alpha(g_1)(\alpha(g_2)f)(x) = (\alpha(g_1)\alpha(g_2)f)(x)\]
 \end{example}
 \begin{remark}
-    Если $G \acts X, H \leq G$, то определено также действие $H\acts X$ - ограничение действия на подгруппу.
+    Если $G \acts X, H \leq G$, то определено также действие $H\acts X$ --- ограничение действия на подгруппу.
 \end{remark}
 \begin{example}
-    $G = S_3; \ G \acts X$, где $X = \{1, 2, 3\}$ - действуют как подстановки.\\
-    $H = \langle (1, 2, 3) \rangle \leq G$ - определено действие $H \acts X$ как ограничение $G \acts X$.
+    $G = S_3; \ G \acts X$, где $X = \{1, 2, 3\}$ --- действуют как подстановки.\\
+    $H = \langle (1, 2, 3) \rangle \leq G$ --- определено действие $H \acts X$ как ограничение $G \acts X$.
 \end{example}
 \subsection{Орбиты и стабилизаторы}
 \begin{subtheorem}
@@ -82,8 +82,8 @@
     Обозначается $\textup{Orb}(x) = \{y \in X \ | \ \exists g \in G: y = gx\}$
 \end{definition}
 \begin{example}
-    Пусть $G$ - группа поворотов плоскости $\E^2$ вокруг точки $o$.\\
-    Тогда при $G \acts E^2 \ \ \textup{Orb}(x)$ - окружность с центром в точке $o$ радиуса $|ox|$.
+    Пусть $G$ --- группа поворотов плоскости $\E^2$ вокруг точки $o$.\\
+    Тогда при $G \acts E^2 \ \ \textup{Orb}(x)$ --- окружность с центром в точке $o$ радиуса $|ox|$.
 \end{example}
 \begin{definition}
     Если $\textup{Orb}(x) = \{x\}$, то $x$ называется неподвижной точкой.
@@ -95,8 +95,8 @@
     Это именно характеристка действия, так как $\exists x: \textup{Orb}(x) = X \Rightarrow \forall x \in X \ \textup{Orb}(x) = X$.
 \end{remark}
 \begin{example}
-    $G$ - группа сдвигов (параллельных переносов) $\E^2$.\\
-    Тогда $G \acts \E^2$ - транзитивное (из любой точки можно получить любую другую сдвигом на вектор, их соединяющий).
+    $G$ --- группа сдвигов (параллельных переносов) $\E^2$.\\
+    Тогда $G \acts \E^2$ --- транзитивное (из любой точки можно получить любую другую сдвигом на вектор, их соединяющий).
 \end{example}
 \begin{subtheorem}
     Если $y \in \textup{Orb}(x)$, то $\textup{Orb}(y) = \textup{Orb}(x)$.
@@ -115,7 +115,7 @@
         \item $g_1, g_2 \in St(x) \Longrightarrow g_1x = g_2x = x$\\
         $(g_1g_2)x = g_1(g_2x) = g_1x = x \Longrightarrow g_1g_2 \in \textup{St}(x)$;
         \item $ex = x \Longrightarrow e \in \textup{St}(x)$;
-        \item Пусть $g \in \textup{St}(x)$. Тогда $g(x) = x$, а также $g(g^{-1}x) = ex = x$. Так как образ $g$ при действии - биекция, имеем $x = g^{-1}x$, то есть $g^{-1} \in \textup{St}(x)$
+        \item Пусть $g \in \textup{St}(x)$. Тогда $g(x) = x$, а также $g(g^{-1}x) = ex = x$. Так как образ $g$ при действии --- биекция, имеем $x = g^{-1}x$, то есть $g^{-1} \in \textup{St}(x)$
     \end{itemize}    
 \end{proof}
 \begin{subtheorem}
@@ -134,7 +134,7 @@
         \item Корректность: \ Пусть $y = g_1x = g_2x$. Тогда:
         \[g_1x = g_2x \Longrightarrow (g_2^{-1}g_1)x = (g_2^{-1}g_2)x = x \Longrightarrow g_2^{-1}g_1 \in \textup{St}(x) \Longrightarrow\]
         \[\Longrightarrow g_1 \in g_2\textup{St}(x)\Longrightarrow g_1\textup{St}(x) = g_2\textup{St}(x) \Longrightarrow \psi(g_1x) = \psi(g_2x)\]
-        \item Сюръективность - очевидна ($\forall g \in G$ $g\textup{St}(x)$ будет образом точки $gx$);
+        \item Сюръективность --- очевидна ($\forall g \in G$ $g\textup{St}(x)$ будет образом точки $gx$);
         \item Инъективность: Пусть $\psi(g_1x) = \psi(g_2x) $. Тогда:
         \[g_1\textup{St}(x) = g_2\textup{St}(x) \Longrightarrow g_2^{-1}g_1 \in \textup{St}(x) \Longrightarrow (g_2^{-1}g_1)x = x \Longrightarrow g_1x = g_2x\] 
     \end{itemize}
@@ -143,27 +143,27 @@
     $|\textup{Orb}(x)| = |G/\textup{St}(x)| = |G : \textup{St}(x)|$.
 \end{consequensenum}
 \begin{consequensenum}
-    Если $G$ - конечная группа, то $|\textup{Orb}(x)| = \frac{|G|}{|\textup{St}(x)|}$.
+    Если $G$ --- конечная группа, то $|\textup{Orb}(x)| = \frac{|G|}{|\textup{St}(x)|}$.
 \end{consequensenum}
 \begin{example} 
-    Пусть $K \in \E^3$ - куб, $G = \textup{Sym}^+(K) = \{g \in \textup{Isom}^+(\E^3) \ | \ gK = K\}$ - группа вращений $K$.\\
-    Найдём $|G|$. Так как $G \leq S(X)$, где $X = \{v_1,...,v_8\}$ - множество вершин куба, $|G| < \infty$. Значит, если рассмотреть индуцированное действие $G \acts X$, то $|G| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
+    Пусть $K \in \E^3$ --- куб, $G = \textup{Sym}^+(K) = \{g \in \textup{Isom}^+(\E^3) \ | \ gK = K\}$ --- группа вращений $K$.\\
+    Найдём $|G|$. Так как $G \leq S(X)$, где $X = \{v_1,...,v_8\}$ --- множество вершин куба, $|G| < \infty$. Значит, если рассмотреть индуцированное действие $G \acts X$, то $|G| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
     $\textup{Orb}(v_1) = X$ (вершина может перейти в любую) $\Longrightarrow$ $|\textup{Orb}(v_1)| = 8$;\\
     $|\textup{St}(v_1)| = 3$ ($\textup{id}$ и два поворота вокруг большой диагонали, содержащей $v_1$);\\
     Отсюда $|G| = 8 \cdot 3 = 24$.\\
-    Более того, покажем, что $G \simeq S_4$. Рассмотрим множество диагоналей куба $Y = \{d_1, d_2, d_3, d_4\}$. Так как при собственном движении диагонали переходят в диагонали, можем рассмотреть действие $G \acts Y \Longrightarrow \exists \alpha : G \rightarrow S(Y) \simeq S_4$ - гомоморфизм. Из $|G| = |S_4| = 24$ для доказательства того, что $\alpha$ - изоморфизм, достаточно показать сюръективность, а для этого достаточно показать, что все транспозиции диагоналей можно получить вращениями (достаточно, т.к. $S_4$ порождается транспозициями, а $\textup{Im } \alpha \leq S(Y)$).\\
-    Такая транспозиция - это поворот на $\pi$ относительно прямой, проходящей через середины двух рёбер, соединяющих концы диагоналей.
+    Более того, покажем, что $G \simeq S_4$. Рассмотрим множество диагоналей куба $Y = \{d_1, d_2, d_3, d_4\}$. Так как при собственном движении диагонали переходят в диагонали, можем рассмотреть действие $G \acts Y \Longrightarrow \exists \alpha : G \rightarrow S(Y) \simeq S_4$ --- гомоморфизм. Из $|G| = |S_4| = 24$ для доказательства того, что $\alpha$ --- изоморфизм, достаточно показать сюръективность, а для этого достаточно показать, что все транспозиции диагоналей можно получить вращениями (достаточно, т.к. $S_4$ порождается транспозициями, а $\textup{Im } \alpha \leq S(Y)$).\\
+    Такая транспозиция --- это поворот на $\pi$ относительно прямой, проходящей через середины двух рёбер, соединяющих концы диагоналей.
 \end{example}
 \begin{exercise}
-    Доказать, что если $L$ - правильный тетраэдр, то $\textup{Sym}(L) \simeq S_4$.
+    Доказать, что если $L$ --- правильный тетраэдр, то $\textup{Sym}(L) \simeq S_4$.
 \end{exercise}
 \begin{proof}
-    Будем действовать аналогично - пусть $X = \{v_1,...,v_4\}$ - множество вершин тетраэдра, тогда действие $\textup{Sym}(L) \acts E^3$ индуцирует действие $\textup{Sym}(L) \acts X$, а отсюда $|\textup{Sym}(L)| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
+    Будем действовать аналогично --- пусть $X = \{v_1,...,v_4\}$ --- множество вершин тетраэдра, тогда действие $\textup{Sym}(L) \acts E^3$ индуцирует действие $\textup{Sym}(L) \acts X$, а отсюда $|\textup{Sym}(L)| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
     $\textup{Orb}(v_1) = X$ (вершина может перейти в любую) $\Longrightarrow$ $|\textup{Orb}(v_1)| = 4$;\\
     $|\textup{St}(v_1)| = 6$ (любые перестановки вершин на грани, не содержащей $v_1$);\\
     (проверка существования всех этих движений непосредственная)\\
     Отсюда $|G| = 4 \cdot 6 = 24$.\\
-    Так как $S(X) \simeq S_4$, достаточно показать, что гомоморфизм действия - изоморфизм, а из равенства порядков достаточно сюръективности. Транспозиция любых двух вершин может быть получена симметрией относительно плоскости, проходящей через середину ребра, соединяющего вершины, и противоположное ребро.
+    Так как $S(X) \simeq S_4$, достаточно показать, что гомоморфизм действия --- изоморфизм, а из равенства порядков достаточно сюръективности. Транспозиция любых двух вершин может быть получена симметрией относительно плоскости, проходящей через середину ребра, соединяющего вершины, и противоположное ребро.
 \end{proof}
 \begin{definition}
     Элементы $a, b \in G$ называются сопряжёнными, если $\exists g \in G$ такой, что $b = g^{-1}ag$. Обозначается $b = a^g$.
@@ -186,13 +186,13 @@
     \end{itemize}
 \end{proof}
 \subsection{Действия группы на себе}
-Пусть $G$ - группа, $X = G$. Рассмотрим основные действия $G \acts G$ и покажем некоторые их свойства:
+Пусть $G$ --- группа, $X = G$. Рассмотрим основные действия $G \acts G$ и покажем некоторые их свойства:
 \begin{enumerate}
     \item Действие $G \acts G$ левыми сдвигами:\\
     $\alpha: G \rightarrow S(G)$ такое, что $\forall g \in G, h \in G: \ \alpha(g)h = gh$.\\
-    Покажем, что $\alpha$ - гомоморфизм:
+    Покажем, что $\alpha$ --- гомоморфизм:
     \[\forall g_1, g_2 \in G: \ \alpha(g_1g_2)h = (g_1g_2)h = g_1(g_2h) = \alpha(g_1)(\alpha(g_2)h) = (\alpha(g_1)\alpha(g_2))h\]
-    $g \in \textup{Ker } \alpha \Longrightarrow \forall h \in G: \ gh = h \Longrightarrow g = e \Longrightarrow \textup{Ker }\alpha = \{e\}$ - действие эффективно.\\
+    $g \in \textup{Ker } \alpha \Longrightarrow \forall h \in G: \ gh = h \Longrightarrow g = e \Longrightarrow \textup{Ker }\alpha = \{e\}$ --- действие эффективно.\\
     Значит, по теореме о гомоморфизме $G \simeq \textup{Im }\alpha \leq S(G)$.
     \begin{consequense} (Теорема Кэли)\\
         Пусть $|G| = n$. Тогда $G$ изоморфна некоторой подгруппе $S_n$.
@@ -202,20 +202,20 @@
     \end{proof}
     \item Действие $G \acts G$ правыми сдвигами:\\
     $\alpha: G \rightarrow S(G)$ такое, что $\forall g \in G, h \in G: \ \alpha(g)h = hg^{-1}$.\\
-    Покажем, что $\alpha$ - гомоморфизм:
+    Покажем, что $\alpha$ --- гомоморфизм:
     \[\forall g_1, g_2 \in G: \ \alpha(g_1g_2)h = hg_2^{-1}g_1^{-1} = \alpha(g_1)(hg_2^{-1}) = (\alpha(g_1)\alpha(g_2))h\]
-    $g \in \textup{Ker } \alpha \Longrightarrow \forall h \in G: \ hg^{-1} = h \Longrightarrow g = e \Longrightarrow \textup{Ker }\alpha = \{e\}$ - действие эффективно.
+    $g \in \textup{Ker } \alpha \Longrightarrow \forall h \in G: \ hg^{-1} = h \Longrightarrow g = e \Longrightarrow \textup{Ker }\alpha = \{e\}$ --- действие эффективно.
     \item Действие $G \acts G$ сопряжениями:\\
     $\alpha: G \rightarrow S(G)$ такое, что $\forall g \in G, h \in G: \ \alpha(g)h = ghg^{-1}$.\\
-    Покажем, что $\alpha$ - гомоморфизм:
+    Покажем, что $\alpha$ --- гомоморфизм:
     \[\forall g_1, g_2 \in G: \ \alpha(g_1g_2)h = (g_1g_2)h(g_1g_2)^{-1} = g_1(g_2hg_2^{-1})g_1^{-1} = \alpha(g_1)(\alpha(g_2)h)\]
     \begin{subtheorem}
-        $\forall g \in G: \ \alpha(g): G \rightarrow G$ - автоморфизм, т.е. изоморфизм $G$ на себя.
+        $\forall g \in G: \ \alpha(g): G \rightarrow G$ --- автоморфизм, т.е. изоморфизм $G$ на себя.
     \end{subtheorem}
     \begin{proof} 
-        Биективность $\alpha(g)$ следует из $\alpha(g) \in S(G)$. Докажем, что $\alpha(g)$ - гомоморфизм:
+        Биективность $\alpha(g)$ следует из $\alpha(g) \in S(G)$. Докажем, что $\alpha(g)$ --- гомоморфизм:
         \[\alpha(g)(h_1h_2) = gh_1h_2g^{-1} = (gh_1g^{-1})(gh_2g^{-1}) = (\alpha(g)h_1)(\alpha(g)h_2)\]
-        Значит, $\alpha(g)$ - автоморфизм $G$.
+        Значит, $\alpha(g)$ --- автоморфизм $G$.
     \end{proof}
     \begin{definition}
         Такой автоморфизм называется внутренним автоморфизмом группы $G$ (относительно элемента $g$).
@@ -223,8 +223,8 @@
 \end{enumerate}
 \begin{subtheorem}\tab
     \begin{enumerate}
-        \item Множество $\textup{Aut }G$ всех автоморфизмов группы $G$ - группа относительно композиции, причём $\textup{Aut }G \leq S(G)$.
-        \item Множество $\textup{Int }G$ всех внутренних автоморфизмов группы $G$ - группа относительно композиции, причём $\textup{Int }G \unlhd \textup{Aut }G$.
+        \item Множество $\textup{Aut }G$ всех автоморфизмов группы $G$ --- группа относительно композиции, причём $\textup{Aut }G \leq S(G)$.
+        \item Множество $\textup{Int }G$ всех внутренних автоморфизмов группы $G$ --- группа относительно композиции, причём $\textup{Int }G \unlhd \textup{Aut }G$.
     \end{enumerate}
 \end{subtheorem}
 \begin{proof}\tab
@@ -237,9 +237,9 @@
         \end{itemize} 
         \item Для определения группы достаточно проверить, что $\textup{Int } G \leq \textup{Aut } G$:
         \begin{itemize}
-            \item $\alpha_1, \alpha_2 \in \textup{Int } G \Longrightarrow \exists g_1, g_2 \in G: \alpha_i$ - сопряжение относительно $g_i$. Тогда $(\alpha_1\alpha_2)$ - сопряжение относительно $g_1g_2$, т.е. $(\alpha_1\alpha_2) \in \textup{Int } G$;
-            \item $\textup{id} \in \textup{Int } G$ - сопряжение относительно $e$;
-            \item $\alpha \in \textup{Int } G \Longrightarrow \alpha$ - сопряжение относительно $g \in G \Longrightarrow \alpha^{-1}$ - сопряжение относительно $g^{-1} \Longrightarrow \alpha^{-1} \in \textup{Int } G$.
+            \item $\alpha_1, \alpha_2 \in \textup{Int } G \Longrightarrow \exists g_1, g_2 \in G: \alpha_i$ --- сопряжение относительно $g_i$. Тогда $(\alpha_1\alpha_2)$ --- сопряжение относительно $g_1g_2$, т.е. $(\alpha_1\alpha_2) \in \textup{Int } G$;
+            \item $\textup{id} \in \textup{Int } G$ --- сопряжение относительно $e$;
+            \item $\alpha \in \textup{Int } G \Longrightarrow \alpha$ --- сопряжение относительно $g \in G \Longrightarrow \alpha^{-1}$ --- сопряжение относительно $g^{-1} \Longrightarrow \alpha^{-1} \in \textup{Int } G$.
         \end{itemize}  
         Проверим, что $\textup{Int }G \unlhd \textup{Aut }G$, т.е. $\forall \phi \in \textup{Aut }G,\ g \in G : \ \phi\alpha(g)\phi^{-1} \in \textup{Int } G$:
         \[(\phi\alpha(g)\phi^{-1})(h) = \phi(\alpha(g)(\phi^{-1}(h))) = \phi(g\phi^{-1}(h)g^{-1}) = \phi(g)\phi(\phi^{-1}(h))\phi(g^{-1})\]
@@ -247,33 +247,33 @@
     \end{enumerate}
 \end{proof}
 \begin{definition}
-    $\textup{Aut }G$ называется группой аутизмов$_{\href{https://ru.wikipedia.org/wiki/\%D0\%90\%D1\%83\%D1\%82\%D0\%B8\%D0\%B7\%D0\%BC}{1}}$ группы $G$.\\
+    $\\ \textup{Aut }G$ называется группой \st{аутизмов}$_{\href{https://ru.wikipedia.org/wiki/\%D0\%90\%D1\%83\%D1\%82\%D0\%B8\%D0\%B7\%D0\%BC}{1}}$ автоморфизмов группы $G$.\\
     $\textup{Int }G$ называется группой внутренних автоморфизмов группы $G$.
 \end{definition}
-Пусть $\alpha$ - действие $G\acts G$ сопряжениями. Тогда 
+Пусть $\alpha$ --- действие $G\acts G$ сопряжениями. Тогда 
 $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{g \in G \ | \ ghg^{-1} = h \ \forall h \in G\} = \{g \in G \ | \ gh = hg \ \forall h \in G\}$, а $\textup{Im } \alpha = \textup{Int }G$.
 \begin{definition}
     Множество $Z(G) = \{g \in G \ | \ gh = hg \ \forall h \in G\}$ называется центром группы $G$.
 \end{definition}
 \begin{properties}\tab
     \begin{enumerate}
-        \item $Z(G) = \textup{Ker } \alpha$, где $\alpha$ - действие $G \acts G$ сопряжениями;
+        \item $Z(G) = \textup{Ker } \alpha$, где $\alpha$ --- действие $G \acts G$ сопряжениями;
         \item $Z(G) \unlhd G$;
         \item $\forall H \leq Z(G): \ H \unlhd G$;
-        \item $Z(G) = G \Longleftrightarrow G$ - абелева
+        \item $Z(G) = G \Longleftrightarrow G$ --- абелева
     \end{enumerate}    
 \end{properties}
 \begin{proof}\tab
     \begin{enumerate}
         \item Доказано выше;
-        \item Следует из (1) ($\textup{Ker }\alpha \unlhd G$ - свойство гомоморфизма);
+        \item Следует из (1) ($\textup{Ker }\alpha \unlhd G$ --- свойство гомоморфизма);
         \item $\forall h \in H \leq Z(G),\ g \in G: ghg^{-1} = gg^{-1}h = h \in H \Longrightarrow H \unlhd G$;
         \item Очевидно из определения абелевой группы.
     \end{enumerate}
 \end{proof}
 \subsection{Классы сопряжённости и централизаторы}
 \begin{definition}
-    Пусть $\alpha$ - действие $G \acts G$ сопряжениями.\\
+    Пусть $\alpha$ --- действие $G \acts G$ сопряжениями.\\
     Классом сопряжённости $x \in G$ называется орбита $x$ относительно $\alpha$.\\
     Централизатором элемента $x \in G$ называется стабилизатор $x$ относительно $\alpha$.\\
     Класс сопряжённости обозначается как $x^G = \{y \in G \ | \ \exists g \in G: y = gxg^{-1}\}$.
@@ -295,40 +295,40 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
     Группа $G$ называется тривиальной, если $G = \{e\}$.
 \end{definition}
 \begin{theorem}
-    Центр любой конечной нетривиальной $p$-группы нетривиален ($p$ - простое).
+    Центр любой конечной нетривиальной $p$-группы нетривиален ($p$ --- простое).
 \end{theorem}
 \begin{proof}
     Пусть $|G| = p^s$. Рассмотрим случаи:
     \begin{enumerate}
-        \item $G$ - абелева $\Longrightarrow Z(G) = G$.
-        \item $G$ - неабелева. Тогда $G$ разбивается на несколько непересекающихся классов сопряжённости: $G = \bigsqcup \limits_{i=1}^k x_i^G$.\\
+        \item $G$ --- абелева $\Longrightarrow Z(G) = G$.
+        \item $G$ --- неабелева. Тогда $G$ разбивается на несколько непересекающихся классов сопряжённости: $G = \bigsqcup \limits_{i=1}^k x_i^G$.\\
         По утверждению 2 $|x_i^G| = 1 \Longleftrightarrow x_i \in Z(G)$, а по утверждению 1 $|x_i^G| = \frac{|G|}{|C(x_i)|}$\\
-        Так как $G$ - $p$-группа, для $x_i \notin Z(G): \  |x_i^G| = p^{s_i}, s_i \geqslant 1$.\\
+        Так как $G$ --- $p$-группа, для $x_i \notin Z(G): \  |x_i^G| = p^{s_i}, s_i \geqslant 1$.\\
         Без ограничения общности пусть только $x_1,...,x_m \in Z(G)$ (всегда будет хотя бы один, так как $e \in Z(G)$). Тогда: 
         \[|G| = \undermat{|Z(G)|}{|x_1^G| + ... + |x_m^G|} + |x_{m+1}^G| + ... + |x_k^G| \Longrightarrow p^s = |Z(G)| + p^{s_{m+1}} + ... + p^{s_k}\]
         \\
-        Отсюда $p \mid |Z(G)|$, а значит, $|Z(G)| \geqslant p > 1$ - центр нетривиален.
+        Отсюда $p \mid |Z(G)|$, а значит, $|Z(G)| \geqslant p > 1$ --- центр нетривиален.
     \end{enumerate}
 \end{proof}
 \begin{remark}
     $\exists$ бесконечная (конечнопорождённая) $p$-группа с тривиальным центром (монстр Тарского).
 \end{remark}
 \begin{consequense}
-    Если $|G| = p^2$, где $p$ - простое, то $G$ - абелева.
+    Если $|G| = p^2$, где $p$ --- простое, то $G$ --- абелева.
 \end{consequense}
 \begin{proof}
-    $G$ - $p$-группа $\Longrightarrow Z(G) \neq \{e\}$.\\
+    $G$ --- $p$-группа $\Longrightarrow Z(G) \neq \{e\}$.\\
     Предположим, что $G$ неабелева, т.е. что $Z(G) \neq G$. \\
     Тогда, так как $|Z(G)| \mid |G| = p^2$ и $|Z(G)| \neq 1, p^2$, имеем $|Z(G)| = p$.\\
-    Рассмотрим группу $G / Z(G)$. Её порядок равен $\frac{|G|}{|Z(G)|} = \frac{p^2}{p} = p \Longrightarrow G / Z(G)$ - циклическая, а значит, $G / Z(G) = \langle aZ(G) \rangle$. Тогда $\forall g \in G \ \exists t \in \Z: g \in a^tZ(G)$. Рассмотрим два произвольных элемента $g_1, g_2 \in G$ и докажем, что $g_1g_2 = g_2g_1$:
+    Рассмотрим группу $G / Z(G)$. Её порядок равен $\frac{|G|}{|Z(G)|} = \frac{p^2}{p} = p \Longrightarrow G / Z(G)$ --- циклическая, а значит, $G / Z(G) = \langle aZ(G) \rangle$. Тогда $\forall g \in G \ \exists t \in \Z: g \in a^tZ(G)$. Рассмотрим два произвольных элемента $g_1, g_2 \in G$ и докажем, что $g_1g_2 = g_2g_1$:
     \[\exists t_1, t_2 \in \Z: g_1 = a^{t_1}Z(G), g_2 = a^{t_2}Z(G) \Longrightarrow \exists z_1, z_2 \in Z(G):  g_1 = a^{t_1}z_1, g_2 = a^{t_2}z_2\]
     Так как элементы центра коммутируют со всеми элементами $G$, имеем:
     \[g_1g_2 = a^{t_1}z_1a^{t_2}z_2 = a^{t_1 + t_2}z_1z_2 = a^{t_2 + t_1}z_2z_1 = a^{t_2}z_2a^{t_1}z_1 = g_2g_1\]
-    а значит, $G$ - абелева, что противоречит предположению.\\
-    Отсюда $G$ не может быть неабелевой, т.е. $G$ - абелева. 
+    а значит, $G$ --- абелева, что противоречит предположению.\\
+    Отсюда $G$ не может быть неабелевой, т.е. $G$ --- абелева. 
 \end{proof}
 \begin{lemmanum}
-    Пусть $X$ - произвольное множество, $G \leq S(X)$. Тогда если $\phi \in G$ т.ч. $\phi: x \mapsto y$, то $\forall \psi \in G: \ \psi \circ \phi \circ \psi^{-1}: \psi(x) \mapsto \psi(y)$.
+    Пусть $X$ --- произвольное множество, $G \leq S(X)$. Тогда если $\phi \in G$ т.ч. $\phi: x \mapsto y$, то $\forall \psi \in G: \ \psi \circ \phi \circ \psi^{-1}: \psi(x) \mapsto \psi(y)$.
 \end{lemmanum}
 \begin{proof}
     Применим преобразование $\psi \circ \phi \circ \psi^{-1}$:
@@ -339,37 +339,37 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
 \end{subtheoremnum}
 \begin{proof}
     $ \\ \Longrightarrow: \ \ $ Пусть $\sigma, \tilde{\sigma}$ сопряжены в $S_n \Longrightarrow \exists \tau \in S_n: \tilde{\sigma} = \tau \sigma \tau^{-1}$.\\
-    Пусть $\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...$ - разложение $\sigma$ в независимые циклы. Тогда $\sigma: i_1 \mapsto i_2, i_2 \mapsto i_3,..., i_s \mapsto i_1$, а тогда по лемме 1 $\tau\sigma\tau^{-1}: \tau(i_1) \mapsto \tau(i_2), \tau(i_2) \mapsto \tau(i_3),..., \tau(i_s) \mapsto \tau(i_1)$. Аналогичное рассуждение можно провести для всех независимых циклов $\sigma$, а значит, $\tau\sigma\tau^{-1} = (\tau(i_1)\tau(i_2)...\tau(i_s))(\tau(j_1)\tau(j_2)...\tau(j_t))...$ - длины циклов сохраняются.\\
+    Пусть $\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...$ --- разложение $\sigma$ в независимые циклы. Тогда $\sigma: i_1 \mapsto i_2, i_2 \mapsto i_3,..., i_s \mapsto i_1$, а тогда по лемме 1 $\tau\sigma\tau^{-1}: \tau(i_1) \mapsto \tau(i_2), \tau(i_2) \mapsto \tau(i_3),..., \tau(i_s) \mapsto \tau(i_1)$. Аналогичное рассуждение можно провести для всех независимых циклов $\sigma$, а значит, $\tau\sigma\tau^{-1} = (\tau(i_1)\tau(i_2)...\tau(i_s))(\tau(j_1)\tau(j_2)...\tau(j_t))...$ --- длины циклов сохраняются.\\
     $\Longleftarrow: \ \ $ Пусть $\sigma, \tilde{\sigma}$ имеют одинаковые цикловые структуры. Можем поменять порядок циклов так, чтобы длины $i$-х циклов в $\sigma$ и $\tilde{\sigma}$ совпадали, т.е.
     \[\sigma = (i_1i_2...i_s)(j_1j_2...j_t)...; \ \ \tilde{\sigma} = (\tilde{i}_1\tilde{i}_2...\tilde{i}_s)(\tilde{j}_1\tilde{j}_2...\tilde{j}_t)...\]
     Тогда если $\tau = \begin{pmatrix} i_1&i_2&...&i_s&j_1&j_2&...&j_t&...\\ \tilde{i}_1&\tilde{i}_2&...&\tilde{i}_s&\tilde{j}_1&\tilde{j}_2&...&\tilde{j}_t&... \end{pmatrix}$, то по лемме 1 $\tilde{\sigma} = \tau \sigma \tau^{-1}$.  
 \end{proof}
 \begin{examples}
-    $\sigma = (12)(345)(6)(7), \tilde{\sigma} = (15)(243)(6)(7)$ - сопряжены в $S_7$:\\$\tau = \begin{pmatrix} 1&2&3&4&5&6&7\\1&5&2&4&3&6&7  \end{pmatrix}$(из построения в теореме);\\
+    $\sigma = (12)(345)(6)(7), \tilde{\sigma} = (15)(243)(6)(7)$ --- сопряжены в $S_7$:\\$\tau = \begin{pmatrix} 1&2&3&4&5&6&7\\1&5&2&4&3&6&7  \end{pmatrix}$(из построения в теореме);\\
     $\sigma = (123)(45), \tau = (135) \Longrightarrow \tau\sigma\tau^{-1} = (325)(41)$.
 \end{examples}
 \begin{consequense}
     $Z(S_n) = \{\textup{id}\}$ при $n \geqslant 3$.
 \end{consequense}
 \begin{proof}
-    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 3, \exists k \neq i, j$. Тогда при $\tau = (jk): \ \tau\sigma\tau^{-1} = (ik...)...$ - не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$) - противоречие.  
+    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 3, \exists k \neq i, j$. Тогда при $\tau = (jk): \ \tau\sigma\tau^{-1} = (ik...)...$ --- не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$) --- противоречие.  
 \end{proof}
 \begin{exercise}
     Докажите, что $Z(A_n) = \{\textup{id}\}$ при $n \geqslant 4$.
 \end{exercise}
 \begin{proof}
-    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 4, \exists k, l: k,l,i,j$ попарно различны. Тогда при $\tau = (jkl): \ \tau\sigma\tau^{-1} = (ik...)...$ - не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$)- противоречие.  
+    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 4, \exists k, l: k,l,i,j$ попарно различны. Тогда при $\tau = (jkl): \ \tau\sigma\tau^{-1} = (ik...)...$ --- не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$)- противоречие.  
 \end{proof}
 \begin{subtheorem}
     $ \\H \unlhd G \Longleftrightarrow \begin{cases}
         H \leq G\\
-        H \text{ - объединение нескольких классов сопряжённости } G
+        H \text{ --- объединение нескольких классов сопряжённости } G
     \end{cases}$
 \end{subtheorem}
 \begin{proof}
     $ \\ \Longrightarrow: \ \ $ Пусть $H \unlhd G$. Очевидно, что $H \leq G$.\\
-    Если $h \in H$, то $\forall g \in G  \ ghg^{-1} \in H$ - $H$ содержит классы сопряжённости всех её элементов $\Longrightarrow H = \bigcup \limits_{h \in H} h^G$.\\
-    $\Longleftarrow: \ \ $ Пусть $H \leq G$ и $H$ - объединение классов сопряжённости. Тогда $\forall h \in H, g \in G: ghg^{-1} \in H$ ($H$ содержит весь класс сопряжённости $h^G$) $\Longrightarrow H \unlhd G$.   
+    Если $h \in H$, то $\forall g \in G  \ ghg^{-1} \in H$ --- $H$ содержит классы сопряжённости всех её элементов $\Longrightarrow H = \bigcup \limits_{h \in H} h^G$.\\
+    $\Longleftarrow: \ \ $ Пусть $H \leq G$ и $H$ --- объединение классов сопряжённости. Тогда $\forall h \in H, g \in G: ghg^{-1} \in H$ ($H$ содержит весь класс сопряжённости $h^G$) $\Longrightarrow H \unlhd G$.   
 \end{proof}
 \setcounter{thcount}{0}
 \setcounter{concount}{0}

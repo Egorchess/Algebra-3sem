@@ -1,7 +1,7 @@
 \section{Конечнопорождённые абелевы группы}
 \begin{remark}
     В данном разделе используется аддитивная терминология: \\
-    $(A, +)$ - абелева группа, $\forall a \in A, n \in \Z$:
+    $(A, +)$ --- абелева группа, $\forall a \in A, n \in \Z$:
     \[na = \begin{cases}
         \undermat{n}{a + ... + a}, \ n > 0;\\
         \\
@@ -17,7 +17,7 @@
     \end{enumerate}
 \end{properties}
 \begin{proof}
-    Непосредственный разбор случаев - знаков $m, n$.
+    Непосредственный разбор случаев --- знаков $m, n$.
 \end{proof}
 \begin{definition}
     (Целочисленнной) линейной комбинацией элементов $a_1,...,a_k \in A$ называется выражение $n_1a_1 + ... + n_ka_k \ (n_i \in \Z)$.\\
@@ -28,18 +28,18 @@
     В противном случае система $a_1,...,a_k$ называется линейно независимой.
 \end{definition}
 \begin{example}
-    $A = \Z_3 \oplus \Z_4$. Система из одного элемента $(1, 1)$ - линейно зависима: $12 \cdot (1, 1) = (0, 0)$
+    $A = \Z_3 \oplus \Z_4$. Система из одного элемента $(1, 1)$ --- линейно зависима: $12 \cdot (1, 1) = (0, 0)$
 \end{example}
 \begin{definition}
-    Пусть $A$ - абелева группа, $a_1,...,a_k \in A$. \\
+    Пусть $A$ --- абелева группа, $a_1,...,a_k \in A$. \\
     Будем обозначать $\langle a_1,...,a_k \rangle = \{n_1a_1 + ... + n_ka_k \ | \ n_i \in \Z\}$\\
-    (для бесконечного числа $a_k$ - всевозможные конечные линейные комбинации)
+    (для бесконечного числа $a_k$ --- всевозможные конечные линейные комбинации)
 \end{definition}
 \begin{subtheorem}
-    $\langle a_1,...,a_k \rangle$ - наименьшая подгруппа $A$, содержащая $a_1,...,a_k$. 
+    $\langle a_1,...,a_k \rangle$ --- наименьшая подгруппа $A$, содержащая $a_1,...,a_k$. 
 \end{subtheorem}
 \begin{proof}
-    Пусть $H$ - наименьшая подгруппа, содержащая $a_1,...,a_k$. Тогда с одной стороны $\langle a_1,...,a_k \rangle \subseteq H$ по определению подгруппы, а с другой стороны $\langle a_1,...,a_k\rangle$, очевидно, подгруппа в $A$. Значит, $H = \langle a_1,...,a_k \rangle$ 
+    Пусть $H$ --- наименьшая подгруппа, содержащая $a_1,...,a_k$. Тогда с одной стороны $\langle a_1,...,a_k \rangle \subseteq H$ по определению подгруппы, а с другой стороны $\langle a_1,...,a_k\rangle$, очевидно, подгруппа в $A$. Значит, $H = \langle a_1,...,a_k \rangle$ 
 \end{proof}
 \begin{definition}
     Если $A = \langle a_1,...,a_k \rangle$, то говорят, что $A$ порождается $a_1,...,a_k$. Элементы $a_1,...,a_k$ называются порождающими (образующими).
@@ -49,34 +49,34 @@
 \end{definition}
 \begin{examples}\tab
     \begin{enumerate}
-        \item $\Q$ - не конечнопорождённая;
-        \item $U$ (комплексные корни из 1) - не конечнопорождённая;
-        \item $\Z, \Z_n$ - конечнопорождённые (циклические);
-        \item $\Z \oplus \Z$ - конечнопорождённая, не циклическая (примеры систем порождающих - $(1, 0), (0, 1)$ или $(3, 0), (4, 5), (0, 1)$) 
+        \item $\Q$ --- не конечнопорождённая;
+        \item $U$ (комплексные корни из 1) --- не конечнопорождённая;
+        \item $\Z, \Z_n$ --- конечнопорождённые (циклические);
+        \item $\Z \oplus \Z$ --- конечнопорождённая, не циклическая (примеры систем порождающих --- $(1, 0), (0, 1)$ или $(3, 0), (4, 5), (0, 1)$) 
     \end{enumerate}
 \end{examples}
 \begin{definition}
     Линейно независимая система порождающих группы $A$ называется базисом (или свободной системой порождающих).
 \end{definition}
 \begin{subtheorem} (не было в лекции)\\
-    $a_1,...,a_k$ - базис $\Longleftrightarrow$ любой элемент $A$ выражается через $a_1,...,a_k$ единственным образом.
+    $a_1,...,a_k$ --- базис $\Longleftrightarrow$ любой элемент $A$ выражается через $a_1,...,a_k$ единственным образом.
 \end{subtheorem}
 \begin{proof}
     $ \\ \Longrightarrow: \ \ $ Из определения базиса любой элемент имеет разложение по базису.
     \[\alpha_1e_1 + ... + \alpha_ne_n = a = \alpha_1'e_1 + ... + \alpha_n'e_n \Longrightarrow (\alpha_1 - \alpha_1')e_1 + ... + (\alpha_n - \alpha_n')e_n = 0\] 
     Отсюда из линейной независимости $\alpha_i = \alpha_i' \ \forall i$, т.е. разложение единственно.\\
-    $\Longleftarrow: \ \ $ Любой элемент $a \in A$ имеет разложение по $a_1,...,a_n$ - система $a_1,...,a_n$ порождает $A$. Разложение любого элемента единственно $\Longrightarrow 0$ имеет только тривиальное разложение $\Longrightarrow a_1,...,a_n$ линейно независимы. 
+    $\Longleftarrow: \ \ $ Любой элемент $a \in A$ имеет разложение по $a_1,...,a_n$ --- система $a_1,...,a_n$ порождает $A$. Разложение любого элемента единственно $\Longrightarrow 0$ имеет только тривиальное разложение $\Longrightarrow a_1,...,a_n$ линейно независимы. 
 \end{proof}
 \begin{example}
-    $\Z_3 \oplus \Z_4$ - не имеет базиса: любая система элементов в ней линейно зависима ($12 \cdot a = 0 \ \forall a \in A$).
+    $\Z_3 \oplus \Z_4$ --- не имеет базиса: любая система элементов в ней линейно зависима ($12 \cdot a = 0 \ \forall a \in A$).
 \end{example}
 \begin{definition}
     Конечнопорождённая абелева группа, имеющая базис, называется свободной абелевой группой.
-    По определению $A = \{0\}$ - свободная абелева группа.
+    По определению $A = \{0\}$ --- свободная абелева группа.
 \end{definition}
 \begin{example}
-    $\Z^n = \undermat{n}{\Z \oplus ... \oplus \Z}$ - свободная абелева группа; $\\ \\$
-    Базис - $(1,0,...0), (0, 1,...,0),...,(0,0,...,1)$. Проверим это:
+    $\Z^n = \undermat{n}{\Z \oplus ... \oplus \Z}$ --- свободная абелева группа; $\\ \\$
+    Базис --- $(1,0,...0), (0, 1,...,0),...,(0,0,...,1)$. Проверим это:
     \begin{enumerate}
         \item Линейная независимость:
         \[\alpha_1e_1 + ... + \alpha_ne_n = 0 \Longrightarrow (\alpha_1,...,\alpha_n) = (0,...,0) \Longrightarrow \alpha_i = 0 \ \forall i\]
@@ -88,14 +88,14 @@
     Если абелева группа $A$ обладает базисом из $n$ элементов, то любая система из $m > n$ элементов линейно зависима.
 \end{lemma}
 \begin{proof}
-    Пусть $e_1,...,e_n$ - базис группы $A$, $a_1,...,a_m \in A$ - произвольные элементы. Тогда из определения базиса:
+    Пусть $e_1,...,e_n$ --- базис группы $A$, $a_1,...,a_m \in A$ --- произвольные элементы. Тогда из определения базиса:
     \[\begin{cases}
         a_1 = \alpha_{11}e_1 + ... + \alpha_{1n}e_n \longrightarrow (\alpha_{11}, ..., \alpha_{1n})\\
         $\vdots$ \\
         a_m = \alpha_{m1}e_1 + ... + \alpha_{mn}e_n \longrightarrow (\alpha_{m1}, ..., \alpha_{mn})
     \end{cases}\]
     Строки $\overline{\alpha}_i = (\alpha_{i1}, ..., \alpha_{in})$ можно рассматривать как векторы из пр-ва $\Q^{n}$ над $\Q$. Так как $m > n$, по ОЛЛЗ для векторных пространств система $\overline{\alpha}_1,...,\overline{\alpha}_m$ линейно зависима, т.е. $\exists \lambda_1,...,\lambda_m \in \Q$, не все равные нулю, что $\lambda_1\overline{\alpha}_1 + ... + \lambda_m\overline{\alpha}_m = 0$.\\
-    Тогда если $d$ - НОК знаменателей ненулевых $\lambda_i$, то $(d\lambda_1)\overline{\alpha}_1 + ... + (d\lambda_m)\overline{\alpha}_m = 0$ - нетривиальная целочисленная линейная комбинация, равная нулю.\\
+    Тогда если $d$ --- НОК знаменателей ненулевых $\lambda_i$, то $(d\lambda_1)\overline{\alpha}_1 + ... + (d\lambda_m)\overline{\alpha}_m = 0$ --- нетривиальная целочисленная линейная комбинация, равная нулю.\\
     Тогда $(d\lambda_1)a_1 + ... + (d\lambda_m)a_m = 0$, т.е. $a_1,...,a_m$ линейно зависимы.
 \end{proof}
 \begin{theoremnum}
@@ -111,9 +111,9 @@
     Все свободные абелевы группы ранга $n$ изоморфны между собой (в частности, изоморфны $\Z^n$).
 \end{theoremnum}
 \begin{proof}
-    $ \\$Пусть $A$ - свободная абелева группа, $\textup{rk }A = n$, $e_1,...,e_n$ - базис. Рассмотрим отображение $\phi: A \rightarrow \Z^n$ такое, что $\forall a = \alpha_1e_1 + ... + \alpha_ne_n \in A \ \phi(a) = (\alpha_1,...,\alpha_n)$. Покажем, что $\phi$ - изоморфизм:
+    $ \\$Пусть $A$ --- свободная абелева группа, $\textup{rk }A = n$, $e_1,...,e_n$ --- базис. Рассмотрим отображение $\phi: A \rightarrow \Z^n$ такое, что $\forall a = \alpha_1e_1 + ... + \alpha_ne_n \in A \ \phi(a) = (\alpha_1,...,\alpha_n)$. Покажем, что $\phi$ --- изоморфизм:
     \begin{enumerate}
-        \item Биекция - следует из единственности разложения по базису;
+        \item Биекция --- следует из единственности разложения по базису;
         \item Гомоморфизм: пусть $a = \alpha_1e_1 + ... + \alpha_ne_n, b = \beta_1e_1 + ... + \beta_ne_n$. Тогда:
         \[\phi(a + b) = \phi((\alpha_1 + \beta_1)e_1 + ... + (\alpha_n + \beta_n)e_n) = ((\alpha_1 + \beta_1), ...,(\alpha_n + \beta_n)) =\]
         \[ = (\alpha_1,...,\alpha_n) + (\beta_1,...,\beta_n) = \phi(a) + \phi(b)\]
@@ -127,22 +127,22 @@
 \begin{proof}
     Случай $n = 0$ очевиден. Индукция по $n$:\\
     \tab База: $n = 1 \Longrightarrow A \simeq \Z \Longrightarrow A = \langle e \rangle$.\\
-    Знаем, что любая подгруппа циклической группы - циклическая.\\
+    Знаем, что любая подгруппа циклической группы --- циклическая.\\
     Пусть $B = \langle ke \rangle, k \in \N \cup \{0\}$. Тогда:
     \[k = 0 \Longrightarrow B = \{0\} \Longrightarrow \textup{rk }B = 0 < 1 = \textup{rk }A\]
     \[k \neq 0 \Longrightarrow B = \langle ke \rangle \simeq \Z \Longrightarrow \textup{rk }B = 1 = \textup{rk }A\]
-    \tab Шаг: пусть $e_1,...,e_n$ - базис свободной абелевой группы $A$.\\
-    Рассмотрим $\tilde{A} = \langle e_1,...,e_{n-1} \rangle \leq A$ - свободная абелева ранга $n-1$.\\
-    Рассмотрим $\tilde{B} = B \cap \tilde{A}$ - подгруппу $B$, которая содержится в $\tilde{A}$ (очевидно, что это подгруппа). По предположению индукции $\tilde{B}$ - свободная абелева, причём $\textup{rk }\tilde{B} \leqslant \textup{rk }\tilde{A} = n-1$.\\
+    \tab Шаг: пусть $e_1,...,e_n$ --- базис свободной абелевой группы $A$.\\
+    Рассмотрим $\tilde{A} = \langle e_1,...,e_{n-1} \rangle \leq A$ --- свободная абелева ранга $n-1$.\\
+    Рассмотрим $\tilde{B} = B \cap \tilde{A}$ --- подгруппу $B$, которая содержится в $\tilde{A}$ (очевидно, что это подгруппа). По предположению индукции $\tilde{B}$ --- свободная абелева, причём $\textup{rk }\tilde{B} \leqslant \textup{rk }\tilde{A} = n-1$.\\
     Если $B = \tilde{B}$, то теорема доказана. \\
     Иначе рассмотрим гомоморфизм (проекцию на $\langle e_n \rangle$) \\ $\pi: A \rightarrow \Z: \forall a = \alpha_1e_1 + ... + \alpha_ne_n \in A \ \pi(a) = \alpha_n \ (\textup{Ker }\pi = \tilde{A}, \textup{Im }\pi = \Z)$.\\
-    Знаем, что $\pi(B)$ - подгруппа в $\Z \Longrightarrow \pi(B) = \langle k \rangle$ ($k \neq 0$ из $B \neq \tilde{B}$).\\
-    Рассмотрим $b_0 \in B$ такой, что $\pi(b_0) = k$, т.е. $b_0 = \beta_1e_1 + ... + \beta_{n-1}e_{n-1} + ke_n$. Докажем, что если $b_1,...,b_s$ - базис $\tilde{B}$, то $b_0, b_1,...,b_s$ - базис $B$ (тогда $B$ - свободная абелева, $\textup{rk }B \leqslant n$)
+    Знаем, что $\pi(B)$ --- подгруппа в $\Z \Longrightarrow \pi(B) = \langle k \rangle$ ($k \neq 0$ из $B \neq \tilde{B}$).\\
+    Рассмотрим $b_0 \in B$ такой, что $\pi(b_0) = k$, т.е. $b_0 = \beta_1e_1 + ... + \beta_{n-1}e_{n-1} + ke_n$. Докажем, что если $b_1,...,b_s$ --- базис $\tilde{B}$, то $b_0, b_1,...,b_s$ --- базис $B$ (тогда $B$ --- свободная абелева, $\textup{rk }B \leqslant n$)
     \begin{enumerate}
         \item Проверим линейную независимость:
         \[\lambda_0b_0 + ... + \lambda_sb_s = 0 \Rightarrow \pi(\lambda_0b_0 + ... + \lambda_sb_s) = 0 \Rightarrow \lambda_0\pi(b_0) + ... + \lambda_s\pi(b_s) = 0 \Longrightarrow\]
         \[\lambda_0k = 0 \Rightarrow \lambda_0 = 0\]
-        Линейная комбинация $\lambda_1b_1 + ... + \lambda_sb_s = 0$ тривиальна, так как $b_1,...,b_s$ - базис $\tilde{B}$. Отсюда $b_0,b_1,...,b_s$ линейно независимы.
+        Линейная комбинация $\lambda_1b_1 + ... + \lambda_sb_s = 0$ тривиальна, так как $b_1,...,b_s$ --- базис $\tilde{B}$. Отсюда $b_0,b_1,...,b_s$ линейно независимы.
         \item $\langle b_0,b_1...,b_s \rangle \overset{?}{=} B$:\\
         Рассмотрим произвольный $b \in B$. $\pi(b) \in \langle k \rangle \Longrightarrow \pi(b) = tk, \ t \in \Z$.\\
         Пусть $\tilde{b} = b - tb_0$. Тогда $\pi(\tilde{b}) = \pi(b) - t\pi(b_0) = tk - tk = 0 \Longrightarrow \tilde{b} \in \textup{Ker }\pi = \tilde{A} \Longrightarrow \tilde{b} \in \tilde{A} \cap B = \tilde{B} \Longrightarrow \tilde{b} = t_1b_1 + ... + t_sb_s \Longrightarrow b = tb_0 + t_1b_1 + ... + t_sb_s$.
@@ -150,7 +150,7 @@
 \end{proof}
 \subsection{Связь между базисами свободной абелевой группы}
 \begin{definition}
-    Пусть $A$ - свободная абелева группа, $\E = \{e_1,...,e_n\}$, $\tilde{\E} = \{\tilde{e}_1,...,\tilde{e}_n\}$ - базисы $A$.
+    Пусть $A$ --- свободная абелева группа, $\E = \{e_1,...,e_n\}$, $\tilde{\E} = \{\tilde{e}_1,...,\tilde{e}_n\}$ --- базисы $A$.
     \[\begin{cases}
         \tilde{e}_1 = c_{11}e_1 + ... + c_{n1}e_n\\
         \vdots \\
@@ -159,17 +159,17 @@
     Такая $C \in M_n(\Z)$ называется матрицей перехода от $\E$ к $\tilde{\E}$. 
 \end{definition}
 \begin{subtheorem}
-    $ \\$Пусть $C \in M_n(\Z)$. Тогда $C$ - матрица перехода $\Longleftrightarrow \det C = \pm1$. 
+    $ \\$Пусть $C \in M_n(\Z)$. Тогда $C$ --- матрица перехода $\Longleftrightarrow \det C = \pm1$. 
 \end{subtheorem}
 \begin{proof}
-    $ \\ \Longrightarrow: \ \ $Пусть $C$ - матрица перехода от $\E$ к $\tilde{\E}$, $D$ - от $\tilde{\E}$ к $\E$. Тогда:
+    $ \\ \Longrightarrow: \ \ $Пусть $C$ --- матрица перехода от $\E$ к $\tilde{\E}$, $D$ --- от $\tilde{\E}$ к $\E$. Тогда:
     \[\begin{cases}
         (\tilde{e}_1,...,\tilde{e}_n) = (e_1,...,e_n)C\\
         (e_1,...,e_n) = (\tilde{e}_1,...,\tilde{e}_n)D
     \end{cases} \Longrightarrow CD = DC = E \Longrightarrow D = C^{-1}\]
     \[\det C \cdot \det D = \det CD = \det E = 1\]
     Так как $C, D \in M_n(\Z)$, $\det C,\det D \in \Z \Longrightarrow \det C = \pm 1$. \\
-    $\Longleftarrow: \ \ C \in M_n(\Z), \det C = \pm1$. Рассмотрим некоторый базис $\E = \{e_1,...,e_n\}$ и докажем, что $(\tilde{e}_1,...,\tilde{e}_n) = (e_1,...,e_n)C$ - базис.
+    $\Longleftarrow: \ \ C \in M_n(\Z), \det C = \pm1$. Рассмотрим некоторый базис $\E = \{e_1,...,e_n\}$ и докажем, что $(\tilde{e}_1,...,\tilde{e}_n) = (e_1,...,e_n)C$ --- базис.
     \begin{enumerate}
         \item Проверим линейную независимость:\\
         Если $\lambda_1\tilde{e}_1 + ... + \lambda_n\tilde{e}_n = 0$, то линейная комбинация столбцов $C$ с теми же $\lambda_i$ также равна 0. Из $\det C \neq 0$ столбцы линейно независимы, т.е. $\lambda_i = 0 \ \forall i$.
@@ -180,7 +180,7 @@
 \end{proof}
 \subsection{Элементарные преобразования свободных абелевых групп}
 \begin{definition} (ЭП свободных абелевых групп)\\
-    Пусть $A$ - свободная абелева группа, $e_1,...,e_n$ - базис $A$. 
+    Пусть $A$ --- свободная абелева группа, $e_1,...,e_n$ --- базис $A$. 
     \begin{itemize}
         \item \textbf{ЭП1}: $\tilde{e}_i = e_i + ke_j, \ i \neq j, k \in \Z; \ \ \ \tilde{e}_s = e_s, \ s \neq i$;
         \item \textbf{ЭП2}: $\tilde{e}_i = e_j; \ \ \ \tilde{e}_j = e_i; \ \ \ \tilde{e}_s = e_s, \ s \neq i,j \ (i \neq j)$;
@@ -223,18 +223,18 @@
     Любую матрицу $M\in M_{n \times m}(\Z)$ за конечное число целочисленных ЭП над строками и столбцами можно привести к "диагональному" виду. 
 \end{lemma}
 \begin{proof}
-    Индукция по $n$ - числу строк матрицы.
-    При фиксированном $n$ индукция по $\nu(M)$ - наименьшему по модулю ненулевому элементу $M$. \\
+    Индукция по $n$ --- числу строк матрицы.
+    При фиксированном $n$ индукция по $\nu(M)$ --- наименьшему по модулю ненулевому элементу $M$. \\
     Если $M=0$, то утверждение доказано, поэтому далее $M \neq 0$.\\
     База индукции: $n=1 \Longrightarrow M = (a_{11},...,a_{1m})$.\\
-    \tab База внутренней индукции: $\nu(M) = 1$ - очевидна (если в строке есть 1, то с помощью неё можно занулить все оставшиеся элементы).\\
+    \tab База внутренней индукции: $\nu(M) = 1$ --- очевидна (если в строке есть 1, то с помощью неё можно занулить все оставшиеся элементы).\\
     \tab Шаг внутренней индукции: Пусть $\nu(M) = |a_{1j}|$. Если $a_{1j} < 0$, то применим ЭП3 к стоблцу $j$; если $j > 1$, то применением ЭП2 поменяем 1-й и $j$-й столбцы местами. После этих операций $\nu(M) = a_{11}$.\\
     $\forall j > 1: a_{1j} = a_{11}q_j + r_j$, где $0 \leqslant r_j < a_{11}$. Вычитая с помощью ЭП1 из $j$-го столбца 1-й, умноженный на $q_j$, получим строку $\tilde{M} = (a_{11}, r_2,...,r_m)$.\\
     Если все $r_j = 0$, то диагональный вид получен, иначе можно воспользоваться предположением индукции ($\nu(\tilde{M}) < \nu(M)$).\\
     Шаг индукции: Пусть $\nu(M) = |a_{ij}|$. Сначала сделаем $a_{ij}$ положительным (ЭП3), затем переставим его в верхний левый угол (ЭП2).\\
-    \tab Случай 1: $M = \begin{pmatrix} a_{11}&\vline&0&\dots&0\\ \hline 0&\vline \\ \vdots&\vline&&\text{\LARGE{C}}  \\ 0 & \vline \end{pmatrix}$ - по предположению индукции приводим $C$ к диагональному виду;\\
+    \tab Случай 1: $M = \begin{pmatrix} a_{11}&\vline&0&\dots&0\\ \hline 0&\vline \\ \vdots&\vline&&\text{\LARGE{C}}  \\ 0 & \vline \end{pmatrix}$ --- по предположению индукции приводим $C$ к диагональному виду;\\
     \tab Случай 2: $\exists j > 1: a_{1j} \neq 0$. Тогда, аналогично базе индукции, с помощью ЭП1 приводим верхнюю строчку к виду: $\forall j > 1: a_{1j} = 0$.\\
-    \tab Случай 3: $\exists j > 1: a_{j1} \neq 0$ - аналогично случаю 2 (ЭП строк вместо столбцов). 
+    \tab Случай 3: $\exists j > 1: a_{j1} \neq 0$ --- аналогично случаю 2 (ЭП строк вместо столбцов). 
 \end{proof}
 \begin{exercise}
     Доказать, что с помощью конечного числа целочисленных ЭП над строками и столбцами \[M \sim \begin{pmatrix}
@@ -248,8 +248,8 @@
     где $\alpha_l \mid \alpha_{l-1}, \alpha_{l-1} \mid \alpha_{l-2}, ..., \alpha_2 \mid \alpha_1$.
 \end{exercise}
 \begin{proof}
-    По лемме можем с помощью ЭП привести $M$ к диагональному виду. Индукция по $l$ - числу ненулевых $\alpha$ в диагональном виде:\\
-    \tab База: $l = 0, 1$ - очевидно;\\
+    По лемме можем с помощью ЭП привести $M$ к диагональному виду. Индукция по $l$ --- числу ненулевых $\alpha$ в диагональном виде:\\
+    \tab База: $l = 0, 1$ --- очевидно;\\
     \tab Шаг: Из теории чисел знаем, что для чисел $\alpha_1, \alpha_i$ существуют $a, b \in \Z$, что $a\alpha_1 + b\alpha_i = d_i =$ НОД($\alpha_1, \alpha_i$). Значит, с помощью ЭП1 можно сделать $a_{1i} = d_i$. Тогда следующими операциями:
     \[\begin{pmatrix}
     \alpha_1&\cdots&0&\cdots&0\\ &\ddots&&&\\ 0&&\alpha_i&&0\\ &&&\ddots&\\0&&&&\alpha_l
@@ -267,21 +267,21 @@
 \end{proof}
 \begin{example}
     $(12, 10, 6) \sim (6, 10, 12) \sim (6, 4, 0) \sim (4, 6, 0) \sim (4, 2, 0) \sim (2, 4, 0) \sim (2, 0, 0)$.\\
-    (По сути - обобщённый алгоритм Евклида, остаётся НОД чисел 12, 10 и 6).
+    (По сути --- обобщённый алгоритм Евклида, остаётся НОД чисел 12, 10 и 6).
 \end{example}
 \setcounter{thcount}{0}
 \subsection{Согласованные базисы свободной абелевой группы и её подгруппы}
 \begin{theoremnum}
-    $ \\$Пусть $A$ - свободная абелева группа ранга $n, B \leq A$ - подгруппа ранга $m$.\\
+    $ \\$Пусть $A$ --- свободная абелева группа ранга $n, B \leq A$ --- подгруппа ранга $m$.\\
     Тогда $\exists$ базисы $\tilde{e}_1,...,\tilde{e}_n$ группы $A$ и $\tilde{f}_1,...,\tilde{f}_m$ подгруппы $B$ такие, что \\ $\tilde{f}_i = \alpha_i\tilde{e}_i, \ \alpha_i \in \N$.
 \end{theoremnum}
 \begin{proof}
-    Пусть $e_1,...,e_n$ и $f_1,...,f_m$ - некоторые базисы $A$ и $B$ соответственно. Так как $f_i \in A$, $(f_1,...,f_m) = (e_1,...,e_n)C$, где $C \in M_{n\times m}(\Z)$.\\
-    Если $\tilde{f}_1,...,\tilde{f}_m$ - другой базис $B$, то $(f_1,...,f_m) = (\tilde{f}_1,...,\tilde{f}_m)T$, где $T \in M_{m\times m}(\Z)$\\
-    Если $\tilde{e}_1,...,\tilde{e}_n$ - другой базис $A$, то $(e_1,...,e_n) = (\tilde{e}_1,...,\tilde{e}_n)S$, где $S \in M_{n\times n}(\Z)$ ($\det T, S = \pm 1$).
+    Пусть $e_1,...,e_n$ и $f_1,...,f_m$ --- некоторые базисы $A$ и $B$ соответственно. Так как $f_i \in A$, $(f_1,...,f_m) = (e_1,...,e_n)C$, где $C \in M_{n\times m}(\Z)$.\\
+    Если $\tilde{f}_1,...,\tilde{f}_m$ --- другой базис $B$, то $(f_1,...,f_m) = (\tilde{f}_1,...,\tilde{f}_m)T$, где $T \in M_{m\times m}(\Z)$\\
+    Если $\tilde{e}_1,...,\tilde{e}_n$ --- другой базис $A$, то $(e_1,...,e_n) = (\tilde{e}_1,...,\tilde{e}_n)S$, где $S \in M_{n\times n}(\Z)$ ($\det T, S = \pm 1$).
     Отсюда
     \[(\tilde{f}_1,...,\tilde{f}_m)T = (\tilde{e}_1,...,\tilde{e}_n)SC \Longrightarrow (\tilde{f}_1,...,\tilde{f}_m) = (\tilde{e}_1,...,\tilde{e}_n)\tilde{C}, \ \ \tilde{C} = SCT^{-1}\]
-    Тогда если $S, T^{-1}$ - элементарные матрицы, то $SC$ - ЭП над строками $C$, а $CT^{-1}$ - ЭП над столбцами $C$.
+    Тогда если $S, T^{-1}$ --- элементарные матрицы, то $SC$ --- ЭП над строками $C$, а $CT^{-1}$ --- ЭП над столбцами $C$.
     По лемме 1 $C$ с помощью ЭП можно привести к виду $\tilde{C} = \begin{pmatrix} \begin{smallmatrix}
     \alpha_1&&0\\ &\ddots&\\ 0&&\alpha_m
     \end{smallmatrix} \\\hline 0\end{pmatrix}$ (нулей среди $\alpha_i$ не будет, т.к. векторы базиса $f$ ЛНЗ).
@@ -312,19 +312,19 @@
     Из следствия 1 видно, что если $\textup{rk } A = \textup{rk } B$, то $A/B \simeq \Z_{\alpha_1} \oplus ... \oplus \Z_{\alpha_n}$, и $|A/B| < \infty$, а иначе в прямой сумме встретится слагаемое $\Z$, то есть найдётся элемент бесконечного порядка.
 \end{proof}
 \begin{subtheoremnum}(Универсальное свойство абелевой группы)\\
-    Пусть $S = \{a_1,...,a_n\}$ - система порождающих абелевой группы $A$.\\
+    Пусть $S = \{a_1,...,a_n\}$ --- система порождающих абелевой группы $A$.\\
     Тогда следующие утверждения эквивалентны:
     \begin{enumerate}
-        \item $A$ - свободная с базисом $S$;
+        \item $A$ --- свободная с базисом $S$;
         \item $\forall$ абелевой группы $D$, $\forall \ d_1,...,d_n \in D \ \exists!$ гомоморфизм $\phi: A\rightarrow D$ т.ч. $\phi: a_i \mapsto d_i \  \forall i$. 
     \end{enumerate} 
 \end{subtheoremnum}
 \begin{proof}
-    $ \\ 1 \Longrightarrow 2:$  $S$ - базис $A \Longrightarrow \forall a \in A \ \exists! \alpha_i  \in \Z : a = \alpha_1a_1 + ... + \alpha_na_n$.\\
+    $ \\ 1 \Longrightarrow 2:$  $S$ --- базис $A \Longrightarrow \forall a \in A \ \exists! \alpha_i  \in \Z : a = \alpha_1a_1 + ... + \alpha_na_n$.\\
     Рассмотрим отображение $\phi: A \rightarrow D$, заданное как $a = \alpha_1a_1 + ... + \alpha_na_n \mapsto \alpha_1d_1 + ... + \alpha_nd_n$. Оно корректно вследствие единственности разложения по базису, а также очевидно является гомоморфизмом с нужным свойством.\\
     $2 \Longrightarrow 1$. Рассмотрим свободную группу $D$ ранга $n$, в ней рассмотрим базис $d_1,...,d_n$. По условию $\exists!$ гомоморфизм $\phi: A \rightarrow D$, причём $a_i \mapsto d_i$.\\
     Предположим, что $a_1,...,a_n$ линейно зависимы. Тогда \[\lambda_1a_1 +...+\lambda_na_n = 0 \Longrightarrow \phi(\lambda_1a_1 +...+\lambda_na_n) = \lambda_1d_1 +...+\lambda_nd_n = 0\] 
-    Противоречие с линейной независимостью $d_1,...,d_n$. Значит, $a_1,...,a_n$ - базис.
+    Противоречие с линейной независимостью $d_1,...,d_n$. Значит, $a_1,...,a_n$ --- базис.
 \end{proof}
 \begin{consequensenum}
     Любая конечнопорождённая абелева группа изоморфна свободной абелевой группе по некоторой её подгруппе $B$.
@@ -350,13 +350,13 @@
     Группа, в которой каждый неединичный элемент имеет бесконечный порядок, называется группой без кручения.
 \end{definition}
 \begin{exercise}
-    Если $A$ - свободная абелева, то $A$ - без кручения.
+    Если $A$ --- свободная абелева, то $A$ --- без кручения.
 \end{exercise}
 \begin{proof}
-    Предположим, что $b \in A$ - элемент конечного порядка $m$. По определению свободной группы $b = \alpha_1a_1 + ... + \alpha_na_n$, причём не все $\alpha_i$ равны 0. Тогда $m\alpha_1a_1 + ... + m\alpha_na_n = mb = 0$ - противоречие с линейной независимостью базиса.
+    Предположим, что $b \in A$ --- элемент конечного порядка $m$. По определению свободной группы $b = \alpha_1a_1 + ... + \alpha_na_n$, причём не все $\alpha_i$ равны 0. Тогда $m\alpha_1a_1 + ... + m\alpha_na_n = mb = 0$ --- противоречие с линейной независимостью базиса.
 \end{proof}
 \begin{consequensenum}
-    Если $A$ - конечнопорождённая абелева группа без кручения, то $A$ - свободная абелева группа.
+    Если $A$ --- конечнопорождённая абелева группа без кручения, то $A$ --- свободная абелева группа.
 \end{consequensenum}
 \begin{proof}
     В обозначениях следствия 5 $m = 0$.
@@ -366,14 +366,14 @@
     Группа $G$ называется периодической, если $\forall g \in G$ $g$ имеет конечный порядок. 
 \end{definition}
 \begin{definition}
-    Периодическая группа $G$ называется $p$-группой, где $p$ - простое, если $\forall g \in G \ \exists s \in \N: \textup{ord } g = p^s$.
+    Периодическая группа $G$ называется $p$-группой, где $p$ --- простое, если $\forall g \in G \ \exists s \in \N: \textup{ord } g = p^s$.
 \end{definition}
 \begin{exercise}
     \label{ex:ex1}
     $ \\$Доказать, что конечная группа $G$ является $p$-группой $\Longleftrightarrow |G| = p^m \ (m \in \N)$. 
 \end{exercise}
 \begin{proof}
-    $ \\ \Longleftarrow$ - очевидно, т.к. $\forall g \in G: \ \textup{ord } g \mid p^m = |G|$;\\
+    $ \\ \Longleftarrow$ --- очевидно, т.к. $\forall g \in G: \ \textup{ord } g \mid p^m = |G|$;\\
     $\Longrightarrow:$ на будущих лекциях будет доказательство в терминах силовских подгрупп.
 \end{proof}
 \begin{definition}
@@ -386,18 +386,18 @@
     Без доказательства.
 \end{proof}
 \begin{example} Не конечнопорождённая примарная абелева группа:\\
-    $\CC_{p^\infty}$ - группа комплексных корней степеней $p^m$ из 1.
+    $\CC_{p^\infty}$ --- группа комплексных корней степеней $p^m$ из 1.
 \end{example}
 \setcounter{lemcount}{0}
 \begin{lemmanum}
-    Пусть $A$ - конечнопорождённая абелева группа, $B \leq A$ такая, что $A/B$ - свободная абелева группа. Тогда $\exists \ C \leq A$ - свободная абелева группа такая, что $A \simeq B \oplus C$.
+    Пусть $A$ --- конечнопорождённая абелева группа, $B \leq A$ такая, что $A/B$ --- свободная абелева группа. Тогда $\exists \ C \leq A$ --- свободная абелева группа такая, что $A \simeq B \oplus C$.
 \end{lemmanum}
 \begin{proof}
-    Пусть $\overline{e}_1,...\overline{e}_n$ - базис $\Z^n \simeq A/B$, и пусть $\phi: A/B \rightarrow \Z^n$ - изоморфизм. Тогда $\phi^{-1}(\overline{e}_i) = e_i + B$, где $e_i \in A$.\\
+    Пусть $\overline{e}_1,...\overline{e}_n$ --- базис $\Z^n \simeq A/B$, и $\phi: A/B \rightarrow \Z^n$ --- изоморфизм. Тогда $\phi^{-1}(\overline{e}_i) = e_i + B$, где $e_i \in A$.\\
     Рассмотрим $C = \langle e_1,...,e_n \rangle$.\\
-    Покажем, что $e_1,...,e_n$ - базис $C$, т.е. докажем линейную независимость $e_1,...,e_n$:
+    Покажем, что $e_1,...,e_n$ -- базис $C$, т.е. докажем линейную независимость $e_1,...,e_n$:
     \[\lambda_1e_1 + ... + \lambda_ne_n = 0 \Longrightarrow \lambda_1e_1 + ... + \lambda_ne_n + B = B \Longrightarrow \phi(\lambda_1e_1 + ... + \lambda_ne_n + B) =\]
-    \[= \lambda_1\overline{e}_1 + ... + \lambda_n\overline{e}_n = 0 \Longrightarrow \forall i \ \lambda_i = 0 \ \text{ т.к. } \overline{e}_1,...\overline{e}_n \text{ - базис } \Z^n\]
+    \[= \lambda_1\overline{e}_1 + ... + \lambda_n\overline{e}_n = 0 \Longrightarrow \forall i \ \lambda_i = 0 \ \text{ т.к. } \overline{e}_1,...\overline{e}_n \text{ --- базис } \Z^n\]
     Покажем, что $A = B \oplus C$, или, что равносильно, что $A = B + C$ и $B \cap C = \{0\}$:
     \begin{itemize}
         \item $B \cap C = \{0\}$: Рассмотрим $b \in B \cap C$. Тогда:
@@ -415,7 +415,7 @@
     Обозначим за $\textup{Tor } A$ множество всех элементов конечного порядка группы $A$. 
     \begin{enumerate}
         \item $a, b \in \textup{Tor } A \Longrightarrow \exists \ n, m \in \N: na = mb = 0 \Longrightarrow\\ \Longrightarrow(n\cdot m)(a+b) = (n\cdot m)a + (n\cdot m)b = 0 \Longrightarrow (a+b)$ имеет конечный порядок.
-        \item $0 \in \textup{Tor } A$ - очевидно.
+        \item $0 \in \textup{Tor } A$ --- очевидно.
         \item $\forall a \in \textup{Tor } A \Longrightarrow -a \in \textup{Tor } A$, т.к. $n(-a) = -na = 0$.
     \end{enumerate}
 \end{proof}
@@ -426,7 +426,7 @@
     Доказать, что в группе $D_\infty = \langle a, b\ |\ a^2 = 1, aba^{-1} = b^{-1} \rangle$ все элементы конечного порядка не образуют подгруппу.
 \end{exercise}
 \begin{remark}
-    Группа Диэдра $D_n$ отлична от $D_\infty$ наличием соотношения $b^n = 1$, ($a$ - любая симметрия правильного $n$-угольника, $b$ - поворот на $\frac{2\pi}{n}$).
+    Группа Диэдра $D_n$ отлична от $D_\infty$ наличием соотношения $b^n = 1$, ($a$ --- любая симметрия правильного $n$-угольника, $b$ --- поворот на $\frac{2\pi}{n}$).
 \end{remark}
 \begin{proof}
     Заметим, что $\textup{ord } ba = 2:$
@@ -434,42 +434,42 @@
     Также $\textup{ord } a = 2: a^2 = 1$. При этом $\textup{ord } (ba)a = \textup{ord } b = \infty$. Значит, произведение элементов конечного порядка может быть элементом бесконечного порядка, т.е. все элементы конечного порядка не образуют подгруппу в $D_\infty$.
 \end{proof}
 \begin{lemmanum}
-    Пусть $A$ - абелева группа. Тогда $A / \textup{Tor } A$ - группа без кручения.
+    Пусть $A$ --- абелева группа. Тогда $A / \textup{Tor } A$ --- группа без кручения.
 \end{lemmanum}
 \begin{proof}
     От противного: пусть $\overline{a} \in A / \textup{Tor } A, \overline{a} \neq 0, \textup{ord } \overline{a} = n$.\\
     Тогда $\overline{a} = a + \textup{Tor } A, \ a \in A$.
     \[n\overline{a} = 0 \Longrightarrow n(a + \textup{Tor } A) = \textup{Tor } A \Longrightarrow na \in \textup{Tor } A \Longrightarrow\]
     \[\Longrightarrow \exists \ m \in \N: m(na) = 0 \Longrightarrow (mn)a = 0 \Longrightarrow a \in \textup{Tor }A \Longrightarrow \overline{a} = 0\]
-    - противоречие с $\overline{a} \neq 0$. Значит, $A / \textup{Tor } A$ - группа без кручения.
+    --- противоречие с $\overline{a} \neq 0$. Значит, $A / \textup{Tor } A$ --- группа без кручения.
 \end{proof}
 \begin{lemmanum}
-    Пусть $A$ - конечнопорождённая абелева группа. Тогда $A = \textup{Tor } A \oplus C$, где $C \leq A$ - свободная абелева группа, $\textup{Tor } A$ - конечная.
+    Пусть $A$ --- конечнопорождённая абелева группа. Тогда $A = \textup{Tor } A \oplus C$, где $C \leq A$ --- свободная абелева группа, $\textup{Tor } A$ --- конечная.
 \end{lemmanum}
 \begin{proof}
     Пусть $A = \langle a_1,...,a_n \rangle$. \\
-    Тогда $A/\textup{Tor } A = \langle a_1 + \textup{Tor } A,...,a_n + \textup{Tor } A\rangle$. Кроме того, по лемме 3 $A/\textup{Tor } A$ - группа без кручения, а отсюда по следствию 6 из универсального свойства абелевой группы - свободная. Отсюда по лемме 1 $\exists \ C \leq A$ - свободная абелева группа такая, что $A \simeq \textup{Tor } A \oplus C$.\\
-    Осталось показать, что $\textup{Tor } A$ - конечная:
-    $\textup{Tor } A \simeq A/C = \langle a_1 + C,...,a_n + C \rangle \Longrightarrow \textup{Tor } A = \langle b_1,...,b_n \rangle$ - конечнопорождённая.
+    Тогда $A/\textup{Tor } A = \langle a_1 + \textup{Tor } A,...,a_n + \textup{Tor } A\rangle$. Кроме того, по лемме 3 $A/\textup{Tor } A$ --- группа без кручения, а отсюда по следствию 6 из универсального свойства абелевой группы --- свободная. Отсюда по лемме 1 $\exists \ C \leq A$ --- свободная абелева группа такая, что $A \simeq \textup{Tor } A \oplus C$.\\
+    Осталось показать, что $\textup{Tor } A$ --- конечная:
+    $\textup{Tor } A \simeq A/C = \langle a_1 + C,...,a_n + C \rangle \Longrightarrow \textup{Tor } A = \langle b_1,...,b_n \rangle$ --- конечнопорождённая.
     Тогда если $k_i = \textup{ord } b_i$, то $\forall b \in \textup{Tor } A$
     \[b = \lambda_1b_1 + ... + \lambda_nb_n, \ \lambda_i \in \Z, 0 \leqslant \lambda_i < k_i \Longrightarrow |\textup{Tor } A| \leqslant k_1...k_n \]
 \end{proof}
 \begin{lemmanum}
-    Пусть $A$ - конечная абелева группа, $|A| = p_1^{k_1}...p_s^{k_s}$ Тогда $A$ раскладывается в прямую сумму $A_{p_1} \oplus ... \oplus A_{p_s}$, где $A_{p_i}$ - $p_i$-подгруппа, причём набор этих подгрупп определён однозначно.
+    Пусть $A$ --- конечная абелева группа, $|A| = p_1^{k_1}...p_s^{k_s}$ Тогда $A$ раскладывается в прямую сумму $A_{p_1} \oplus ... \oplus A_{p_s}$, где $A_{p_i}$ --- $p_i$-подгруппа, причём набор этих подгрупп определён однозначно.
 \end{lemmanum}
 \begin{proof}\tab
     \begin{itemize}
         \item Существование разложения:\\
-        Рассмотрим произвольное простое $p$ и обозначим за $A_p$ множество всех элементов $A$ порядков $p^m$. Проверим, что $A_p$ - подгруппа $A$:
+        Рассмотрим произвольное простое $p$ и обозначим за $A_p$ множество всех элементов $A$ порядков $p^m$. Проверим, что $A_p$ --- подгруппа $A$:
         \begin{enumerate}
             \item $a, b \in A_{p}, p^{m_1}a = p^{m_2}b = 0 \Longrightarrow p^{m_1 + m_2}(a+b) = p^{m_2}\cdot p^{m_1}a + p^{m_1}\cdot p^{m_2}b = 0$
             Отсюда $a, b \in A_p \Longrightarrow a+b \in A_p$;
-            \item $0 \in A_p$ - очевидно;
+            \item $0 \in A_p$ --- очевидно;
             \item $p^ma = 0 \Longrightarrow p^m(-a) = -p^ma = 0$. Отсюда $a\in A_p \Longrightarrow -a \in A_p$.
         \end{enumerate}
         Докажем, что $A = A_{p_1} \oplus ... \oplus A_{p_s}$:
         \begin{enumerate}
-            \item $A_{p_1} \oplus ... \oplus A_{p_s}$ - прямая сумма.\\
+            \item $A_{p_1} \oplus ... \oplus A_{p_s}$ --- прямая сумма.\\
             Из критерия прямой суммы достаточно показать, что $A_{p_i} \cap \langle A_{p_j} | j \neq i\rangle\\ = \{0\}$. Рассмотрим $a \in A_{p_i} \cap \langle A_{p_j} | \ j \neq i\rangle$. Так как $a \in A_{p_i}$, то $p_i^{m_i}a = 0$. С другой стороны, $a = \sum \limits_{j \neq i} a_j$, то есть $(\prod \limits_{j \neq i} p_j^{m_j})a = 0$.\\
             Так как $\prod \limits_{j \neq i} p_j^{m_j}$ и $p_i^{m_i}$ взаимно просты, имеем $1 \cdot a = a = 0$.
             \item $A = A_{p_1} \oplus ... \oplus A_{p_s}$.
@@ -477,28 +477,28 @@
             Так как НОД$(n_1,...,n_s) = 1, \exists\ l_i \in \Z: l_1n_1 + ... + l_sn_s = 1$.
             Отсюда $a = l_1n_1a + ... + l_sn_sa$. Так как $p_i^{\alpha_i}(l_in_ia) = l_ina = 0$, имеем $l_in_ia \in A_{p_i}$. Значит, $a$ раскладывается в линейную комбинацию элементов $A_{p_i}$.
         \end{enumerate} 
-        \item Единственность разложения - от противного: пусть
+        \item Единственность разложения --- от противного: пусть
         \[A = \tilde{A}_{p_1} \oplus ... \oplus \tilde{A}_{p_s} = A_{p_1} \oplus ... \oplus A_{p_s}\]
-        Так как $A_{p_i}$ - максимальная $p_i$-подгруппа в $A$ (содержит все элементы $A$ порядка $p_i^m$), $\tilde{A}_{p_i} \subseteq A_{p_i}$.\\
+        Так как $A_{p_i}$ --- максимальная $p_i$-подгруппа в $A$ (содержит все элементы $A$ порядка $p_i^m$), $\tilde{A}_{p_i} \subseteq A_{p_i}$.\\
         Предположим, что $\exists a \in A_{p_i}: a \notin \tilde{A}_{p_i}$. Так как $a \in A = \tilde{A}_{p_1} \oplus ... \oplus \tilde{A}_{p_s}$, $a = \tilde{a}_{p_i} + b$, где $\tilde{a}_{p_i} \in \tilde{A}_{p_i}, b \in \langle \tilde{A}_{p_j} \ |\ j\neq i \rangle$. Тогда $\textup{ord } a = p_i^{m_1}, \textup{ord } \tilde{a}_{p_i} = p_i^{m_2} \Longrightarrow$
         \[ p_i^{m_1 + m_2}a = p_i^{m_1 + m_2}\tilde{a}_{p_i} + p_i^{m_1 + m_2}b \Longrightarrow p_i^{m_1 + m_2}b = 0, \text{а также } \prod \limits_{j \neq i} p_j^{\alpha_j} b = 0\]
-        $\prod \limits_{j \neq i} p_j^{\alpha_j}$ и $p_i^{m_1+m_2}$ взаимно просты $\Longrightarrow b = 0$, т.е. $a = \tilde{a}_{p_i} \in \tilde{A}_{p_i}$ - противоречие.\\
+        $\prod \limits_{j \neq i} p_j^{\alpha_j}$ и $p_i^{m_1+m_2}$ взаимно просты $\Longrightarrow b = 0$, т.е. $a = \tilde{a}_{p_i} \in \tilde{A}_{p_i}$ --- противоречие.\\
         Значит, такого $a$ не существует, то есть $A_{p_i} \subseteq \tilde{A}_{p_i}$. Отсюда $A_{p_i} = \tilde{A}_{p_i}$.
     \end{itemize}
 \end{proof}
 \begin{lemmanum}
-    Пусть $A$ - конечная абелева $p$-группа. Тогда если $A = A_1 \oplus ... \oplus A_s = B_1 \oplus ... \oplus B_t$, где $A_i, B_i$ - примарные циклические подгруппы, то $s = t$ и набор порядков $|A_1|,...,|A_s|$ совпадает с набором порядков $|B_1|,...,|B_t|$ (т.е. разложение единственно с точностью до порядка слагаемых).
+    Пусть $A$ --- конечная абелева $p$-группа. Тогда если $A = A_1 \oplus ... \oplus A_s = B_1 \oplus ... \oplus B_t$, где $A_i, B_i$ --- примарные циклические подгруппы, то $s = t$ и набор порядков $|A_1|,...,|A_s|$ совпадает с набором порядков $|B_1|,...,|B_t|$ (т.е. разложение единственно с точностью до порядка слагаемых).
 \end{lemmanum}
 \begin{proof}
     Индукция по $|A|$:\\
-    База: $|A| = p \Longrightarrow A \simeq \Z_p$ - такое разложение единственно;\\
+    База: $|A| = p \Longrightarrow A \simeq \Z_p$ --- такое разложение единственно;\\
     Шаг: Пусть $|A_i| = p^{n_i}, |B_i| = p^{m_i}$. Упорядочим их: пусть
     \[n_1 \geqslant n_2 \geqslant ... \geqslant n_{\tilde{s}} > n_{\tilde{s}+1} = ... = n_s = 1\]
     \[m_1 \geqslant m_2 \geqslant ... \geqslant m_{\tilde{t}} > m_{\tilde{t}+1} = ... = m_t = 1\]
     Пусть $A_i = \langle a_i \rangle_{p^{n_i}}, B_i = \langle b_i \rangle_{p^{m_i}}$. Рассмотрим множество $pA = \{pa \ | \ a \in A\}$. Очевидно, что $pA \leq A$. Тогда:
     \[A = \langle a_1 \rangle \oplus ... \oplus \langle a_{\tilde{s}} \rangle \oplus \langle a_{\tilde{s} + 1} \rangle \oplus ... \oplus \langle a_{s} \rangle\]
     \[\forall a \in A: \ a = \alpha_1a_1 + ... + \alpha_{\tilde{s}}a_{\tilde{s}} + \alpha_{\tilde{s} + 1}a_{\tilde{s} + 1} + ... + \alpha_sa_s \Longrightarrow pa = \alpha_1pa_1 + ... + \alpha_{\tilde{s}}pa_{\tilde{s}}\]
-    ($A_{\tilde{s}+1},..., A_s$ - циклические порядка $p$, поэтому $\alpha_{\tilde{s} + 1}pa_{\tilde{s} + 1} + ... + \alpha_spa_s = 0$)\\
+    ($A_{\tilde{s}+1},..., A_s$ --- циклические порядка $p$, поэтому $\alpha_{\tilde{s} + 1}pa_{\tilde{s} + 1} + ... + \alpha_spa_s = 0$)\\
     Тогда $pA = \langle pa_1 \rangle \oplus ... \oplus \langle pa_{\tilde{s}} \rangle$. При этом $\textup{ord }(pa_1) = p^{n_1 - 1}, ..., \textup{ord }(pa_{\tilde{s}}) = p^{n_{\tilde{s}} - 1}$.
     Значит, $|pA| = p^{n_1 + ... + n_{\tilde{s}} - \tilde{s}} < |A|$.\\
     Аналогично $pA = \langle pb_1 \rangle \oplus ... \oplus \langle pb_{\tilde{t}} \rangle, |pA| = p^{m_1 + ... + m_{\tilde{t}} - \tilde{t}} < |A|$.\\
@@ -508,7 +508,7 @@
     \[n_1 + ... + n_{\tilde{s}} + s - \tilde{s} = m_1 + ... + m_{\tilde{t}} + t - \tilde{t}; \ \tilde{s} = \tilde{t}; \ n_i = m_i \Longrightarrow s = t\]
 \end{proof}
 \begin{theorem}(\textbf{Основная т. о конечнопорождённых абелевых группах})\\
-    Пусть $A$ - конечнопорождённая абелева группа. Тогда $A$ изоморфна прямой сумме (конечных) примарных циклических подгрупп и бесконечных циклических подгрупп:
+    Пусть $A$ --- конечнопорождённая абелева группа. Тогда $A$ изоморфна прямой сумме (конечных) примарных циклических подгрупп и бесконечных циклических подгрупп:
     \[A \simeq \Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_k^{s_k}} \oplus \undermat{m}{\Z \oplus ... \oplus \Z}\]
     \newline
     причём число $m$ и набор $p_1^{s_1},...,p_k^{s_k}$ определены однозначно для группы $A$.
@@ -519,10 +519,10 @@
         Из следствия 4 универсального свойства абелевой группы для $A$ имеем:
         \[A \simeq A_0/B_0 \simeq \Z_{\alpha_1} \oplus ... \oplus \Z_{\alpha_m} \oplus \undermat{n-m}{\Z\oplus ... \oplus \Z}\]
         \newline
-        Также из аналога китайской теоремы об остатках знаем, что если $\alpha = q_1^{\nu_1}...q_\mu^{\nu_\mu}$, где $q_i$ - различные простые, то $\Z_\alpha = \Z_{q_1^{\nu_1}} \oplus ... \oplus \Z_{q_\mu^{\nu_\mu}}$. Отсюда из разложения выше получаем искомое разложение.
+        Также из аналога китайской теоремы об остатках знаем, что если $\alpha = q_1^{\nu_1}...q_\mu^{\nu_\mu}$, где $q_i$ --- различные простые, то $\Z_\alpha = \Z_{q_1^{\nu_1}} \oplus ... \oplus \Z_{q_\mu^{\nu_\mu}}$. Отсюда из разложения выше получаем искомое разложение.
         \item \textbf{Единственность разложения}\\
-        По лемме 4 для $A$ имеет место разложение $A = \textup{Tor } A \oplus C$, где $\textup{Tor } A$ - конечная, $C$ - свободная. Заметим, что $\textup{rk } C = \textup{rk } A/\textup{Tor } A$. Так как $\textup{Tor } A$ - инвариант $A$, то $A/\textup{Tor } A$, а тогда и $\textup{rk } C$ - инварианты $A$.\\
-        Так как $C \simeq \Z \oplus ... \oplus \Z$, а $\Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_k^{s_k}}$ - конечная, имеем $C = \undermat{m}{\Z \oplus ... \oplus \Z}$, то есть $m = \textup{rk } C$, а отсюда $m$ однозначно определено для $A$.\\
+        По лемме 4 для $A$ имеет место разложение $A = \textup{Tor } A \oplus C$, где $\textup{Tor } A$ --- конечная, $C$ --- свободная. Заметим, что $\textup{rk } C = \textup{rk } A/\textup{Tor } A$. Так как $\textup{Tor } A$ --- инвариант $A$, то $A/\textup{Tor } A$, а тогда и $\textup{rk } C$ --- инварианты $A$.\\
+        Так как $C \simeq \Z \oplus ... \oplus \Z$, а $\Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_k^{s_k}}$ --- конечная, имеем $C = \undermat{m}{\Z \oplus ... \oplus \Z}$, то есть $m = \textup{rk } C$, а отсюда $m$ однозначно определено для $A$.\\
         Пусть $B = \textup{Tor } A$. По лемме 5 $B \simeq A_{\tilde{p}_1} \oplus ... \oplus A_{\tilde{p}_l}$, причём это разложение на примарные подгруппы единственно с точностью до порядка слагаемых. А из леммы 6 каждая $A_{\tilde{p}_i}$ раскладывается на циклические примарные однозначно с точностью до порядка слагаемых. Значит, набор порядков $p_1^{s_1},...,p_k^{s_k}$ определён однозначно для $A$.
     \end{itemize}
 \end{proof}
@@ -541,7 +541,7 @@
     Доказать, что $\Q$ не раскладывается в прямую сумму циклических (вообще говоря, произвольных) подгрупп.
 \end{exercise}
 \begin{proof}
-    Пусть $H_1, H_2 \unlhd \Q$ - нетривиальные нормальные подгруппы $\Q$. Тогда $\exists \ h_1 = \in H_1, h_2 \in H_2: h_1, h_2 \neq 0$. Тогда:
+    Пусть $H_1, H_2 \unlhd \Q$ --- нетривиальные нормальные подгруппы $\Q$. Тогда $\exists \ h_1 = \in H_1, h_2 \in H_2: h_1, h_2 \neq 0$. Тогда:
     \[h_1 = \frac{m_1}{n_1}, h_2 = \frac{m_2}{n_2} \Longrightarrow m_2n_1h_1 = m_1n_2h_2 \in H_1 \cap H_2\]
     то есть $H_1 \cap H_2 \neq \{0\}$. Отсюда $\Q$ не раскладывается в прямую сумму подгрупп.
 \end{proof}
@@ -560,24 +560,24 @@
 \end{subtheorem}
 \begin{proof}
     $ \\ \Longrightarrow: \ \ A = \langle a \rangle \Longrightarrow \textup{ord } a = |A| \Longrightarrow \exp A \geqslant |A| \Longrightarrow \exp A = |A|$ (т.к. $\exp A \mid |A|$).\\
-    $ \Longleftarrow:$ От противного: пусть $\exp A = |A|$, но $A$ - не циклическая. По основной теореме о конечнопорождённых абелевых группах $A \simeq \Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_m^{s_m}}$. Если все $p_1,...,p_m$ различны, то $A$ циклическая по аналогу китайской теоремы об остатках - противоречие. Если среди них есть совпадающие, то можем без ограничения общности считать, что $p_1 = p_2, s_1 \leqslant s_2$.
+    $ \Longleftarrow:$ От противного: пусть $\exp A = |A|$, но $A$ --- не циклическая. По основной теореме о конечнопорождённых абелевых группах $A \simeq \Z_{p_1^{s_1}} \oplus ... \oplus \Z_{p_m^{s_m}}$. Если все $p_1,...,p_m$ различны, то $A$ циклическая по аналогу китайской теоремы об остатках --- противоречие. Если среди них есть совпадающие, то можем без ограничения общности считать, что $p_1 = p_2, s_1 \leqslant s_2$.
     Обозначим $\Z_{p_i^{s_i}} = \langle a_i \rangle \Longrightarrow \forall a \in A: a = \sum \limits_{i = 1}^m \alpha_ia_i$. Тогда если в равенстве $|A| = p_1^{s_1}p_2^{s_2}...p_m^{s_m}$ обозначить $t = p_2^{s_2}...p_m^{s_m}$, то $\forall a \in A: \ ta = \sum \limits_{i = 1}^m \alpha_ita_i = 0$. \\
     (очевидно, что $ta_i = 0$ для $i \neq 1$, а $ta_1 = 0$ в силу $p_1 = p_2, s_1 \leqslant s_2$)\\
-    Тогда $t$ - общее кратное всех порядков элементов $A$, то есть $\exp A \mid t$, но $t < |A| = \exp A$ - противоречие. Значит, $A$ - циклическая.
+    Тогда $t$ --- общее кратное всех порядков элементов $A$, то есть $\exp A \mid t$, но $t < |A| = \exp A$ --- противоречие. Значит, $A$ --- циклическая.
 \end{proof}
 \begin{theorem}
-    Пусть $\F$ - произвольное поле, $A$ - конечная подгруппа в $\F^*$.\\
-    Тогда $A$ - циклическая.
+    Пусть $\F$ --- произвольное поле, $A$ --- конечная подгруппа в $\F^*$.\\
+    Тогда $A$ --- циклическая.
 \end{theorem}
 \begin{proof} (мультипликативная терминология)\\
-    Из определения поля $F^*$ - абелева группа, а значит, $A$ также абелева.\\
-    От противного: пусть $A$ не циклическая, т.е. $\exp A < |A|$. Тогда если $\exp A = n$, то $\forall a \in A \ a^{n} = 1$. Рассмотрим многочлен $x^n - 1$ над полем $\F$. Его степень равна $n$, а число его корней в $\F$ хотя бы $|A|$, что больше $n$ по предположению - противоречие. 
+    Из определения поля $F^*$ --- абелева группа, а значит, $A$ также абелева.\\
+    От противного: пусть $A$ не циклическая, т.е. $\exp A < |A|$. Тогда если $\exp A = n$, то $\forall a \in A \ a^{n} = 1$. Рассмотрим многочлен $x^n - 1$ над полем $\F$. Его степень равна $n$, а число его корней в $\F$ хотя бы $|A|$, что больше $n$ по предположению --- противоречие. 
 \end{proof}
 \begin{example}
-    $\F = \Z_p: \ A = F^*$ - циклическая. Например, $\Z_5^* = \langle 3 \rangle_4$. 
+    $\F = \Z_p: \ A = F^*$ --- циклическая. Например, $\Z_5^* = \langle 3 \rangle_4$. 
 \end{example}
 \begin{consequense}
-    Мультипликативная группа любого конечного поля - циклическая.
+    Мультипликативная группа любого конечного поля --- циклическая.
 \end{consequense}
 \setcounter{thcount}{0}
 \setcounter{concount}{0}
