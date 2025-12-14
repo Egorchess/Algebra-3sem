@@ -501,7 +501,7 @@
     ($A_{\tilde{s}+1},..., A_s$ --- циклические порядка $p$, поэтому $\alpha_{\tilde{s} + 1}pa_{\tilde{s} + 1} + ... + \alpha_spa_s = 0$)\\
     Тогда $pA = \langle pa_1 \rangle \oplus ... \oplus \langle pa_{\tilde{s}} \rangle$. При этом $\textup{ord }(pa_1) = p^{n_1 - 1}, ..., \textup{ord }(pa_{\tilde{s}}) = p^{n_{\tilde{s}} - 1}$.
     Значит, $|pA| = p^{n_1 + ... + n_{\tilde{s}} - \tilde{s}} < |A|$.\\
-    Аналогично $pA = \langle pb_1 \rangle \oplus ... \oplus \langle pb_{\tilde{t}} \rangle, |pA| = p^{m_1 + ... + m_{\tilde{t}} - \tilde{t}} < |A|$.\\
+    Аналогично $pA = \langle pb_1 \rangle \oplus ... \oplus \langle pb_{\tilde{t}} \rangle, |pA| = p^{m_1 + ... + m_{\tilde{t}} - \tilde{t}}$.\\
     Тогда по предположению индукции разложения $pA$ совпадают (порядок слагаемых одинаковый в силу упорядоченности), то есть 
     \[\tilde{s} = \tilde{t}; \ \ \forall i = \overline{1...\tilde{s}}: \ n_i - 1 = m_i - 1 \Longrightarrow n_i = m_i\]
     При этом $|A| = |A_1|\cdot...\cdot|A_{\tilde{s}}|\cdot|A_{\tilde{s} + 1}|\cdot...\cdot|A_s| = p^{n_1 + ... + n_{\tilde{s}} + s - \tilde{s}}$, а с другой стороны $|A| = |B_1|\cdot...\cdot|B_{\tilde{t}}|\cdot|B_{\tilde{t} + 1}|\cdot...\cdot|B_t| = p^{m_1 + ... + m_{\tilde{t}} + t - \tilde{t}}$. Отсюда
@@ -566,6 +566,7 @@
     Тогда $t$ --- общее кратное всех порядков элементов $A$, то есть $\exp A \mid t$, но $t < |A| = \exp A$ --- противоречие. Значит, $A$ --- циклическая.
 \end{proof}
 \begin{theorem}
+    \label{th2}
     Пусть $\F$ --- произвольное поле, $A$ --- конечная подгруппа в $\F^*$.\\
     Тогда $A$ --- циклическая.
 \end{theorem}

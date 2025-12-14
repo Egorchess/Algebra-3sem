@@ -1,0 +1,97 @@
+\section{Материал для самостоятельного изучения}
+Материал для данной главы взят из \cite{bunina}, лекции 18-19.
+\subsection{Алгебры над полем}
+\begin{definition}
+    Алгеброй над полем $F$ называется множество $A$ с операциями сложения, умножения и умножения на элементы поля $K$, обладающими следующими свойствами:
+    \begin{enumerate}
+        \item $(A, +, \lambda\cdot)$ --- векторное пространство над $F$;
+        \item $(A, +, \cdot)$ --- кольцо;
+        \item $\forall a, b \in A, \lambda \in F: \ \lambda(ab) = (\lambda a)b$.
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Для алгебры над полем определены следующие понятия:
+    \begin{itemize}
+        \item как для векторного пространства --- размерность;
+        \item как для кольца --- ассоциативность, коммутативность, наличие единицы. 
+    \end{itemize}
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item Если $L$ --- расширение поля $F$, то $L$ - коммутативная ассоциативная алгебра с единицей над $F$;
+        \item Множество $F(X, K)$ функций $f: X \rightarrow K$, где $X$ --- произвольное множество, $K$ --- поле, является коммутативной ассоциативной алгеброй с единицей над $K$;
+        \item $M_n(F)$ --- некоммутативная ассоциативная алгебра с единицей над $F$.
+    \end{enumerate}
+\end{examples}
+\begin{definition}
+    Тело --- ассоциативное кольцо с единицей, в котором каждый ненулевой элемент имеет обратный.
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item Любое поле является телом (поле --- коммутативное тело)
+        \item $Q_8$ --- тело, не являющееся полем (любой элемент имеет обратный, но умножение некоммутативно)
+    \end{enumerate}    
+\end{examples}
+\begin{definition}
+    Алгебра, являющееся телом относительно сложения и умножения, называется алгеброй с делением. 
+\end{definition}
+\begin{examples}\tab
+    \begin{enumerate}
+        \item Любая алгебра, являющаяся полем, является алгеброй с делением (например, поле $L$ как алгебра над подполем $F$);
+        \item Любое тело $D$ можно рассматривать как алгебру с делением над своим центром $Z(D) = \{z \in D \ | \ \forall a \in D: \ za = az\}$, который является коммутативным телом, то есть полем.
+    \end{enumerate}
+\end{examples}
+\begin{remark}
+    Если $D$ --- алгебра с делением над полем $F$, то элементы вида $\lambda \cdot 1$ образуют в ней подкольцо, содержащееся в $Z(D)$ и изоморфное $F$.
+\end{remark}
+\subsection{Алгебра кватернионов}
+Рассмотрим ассоциативную алгебру $\HH$ над $\R$, порождаемую элементами $i, j$ такими, что
+\[i^2 = j^2 = -1; \ \ ij = -ji\]
+Тогда базисом $\HH$ как векторного пространства над $\R$ будут элементы $\{1, i, j, k\}$, где $k = ij$. Тогда:
+\[k^2 = (ij)^2 = ijij = i(-ij)j = -(-1)(-1) = -1;\]
+\[ki = (ij)i = i(-ij) = -ik; \ kj = (ij)j = (-ji)j = -jk\]
+и любой элемент (кватернион) $q \in \HH$ можно записать в виде $q = a + bi + cj + dk$.
+\begin{definition}
+    Пусть $q = a + bi + cj + dk \in \HH$ --- произвольный кватернион. Тогда кватернион $\overline{q} = a - bi - cj - dk$ называется сопряжённым кватернионом к $q$.  
+\end{definition}
+\begin{properties} $\forall q, q_1, q_2 \in \HH$:
+    \begin{enumerate}
+        \item $\overline{\overline{q}} = q$;
+        \item $\overline{q_1q_2} = \overline{q_2}\cdot \overline{q_1}$;
+        \item $q\overline{q} = \overline{q}q = a^2 + b^2 + c^2 + d^2$.
+    \end{enumerate}    
+\end{properties}
+\begin{proof}\tab
+    \begin{enumerate}
+        \item Очевидно из определения;
+        \item В силу линейности $\HH$ как векторного пространства достаточно проверить данное равенство на базисных элементах. Равенства с участием единицы очевидны ($\overline{1} = 1$) --- рассмотрим остальные:
+        \[\overline{ij} = \overline{k} = -k = ji = (-j)(-i) = \overline{j}\cdot\overline{i}\]
+        \[\overline{jk} = \overline{i} = -i = kj = (-k)(-j) = \overline{k}\cdot\overline{j}\]
+        \[\overline{ki} = \overline{j} = -j = ik = (-i)(-k) = \overline{i}\cdot\overline{k}\]
+        \item
+        \[q\overline{q} = (a + bi + cj + dk)(a - bi - cj - dk) = a^2 - (bi + cj + dk)^2 =\]
+        \[= a^2 + b^2 + c^2 + d^2 - bcij - bcji - bdik - bdki - cdjk - cdkj = a^2 + b^2 + c^2 + d^2\]
+        Равенство $q\overline{q} = \overline{q}q$ получается из данного подстановкой $\overline{q}$ вместо $q$.
+    \end{enumerate}
+\end{proof}
+\begin{definition}
+    Число $q\overline{q} \in \R$ называется нормой $q\in \HH$ и обозначается $N(q)$.
+\end{definition}
+\begin{subtheorem}
+    $\HH$ --- алгебра с делением.
+\end{subtheorem}
+\begin{proof}
+    Уже знаем, что $\HH$ --- ассоциативная алгебра с единицей.\\
+    Докажем, что любой ненулевой элемент $H$ обратим: если $q \neq 0$, то $N(q) \neq 0$, а тогда $q^{-1} = \frac{1}{N(q)}\cdot \overline{q}$, так как $q\overline{q} = \overline{q}q = N(q)$. Значит, $\HH$ --- алгебра с делением.
+\end{proof}
+\begin{theorem} (Фробениуса)\\
+    Над полем $\R$ с точностью до изоморфизма существует только три конечномерные ассоциативные алгебры с делением: $\R, \CC, \HH$.
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\setcounter{thcount}{0}
+\setcounter{concount}{0}
+\setcounter{subthcount}{0}
+\setcounter{lemcount}{0}
+\newpage
