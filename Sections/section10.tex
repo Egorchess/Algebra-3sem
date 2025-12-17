@@ -247,7 +247,7 @@
         \begin{itemize}
             \item $\forall x, y \in (S):\ x + y = \sum \limits_{i=0}^kx_is_i + \sum \limits_{i=0}^ky_is_i = \sum \limits_{i=0}^k(x_i + y_i)s_i \in (S)$;
             \item $0 = \sum \limits_{i=0}^k0\cdot s_i \in (S)$;
-            \item $\forall x \in (S): \ -x = \sum \limits_{i=0}^kx_is_i = \sum \limits_{i=0}^k(-x_i)s_i \in (S)$;
+            \item $\forall x \in (S): \ -x = -\sum \limits_{i=0}^kx_is_i = \sum \limits_{i=0}^k(-x_i)s_i \in (S)$;
             \item $\forall x \in (S), a \in K: \ xa = ax = a\sum \limits_{i=0}^kx_is_i = \sum \limits_{i=0}^kax_is_i \in (S)$.
         \end{itemize}
         Значит, $(S)$ --- двусторонний идеал.
@@ -589,7 +589,7 @@
         \[\exists h(x) = c_0 + c_1x + ... + c_nx^n \in F[x], \ h \neq 0, h(a) = c_0 + c_1a + ... + c_na^n = 0\]
         Отсюда $a^n = \tilde{c}_0 + \tilde{c}_1a + ... + \tilde{c}_{n-1}a^{n-1}$, где $\tilde{c}_i \in F$.\\
         Покажем, что $F[a]$ порождается множеством $\{1,a,...,a^{n-1}\}$:\\
-        Пусть $x \in F[a]$. Пусть $x \in F[a] \Longrightarrow x = \sum \limits_{j=0}^m \lambda_ja^j$. Индукция по $m$:\\
+        Пусть $x \in F[a] \Longrightarrow x = \sum \limits_{j=0}^m \lambda_ja^j$. Индукция по $m$:\\
         База: $m < n$ --- уже имеем разложение по нужным элементам;\\
         Шаг: Заметим, что
         \[a^m = a^{m-n}a^n = a^{m-n}(\tilde{c}_0 + \tilde{c}_1a + ... + \tilde{c}_{n-1}a^{n-1}) = \tilde{c}_0a^{m-n} + ... + \tilde{c}_{n-1}a^{m-1}\]
