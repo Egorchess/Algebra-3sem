@@ -15,7 +15,7 @@
     \end{enumerate}
 \end{proof}
 \begin{definition}
-    Данная группа $(G, \cdot)$ называется прямым произведением групп $G_1,...,G_k$. Обозначается $G = G_1 \times ... \times G_k$; $G_i$ называются множителями.\\
+    Данная группа $(G, \cdot)$ называется (внешним) прямым произведением групп $G_1,...,G_k$. Обозначается $G = G_1 \times ... \times G_k$; $G_i$ называются множителями.\\
     В аддитивной терминологии те же рассуждения определяют прямую сумму $G = G_1 \oplus ... \oplus G_k$, где $G_i$ --- слагаемые.
 \end{definition}
 \begin{examples}\tab
@@ -61,7 +61,7 @@
 \subsection{Внутреннее прямое произведение}
 \begin{definition}
     Пусть $G$ --- группа, $H_1,...,H_k \leq G$.\\
-    $G$ раскладывается в прямое произведение подгрупп $H_1,...,H_k$, если:
+    $G$ раскладывается в (внутреннее) прямое произведение подгрупп $H_1,...,H_k$, если:
     \begin{enumerate}
         \item $\forall g \in G \ \exists! \ h_i \in H_i : g = h_1...h_k$;
         \item $\forall i \neq j: \forall h_i \in H_i, h_j \in H_j \ h_ih_j = h_jh_i$.
@@ -153,7 +153,7 @@
 \begin{proof}\tab
     \begin{enumerate}
         \item Имеем: $H_i \leq G, G = H_1 \times ... \times H_k$.\\
-        Рассмотрим отображение $\phi: G \rightarrow G_1 \times ... \times G_k$, где $G_i = H_i$, такое, что $\forall g = h_1...h_k \in G \ \ \phi(h_1...h_k) \mapsto (h_1,...,h_k)$. Это изоморфизм:
+        Рассмотрим отображение $\phi: G \rightarrow G_1 \times ... \times G_k$, где $G_i = H_i$, такое, что $\forall g = h_1...h_k \in G: \ \phi(h_1...h_k) = (h_1,...,h_k)$. Это изоморфизм:
         \begin{itemize}
             \item Биекция --- очевидна;
             \item Гомоморфизм:

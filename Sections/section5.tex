@@ -30,7 +30,7 @@
 Так как $\alpha$ --- гомоморфизм, имеем:
 \[\forall g_1, g_2 \in G: \alpha(g_1g_2) = \alpha(g_1)\alpha(g_2) \Longrightarrow \alpha(g_1g_2)x = (\alpha(g_1)\alpha(g_2))x = \alpha(g_1)(\alpha(g_2)x)\]
 Отсюда $(g_1g_2)x = g_1(g_2x)$. Аналогично:
-\[\forall g \in G: \alpha(g^{-1}) = (\alpha(g))^{-1} \Longrightarrow \alpha(g^{-1})x = (\alpha(g)x)^{-1}\]
+\[\forall g \in G: \alpha(g^{-1}) = (\alpha(g))^{-1} \Longrightarrow \alpha(g^{-1})x = (\alpha(g))^{-1}(x)\]
 Отсюда $g^{-1}x = y \Longleftrightarrow gy = x$.\\
 Если $H \leq S(X)$, то определено "тавтологическое"\  действие $H$ на $X: \alpha(h) = h$ --- вложение $H \rightarrow S(X)$.
 \begin{example}
@@ -83,7 +83,7 @@ $\\$В общем случае $\alpha: G \rightarrow S(X)$ --- гомоморф
 \end{definition}
 \begin{example}
     Пусть $G$ --- группа поворотов плоскости $\E^2$ вокруг точки $o$.\\
-    Тогда при $G \acts E^2 \ \ \textup{Orb}(x)$ --- окружность с центром в точке $o$ радиуса $|ox|$.
+    Тогда при $G \acts \E^2 \ \ \textup{Orb}(x)$ --- окружность с центром в точке $o$ радиуса $|ox|$.
 \end{example}
 \begin{definition}
     Если $\textup{Orb}(x) = \{x\}$, то $x$ называется неподвижной точкой.
@@ -289,7 +289,7 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
     $x^G = \{x\} \Longleftrightarrow x \in Z(G)$.
 \end{subtheoremnum}
 \begin{proof}
-    Очевидно следует из свойства 1 центра группы.
+    $\forall g \in G: gxg^{-1} = x \Longleftrightarrow gx = xg$.
 \end{proof}
 \begin{definition}
     Группа $G$ называется тривиальной, если $G = \{e\}$.
@@ -352,7 +352,7 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
     $Z(S_n) = \{\textup{id}\}$ при $n \geqslant 3$.
 \end{consequense}
 \begin{proof}
-    Допустим, что в $Z(G)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 3, \exists k \neq i, j$. Тогда при $\tau = (jk): \ \tau\sigma\tau^{-1} = (ik...)...$ --- не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$) --- противоречие.  
+    Допустим, что в $Z(S_n)$ есть $\sigma \neq \textup{id}$. Разложим в независимые циклы: $\sigma = (ij...)...$. Так как $n \geqslant 3, \exists k \neq i, j$. Тогда при $\tau = (jk): \ \tau\sigma\tau^{-1} = (ik...)...$ --- не совпадёт с $\sigma$ ($\tau\sigma\tau^{-1}(i) \neq \sigma(i)$) --- противоречие.  
 \end{proof}
 \begin{exercise}
     Докажите, что $Z(A_n) = \{\textup{id}\}$ при $n \geqslant 4$.

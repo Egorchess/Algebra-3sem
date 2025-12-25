@@ -144,7 +144,7 @@
 \end{subtheorem}
 \begin{proof}\tab
     \begin{enumerate}
-        \item Сложение корректно из корректности сложения смежных классов в группах, так как $(I, +)$ --- нормальная подгруппа $(K, +)$;
+        \item Сложение корректно из корректности сложения смежных классов в группах, так как $(I, +)$ --- подгруппа $(K, +)$, нормальная из абелевости;
         \item Пусть $a + I = \tilde{a} + I$, $b + I = \tilde{b} + I$. Докажем, что $ab + I = \tilde{a}\tilde{b} + I$:\\ $\tilde{a} = a + y_a$, $\tilde{b} = b + y_b$, где $y_a, y_b \in I$. Тогда:
         \[\forall x \in \tilde{a}\tilde{b} + I: \ x = \tilde{a}\tilde{b} + y, y \in I\]
         \[x =  \tilde{a}\tilde{b} + y = (a + y_a)(b + y_b) + y = ab + \undermat{\in I}{y_ab + ay_b + y_ay_b + y} = ab + I\]
@@ -251,7 +251,7 @@
             \item $\forall x \in (S), a \in K: \ xa = ax = a\sum \limits_{i=0}^kx_is_i = \sum \limits_{i=0}^kax_is_i \in (S)$.
         \end{itemize}
         Значит, $(S)$ --- двусторонний идеал.
-        \item Пусть $I$ --- двусторонний идеал кольца $K$ такой, что $S \subset K$. Тогда из определения идеала $\forall a \in K, s \in S: \ as \in I$, а так как идеал --- подкольцо, любая сумма вида $\sum \limits_{i=0}^ka_is_i$, где $a_i \in K, s_i \in S$, лежит в $I$. Значит, $(S) \subseteq I$.
+        \item Пусть $I$ --- двусторонний идеал кольца $K$ такой, что $S \subset I$. Тогда из определения идеала $\forall a \in K, s \in S: \ as \in I$, а так как идеал --- подкольцо, любая сумма вида $\sum \limits_{i=0}^ka_is_i$, где $a_i \in K, s_i \in S$, лежит в $I$. Значит, $(S) \subseteq I$.
     \end{enumerate}
 \end{proof}
 \begin{definition}
@@ -286,7 +286,7 @@
     Целостное кольцо $K$, не являющееся полем, называется евклидовым кольцом, если $\exists$ функция $N: K\setminus{0} \rightarrow \Z_+$ (она называется нормой) такая, что:
     \begin{enumerate}
         \item $\forall a, b \in K: N(ab) > N(a)$;
-        \item $\forall a, b \in K, b \neq 0 \exists q, r \in K: \ a = bq + r$, где $\left[\begin{array}{l}
+        \item $\forall a, b \in K, b \neq 0 \ \exists q, r \in K: \ a = bq + r$, где $\left[\begin{array}{l}
         r = 0\\
         N(r) < N(b)
     \end{array}\right.$
@@ -333,8 +333,8 @@
         Значит, $I$ --- не главный идеал.
         \item Докажем, что $\Z[x]$ --- не кольцо главных идеалов. Рассмотрим $I = (2, x)$. Предположим, что $I = (f)$ --- тогда $\exists q_1, q_2 \in \Z[x]: 2 = fq_1, x = fq_2$. Из первого равенства имеем, что либо $f \sim 1$, либо $f \sim 2$:
         \begin{itemize}
-            \item $f \sim 1 \Longrightarrow \pm 1 = 2a + xb$ --- невозможно, т.к. коэффициенты целые;
-            \item $f \sim 2 \Longrightarrow x = \pm2 \cdot q_2$ --- невозможно по тем же соображениям.
+            \item $f \sim 1 \Longrightarrow 1 = 2a + xb$ --- невозможно, т.к. коэффициенты целые;
+            \item $f \sim 2 \Longrightarrow x = 2 \cdot q_2$ --- невозможно по тем же соображениям.
         \end{itemize}
         Значит, $\Z[x]$ --- не кольцо главных идеалов, а отсюда и не евклидово кольцо.
     \end{enumerate}
@@ -647,7 +647,7 @@
     Пусть $L$ --- расширение поля $F$.\\
     Обозначим $\overline{F} = \{a \in L \ | \ a - \text{алгебраический над } F\}$. Тогда:
     \begin{enumerate}
-        \item $F$ --- подполе $L$;
+        \item $\overline{F}$ --- подполе $L$;
         \item если $b\in L$ --- алгебраический над $\overline{F}$, то $b$ --- алгебраический над $F$\\
         (то есть $b \in \overline{F}$)
     \end{enumerate}
@@ -658,7 +658,7 @@
         \begin{itemize}
             \item $a + b \in \overline{F}, \ 0 \in \overline{F},\ -a \in \overline{F} \Longrightarrow \overline{F}$ --- аддитивная подгруппа;
             \item $ab \in \overline{F} \Longrightarrow \overline{F}$ --- подкольцо;
-            \item $1 \in \overline{F}, \ a^{-1} \in \overline{F} \Longrightarrow \overline{F}$ --- подполе.
+            \item $1 \in \overline{F}, \ a^{-1} \in \overline{F} (a \neq 0) \Longrightarrow \overline{F}$ --- подполе.
         \end{itemize}
         \item Пусть $b \in L$ --- алгебраический над $\overline{F}$, т.е. \[\exists h \in \overline{F}[x] \ (h = c_0 + c_1x + ... + c_kx^k, c_i \in \overline{F}): \ h \neq 0,\ h(b) = 0\] 
         Рассмотрим в $L$ подполе $\tilde{F} = F(c_0,c_1,...,c_k)$. Так как $c_i \in \overline{F}$, $c_i$ --- алгебраические над $F$. Тогда $\tilde{F}$ порождается над $F$ конечным числом алгебраических элементов, а отсюда по теореме 2 $\tilde{F}$ --- конечное расширение $F$.\\
@@ -736,7 +736,7 @@
     Теперь докажем единственность. Пусть $\tilde{L}$ --- произвольное поле разложения многочлена $f$ (из опр. $F \subseteq \tilde{L}$). Рассмотрим последовательность гомоморфизмов 
     \[\phi_i : L_i \rightarrow \tilde{L}\text{ таких, что } \phi_0 = \id, \ \phi_{i+1}|_{L_i} = \phi_i\]
     По лемме при присоединении корня неприводимого $f_i$ хотя бы одно продолжение $\phi_{i+1}$ существует тогда и только тогда, когда $\phi_i(f_i)$ имеет корень в $\tilde{L}$.\\
-    Для многочленов знаем, что $f_i \mid f$ над $L_i \Longrightarrow \phi_i(f_i) \mid \phi_i(f)$ над $\tilde{L}$, а $\phi_i(f) = f$, так как все $\phi_i$ тождественны на $f$. При этом $f$ раскладывается на линейные множители над $\tilde{L}$ --- значит, у $\phi_i(f_i)$ не может не быть корней над $L$, и расширение возможно.\\
+    Для многочленов знаем, что $f_i \mid f$ над $L_i \Longrightarrow \phi_i(f_i) \mid \phi_i(f)$ над $\tilde{L}$, а $\phi_i(f) = f$, так как все $\phi_i$ тождественны на $F$. При этом $f$ раскладывается на линейные множители над $\tilde{L}$ --- значит, у $\phi_i(f_i)$ не может не быть корней над $\tilde{L}$, и расширение возможно.\\
     Так построим $\phi_s: L \rightarrow \tilde{L}$ --- гомоморфизм полей, тождественный на $F$.\\
     Ядро $\textup{Ker }\phi_s$ --- идеал в поле $L$, то есть оно равно либо $\{0\}$, либо $L$ --- второе невозможно, так как $\phi_s$ тождественный на $F$, а в $F$ есть $1 \neq 0$.\\
     Образ $\textup{Im }\phi_s$ --- подполе $\tilde{L}$, содержащее все корни многочлена $f$, а тогда из минимальности поля разложения совпадающее с $\tilde{L}$. Значит, $\phi_s$ --- биективный гомоморфизм полей, т.е. изоморфизм полей, тождественный на $F$.
