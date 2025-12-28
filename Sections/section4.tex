@@ -63,7 +63,7 @@
 \end{subtheorem}
 \begin{proof}
     $ \\ \Longrightarrow: \ \ $ Из определения базиса любой элемент имеет разложение по базису.
-    \[\alpha_1e_1 + ... + \alpha_ne_n = a = \alpha_1'e_1 + ... + \alpha_n'e_n \Longrightarrow (\alpha_1 - \alpha_1')e_1 + ... + (\alpha_n - \alpha_n')e_n = 0\] 
+    \[\alpha_1a_1 + ... + \alpha_na_n = a = \alpha_1'a_1 + ... + \alpha_n'a_n \Longrightarrow (\alpha_1 - \alpha_1')a_1 + ... + (\alpha_n - \alpha_n')a_n = 0\] 
     Отсюда из линейной независимости $\alpha_i = \alpha_i' \ \forall i$, т.е. разложение единственно.\\
     $\Longleftarrow: \ \ $ Любой элемент $a \in A$ имеет разложение по $a_1,...,a_n$ --- система $a_1,...,a_n$ порождает $A$. Разложение любого элемента единственно $\Longrightarrow 0$ имеет только тривиальное разложение $\Longrightarrow a_1,...,a_n$ линейно независимы. 
 \end{proof}
@@ -133,7 +133,7 @@
     \[k \neq 0 \Longrightarrow B = \langle ke \rangle \simeq \Z \Longrightarrow \textup{rk }B = 1 = \textup{rk }A\]
     \tab Шаг: пусть $e_1,...,e_n$ --- базис свободной абелевой группы $A$.\\
     Рассмотрим $\tilde{A} = \langle e_1,...,e_{n-1} \rangle \leq A$ --- свободная абелева ранга $n-1$.\\
-    Рассмотрим $\tilde{B} = B \cap \tilde{A}$ --- подгруппу $B$, которая содержится в $\tilde{A}$ (очевидно, что это подгруппа). По предположению индукции $\tilde{B}$ --- свободная абелева, причём $\textup{rk }\tilde{B} \leqslant \textup{rk }\tilde{A} = n-1$.\\
+    Рассмотрим $\tilde{B} = B \cap \tilde{A}$ --- подгруппу $B$, которая содержится в $\tilde{A}$ (очевидно, что это подгруппа). По предположению индусов $\tilde{B}$ --- свободная абелева, причём $\textup{rk }\tilde{B} \leqslant \textup{rk }\tilde{A} = n-1$.\\
     Если $B = \tilde{B}$, то теорема доказана. \\
     Иначе рассмотрим гомоморфизм (проекцию на $\langle e_n \rangle$) \\ $\pi: A \rightarrow \Z: \forall a = \alpha_1e_1 + ... + \alpha_ne_n \in A \ \pi(a) = \alpha_n \ (\textup{Ker }\pi = \tilde{A}, \textup{Im }\pi = \Z)$.\\
     Знаем, что $\pi(B)$ --- подгруппа в $\Z \Longrightarrow \pi(B) = \langle k \rangle$ ($k \neq 0$ из $B \neq \tilde{B}$).\\

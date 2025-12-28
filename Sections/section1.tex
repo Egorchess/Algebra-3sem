@@ -578,7 +578,7 @@
 
 \subsection{Гомоморфизмы групп}
 \begin{definition}
-    Пусть $(G, \cdot, e), (\tilde{G}, \cdot, \tilde{e})$ --- группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\cdot\phi(b)$.
+    Пусть $(G, \cdot, e), (\tilde{G}, \circ, \tilde{e})$ --- группы. Отображение $\phi: G \rightarrow \tilde{G}$ называется гомоморфизмом групп $G$ и $\tilde{G}$, если $\forall a, b, \in G \ \phi(a\cdot b) = \phi(a)\circ\phi(b)$.
 \end{definition}
 \begin{remark}
     В частности, изоморфизм --- биективный гомоморфизм.
@@ -683,12 +683,12 @@
     Эпиморфизм --- сюръективный гомоморфизм.
 \end{definition}
 \begin{subtheorem}
-    Пусть $\phi: G \rightarrow \tilde{\tilde{G}}$ --- произвольный эпиморфизм с ядром $H$.\\
-    Тогда $\exists$ изоморфизм $\psi: G/H \rightarrow \tilde{\tilde{G}}$ такой, что $\phi = \psi \circ \pi$, где $\pi$ --- натуральный гомоморфизм из $G$ в $G/H$.
+    Пусть $\phi: G \rightarrow \tilde{G}$ --- произвольный эпиморфизм с ядром $H$.\\
+    Тогда $\exists$ изоморфизм $\psi: G/H \rightarrow \tilde{G}$ такой, что $\phi = \psi \circ \pi$, где $\pi$ --- натуральный гомоморфизм из $G$ в $G/H$.
 \end{subtheorem}
 \begin{proof}
     По теореме о гомоморфизме $G/ \textup{Ker }\phi \simeq \textup{Im }\phi$.\\
-    Так как $\phi$ --- сюръекция, $\textup{Im }\phi =  \tilde{\tilde{G}}$, также по условию $\textup{Ker }\phi = H$. Тогда $\psi: G/H \rightarrow \tilde{\tilde{G}}$ --- изоморфизм, заданный в доказательстве теоремы о гомоморфизме: $\psi: gH \mapsto \phi(g)$.\\
+    Так как $\phi$ --- сюръекция, $\textup{Im }\phi =  \tilde{G}$, также по условию $\textup{Ker }\phi = H$. Тогда $\psi: G/H \rightarrow \tilde{G}$ --- изоморфизм, заданный в доказательстве теоремы о гомоморфизме: $\psi: gH \mapsto \phi(g)$.\\
     Взяв этот изоморфизм, получим $\phi = \psi \circ \pi$ (так как $g \overset{\pi}{\mapsto} gH \overset{\psi}{\mapsto} \phi(g)$).
 \end{proof}
 \setcounter{thcount}{0}

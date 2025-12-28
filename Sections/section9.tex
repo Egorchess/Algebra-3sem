@@ -457,7 +457,7 @@
         \item В произвольном базисе $\E$: $A(hgh^{-1}) = A(h)A(g)(A(h))^{-1}$ --- след матрицы не меняется при сопряжении (так как не зависит от базиса);
         \item Следует из того, что в некотором базисе $\E$: $A_{\Phi} = \begin{pmatrix} A_{\Phi_1} &\vline&0 \\ \hline 0&\vline&A_{\Phi_2} \end{pmatrix}$; 
         \item Пусть $\textup{ord } g = k$. Тогда $\textup{ord } \Phi(g) = m \mid k$ (т.к. $\Phi(g)^k = I$).\\
-        Рассмотрим матрицу $A(g)$ в жордановом базисе. Так как $A(g)^m = E$, все собственные значения $\lambda_i(g)$ --- комплексные корни степени $m$ из единицы. Также из определения линейного представления $A(g^{-1}) = A(g)^{-1}$, то есть на диагонали $A(g^{-1})$ стоят $\lambda_i(g^{-1}) = \frac{\overline{\lambda_i(g)}}{|\lambda_i(g)|} = \overline{\lambda_i(g)}$, т.к. модуль корня из единицы равен 1. Тогда:
+        Рассмотрим матрицу $A(g)$ в жордановом базисе. Так как $A(g)^m = E$, все собственные значения $\lambda_i(g)$ --- комплексные корни степени $m$ из единицы. Также из определения линейного представления $A(g^{-1}) = A(g)^{-1}$, то есть на диагонали $A(g^{-1})$ стоят $\lambda_i(g^{-1}) = \frac{\overline{\lambda_i(g)}}{|\lambda_i(g)|^2} = \overline{\lambda_i(g)}$, т.к. модуль корня из единицы равен 1. Тогда:
         \[\rchi_\Phi(g^{-1}) = \textup{tr} A(g^{-1}) = \sum \limits_i \lambda_i(g^{-1}) = \sum \limits_i \overline{\lambda_i(g)} = \overline{\sum \limits_i \lambda_i(g)} = \overline{\textup{tr} A(g)} = \overline{\rchi_\Phi(g)}\] 
     \end{enumerate}
 \end{proof}
@@ -551,8 +551,8 @@
 \end{lemmanum}
 \begin{proof}
     Докажем, что $\forall g \in G: \ \Psi_{\Gamma, \Phi} \circ \Phi(G) = \Phi(g) \circ \Psi_{\Gamma, \Phi}$:
-    \[\Phi(g)\circ\Psi_{\Gamma, \Phi}\circ\Phi(g^{-1}) = \Phi(g)(\sum \limits_{h \in G} \overline{\Gamma(h)}\Phi(h))\Phi(g^{-1}) = \sum \limits_{g \in G} \overline{\Gamma(h)}\Phi(ghg^{-1}) =\]
-    \[(\text{из центральности } \Gamma) \ \ = \sum \limits_{g \in G} \overline{\Gamma(ghg^{-1})}\Phi(ghg^{-1}) = \sum \limits_{\tilde{g} \in G} \overline{\Gamma(\tilde{g})}\Phi(\tilde{g}) = \Psi_{\Gamma, \Phi}\]
+    \[\Phi(g)\circ\Psi_{\Gamma, \Phi}\circ\Phi(g^{-1}) = \Phi(g)(\sum \limits_{h \in G} \overline{\Gamma(h)}\Phi(h))\Phi(g^{-1}) = \sum \limits_{h \in G} \overline{\Gamma(h)}\Phi(ghg^{-1}) =\]
+    \[(\text{из центральности } \Gamma) \ \ = \sum \limits_{h \in G} \overline{\Gamma(ghg^{-1})}\Phi(ghg^{-1}) = \sum \limits_{\tilde{g} \in G} \overline{\Gamma(\tilde{g})}\Phi(\tilde{g}) = \Psi_{\Gamma, \Phi}\]
     Отсюда по лемме Шура $\Psi_{\Gamma, \Phi} = \lambda I$. Рассмотрим след $\Psi_{\Gamma, \Phi}$:
     \[\textup{tr } \Psi_{\Gamma, \Phi} = \textup{tr } \lambda I = \lambda \dim V = \lambda \rchi_\Phi(e)\]
     \[\textup{tr } \Psi_{\Gamma, \Phi} = \sum \limits_{g \in G} \overline{\Gamma(g)}\cdot\textup{tr } \Phi(g) = \sum \limits_{g \in G} \overline{\Gamma(g)}\rchi_\Phi(g) = |G|\cdot(\rchi_\Phi, \Gamma)\]
