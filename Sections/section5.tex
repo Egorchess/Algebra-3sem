@@ -129,15 +129,15 @@ $\\$В общем случае $\alpha: G \rightarrow S(X)$ --- гомоморф
 \begin{theorem}
     Отображение $\psi: \textup{Orb}(x) \rightarrow G/\textup{St}(x)$ (множество левых смежных классов, не факторгруппа!) такое, что $gx \mapsto g\textup{St}(x)$, является биекцией.
 \end{theorem}
-\begin{proof}\tab
+\begin{proof}
+    Из предыдущего утверждения:
+    \[g_1 \textup{St}(x) = g_2 \textup{St}(x) \Longleftrightarrow \{h \in G \ | \ g_1x = hx\} = \{h \in G \ | \ g_2x = hx\} \Longleftrightarrow g_1x = g_2x\]
     \begin{itemize}
-        \item Корректность: \ Пусть $y = g_1x = g_2x$. Тогда:
-        \[g_1x = g_2x \Longrightarrow (g_2^{-1}g_1)x = (g_2^{-1}g_2)x = x \Longrightarrow g_2^{-1}g_1 \in \textup{St}(x) \Longrightarrow\]
-        \[\Longrightarrow g_1 \in g_2\textup{St}(x)\Longrightarrow g_1\textup{St}(x) = g_2\textup{St}(x) \Longrightarrow \psi(g_1x) = \psi(g_2x)\]
+        \item Корректность: $g_1x = g_2x \Longrightarrow g_1 \textup{St}(x) = g_2 \textup{St}(x)$;
         \item Сюръективность --- очевидна ($\forall g \in G$ $g\textup{St}(x)$ будет образом точки $gx$);
-        \item Инъективность: Пусть $\psi(g_1x) = \psi(g_2x) $. Тогда:
-        \[g_1\textup{St}(x) = g_2\textup{St}(x) \Longrightarrow g_2^{-1}g_1 \in \textup{St}(x) \Longrightarrow (g_2^{-1}g_1)x = x \Longrightarrow g_1x = g_2x\] 
+        \item Инъективность: $g_1 \textup{St}(x) = g_2 \textup{St}(x) \Longrightarrow g_1x = g_2x$.
     \end{itemize}
+    Отсюда $\psi$ --- биекция.
 \end{proof}
 \begin{consequensenum}
     $|\textup{Orb}(x)| = |G/\textup{St}(x)| = |G : \textup{St}(x)|$.
