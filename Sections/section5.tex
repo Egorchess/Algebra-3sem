@@ -146,7 +146,7 @@ $\\$В общем случае $\alpha: G \rightarrow S(X)$ --- гомоморф
     Если $G$ --- конечная группа, то $|\textup{Orb}(x)| = \frac{|G|}{|\textup{St}(x)|}$.
 \end{consequensenum}
 \begin{example} 
-    Пусть $K \in \E^3$ --- куб, $G = \textup{Sym}^+(K) = \{g \in \textup{Isom}^+(\E^3) \ | \ gK = K\}$ --- группа вращений $K$.\\
+    Пусть $K \subset \E^3$ --- куб, $G = \textup{Sym}^+(K) = \{g \in \textup{Isom}^+(\E^3) \ | \ gK = K\}$ --- группа вращений $K$.\\
     Найдём $|G|$. Так как $G \leq S(X)$, где $X = \{v_1,...,v_8\}$ --- множество вершин куба, $|G| < \infty$. Значит, если рассмотреть индуцированное действие $G \acts X$, то $|G| = |\textup{Orb}(v_1)|\cdot |\textup{St}(v_1)|$.\\
     $\textup{Orb}(v_1) = X$ (вершина может перейти в любую) $\Longrightarrow$ $|\textup{Orb}(v_1)| = 8$;\\
     $|\textup{St}(v_1)| = 3$ ($\textup{id}$ и два поворота вокруг большой диагонали, содержащей $v_1$);\\
@@ -247,7 +247,7 @@ $\\$В общем случае $\alpha: G \rightarrow S(X)$ --- гомоморф
     \end{enumerate}
 \end{proof}
 \begin{definition}
-    $\\ \textup{Aut }G$ называется группой \st{аутизмов}$_{\href{https://ru.wikipedia.org/wiki/\%D0\%90\%D1\%83\%D1\%82\%D0\%B8\%D0\%B7\%D0\%BC}{1}}$ автоморфизмов группы $G$.\\
+    $\\ \textup{Aut }G$ называется группой автоморфизмов группы $G$.\\
     $\textup{Int }G$ называется группой внутренних автоморфизмов группы $G$.
 \end{definition}
 Пусть $\alpha$ --- действие $G\acts G$ сопряжениями. Тогда 
@@ -291,9 +291,6 @@ $\textup{Ker } \alpha = \{g \in G \ | \ \alpha(g)h = h \\ \forall h \in G\} = \{
 \begin{proof}
     $\forall g \in G: gxg^{-1} = x \Longleftrightarrow gx = xg$.
 \end{proof}
-\begin{definition}
-    Группа $G$ называется тривиальной, если $G = \{e\}$.
-\end{definition}
 \begin{theorem}
     Центр любой конечной нетривиальной $p$-группы нетривиален ($p$ --- простое).
 \end{theorem}
