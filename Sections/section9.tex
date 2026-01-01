@@ -334,8 +334,14 @@
     Значит, $\Phi$ --- ортогональное линейное представление.\\
     Случай $\F = \CC$: рассмотрим произвольную эрмитову положительно определённую полуторалинейную функцию $\gamma: V \times V \rightarrow \CC$. Тогда аналогично определим отображение $(x|y)$ --- его свойства и унитарность $\Phi(g)$ проверяются аналогично свойствам $\beta$ и ортогональности $\Phi(g)$. 
 \end{proof}
+\begin{consequense}
+    Любое вещественное (комплексное) линейное представление конечной группы является вполне приводимым.
+\end{consequense}
+\begin{remark}
+    Данное следствие является случаем теоремы Машке для $\F = \R, \CC$.
+\end{remark}
 \subsection{Неприводимые линейные представления над \texorpdfstring{$\CC$}{полем комплексных чисел}}
-Сформулируем две теоремы, описывающие поведение неприводимых комплексных представлений произвольной конечной группы. Они будут доказаны в разделе 9.5 (а именно \hyperlink{chtarget}{здесь}), а этот раздел посвящён их практическому применению. 
+Сформулируем две теоремы, описывающие поведение неприводимых комплексных представлений произвольной конечной группы. Они будут доказаны в разделе \hyperlink{chtarget}{9.5}, а этот раздел посвящён их практическому применению. 
 \begin{theoremnum}
     Пусть $G$ --- конечная группа, $r$ --- количество классов сопряжённости в $G$. Тогда существует ровно $r$ попарно неэквивалентных неприводимых комплексных линейных представлений $G$ над $\CC$.
 \end{theoremnum}
@@ -550,7 +556,7 @@
     Тогда оператор \[\Psi_{\Gamma, \Phi} = \sum \limits_{g \in G} \overline{\Gamma(g)}\Phi(g)\text{ равен }\lambda I,\text{ где }\lambda = |G|\frac{(\rchi_\Phi, \Gamma)}{\rchi_\Phi(e)}\]
 \end{lemmanum}
 \begin{proof}
-    Докажем, что $\forall g \in G: \ \Psi_{\Gamma, \Phi} \circ \Phi(G) = \Phi(g) \circ \Psi_{\Gamma, \Phi}$:
+    Докажем, что $\forall g \in G: \ \Psi_{\Gamma, \Phi} \circ \Phi(g) = \Phi(g) \circ \Psi_{\Gamma, \Phi}$:
     \[\Phi(g)\circ\Psi_{\Gamma, \Phi}\circ\Phi(g^{-1}) = \Phi(g)(\sum \limits_{h \in G} \overline{\Gamma(h)}\Phi(h))\Phi(g^{-1}) = \sum \limits_{h \in G} \overline{\Gamma(h)}\Phi(ghg^{-1}) =\]
     \[(\text{из центральности } \Gamma) \ \ = \sum \limits_{h \in G} \overline{\Gamma(ghg^{-1})}\Phi(ghg^{-1}) = \sum \limits_{\tilde{g} \in G} \overline{\Gamma(\tilde{g})}\Phi(\tilde{g}) = \Psi_{\Gamma, \Phi}\]
     Отсюда по лемме Шура $\Psi_{\Gamma, \Phi} = \lambda I$. Рассмотрим след $\Psi_{\Gamma, \Phi}$:
