@@ -104,8 +104,10 @@
 \begin{proof}
     Пусть $W = a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}$ --- несократимое слово из $F(A)$, где $\epsilon_i = \pm 1, a_{i_j} \in A$. Зададим $\phi: F(A) \rightarrow G$ по правилу $\phi(W) = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}$.\\
     Проверим, что $\phi$ --- гомоморфизм ($W, \tilde{W} \in F(A), W = a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}, \tilde{W} = a_{j_1}^{\tau_1}...a_{j_m}^{\tau_m}$):
-    \[\phi(W\tilde{W}) = \phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}\cdot a_{j_1}^{\tau_1}...a_{j_m}^{\tau_m}) = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}\cdot g_{j_1}^{\tau_1}...g_{j_m}^{\tau_m} =\]
-    \[=(g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k})\cdot (g_{j_1}^{\tau_1}...g_{j_m}^{\tau_m}) = \phi(W)\phi(\tilde{W})\]
+    \[\phi(W\tilde{W}) = \phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}\cdot a_{j_1}^{\tau_1}...a_{j_m}^{\tau_m}) = \phi(a_{i_1}^{\epsilon_1}...a_{i_{k-s}}^{\epsilon_{k-s}}a_{j_{s+1}}^{\tau_{s+1}}...a_{j_m}^{\tau_m}) = g_{i_1}^{\epsilon_1}...g_{i_{k-s}}^{\epsilon_{k-s}}g_{j_{s+1}}^{\tau_{s+1}}...g_{j_m}^{\tau_m} \]
+    \[= g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}\cdot g_{j_1}^{\tau_1}...g_{j_m}^{\tau_m} =
+    (g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k})\cdot (g_{j_1}^{\tau_1}...g_{j_m}^{\tau_m}) = \phi(W)\phi(\tilde{W})\]
+    (где $a_{i_1}^{\epsilon_1}...a_{i_{k-s}}^{\epsilon_{k-s}}a_{j_{s+1}}^{\tau_{s+1}}...a_{j_m}^{\tau_m}$ --- результат полного сокращения $W\tilde{W}$)\\
     Единственность такого гомоморфизма очевидна:\\
     $\phi(a_{i_1}^{\epsilon_1}...a_{i_k}^{\epsilon_k}) = \phi(a_{i_1})^{\epsilon_1}...\phi(a_{i_k})^{\epsilon_k} = g_{i_1}^{\epsilon_1}...g_{i_k}^{\epsilon_k}$ --- определено однозначно.
 \end{proof}
