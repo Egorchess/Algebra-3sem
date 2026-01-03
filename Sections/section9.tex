@@ -27,8 +27,8 @@
         \item Пусть задано линейное представление $\Phi: G \rightarrow GL(V)$ и задан гомоморфизм $\Psi: H \rightarrow G$. Тогда $\tilde{\Phi} = \Phi \circ \Psi: H \rightarrow GL(V)$ --- линейное представление группы $H$.
         \item Пусть $X$ --- некоторое множество, задано $G \acts X$.\\
         Рассмотрим векторное пространство функций $\mathcal{F}(X, \F) = \{f: X \rightarrow \F\} = V$\\
-        Тогда $\Phi: G \rightarrow GL(V)$: $\forall g \in G \ \Phi(g)f = \tilde{f}$, где $\tilde{f}(x) = f(gx)$ --- линейное представление группы $G$:
-        \[\forall g_1, g_2\in G : \Phi(g_1g_2)f(x) = f(g_1g_2x) = \Phi(g_1)f(g_2x) = \Phi(g_1)\Phi(g_2)f(x)\]
+        Тогда $\Phi: G \rightarrow GL(V)$: $\forall g \in G \ \Phi(g)f = \tilde{f}$, где $\tilde{f}(x) = f(g^{-1}x)$ --- линейное представление группы $G$:
+        \[\forall g_1, g_2\in G : \Phi(g_1)\Phi(g_2)f(x) = \Phi(g_1)(h(x)) = h(g_1^{-1}x) = \Phi(g_2)f(g_1^{-1}x) =\]\[= f(g_2^{-1}g_1^{-1}x) = f((g_1g_2)^{-1}x) = \Phi(g_1g_2)f(x)\]
     \end{enumerate}
 \end{examples}
 
@@ -45,10 +45,12 @@
 \begin{remark}
     Далее зачастую $n$-мерное линейное представление $G \rightarrow GL(V)$ будет рассматриваться как матричное представление $G \rightarrow GL_n(\F)$, ему соответствующее.
 \end{remark}
+\begin{remark}
+    Все напоминания данной главы взяты из курса линейной алгебры. %(\cite{linal}).
+\end{remark}
 \begin{reminder}
     Если $\phi: V \rightarrow V$ --- линейный оператор, $A$ и $\tilde{A}$ --- его матрицы в базисах $\E$ и $\tilde{\E}$ соответственно, то $\tilde{A} = C^{-1}AC$, где $C$ --- матрица перехода от $\E$ к $\tilde{\E}$.  
 \end{reminder}
-Здесь и далее: если вдруг не вспоминается --- см. конспект линейной алгебры (\cite{linal}).
 \begin{definition}
     Матричные представления $\Phi_1, \Phi_2$ группы $G$ размерности $n$ над полем $\F$ называются эквивалентными (изоморфными, подобными), если $\exists C \in GL_n(\F): \forall g \in G: \ \Phi_1(g) = C^{-1}\Phi_2(g)C$. Обозначается $\Phi_1 \approx \Phi_2$.
 \end{definition}
